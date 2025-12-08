@@ -15,8 +15,9 @@ import StepTwo from '@/public/step-two.png';
 import StepThree from '@/public/step-three.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
-import Chevron from '@/public/chevron.svg';
 import Kimi from '@/public/kimi.jpg';
+import FAQItem from '@/components/FAQItem';
+import FeedbackCard from '@/components/FeedbackCard';
 
 export default function Home() {
   return (
@@ -376,165 +377,69 @@ export default function Home() {
           </h1>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
-            <div className="bg-[#F4F1EA] rounded-3xl p-5 w-[300px]">
-              <p className="text-[16px] text-[#242832] font-normal">
-                {
-                  '"Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped."'
-                }
-              </p>
-              <div className="flex flex-row items-center gap-x-2 mt-5">
-                <Image
-                  src={Kimi}
-                  alt="Cher Ami logo"
-                  width={48}
-                  height={48}
-                  className="rounded-full"
-                />
-                <p className="text-[16px] text-[#242832] font-semibold">Kimi</p>
-              </div>
-            </div>
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />{' '}
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />{' '}
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />{' '}
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />{' '}
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />{' '}
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />{' '}
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />
+            <FeedbackCard
+              text={
+                'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
+              }
+              image={Kimi}
+              name={'Kimi'}
+            />
           </div>
         </div>
 
@@ -543,46 +448,22 @@ export default function Home() {
             FAQ
           </h1>
           <div className="flex flex-col gap-y-3">
-            <div className="flex flex-row justify-between bg-[#F4F1EA] p-4 w-[500px] rounded-[14]">
-              <p>How do I create a new account?</p>
-              <Image
-                src={Chevron}
-                alt="Cher Ami logo"
-                width={24}
-                height={24}
-                className="rounded-full"
-              />
-            </div>
-            <div className="flex flex-row justify-between bg-[#F4F1EA] p-4 w-[500px] rounded-[14]">
-              <p>How do I create a new account?</p>
-              <Image
-                src={Chevron}
-                alt="Cher Ami logo"
-                width={24}
-                height={24}
-                className="rounded-full"
-              />
-            </div>
-            <div className="flex flex-row justify-between bg-[#F4F1EA] p-4 w-[500px] rounded-[14]">
-              <p>How do I create a new account?</p>
-              <Image
-                src={Chevron}
-                alt="Cher Ami logo"
-                width={24}
-                height={24}
-                className="rounded-full"
-              />
-            </div>
-            <div className="flex flex-row justify-between bg-[#F4F1EA] p-4 w-[500px] rounded-[14]">
-              <p>How do I create a new account?</p>
-              <Image
-                src={Chevron}
-                alt="Cher Ami logo"
-                width={24}
-                height={24}
-                className="rounded-full"
-              />
-            </div>
+            <FAQItem
+              question={'How do I create a new account?'}
+              answer={'Idk Walt'}
+            />
+            <FAQItem
+              question={'How do I create a new account?'}
+              answer={'Idk Walt'}
+            />
+            <FAQItem
+              question={'How do I create a new account?'}
+              answer={'Idk Walt'}
+            />
+            <FAQItem
+              question={'How do I create a new account?'}
+              answer={'Idk Walt'}
+            />
           </div>
         </div>
       </main>
