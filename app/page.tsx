@@ -23,12 +23,11 @@ export default function Home() {
   return (
     <div className="bg-[#FCFBF8]">
       <main className="flex flex-col items-center gap-y-36 py-5">
-        <div className="flex flex-row justify-between w-full px-50">
+        <div className="flex flex-row justify-between w-full px-5 md:px-40 xl:px-50">
           <Image
             src={TitleImage}
             alt="Cher Ami logo"
-            width={143}
-            height={32}
+            className="w-[143px] h-8 flex-none"
             priority
           />
           <div className="flex flex-row gap-x-4">
@@ -371,7 +370,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
+        <div className="flex flex-col items-center">
           <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
             What people are saying
           </h1>
@@ -443,11 +442,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div>
+        <div className="flex flex-col w-full">
           <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-5">
             FAQ
           </h1>
-          <div className="flex flex-col gap-y-3">
+          <div className="flex flex-col gap-y-3 items-center">
             <FAQItem
               question={'How do I create a new account?'}
               answer={'Idk Walt'}
