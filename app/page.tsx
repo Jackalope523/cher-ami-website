@@ -5,14 +5,15 @@ import Mouse from '@/public/mouse.png';
 import Placeholder from '@/public/placeholder.jpg';
 import PhoneShowcase from '@/public/app-showcase.png';
 import MagazineShowcase from '@/public/magazine-showcase.png';
-import Rat from '@/public/rat.png';
-import Fox from '@/public/fox.png';
-import Family from '@/public/family.png';
-import Shield from '@/public/shield.png';
-import Book from '@/public/book.png';
 import StepOne from '@/public/step-one.png';
 import StepTwo from '@/public/step-two.png';
 import StepThree from '@/public/step-three.png';
+import StepOneIllustration from '@/public/step-one-illustration.png';
+import StepTwoIllustration from '@/public/step-two-illustration.png';
+import StepThreeIllustration from '@/public/step-three-illustration.png';
+import ValueQualityIllustration from '@/public/value-quality.png';
+import ValuePrivacyIllustration from '@/public/value-privacy.png';
+import ValueFreeShippingIllustration from '@/public/value-shipping.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
 import Kimi from '@/public/kimi.jpg';
@@ -194,7 +195,7 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <Image src={Rat} alt="Cher Ami logo" width={255} height={178} />
+                <Image src={StepOneIllustration} alt="Cher Ami logo" width={255} height={178} />
                 <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Share Photos
                 </h1>
@@ -214,7 +215,7 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <Image src={Fox} alt="Cher Ami logo" width={255} height={178} />
+                <Image src={StepTwoIllustration} alt="Cher Ami logo" width={255} height={178} />
                 <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Receive Magazine
                 </h1>
@@ -235,7 +236,7 @@ export default function Home() {
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
                 <Image
-                  src={Family}
+                  src={StepThreeIllustration}
                   alt="Cher Ami logo"
                   width={255}
                   height={178}
@@ -260,12 +261,12 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#F4F1EA] items-center bg-[#F4F1EA] py-2 w-full">
                 <h3 className="text-[28px] text-[#242832] font-semibold">
-                  FREE
+                  Digital Edition
                 </h3>
               </div>
               <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA]">
                 <h3 className="text-[48px] text-[#242832] font-semibold my-4">
-                  $0
+                  FREE
                 </h3>
                 <div className="flex flex-col">
                   <div className="flex flex-row gap-x-1">
@@ -277,6 +278,17 @@ export default function Home() {
                     />
                     <p className="text-[16px] text-[#242832] font-normal">
                       Share and view posts on the Cher Ami app.
+                    </p>
+                  </div>
+                  <div className="flex flex-row gap-x-1">
+                    <Image
+                      src={Check}
+                      alt="Cher Ami logo"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[16px] text-[#242832] font-normal">
+                      Add unlimited members to your circle.
                     </p>
                   </div>
                   <div className={'flex flex-row gap-x-1'}>
@@ -292,12 +304,12 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#C15F3C] items-center bg-[#C15F3C] py-2 w-full">
                 <h3 className="text-[28px] text-[#FCFBF8] font-semibold">
-                  Standard
+                  Monthly Edition
                 </h3>
               </div>
               <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C]">
                 <h3 className="text-[48px] text-[#242832] font-semibold my-4">
-                  $12
+                  $12.99
                 </h3>
                 <div className="flex flex-col">
                   <div className="flex flex-row gap-x-1">
@@ -311,6 +323,17 @@ export default function Home() {
                       Share and view posts on the Cher Ami app.
                     </p>
                   </div>
+                  <div className="flex flex-row gap-x-1">
+                    <Image
+                      src={Check}
+                      alt="Cher Ami logo"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[16px] text-[#242832] font-normal">
+                      Add unlimited members to your circle.
+                    </p>
+                  </div>
                   <div className={'flex flex-row gap-x-1'}>
                     <Image
                       src={Check}
@@ -320,6 +343,17 @@ export default function Home() {
                     />
                     <p className="text-[16px] text-[#242832] font-normal">
                       Receive a printed magazine each month.
+                    </p>
+                  </div>
+                  <div className={'flex flex-row gap-x-1'}>
+                    <Image
+                      src={Check}
+                      alt="Cher Ami logo"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[16px] text-[#242832] font-normal">
+                      Free shipping.
                     </p>
                   </div>
                 </div>
@@ -334,7 +368,7 @@ export default function Home() {
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
-              <Image src={Book} alt="Cher Ami logo" width={255} height={178} />
+              <Image src={ValueQualityIllustration} alt="Cher Ami logo" width={156} height={183} />
               <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                 High Quality
               </h1>
@@ -345,7 +379,7 @@ export default function Home() {
 
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
               <Image
-                src={Shield}
+                src={ValuePrivacyIllustration}
                 alt="Cher Ami logo"
                 width={156}
                 height={183}
@@ -359,7 +393,7 @@ export default function Home() {
             </div>
 
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
-              <Image src={Fox} alt="Cher Ami logo" width={255} height={178} />
+              <Image src={ValueFreeShippingIllustration} alt="Cher Ami logo" width={156} height={183} />
               <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                 Free Shipping
               </h1>
