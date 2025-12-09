@@ -26,40 +26,39 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="bg-[#FCFBF8]">
-      <main className="flex flex-col items-center gap-y-36 py-5">
-        <div className="flex flex-row justify-between w-full px-5 md:px-40 xl:px-50">
-          <Image
-            src={TitleImage}
-            alt="Cher Ami logo"
-            className="w-[143px] h-8 flex-none"
-            priority
-          />
-          <div className="flex flex-row gap-x-4">
-            <Link
-              href="#steps-section"
-              className="text-[#B05637] px-4 py-3 rounded-xl">
-              How It Works
-            </Link>
-            <Link
-              href="#download-section"
-              className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
-              Get Cher Ami
-            </Link>
-          </div>
+      <header className="flex flex-row justify-between w-full px-5 md:px-40 xl:px-50 pt-5">
+        <Image
+          src={TitleImage}
+          alt="Cher Ami logo"
+          className="w-[143px] h-8 flex-none"
+          priority
+        />
+        <div className="flex flex-row gap-x-4">
+          <Link
+            href="#steps-section"
+            className="text-[#B05637] px-4 py-3 rounded-xl">
+            How It Works
+          </Link>
+          <Link
+            href="#download-section"
+            className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
+            Get Cher Ami
+          </Link>
         </div>
-
+      </header>
+      <main className="flex flex-col items-center gap-y-36 pb-5 my-36">
         <div className="flex flex-row items-center">
           <div className="flex-1 hidden xl:block">
             <Image
               src={Hedgehog}
-              alt="Cher Ami logo"
+              alt="A hedgehog holding balloons."
               className="w-full h-auto object-contain"
             />
           </div>
           <div className="flex flex-col items-center">
-            <h1 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-12">
+            <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-12">
               Share your cherished memories of family and friends.
-            </h1>
+            </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto mb-16">
               {
                 "Every month, your circle's best photos are transformed into a beautiful magazine and delivered to loved ones' doorsteps."
@@ -82,7 +81,7 @@ export default function Home() {
           <div className="flex-1 hidden xl:block">
             <Image
               src={Mouse}
-              alt="Cher Ami logo"
+              alt="A mouse throwing a paper airplane."
               className="w-full h-auto object-contain"
             />
           </div>
@@ -91,63 +90,63 @@ export default function Home() {
         <div className="flex flex-row gap-x-10 overflow-x-auto px-40">
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-[32]"
           />
           <Image
             src={Placeholder}
-            alt="Cher Ami logo"
+            alt=""
             width={408}
             height={510}
             className="rounded-4xl"
@@ -156,9 +155,9 @@ export default function Home() {
 
         <div>
           <div className="mb-10">
-            <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
+            <h2 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
               Two ways to connect.
-            </h1>
+            </h2>
             <p className="text-[16px] text-[#242832] font-normal text-center max-w-xl mx-auto">
               {
                 'Sharing moments of your life with family and friends has never been easier.'
@@ -169,12 +168,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 mb-20">
             <Image
               src={PhoneShowcase}
-              alt="Cher Ami logo"
+              alt="An smartphone running the Cher Ami mobile app"
               className="block w-auto h-auto"
             />
             <Image
               src={MagazineShowcase}
-              alt="Cher Ami logo"
+              alt="The Cher Ami magazine"
               className="block w-auto h-auto"
             />
           </div>
@@ -182,11 +181,11 @@ export default function Home() {
 
         <div className="flex flex-col items-center">
           <div className="mb-10">
-            <h1
+            <h2
               id="steps-section"
               className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
               As easy as...
-            </h1>
+            </h2>
             <p className="text-[16px] text-[#242832] font-normal text-center max-w-xl mx-auto">
               {
                 'You focus on making memories while we take care of everything else, from design to delivery.'
@@ -194,11 +193,11 @@ export default function Home() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="relative w-[300px] flex flex-col items-center">
+            <div className="relative w-[350px] flex flex-col items-center">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
                 <Image
                   src={StepOne}
-                  alt="Cher Ami logo"
+                  alt="The number one"
                   width={18}
                   height={22}
                 />
@@ -207,24 +206,24 @@ export default function Home() {
                 <div className="flex flex-col h-[255px] justify-center">
                   <Image
                     src={StepOneIllustration}
-                    alt="Cher Ami logo"
+                    alt="Three mice playing with a kite"
                     height={255}
                   />
                 </div>
-                <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                <h2 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Share Photos
-                </h1>
+                </h2>
                 <p className="text-[16px] text-[#242832] font-normal text-center">
                   Upload memories through our app all month long.
                 </p>
               </div>
             </div>
 
-            <div className="relative w-[300px] flex flex-col items-center">
+            <div className="relative w-[350px] flex flex-col items-center">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
                 <Image
                   src={StepTwo}
-                  alt="Cher Ami logo"
+                  alt="The number two"
                   width={26.61}
                   height={30.86}
                 />
@@ -233,24 +232,24 @@ export default function Home() {
                 <div className="flex flex-col h-[255px] justify-center">
                   <Image
                     src={StepTwoIllustration}
-                    alt="Cher Ami logo"
+                    alt="A squirrel delivering a letter"
                     height={255}
                   />
                 </div>
-                <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                <h2 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Receive Magazine
-                </h1>
+                </h2>
                 <p className="text-[16px] text-[#242832] font-normal text-center">
                   Upload memories through our app all month long.
                 </p>
               </div>
             </div>
 
-            <div className="relative w-[300px] flex flex-col items-center">
+            <div className="relative w-[350px] flex flex-col items-center">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
                 <Image
                   src={StepThree}
-                  alt="Cher Ami logo"
+                  alt="The number three"
                   width={22}
                   height={26}
                 />
@@ -259,13 +258,13 @@ export default function Home() {
                 <div className="flex flex-col h-[255px] justify-center">
                   <Image
                     src={StepThreeIllustration}
-                    alt="Cher Ami logo"
+                    alt="A family of bears reading a magazine"
                     height={255}
                   />
                 </div>
-                <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                <h2 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Enjoy Together
-                </h1>
+                </h2>
                 <p className="text-[16px] text-[#242832] font-normal text-center">
                   Upload memories through our app all month long.
                 </p>
@@ -275,9 +274,9 @@ export default function Home() {
         </div>
 
         <div>
-          <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
+          <h2 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
             Pricing
-          </h1>
+          </h2>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="flex flex-col items-center">
@@ -294,7 +293,7 @@ export default function Home() {
                   <div className="flex flex-row gap-x-1">
                     <Image
                       src={Check}
-                      alt="Cher Ami logo"
+                      alt="A check mark"
                       width={24}
                       height={24}
                     />
@@ -305,7 +304,7 @@ export default function Home() {
                   <div className="flex flex-row gap-x-1">
                     <Image
                       src={Check}
-                      alt="Cher Ami logo"
+                      alt="A check mark"
                       width={24}
                       height={24}
                     />
@@ -314,7 +313,7 @@ export default function Home() {
                     </p>
                   </div>
                   <div className={'flex flex-row gap-x-1'}>
-                    <Image src={X} alt="Cher Ami logo" width={24} height={24} />
+                    <Image src={X} alt="The letter X" width={24} height={24} />
                     <p className="text-[1rem] text-[#242832] font-normal">
                       No printed magazine.
                     </p>
@@ -342,7 +341,7 @@ export default function Home() {
                   <div className="flex flex-row gap-x-1">
                     <Image
                       src={Check}
-                      alt="Cher Ami logo"
+                      alt="A check mark"
                       width={24}
                       height={24}
                     />
@@ -353,7 +352,7 @@ export default function Home() {
                   <div className="flex flex-row gap-x-1">
                     <Image
                       src={Check}
-                      alt="Cher Ami logo"
+                      alt="A check mark"
                       width={24}
                       height={24}
                     />
@@ -364,7 +363,7 @@ export default function Home() {
                   <div className={'flex flex-row gap-x-1'}>
                     <Image
                       src={Check}
-                      alt="Cher Ami logo"
+                      alt="A check mark"
                       width={24}
                       height={24}
                     />
@@ -375,7 +374,7 @@ export default function Home() {
                   <div className={'flex flex-row gap-x-1'}>
                     <Image
                       src={Check}
-                      alt="Cher Ami logo"
+                      alt="A check mark"
                       width={24}
                       height={24}
                     />
@@ -390,50 +389,56 @@ export default function Home() {
         </div>
 
         <div>
-          <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
+          <h2 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
             Our values
-          </h1>
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
-              <Image
-                src={ValueQualityIllustration}
-                alt="Cher Ami logo"
-                width={156}
-                height={183}
-              />
-              <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
+              <div className="flex flex-col h-[255px] justify-center">
+                <Image
+                  src={ValueQualityIllustration}
+                  alt="A mouse smoking a pipe"
+                  width={156}
+                  height={183}
+                />
+              </div>
+              <h2 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                 High Quality
-              </h1>
+              </h2>
               <p className="text-[16px] text-[#242832] font-normal text-center">
                 Upload memories through our app all month long.
               </p>
             </div>
 
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
-              <Image
-                src={ValuePrivacyIllustration}
-                alt="Cher Ami logo"
-                width={156}
-                height={183}
-              />
-              <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
+              <div className="flex flex-col h-[255px] justify-center">
+                <Image
+                  src={ValuePrivacyIllustration}
+                  alt="A mouse picking up acorns"
+                  width={156}
+                  height={183}
+                />
+              </div>
+              <h2 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                 Private
-              </h1>
+              </h2>
               <p className="text-[16px] text-[#242832] font-normal text-center">
                 Upload memories through our app all month long.
               </p>
             </div>
 
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
-              <Image
-                src={ValueFreeShippingIllustration}
-                alt="Cher Ami logo"
-                width={156}
-                height={183}
-              />
-              <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
+              <div className="flex flex-col h-[255px] justify-center">
+                <Image
+                  src={ValueFreeShippingIllustration}
+                  alt="A paper airplane"
+                  width={156}
+                  height={183}
+                />
+              </div>
+              <h2 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                 Free Shipping
-              </h1>
+              </h2>
               <p className="text-[16px] text-[#242832] font-normal text-center">
                 Upload memories through our app all month long.
               </p>
@@ -442,9 +447,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col items-center">
-          <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
+          <h2 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
             What people are saying
-          </h1>
+          </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             <FeedbackCard
@@ -514,9 +519,9 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col w-full">
-          <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-5">
+          <h2 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-5">
             FAQ
-          </h1>
+          </h2>
           <div className="flex flex-col gap-y-3 items-center">
             <FAQItem
               question={'How do I create a new account?'}
@@ -536,98 +541,97 @@ export default function Home() {
             />
           </div>
         </div>
-
-        <div className="flex flex-col w-full items-center gap-y-10">
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-4xl ">
-            <div className="flex flex-col">
-              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
-                Product
-              </h3>
-              <p className="text-[#B05637] py-2">How It Works</p>
-              <p className="text-[#B05637] py-2">Get Cher Ami</p>
-            </div>
-            <div className="flex flex-col">
-              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
-                Legal
-              </h3>
-              <Link href="/legal/privacy" className="text-[#B05637] py-2">
-                Privacy Policy
-              </Link>
-              <Link href="/legal/terms" className="text-[#B05637] py-2">
-                Terms of Service
-              </Link>
-            </div>
-            <div className="flex flex-col">
-              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
-                Follow us
-              </h3>
-              <Link
-                href="https://www.facebook.com/thecherami"
-                className="text-[#B05637] py-2">
-                Facebook
-              </Link>
-              <Link
-                href="https://www.instagram.com/thecherami"
-                className="text-[#B05637] py-2">
-                Instagram
-              </Link>
-              <Link
-                href="https://www.tiktok.com/@thecherami"
-                className="text-[#B05637] py-2">
-                TikTok
-              </Link>
-              <Link
-                href="https://www.youtube.com/@thecherami"
-                className="text-[#B05637] py-2">
-                YouTube
-              </Link>
-              <Link
-                href="https://www.reddit.com/user/thecherami/"
-                className="text-[#B05637] py-2">
-                Reddit
-              </Link>
-            </div>
-            <div className="flex flex-col gap-y-4">
-              <h3
-                id="download-section"
-                className="text-[20px] text-[#242832] font-semibold mb-6">
-                Download the app
-              </h3>
-              <Link href="https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033">
-                <Image
-                  src={AppStoreBadge}
-                  alt="Cher Ami logo"
-                  className="w-[120px] h-10"
-                />
-              </Link>
-              <Link href="https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=web_share">
-                <Image
-                  src={PlayStoreBadge}
-                  alt="Cher Ami logo"
-                  className="w-[135px] h-10"
-                />
-              </Link>
-            </div>
+      </main>
+      <footer className="flex flex-col w-full items-center gap-y-10 pb-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-4xl ">
+          <div className="flex flex-col">
+            <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+              Product
+            </h3>
+            <p className="text-[#B05637] py-2">How It Works</p>
+            <p className="text-[#B05637] py-2">Get Cher Ami</p>
           </div>
-          <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">
-            <Image
-              src={TitleImage}
-              alt="Cher Ami logo"
-              className="w-[143px] h-8 flex-none"
-              priority
-            />
-            <div className="border border-[#DEDBD5] my-4" />
-            <div className="flex flex-row justify-between">
-              <p className="text-[#868581]">
-                © 2025 Hollow Inc. All rights reserved.
-              </p>
-              <p className="text-[#868581]">
-                Made with ❤️ in the USA, Canada, and EU.
-              </p>
-            </div>
+          <div className="flex flex-col">
+            <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+              Legal
+            </h3>
+            <Link href="/legal/privacy" className="text-[#B05637] py-2">
+              Privacy Policy
+            </Link>
+            <Link href="/legal/terms" className="text-[#B05637] py-2">
+              Terms of Service
+            </Link>
+          </div>
+          <div className="flex flex-col">
+            <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+              Follow us
+            </h3>
+            <Link
+              href="https://www.facebook.com/thecherami"
+              className="text-[#B05637] py-2">
+              Facebook
+            </Link>
+            <Link
+              href="https://www.instagram.com/thecherami"
+              className="text-[#B05637] py-2">
+              Instagram
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@thecherami"
+              className="text-[#B05637] py-2">
+              TikTok
+            </Link>
+            <Link
+              href="https://www.youtube.com/@thecherami"
+              className="text-[#B05637] py-2">
+              YouTube
+            </Link>
+            <Link
+              href="https://www.reddit.com/user/thecherami/"
+              className="text-[#B05637] py-2">
+              Reddit
+            </Link>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <h3
+              id="download-section"
+              className="text-[20px] text-[#242832] font-semibold mb-6">
+              Download the app
+            </h3>
+            <Link href="https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033">
+              <Image
+                src={AppStoreBadge}
+                alt="Go to the Apple App Store"
+                className="w-[120px] h-10"
+              />
+            </Link>
+            <Link href="https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=web_share">
+              <Image
+                src={PlayStoreBadge}
+                alt="Go to the Google Play Store"
+                className="w-[135px] h-10"
+              />
+            </Link>
           </div>
         </div>
-      </main>
+        <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">
+          <Image
+            src={TitleImage}
+            alt="Cher Ami logo"
+            className="w-[143px] h-8 flex-none"
+            priority
+          />
+          <div className="border border-[#DEDBD5] my-4" />
+          <div className="flex flex-row justify-between">
+            <p className="text-[#868581]">
+              © 2025 Hollow Inc. All rights reserved.
+            </p>
+            <p className="text-[#868581]">
+              Made with ❤️ in the USA, Canada, and EU.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
