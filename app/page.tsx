@@ -21,6 +21,7 @@ import PlayStoreBadge from '@/public/googe-play-badge.svg';
 import Kimi from '@/public/kimi.jpg';
 import FAQItem from '@/components/FAQItem';
 import FeedbackCard from '@/components/FeedbackCard';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -34,12 +35,16 @@ export default function Home() {
             priority
           />
           <div className="flex flex-row gap-x-4">
-            <button className="text-[#B05637] px-4 py-3 rounded-xl">
+            <Link
+              href="#steps-section"
+              className="text-[#B05637] px-4 py-3 rounded-xl">
               How It Works
-            </button>
-            <button className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
+            </Link>
+            <Link
+              href="#download-section"
+              className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
               Get Cher Ami
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -177,7 +182,9 @@ export default function Home() {
 
         <div className="flex flex-col items-center">
           <div className="mb-10">
-            <h1 className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
+            <h1
+              id="steps-section"
+              className="text-[40px] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
               As easy as...
             </h1>
             <p className="text-[16px] text-[#242832] font-normal text-center max-w-xl mx-auto">
@@ -197,12 +204,13 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <Image
-                  src={StepOneIllustration}
-                  alt="Cher Ami logo"
-                  width={255}
-                  height={178}
-                />
+                <div className="flex flex-col h-[255px] justify-center">
+                  <Image
+                    src={StepOneIllustration}
+                    alt="Cher Ami logo"
+                    height={255}
+                  />
+                </div>
                 <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Share Photos
                 </h1>
@@ -222,12 +230,13 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <Image
-                  src={StepTwoIllustration}
-                  alt="Cher Ami logo"
-                  width={255}
-                  height={178}
-                />
+                <div className="flex flex-col h-[255px] justify-center">
+                  <Image
+                    src={StepTwoIllustration}
+                    alt="Cher Ami logo"
+                    height={255}
+                  />
+                </div>
                 <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Receive Magazine
                 </h1>
@@ -247,12 +256,13 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <Image
-                  src={StepThreeIllustration}
-                  alt="Cher Ami logo"
-                  width={255}
-                  height={178}
-                />
+                <div className="flex flex-col h-[255px] justify-center">
+                  <Image
+                    src={StepThreeIllustration}
+                    alt="Cher Ami logo"
+                    height={255}
+                  />
+                </div>
                 <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Enjoy Together
                 </h1>
@@ -272,12 +282,12 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="flex flex-col items-center">
               <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#F4F1EA] items-center bg-[#F4F1EA] py-2 w-full">
-                <h3 className="text-[28px] text-[#242832] font-semibold">
+                <h3 className="text-[1.75rem] text-[#242832] font-semibold">
                   Digital Edition
                 </h3>
               </div>
               <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA]">
-                <h3 className="text-[48px] text-[#242832] font-semibold my-4">
+                <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
                   FREE
                 </h3>
                 <div className="flex flex-col">
@@ -288,7 +298,7 @@ export default function Home() {
                       width={24}
                       height={24}
                     />
-                    <p className="text-[16px] text-[#242832] font-normal">
+                    <p className="text-[1rem] text-[#242832] font-normal">
                       Share and view posts on the Cher Ami app.
                     </p>
                   </div>
@@ -299,14 +309,19 @@ export default function Home() {
                       width={24}
                       height={24}
                     />
-                    <p className="text-[16px] text-[#242832] font-normal">
+                    <p className="text-[1rem] text-[#242832] font-normal">
                       Add unlimited members to your circle.
                     </p>
                   </div>
                   <div className={'flex flex-row gap-x-1'}>
                     <Image src={X} alt="Cher Ami logo" width={24} height={24} />
-                    <p className="text-[16px] text-[#242832] font-normal">
+                    <p className="text-[1rem] text-[#242832] font-normal">
                       No printed magazine.
+                    </p>
+                  </div>
+                  <div className={'flex flex-row gap-x-1]'}>
+                    <p className="text-[1rem] text-transparent font-normal">
+                      Free shipping
                     </p>
                   </div>
                 </div>
@@ -315,12 +330,12 @@ export default function Home() {
 
             <div className="flex flex-col items-center">
               <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#C15F3C] items-center bg-[#C15F3C] py-2 w-full">
-                <h3 className="text-[28px] text-[#FCFBF8] font-semibold">
+                <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
                   Monthly Edition
                 </h3>
               </div>
               <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C]">
-                <h3 className="text-[48px] text-[#242832] font-semibold my-4">
+                <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
                   $12.99
                 </h3>
                 <div className="flex flex-col">
@@ -331,7 +346,7 @@ export default function Home() {
                       width={24}
                       height={24}
                     />
-                    <p className="text-[16px] text-[#242832] font-normal">
+                    <p className="text-[1rem] text-[#242832] font-normal">
                       Share and view posts on the Cher Ami app.
                     </p>
                   </div>
@@ -342,7 +357,7 @@ export default function Home() {
                       width={24}
                       height={24}
                     />
-                    <p className="text-[16px] text-[#242832] font-normal">
+                    <p className="text-[1rem] text-[#242832] font-normal">
                       Add unlimited members to your circle.
                     </p>
                   </div>
@@ -353,7 +368,7 @@ export default function Home() {
                       width={24}
                       height={24}
                     />
-                    <p className="text-[16px] text-[#242832] font-normal">
+                    <p className="text-[1rem] text-[#242832] font-normal">
                       Receive a printed magazine each month.
                     </p>
                   </div>
@@ -364,7 +379,7 @@ export default function Home() {
                       width={24}
                       height={24}
                     />
-                    <p className="text-[16px] text-[#242832] font-normal">
+                    <p className="text-[1rem] text-[#242832] font-normal">
                       Free shipping.
                     </p>
                   </div>
@@ -535,31 +550,63 @@ export default function Home() {
               <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                 Legal
               </h3>
-              <p className="text-[#B05637] py-2">How It Works</p>
-              <p className="text-[#B05637] py-2">Get Cher Ami</p>
+              <Link href="/legal/privacy" className="text-[#B05637] py-2">
+                Privacy Policy
+              </Link>
+              <Link href="/legal/terms" className="text-[#B05637] py-2">
+                Terms of Service
+              </Link>
             </div>
             <div className="flex flex-col">
               <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                 Follow us
               </h3>
-              <p className="text-[#B05637] py-2">Facebook</p>
-              <p className="text-[#B05637] py-2">Instagram</p>
-              <p className="text-[#B05637] py-2">TikTok</p>
+              <Link
+                href="https://www.facebook.com/thecherami"
+                className="text-[#B05637] py-2">
+                Facebook
+              </Link>
+              <Link
+                href="https://www.instagram.com/thecherami"
+                className="text-[#B05637] py-2">
+                Instagram
+              </Link>
+              <Link
+                href="https://www.tiktok.com/@thecherami"
+                className="text-[#B05637] py-2">
+                TikTok
+              </Link>
+              <Link
+                href="https://www.youtube.com/@thecherami"
+                className="text-[#B05637] py-2">
+                YouTube
+              </Link>
+              <Link
+                href="https://www.reddit.com/user/thecherami/"
+                className="text-[#B05637] py-2">
+                Reddit
+              </Link>
             </div>
             <div className="flex flex-col gap-y-4">
-              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+              <h3
+                id="download-section"
+                className="text-[20px] text-[#242832] font-semibold mb-6">
                 Download the app
               </h3>
-              <Image
-                src={AppStoreBadge}
-                alt="Cher Ami logo"
-                className="w-[120px] h-10"
-              />
-              <Image
-                src={PlayStoreBadge}
-                alt="Cher Ami logo"
-                className="w-[135px] h-10"
-              />
+              <Link href="https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033">
+                <Image
+                  src={AppStoreBadge}
+                  alt="Cher Ami logo"
+                  className="w-[120px] h-10"
+                />
+              </Link>
+              <Link href="https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=web_share">
+                <Image
+                  src={PlayStoreBadge}
+                  alt="Cher Ami logo"
+                  className="w-[135px] h-10"
+                />
+              </Link>
             </div>
           </div>
           <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">
