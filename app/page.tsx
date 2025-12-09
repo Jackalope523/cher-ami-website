@@ -16,6 +16,8 @@ import ValuePrivacyIllustration from '@/public/value-privacy.png';
 import ValueFreeShippingIllustration from '@/public/value-shipping.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
+import AppStoreBadge from '@/public/apple-app-store badge.svg';
+import PlayStoreBadge from '@/public/googe-play-badge.svg';
 import Kimi from '@/public/kimi.jpg';
 import FAQItem from '@/components/FAQItem';
 import FeedbackCard from '@/components/FeedbackCard';
@@ -195,7 +197,12 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <Image src={StepOneIllustration} alt="Cher Ami logo" width={255} height={178} />
+                <Image
+                  src={StepOneIllustration}
+                  alt="Cher Ami logo"
+                  width={255}
+                  height={178}
+                />
                 <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Share Photos
                 </h1>
@@ -215,7 +222,12 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <Image src={StepTwoIllustration} alt="Cher Ami logo" width={255} height={178} />
+                <Image
+                  src={StepTwoIllustration}
+                  alt="Cher Ami logo"
+                  width={255}
+                  height={178}
+                />
                 <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                   Receive Magazine
                 </h1>
@@ -368,7 +380,12 @@ export default function Home() {
           </h1>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
-              <Image src={ValueQualityIllustration} alt="Cher Ami logo" width={156} height={183} />
+              <Image
+                src={ValueQualityIllustration}
+                alt="Cher Ami logo"
+                width={156}
+                height={183}
+              />
               <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                 High Quality
               </h1>
@@ -393,7 +410,12 @@ export default function Home() {
             </div>
 
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[300px]">
-              <Image src={ValueFreeShippingIllustration} alt="Cher Ami logo" width={156} height={183} />
+              <Image
+                src={ValueFreeShippingIllustration}
+                alt="Cher Ami logo"
+                width={156}
+                height={183}
+              />
               <h1 className="text-[28px] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
                 Free Shipping
               </h1>
@@ -499,8 +521,66 @@ export default function Home() {
             />
           </div>
         </div>
+
+        <div className="flex flex-col w-full items-center gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-4xl ">
+            <div className="flex flex-col">
+              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+                Product
+              </h3>
+              <p className="text-[#B05637] py-2">How It Works</p>
+              <p className="text-[#B05637] py-2">Get Cher Ami</p>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+                Legal
+              </h3>
+              <p className="text-[#B05637] py-2">How It Works</p>
+              <p className="text-[#B05637] py-2">Get Cher Ami</p>
+            </div>
+            <div className="flex flex-col">
+              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+                Follow us
+              </h3>
+              <p className="text-[#B05637] py-2">Facebook</p>
+              <p className="text-[#B05637] py-2">Instagram</p>
+              <p className="text-[#B05637] py-2">TikTok</p>
+            </div>
+            <div className="flex flex-col gap-y-4">
+              <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
+                Download the app
+              </h3>
+              <Image
+                src={AppStoreBadge}
+                alt="Cher Ami logo"
+                className="w-[120px] h-10"
+              />
+              <Image
+                src={PlayStoreBadge}
+                alt="Cher Ami logo"
+                className="w-[135px] h-10"
+              />
+            </div>
+          </div>
+          <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">
+            <Image
+              src={TitleImage}
+              alt="Cher Ami logo"
+              className="w-[143px] h-8 flex-none"
+              priority
+            />
+            <div className="border border-[#DEDBD5] my-4" />
+            <div className="flex flex-row justify-between">
+              <p className="text-[#868581]">
+                © 2025 Hollow Inc. All rights reserved.
+              </p>
+              <p className="text-[#868581]">
+                Made with ❤️ in the USA, Canada, and EU.
+              </p>
+            </div>
+          </div>
+        </div>
       </main>
     </div>
   );
 }
-
