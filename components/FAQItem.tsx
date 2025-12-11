@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Chevron from '../public/chevron.svg'; // adjust path if needed
+import Chevron from '../public/chevron.svg';
 
 interface FAQItemProps {
   question: string;
