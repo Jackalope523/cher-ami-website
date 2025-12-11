@@ -7,7 +7,7 @@ import TitleImage from '@/public/title.png';
 
 export default function GeneralHelp() {
   return (
-    <div className="bg-[#FCFBF8]">
+    <div className="bg-[#FCFBF8] pt-12 pb-36">
       <div className="bg-[#FCFBF8] max-w-[1200px] mx-auto px-5">
         <nav className="flex flex-row gap-x-4 py-3">
           <Link href="/help" className="text-[1rem] text-[#242832] font-medium">

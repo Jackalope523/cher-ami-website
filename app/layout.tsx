@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <header className="bg-[#FCFBF8] pt-5 pb-36">
+        <header className="bg-[#FCFBF8] pt-5">
           <div className="flex flex-row justify-between items-center w-full max-w-[1200px] mx-auto px-5">
             <Link href={'/'}>
               <Image
@@ -57,7 +57,7 @@ export default function RootLayout({
         </header>
 
         {children}
-        <footer className="flex flex-col w-full items-center gap-y-10 px-5 pb-5 bg-[#FCFBF8] pt-36">
+        <footer className="flex flex-col w-full items-center gap-y-10 px-5 pb-5 bg-[#FCFBF8]">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-4xl ">
             <div className="flex flex-col">
               <h3 className="text-[20px] text-[#242832] font-semibold mb-6">

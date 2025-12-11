@@ -23,7 +23,7 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <div className="bg-[#FCFBF8]">
+    <div className="bg-[#FCFBF8] py-36">
       <main className="flex flex-col items-center gap-y-36 pb-5">
         <section className="flex flex-row items-center">
           <div className="flex-1 hidden xl:block">

@@ -8,7 +8,7 @@ import LinkCard from '@/components/LinkCard';
 
 export default function Legal() {
   return (
-    <div className="bg-[#FCFBF8]">
+    <div className="bg-[#FCFBF8] pt-12 pb-36">
       <main className="flex flex-col items-center max-w-[1200px] mx-auto px-5">
         <h1 className="text-[3rem] text-[#383a3f] font-semibold mb-16">
           Legal
