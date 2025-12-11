@@ -9,28 +9,28 @@ import LinkCard from '@/components/LinkCard';
 export default function Legal() {
   return (
     <div className="bg-[#FCFBF8]">
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col items-center max-w-[1200px] mx-auto px-5">
         <h1 className="text-[3rem] text-[#383a3f] font-semibold mb-16">
           Legal
         </h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mb-16 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 mb-16 gap-5 w-full">
           <LinkCard
-            href="/dfihjsdkjfj"
+            href="/legal/privacy"
             imageSource={Lock}
             alt={'Go to general help'}
-            title={'General'}
+            title={'Privacy Policy'}
           />
           <LinkCard
-            href="/dsfsfsd"
+            href="/legal/terms"
             imageSource={Handshake}
             alt={'Go to account help'}
-            title={'Account'}
+            title={'Terms and Conditions'}
           />
           <LinkCard
             href="/dsfsfsd"
             imageSource={Undo}
             alt={'Go to security and privacy help'}
-            title={'Security & Privacy'}
+            title={'Return Policy'}
           />
         </div>
         <h2 className="text-[1.75rem] text-[#242832] font-semibold mb-5">
