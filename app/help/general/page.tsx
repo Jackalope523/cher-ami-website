@@ -1,9 +1,6 @@
 import Link from 'next/link';
-import CheckIcon from '@/public/check.svg';
-import NotIcon from '@/public/x.svg';
 import Chevron from '@/public/chevron-right.svg';
 import Image from 'next/image';
-import TitleImage from '@/public/title.png';
 
 export default function GeneralHelp() {
   return (

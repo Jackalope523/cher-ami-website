@@ -1,139 +1,112 @@
 import Link from 'next/link';
-import CheckIcon from '@/public/check.svg';
-import NotIcon from '@/public/x.svg';
-import ArrowIcon from '@/public/arrow.svg';
+import Mail from '@/public/mail.svg';
+import Check from '@/public/check-black.svg';
+import X from '@/public/x-black.svg';
 import Image from 'next/image';
-import TitleImage from '@/public/title.png';
 
-export default function AccountDeletion() {
+export default function AccountDeletionHelp() {
   return (
-    <div className="bg-[#FCFBF8]">
-      <main className="flex flex-col items-center py-5">
-        <div className="flex flex-row justify-between w-full px-5 md:px-40 xl:px-50">
-          <Link href="/">
-            <Image
-              src={TitleImage}
-              alt="Cher Ami logo"
-              className="w-[143px] h-8 flex-none"
-              priority
-            />
-          </Link>
-        </div>
-        <div className="flex flex-col items-center justify-center min-h-screen gap-(--spacing-600) px-5 py-10 bg-(--canary-sand)">
-          <div className="flex flex-col items-center gap-(--spacing-300) w-full mx-auto text-center">
-            <h3 className="text-2xl font-semibold">Account Deletion</h3>
-            <p>Looking to delete your Cher Ami account? Look no further!</p>
-          </div>
-
-          <div className="flex flex-col max-w-[40%] items-start text-left gap-(--spacing-400) mt-10">
-            <h5 className="font-semibold mb-4">
-              The following data will be deleted:
-            </h5>
-            <div className="flex flex-col gap-(--spacing-250)">
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={CheckIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>Your account & nest data.</p>
-              </div>
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={CheckIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>Your snapshots.</p>
-              </div>
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={CheckIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>Your unstarted gatherings.</p>
-              </div>
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={NotIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>
-                  Ongoing or terminated gatherings will have your information
-                  redacted.
-                </p>
-              </div>
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={NotIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>
+    <div className="bg-[#FCFBF8] pt-12 pb-36">
+      <div className="bg-[#FCFBF8] max-w-[750px] mx-auto px-5">
+        <main className="flex flex-col items-center">
+          <h1 className="text-[2.5rem] text-[#242832] font-semibold mb-4">
+            Account Deletion
+          </h1>
+          <p className="text-[1rem] text-[#242832] font-normal mb-16">
+            Looking to delete your account?
+          </p>
+          <div className="flex flex-col gap-y-8 mb-16">
+            <div className="flex flex-col gap-y-4">
+              <h2 className="text-[1.25rem] text-[#383a3f] font-semibold">
+                The following data will be deleted:
+              </h2>
+              <ul>
+                <li className="flex gap-3 mb-3">
+                  <Image
+                    src={Check}
+                    alt="Go to contact"
+                    width={24}
+                    height={24}
+                  />
+                  Your account data.
+                </li>
+                <li className="flex gap-3 mb-3">
+                  <Image
+                    src={Check}
+                    alt="Go to contact"
+                    width={24}
+                    height={24}
+                  />
+                  Your posts.
+                </li>
+                <li className="flex gap-3">
+                  <Image
+                    src={Check}
+                    alt="Go to contact"
+                    width={24}
+                    height={24}
+                  />
+                  Any recipients you have created.
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col gap-y-4">
+              <h2 className="text-[1.25rem] text-[#383a3f] font-semibold">
+                The following data will be deleted:
+              </h2>
+              <ul>
+                <li className="flex gap-3 mb-3">
+                  <Image src={X} alt="Go to contact" width={24} height={24} />
+                  Circles you created with other members.
+                </li>
+                <li className="flex gap-3">
+                  <Image src={X} alt="Go to contact" width={24} height={24} />
                   We will retain any disciplinary-relevant information and may
                   apply it to future accounts.
-                </p>
-              </div>
+                </li>
+              </ul>
             </div>
-            <p className="mt-4">
-              By continuing, your account will immediately be terminated and the
-              aforementioned data removed, though it may take up to 30 days for
-              our servers to register this.
-            </p>
-          </div>
-
-          {/* Instructions Section */}
-          <div className="flex flex-col min-w-[30%] max-w-[80%] items-center text-center gap-(--spacing-600) mt-12">
-            <h5 className="font-semibold">Instructions</h5>
-            <p>
-              To delete your CANARY account, you must access your account
-              through the app.
-              <br />
-              If you cannot access your account or the app, please{' '}
-              <Link href="/help/support" className="text-[#B05637] underline">
-                contact us
-              </Link>
-              .
-            </p>
-            <div className="flex flex-col min-w-[70%] max-w-[80%] items-start text-left gap-(--spacing-250) mt-6">
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={ArrowIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>Access your in-app settings through the nest screen.</p>
-              </div>
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={ArrowIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>Access your private settings.</p>
-              </div>
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={ArrowIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>Click &apos;Go To Account Deletion&apos;.</p>
-              </div>
-              <div className="flex flex-row items-start gap-(--spacing-200)">
-                <Image
-                  src={ArrowIcon}
-                  alt="Cher Ami logo"
-                  className="shrink-0 w-6 h-6 mt-1"
-                />
-                <p>Continue with the on-screen instructions.</p>
-              </div>
+            <div className="flex flex-col gap-y-4">
+              <h2 className="text-[1.25rem] text-[#383a3f] font-semibold">
+                Instructions
+              </h2>
+              <p>
+                To delete your Cher Ami account, you must access your account
+                through the app. If you cannot access your account or the app,
+                send us an email.
+              </p>
+              <ul>
+                <li className="flex mb-3 gap-3">
+                  <p className="text-[#C15F3C]">1.</p>
+                  <p>
+                    Access your in-app settings through the button in the
+                    sidebar.
+                  </p>
+                </li>
+                <li className="flex mb-3 gap-3">
+                  <p className="text-[#C15F3C]">2.</p>
+                  <p>Click “Delete Account”.</p>
+                </li>
+                <li className="flex gap-3">
+                  <p className="text-[#C15F3C]">3.</p>
+                  <p>Continue with the on-screen instructions.</p>
+                </li>
+              </ul>
             </div>
           </div>
-        </div>
-      </main>
+          <h2 className="text-[1.75rem] text-[#242832] font-semibold mt-6 mb-4">
+            Still need help?
+          </h2>
+          <Link
+            href={'/contact'}
+            className="flex flex-row px-8 py-6 gap-x-2 rounded-[1.25rem] border-2 border-[#242832]">
+            <p className="text-[1rem] text-[#242832] font-medium">
+              Contact us directly
+            </p>
+            <Image src={Mail} alt="Go to contact" width={24} height={24} />
+          </Link>
+        </main>
+      </div>
     </div>
   );
 }

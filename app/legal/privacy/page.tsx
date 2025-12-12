@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import TitleImage from '@/public/title.png';
+import Chevron from '@/public/chevron-right.svg';
 
 export default function Privacy() {
   const privacyPolicyContent = `
@@ -67,26 +67,28 @@ word-break: break-word !important;
   `;
 
   return (
-    <div
-      style={{
-        paddingRight: 20,
-        paddingLeft: 20,
-        paddingBottom: 40,
-        paddingTop: 20,
-      }}>
-      <header>
-        <Link href={'/'}>
+    <div className="bg-[#FCFBF8] pt-12 pb-36">
+      <div className="bg-[#FCFBF8] max-w-[1200px] mx-auto px-5">
+        <nav className="flex flex-row gap-x-4 py-3">
+          <Link
+            href="/legal"
+            className="text-[1rem] text-[#242832] font-medium">
+            Legal
+          </Link>
           <Image
-            src={TitleImage}
-            alt="Cher Ami logo"
-            className="w-[143px] h-8 flex-none"
-            priority
+            src={Chevron}
+            alt="A right facing chevron"
+            width={24}
+            height={24}
           />
-        </Link>
-      </header>
-      <main style={{ marginTop: 100, marginBottom: 100 }}>
-        <div dangerouslySetInnerHTML={{ __html: privacyPolicyContent }} />
-      </main>
+          <p className="text-[1rem] text-[#242832] font-medium underline">
+            Privacy Policy
+          </p>
+        </nav>
+        <main className="">
+          <div dangerouslySetInnerHTML={{ __html: privacyPolicyContent }} />
+        </main>
+      </div>
     </div>
   );
 }

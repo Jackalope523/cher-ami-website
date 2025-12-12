@@ -25,7 +25,7 @@ export default function Help() {
             title={'General'}
           />
           <LinkCard
-            href="/dsfsfsd"
+            href="/help/account-deletion"
             imageSource={User}
             alt={'Go to account help'}
             title={'Account'}
@@ -50,7 +50,7 @@ export default function Help() {
           />
         </div>
 
-        <h2 className="text-[1.75rem] text-[#242832] font-semibold mb-5">
+        <h2 className="text-[1.75rem] text-[#242832] font-semibold mt-6 mb-4">
           Still need help?
         </h2>
         <Link
