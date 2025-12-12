@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="bg-[#FCFBF8]">
+    <div className="bg-[#FCFBF8] py-36">
       <main className="flex flex-col md:flex-row items-center justify-center gap-10 py-36">
         <Image
           src={Mouse}
