@@ -27,7 +27,7 @@ export default function Legal() {
             title={'Terms and Conditions'}
           />
           <LinkCard
-            href="/dsfsfsd"
+            href="/legal/return"
             imageSource={Undo}
             alt={'Go to security and privacy help'}
             title={'Return Policy'}
