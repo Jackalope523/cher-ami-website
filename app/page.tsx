@@ -42,7 +42,7 @@ export default function Home() {
                 "Every month, your circle's best photos are transformed into a beautiful magazine and delivered to loved ones' doorsteps."
               }
             </p>
-            <div className="flex flex-col border-2 border-[#C15F3C] p-5 rounded-[20] gap-y-3 w-[75%]">
+            {/* <div className="flex flex-col border-2 border-[#C15F3C] p-5 rounded-[20] gap-y-3 w-[75%]">
               <p className="text-[1.25rem] text-[#242832] font-medium">
                 Get notified when we launch.
               </p>
@@ -54,7 +54,7 @@ export default function Home() {
                   Get notified
                 </button>
               </div>
-            </div>
+            </div> */}
           </div>
           <div className="flex-1 hidden xl:block">
             <Image
@@ -65,7 +65,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex flex-row gap-x-10 overflow-x-auto px-40">
+        {/* <section className="flex flex-row gap-x-10 overflow-x-auto px-40">
           <Image
             src={Placeholder}
             alt=""
@@ -129,7 +129,7 @@ export default function Home() {
             height={510}
             className="rounded-4xl"
           />
-        </section>
+        </section> */}
 
         <section>
           <div className="mb-10">

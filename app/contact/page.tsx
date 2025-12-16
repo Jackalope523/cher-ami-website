@@ -12,6 +12,32 @@ export default function AccountDeletionHelp() {
   const [subject, setSubject] = useState('');
   const [content, setContent] = useState('');
 
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    try {
+      const res = await fetch('/api/support-ticket', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          email_from: email,
+          email_subject: subject,
+          email_body: content,
+        }),
+      });
+
+      if (!res.ok) throw new Error('Failed to send email');
+
+      setEmail('');
+      setSubject('');
+      setContent('');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div className="bg-[#FCFBF8] py-24">
       <div className="bg-[#FCFBF8] max-w-[600px] mx-auto px-5">
@@ -28,9 +54,7 @@ export default function AccountDeletionHelp() {
 
           <form
             className="flex flex-col gap-8 mb-16 w-full"
-            onSubmit={(e) => {
-              e.preventDefault();
-            }}>
+            onSubmit={handleSubmit}>
             <div className="flex flex-col gap-1.5">
               <label
                 htmlFor="email"
