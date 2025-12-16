@@ -5,7 +5,7 @@ import Link from 'next/link';
 import TitleImage from '@/public/title.png';
 import AppStoreBadge from '@/public/apple-app-store badge.svg';
 import PlayStoreBadge from '@/public/googe-play-badge.svg';
-import PlausibleProvider, { usePlausible } from "next-plausible";
+import PlausibleProvider, { usePlausible } from 'next-plausible';
 import './globals.css';
 
 const poppins = Poppins({
@@ -88,7 +88,9 @@ export default function RootLayout({
                 <Link href="/legal/terms" className="text-[#B05637] py-2">
                   Terms of Service
                 </Link>
-                <p className="text-[#B05637] py-2">Return Policy</p>
+                <Link href="/legal/return" className="text-[#B05637] py-2">
+                  Return Policy
+                </Link>
               </div>
               <div className="flex flex-col">
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
