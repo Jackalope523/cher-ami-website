@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "/_global-error",
+  "/_not-found/page": "/_not-found",
+  "/api/support-ticket/route": "/api/support-ticket",
+  "/contact/page": "/contact",
+  "/favicon.ico/route": "/favicon.ico",
+  "/help/account-deletion/page": "/help/account-deletion",
+  "/help/general/page": "/help/general",
+  "/help/page": "/help",
+  "/legal/page": "/legal",
+  "/legal/privacy/page": "/legal/privacy",
+  "/legal/terms/page": "/legal/terms",
+  "/page": "/"
+}

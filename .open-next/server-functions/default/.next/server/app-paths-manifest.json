@@ -1,0 +1,14 @@
+{
+  "/_global-error/page": "app/_global-error/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/support-ticket/route": "app/api/support-ticket/route.js",
+  "/contact/page": "app/contact/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/help/account-deletion/page": "app/help/account-deletion/page.js",
+  "/help/general/page": "app/help/general/page.js",
+  "/help/page": "app/help/page.js",
+  "/legal/page": "app/legal/page.js",
+  "/legal/privacy/page": "app/legal/privacy/page.js",
+  "/legal/terms/page": "app/legal/terms/page.js",
+  "/page": "app/page.js"
+}
