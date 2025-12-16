@@ -5,7 +5,7 @@ import Link from 'next/link';
 import TitleImage from '@/public/title.png';
 import AppStoreBadge from '@/public/apple-app-store badge.svg';
 import PlayStoreBadge from '@/public/googe-play-badge.svg';
-import PlausibleProvider, { usePlausible } from 'next-plausible';
+import PlausibleProvider from 'next-plausible';
 import './globals.css';
 
 const poppins = Poppins({
