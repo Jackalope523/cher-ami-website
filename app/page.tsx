@@ -26,8 +26,8 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="bg-[#FCFBF8] py-36">
-      <main className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5">
-        <section className="flex flex-col lg:flex-row items-center justify-between w-full mb-36 px-8">
+      <main className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-36">
+        <section className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
           <div className="flex flex-col">
             <div className="flex flex-col items-center">
               <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-[650px] mb-12">
@@ -144,7 +144,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 mb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-2">
             <Image
               src={PhoneShowcase}
               alt="A smartphone running the Cher Ami mobile app"
