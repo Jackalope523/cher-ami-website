@@ -35,7 +35,7 @@ export default function Home() {
           </div>
           <div className="flex flex-col items-center">
             <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-12">
-              Share your cherished memories of family and friends.
+              Share Cherished Memories with Family and Friends
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto mb-16">
               {
@@ -134,7 +134,7 @@ export default function Home() {
         <section>
           <div className="mb-10">
             <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
-              Two ways to connect.
+              Two Ways To Connect
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
               {
@@ -158,18 +158,11 @@ export default function Home() {
         </section>
 
         <section className="flex flex-col items-center">
-          <div className="mb-10">
-            <h2
-              id="steps-section"
-              className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
-              As easy as...
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-              {
-                'You focus on making memories while we take care of everything else, from design to delivery.'
-              }
-            </p>
-          </div>
+          <h2
+            id="steps-section"
+            className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
+            As Easy As...
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="relative w-[350px] flex flex-col items-center">
               <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
@@ -189,10 +182,10 @@ export default function Home() {
                   />
                 </div>
                 <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  Share Photos
+                  You Upload
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  Upload memories through our app all month long.
+                  Post your photos to your shared private album throughout the month.
                 </p>
               </div>
             </div>
@@ -215,10 +208,10 @@ export default function Home() {
                   />
                 </div>
                 <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  Receive Magazine
+                  We Deliver
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  Upload memories through our app all month long.
+                  At the end of the month, we print and ship the magazine to your loved ones. No design hassle required.
                 </p>
               </div>
             </div>
@@ -244,7 +237,7 @@ export default function Home() {
                   Enjoy Together
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  Upload memories through our app all month long.
+                  They recieve your best memories everyone can enjoy in a beautiful magazine to keep forever.
                 </p>
               </div>
             </div>
@@ -252,9 +245,16 @@ export default function Home() {
         </section>
 
         <section>
-          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
-            Pricing
-          </h2>
+          <div className="mb-10">
+            <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
+              Pricing
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
+              {
+                'No hidden fees, cancel anytime.'
+              }
+            </p>
+          </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div className="flex flex-col items-center">
@@ -368,14 +368,14 @@ export default function Home() {
 
         <section>
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
-            Our values
+            Our Guiding Principles
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
               <div className="flex flex-col h-[255px] justify-center">
                 <Image
                   src={ValueQualityIllustration}
-                  alt="A mouse smoking a pipe"
+                  alt="A mouse reading a paper"
                   width={156}
                   height={183}
                 />
@@ -384,7 +384,7 @@ export default function Home() {
                 High Quality
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                Upload memories through our app all month long.
+                Premium prints that you can cherish for years to come.
               </p>
             </div>
 
@@ -392,16 +392,16 @@ export default function Home() {
               <div className="flex flex-col h-[255px] justify-center">
                 <Image
                   src={ValuePrivacyIllustration}
-                  alt="A mouse picking up acorns"
+                  alt="A chipmunk picking up acorns"
                   width={156}
                   height={183}
                 />
               </div>
               <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                Private
+                Privacy-First
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                Upload memories through our app all month long.
+                All your data is completely private and not shared with anyone.
               </p>
             </div>
 
@@ -418,13 +418,13 @@ export default function Home() {
                 Free Shipping
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                Upload memories through our app all month long.
+                Shipping to whoever you want, anywhere in the USA, on us.
               </p>
             </div>
           </div>
         </section>
 
-        <section className="flex flex-col items-center">
+        {/* <section className="flex flex-col items-center">
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
             What people are saying
           </h2>
@@ -494,7 +494,7 @@ export default function Home() {
               name={'Kimi'}
             />
           </div>
-        </section>
+            </section> */}
 
         <section className="flex flex-col w-full">
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-5">
@@ -503,19 +503,27 @@ export default function Home() {
           <div className="flex flex-col gap-y-3 items-center">
             <FAQItem
               question={'How do I create a new account?'}
-              answer={'Idk Walt'}
+              answer={'Download the official Cher Ami app on your iOS or Android device and follow the sign-up instructions!'}
             />
             <FAQItem
-              question={'How do I create a new account?'}
-              answer={'Idk Walt'}
+              question={'Who is it for?'}
+              answer={'Grandparents, parents, aunts, uncles, or anyone who wants to stay connected with their loved ones through shared memories!'}
             />
             <FAQItem
-              question={'How do I create a new account?'}
-              answer={'Idk Walt'}
+              question={'Where can I deliver a Cher Ami?'}
+              answer={'Currently, we deliver anywhere in the USA but have plans to reach more countries—stay tuned!'}
             />
             <FAQItem
-              question={'How do I create a new account?'}
-              answer={'Idk Walt'}
+              question={'When can I start adding photos?'}
+              answer={'Right away! Once you join and create your circle, you can start uploading photos immediately for this month\'s issue.'}
+            />
+            <FAQItem
+              question={'Who can see my photos?'}
+              answer={'Only you and members you invite to your circle can view, add, and deliver photos.'}
+            />
+            <FAQItem
+              question={'It\'s already the end of the month! Can I still join?'}
+              answer={'Yes! When you join, you can choose to start your first issue next month so you don\'t have to worry about not having enough photos.'}
             />
           </div>
         </section>

@@ -98,26 +98,31 @@ export default function RootLayout({
                 </h3>
                 <Link
                   href="https://www.facebook.com/thecherami"
+                  target="_blank"
                   className="text-[#B05637] py-2">
                   Facebook
                 </Link>
                 <Link
                   href="https://www.instagram.com/thecherami"
+                  target="_blank"
                   className="text-[#B05637] py-2">
                   Instagram
                 </Link>
                 <Link
                   href="https://www.tiktok.com/@thecherami"
+                  target="_blank"
                   className="text-[#B05637] py-2">
                   TikTok
                 </Link>
                 <Link
                   href="https://www.youtube.com/@thecherami"
+                  target="_blank"
                   className="text-[#B05637] py-2">
                   YouTube
                 </Link>
                 <Link
                   href="https://www.reddit.com/user/thecherami/"
+                  target="_blank"
                   className="text-[#B05637] py-2">
                   Reddit
                 </Link>
