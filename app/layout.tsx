@@ -3,10 +3,9 @@ import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import TitleImage from '@/public/title.png';
-import AppStoreBadge from '@/public/apple-app-store badge.svg';
-import PlayStoreBadge from '@/public/googe-play-badge.svg';
-import PlausibleProvider from 'next-plausible';
+import PlausibleProvider, { usePlausible } from 'next-plausible';
 import './globals.css';
+import CTA from '@/components/CTA';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -24,6 +23,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const plausible = usePlausible();
+
   return (
     <html lang="en">
       <body className={poppins.className}>
@@ -133,20 +134,8 @@ export default function RootLayout({
                   className="text-[20px] text-[#242832] font-semibold mb-6">
                   Download the app
                 </h3>
-                <Link href="https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033">
-                  <Image
-                    src={AppStoreBadge}
-                    alt="Go to the Apple App Store"
-                    className="w-[120px] h-10"
-                  />
-                </Link>
-                <Link href="https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=web_share">
-                  <Image
-                    src={PlayStoreBadge}
-                    alt="Go to the Google Play Store"
-                    className="w-[135px] h-10"
-                  />
-                </Link>
+                <CTA store='Apple' />
+                <CTA store='Google' />
               </div>
             </div>
             <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">

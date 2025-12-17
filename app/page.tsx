@@ -247,7 +247,7 @@ export default function Home() {
         <section>
           <div className="mb-10">
             <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-              Pricing
+              Your Move
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
               {
