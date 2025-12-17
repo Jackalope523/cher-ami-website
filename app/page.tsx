@@ -1,7 +1,9 @@
 import Image from 'next/image';
 import TitleImage from '@/public/title.png';
-import Hedgehog from '@/public/hedgehog.png';
+import Phone from '@/public/phone.png';
 import Mouse from '@/public/mouse.png';
+import AppStoreBadge from '@/public/apple-app-store badge.svg';
+import PlayStoreBadge from '@/public/googe-play-badge.svg';
 import Placeholder from '@/public/placeholder.jpg';
 import PhoneShowcase from '@/public/app-showcase.png';
 import MagazineShowcase from '@/public/magazine-showcase.png';
@@ -24,45 +26,44 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div className="bg-[#FCFBF8] py-36">
-      <main className="flex flex-col items-center gap-y-36 pb-5">
-        <section className="flex flex-row items-center">
-          <div className="flex-1 hidden xl:block">
-            <Image
-              src={Hedgehog}
-              alt="A hedgehog holding balloons."
-              className="w-full h-auto object-contain"
-            />
-          </div>
-          <div className="flex flex-col items-center">
-            <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-12">
-              Share Cherished Memories with Family and Friends
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto mb-16">
-              {
-                "Every month, your circle's best photos are transformed into a beautiful magazine and delivered to loved ones' doorsteps."
-              }
-            </p>
-            {/* <div className="flex flex-col border-2 border-[#C15F3C] p-5 rounded-[20] gap-y-3 w-[75%]">
-              <p className="text-[1.25rem] text-[#242832] font-medium">
-                Get notified when we launch.
+      <main className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5">
+        <section className="flex flex-col lg:flex-row items-center justify-between w-full mb-36 px-8">
+          <div className="flex flex-col">
+            <div className="flex flex-col items-center">
+              <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-[650px] mb-12">
+                Share Cherished Memories with Family and Friends
+              </h2>
+              <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px] mb-8">
+                {
+                  "Every month, your circle's best photos are transformed into a beautiful magazine and delivered to loved ones' doorsteps."
+                }
               </p>
-              <div className="flex flex-row justify-between gap-x-3">
-                <div className="border-2 border-[#DEDBD5] px-4 py-3 rounded-xl flex-1">
-                  <p>Email address</p>
-                </div>
-                <button className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
-                  Get notified
-                </button>
+              <div className="flex flex-row gap-4">
+                <Link href="https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033">
+                  <Image
+                    src={AppStoreBadge}
+                    alt="Go to the Apple App Store"
+                    className="w-48 h-16"
+                  />
+                </Link>
+                <Link href="https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=web_share">
+                  <Image
+                    src={PlayStoreBadge}
+                    alt="Go to the Google Play Store"
+                    className="w-[216px] h-16"
+                  />
+                </Link>
               </div>
-            </div> */}
+            </div>
           </div>
-          <div className="flex-1 hidden xl:block">
-            <Image
-              src={Mouse}
-              alt="A mouse throwing a paper airplane."
-              className="w-full h-auto object-contain"
-            />
-          </div>
+          <Image
+            src={Phone}
+            alt="A mouse throwing a paper airplane."
+            height={504 * 1.5}
+            width={205 * 1.5}
+            style={{ transform: 'rotate(2deg)' }}
+            className="hidden lg:block"
+          />
         </section>
 
         {/* <section className="flex flex-row gap-x-10 overflow-x-auto px-40">
@@ -185,7 +186,8 @@ export default function Home() {
                   You Upload
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  Post your photos to your shared private album throughout the month.
+                  Post your photos to your shared private album throughout the
+                  month.
                 </p>
               </div>
             </div>
@@ -211,7 +213,8 @@ export default function Home() {
                   We Deliver
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  At the end of the month, we print and ship the magazine to your loved ones. No design hassle required.
+                  At the end of the month, we print and ship the magazine to
+                  your loved ones. No design hassle required.
                 </p>
               </div>
             </div>
@@ -237,7 +240,8 @@ export default function Home() {
                   Enjoy Together
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  They recieve your best memories everyone can enjoy in a beautiful magazine to keep forever.
+                  They recieve your best memories everyone can enjoy in a
+                  beautiful magazine to keep forever.
                 </p>
               </div>
             </div>
@@ -250,9 +254,7 @@ export default function Home() {
               Your Move
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-              {
-                'No hidden fees, cancel anytime.'
-              }
+              {'No hidden fees, cancel anytime.'}
             </p>
           </div>
 
@@ -436,42 +438,42 @@ export default function Home() {
               }
               image={Kimi}
               name={'Kimi'}
-            />{' '}
+            />
             <FeedbackCard
               text={
                 'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
               }
               image={Kimi}
               name={'Kimi'}
-            />{' '}
+            />
             <FeedbackCard
               text={
                 'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
               }
               image={Kimi}
               name={'Kimi'}
-            />{' '}
+            />
             <FeedbackCard
               text={
                 'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
               }
               image={Kimi}
               name={'Kimi'}
-            />{' '}
+            />
             <FeedbackCard
               text={
                 'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
               }
               image={Kimi}
               name={'Kimi'}
-            />{' '}
+            />
             <FeedbackCard
               text={
                 'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
               }
               image={Kimi}
               name={'Kimi'}
-            />{' '}
+            />
             <FeedbackCard
               text={
                 'Such a delightful experience! The process was seamless, and the final gazette looked even better than we had hoped.'
@@ -503,27 +505,39 @@ export default function Home() {
           <div className="flex flex-col gap-y-3 items-center">
             <FAQItem
               question={'How do I create a new account?'}
-              answer={'Download the official Cher Ami app on your iOS or Android device and follow the sign-up instructions!'}
+              answer={
+                'Download the official Cher Ami app on your iOS or Android device and follow the sign-up instructions!'
+              }
             />
             <FAQItem
               question={'Who is it for?'}
-              answer={'Grandparents, parents, aunts, uncles, or anyone who wants to stay connected with their loved ones through shared memories!'}
+              answer={
+                'Grandparents, parents, aunts, uncles, or anyone who wants to stay connected with their loved ones through shared memories!'
+              }
             />
             <FAQItem
               question={'Where can I deliver a Cher Ami?'}
-              answer={'Currently, we deliver anywhere in the USA but have plans to reach more countries—stay tuned!'}
+              answer={
+                'Currently, we deliver anywhere in the USA but have plans to reach more countries—stay tuned!'
+              }
             />
             <FAQItem
               question={'When can I start adding photos?'}
-              answer={'Right away! Once you join and create your circle, you can start uploading photos immediately for this month\'s issue.'}
+              answer={
+                "Right away! Once you join and create your circle, you can start uploading photos immediately for this month's issue."
+              }
             />
             <FAQItem
               question={'Who can see my photos?'}
-              answer={'Only you and members you invite to your circle can view, add, and deliver photos.'}
+              answer={
+                'Only you and members you invite to your circle can view, add, and deliver photos.'
+              }
             />
             <FAQItem
-              question={'It\'s already the end of the month! Can I still join?'}
-              answer={'Yes! When you join, you can choose to start your first issue next month so you don\'t have to worry about not having enough photos.'}
+              question={"It's already the end of the month! Can I still join?"}
+              answer={
+                "Yes! When you join, you can choose to start your first issue next month so you don't have to worry about not having enough photos."
+              }
             />
           </div>
         </section>
