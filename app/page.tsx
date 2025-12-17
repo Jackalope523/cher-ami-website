@@ -58,7 +58,7 @@ export default function Home() {
           </div>
           <Image
             src={Phone}
-            alt="A mouse throwing a paper airplane."
+            alt="A smartphone running the Cher Ami mobile app"
             height={504 * 1.5}
             width={205 * 1.5}
             style={{ transform: 'rotate(2deg)' }}
@@ -147,7 +147,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 mb-20">
             <Image
               src={PhoneShowcase}
-              alt="An smartphone running the Cher Ami mobile app"
+              alt="A smartphone running the Cher Ami mobile app"
               className="block w-auto h-auto"
             />
             <Image
