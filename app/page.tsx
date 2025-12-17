@@ -372,7 +372,7 @@ export default function Home() {
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
             Our Guiding Principles
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 place-items-center">
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
               <div className="flex flex-col h-[255px] justify-center">
                 <Image
