@@ -127,7 +127,7 @@ export default function Home() {
         <section>
           <div className="mb-10">
             <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
-              Two Ways To Connect
+              Two Ways to Connect
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
               {
@@ -152,7 +152,7 @@ export default function Home() {
 
         <section id="steps-section" className="flex flex-col items-center">
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
-            As Easy As...
+            As Easy As 1-2-3
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <div className="relative w-[350px] flex flex-col items-center">
@@ -173,11 +173,10 @@ export default function Home() {
                   />
                 </div>
                 <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  You Upload
+                  You Share
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  Post your photos to your shared private album throughout the
-                  month.
+                <b>Add photos to your private album</b> throughout the month whenever inspiration strikes. When you're ready, hit post—that's it!
                 </p>
               </div>
             </div>
@@ -192,7 +191,7 @@ export default function Home() {
                 />
               </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <div className="flex flex-col h-[255px] justify-center">
+                <div className="flex flex-col h-[255px] justify-center scale-x-[-1]">
                   <Image
                     src={StepTwoIllustration}
                     alt="A squirrel delivering a letter"
@@ -203,8 +202,7 @@ export default function Home() {
                   We Deliver
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  At the end of the month, we print and ship the magazine to
-                  your loved ones. No design hassle required.
+                  <b>Every month, your photos are transformed</b> into a magazine your family eagerly awaits. Professionally designed, beautifully printed, delivered right to their door.
                 </p>
               </div>
             </div>
@@ -227,11 +225,10 @@ export default function Home() {
                   />
                 </div>
                 <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  Enjoy Together
+                  Cherish Forever
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  They recieve your best memories everyone can enjoy in a
-                  beautiful magazine to keep forever.
+                  <b>Your grandparents enjoy it</b> at their coffee table. Your parents show it to everyone who visits. It becomes the thing they look forward to each month—physical proof that family is never far away.
                 </p>
               </div>
             </div>
@@ -241,7 +238,7 @@ export default function Home() {
         <section>
           <div className="mb-10">
             <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-              Your Move
+              Flexible Subscriptions
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
               {'No hidden fees, cancel anytime.'}
