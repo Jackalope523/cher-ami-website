@@ -33,7 +33,8 @@ export default function RootLayout({
         <PlausibleProvider domain="thecherami.com">
           <Header />
 
-          {children}
+          <main className="pt-16 bg-[#FCFBF8]">{children}</main>
+
           <footer className="flex flex-col w-full items-center gap-y-10 px-5 pb-5 bg-[#FCFBF8]">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-4xl ">
               <div className="flex flex-col">

@@ -66,27 +66,23 @@ word-break: break-word !important;
   `;
 
   return (
-    <div className="bg-[#FCFBF8] pt-12 pb-36">
-      <div className="bg-[#FCFBF8] max-w-[1200px] mx-auto px-5">
-        <nav className="flex flex-row gap-x-4 py-3">
-          <Link
-            href="/legal"
-            className="text-[1rem] text-[#242832] font-medium">
-            Legal
-          </Link>
-          <Image
-            src={Chevron}
-            alt="A right facing chevron"
-            width={24}
-            height={24}
-          />
-          <p className="text-[1rem] text-[#242832] font-medium underline">
-            Return Policy
-          </p>
-        </nav>
-        <main className="">
-          <div dangerouslySetInnerHTML={{ __html: privacyPolicyContent }} />
-        </main>
+    <div className="bg-[#FCFBF8] max-w-[1200px] mx-auto px-5 pt-12 pb-36">
+      <nav className="flex flex-row gap-x-4 py-3">
+        <Link href="/legal" className="text-[1rem] text-[#242832] font-medium">
+          Legal
+        </Link>
+        <Image
+          src={Chevron}
+          alt="A right facing chevron"
+          width={24}
+          height={24}
+        />
+        <p className="text-[1rem] text-[#242832] font-medium underline">
+          Return Policy
+        </p>
+      </nav>
+      <div>
+        <div dangerouslySetInnerHTML={{ __html: privacyPolicyContent }} />
       </div>
     </div>
   );
