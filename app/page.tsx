@@ -38,7 +38,7 @@ export default function Home() {
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px] mb-8">
               {
-                "Every month, your circle's best photos are transformed into a beautiful magazine and delivered to loved ones' doorsteps."
+                "Every month, transform your best photos into a beautiful magazine, delivered to loved ones' doorsteps."
               }
             </p>
             <div className="flex flex-row gap-4">
