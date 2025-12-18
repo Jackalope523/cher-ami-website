@@ -3,9 +3,11 @@ import { Poppins } from 'next/font/google';
 import Image from 'next/image';
 import Link from 'next/link';
 import TitleImage from '@/public/title.png';
+import MenuIcon from '@/public/menu.svg';
 import PlausibleProvider, { usePlausible } from 'next-plausible';
 import './globals.css';
 import CTA from '@/components/CTA';
+import Header from '@/components/Header';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -29,35 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         <PlausibleProvider domain="thecherami.com">
-          <header className="bg-[#FCFBF8] pt-5">
-            <div className="flex flex-row justify-between items-center w-full max-w-[1200px] mx-auto px-5">
-              <Link href={'/'}>
-                <Image
-                  src={TitleImage}
-                  alt="Cher Ami logo"
-                  className="w-[143px] h-8 flex-none"
-                  priority
-                />
-              </Link>
-              <div className="flex flex-row gap-x-4">
-                <Link
-                  href="/#steps-section"
-                  className="text-[#B05637] px-4 py-3 rounded-xl">
-                  How It Works
-                </Link>
-                <Link
-                  href="/help"
-                  className="text-[#B05637] px-4 py-3 rounded-xl">
-                  Help
-                </Link>
-                <Link
-                  href="#download-section"
-                  className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
-                  Get Cher Ami
-                </Link>
-              </div>
-            </div>
-          </header>
+          <Header />
 
           {children}
           <footer className="flex flex-col w-full items-center gap-y-10 px-5 pb-5 bg-[#FCFBF8]">
@@ -129,13 +103,11 @@ export default function RootLayout({
                 </Link>
               </div>
               <div className="flex flex-col gap-y-4">
-                <h3
-                  id="download-section"
-                  className="text-[20px] text-[#242832] font-semibold mb-6">
+                <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                   Download the app
                 </h3>
-                <CTA store='Apple' />
-                <CTA store='Google' />
+                <CTA store="Apple" width={120} height={40} />
+                <CTA store="Google" width={135} height={40} />
               </div>
             </div>
             <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">

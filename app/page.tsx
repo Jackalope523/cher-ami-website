@@ -22,12 +22,16 @@ import Kimi from '@/public/kimi.jpg';
 import FAQItem from '@/components/FAQItem';
 import FeedbackCard from '@/components/FeedbackCard';
 import Link from 'next/link';
+import { usePlausible } from 'next-plausible';
+import CTA from '@/components/CTA';
 
 export default function Home() {
   return (
     <div className="bg-[#FCFBF8] py-36">
       <main className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-36">
-        <section className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
+        <section
+          id="download-section"
+          className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
           <div className="flex flex-col">
             <div className="flex flex-col items-center">
               <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-[650px] mb-12">
@@ -39,20 +43,8 @@ export default function Home() {
                 }
               </p>
               <div className="flex flex-row gap-4">
-                <Link href="https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033">
-                  <Image
-                    src={AppStoreBadge}
-                    alt="Go to the Apple App Store"
-                    className="w-48 h-16"
-                  />
-                </Link>
-                <Link href="https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=web_share">
-                  <Image
-                    src={PlayStoreBadge}
-                    alt="Go to the Google Play Store"
-                    className="w-[216px] h-16"
-                  />
-                </Link>
+                <CTA store="Apple" width={192} height={64} />
+                <CTA store="Google" width={216} height={64} />
               </div>
             </div>
           </div>
@@ -158,10 +150,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex flex-col items-center">
-          <h2
-            id="steps-section"
-            className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
+        <section id="steps-section" className="flex flex-col items-center">
+          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
             As Easy As...
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
