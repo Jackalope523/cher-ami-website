@@ -45,7 +45,7 @@ export default function Header() {
         </button>
       </div>
       {showMenu && (
-        <div className="flex flex-col w-full max-w-[1200px] mx-auto px-5">
+        <div className="sm:hidden flex flex-col w-full max-w-[1200px] mx-auto px-5">
           <Link
             href="/#steps-section"
             onClick={() => {
