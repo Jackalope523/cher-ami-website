@@ -493,7 +493,7 @@ export default function Home() {
 
       <section className="flex flex-col w-full">
         <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-5">
-          FAQ
+          Questions?
         </h2>
         <div className="flex flex-col gap-y-3 items-center">
           <FAQItem
