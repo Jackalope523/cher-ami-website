@@ -36,7 +36,7 @@ export default function AccountDeletionHelp() {
           </div>
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.25rem] text-[#383a3f] font-semibold">
-              The following data will be deleted:
+              The following data will not be deleted:
             </h2>
             <ul>
               <li className="flex gap-3 mb-3">
