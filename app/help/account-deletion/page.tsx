@@ -14,7 +14,7 @@ export default function AccountDeletionHelp() {
         <p className="text-[1rem] text-[#242832] font-normal mb-16">
           Looking to delete your account?
         </p>
-        <div className="flex flex-col gap-y-8 mb-16">
+        <div className="flex flex-col gap-y-8 mb-12">
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.25rem] text-[#383a3f] font-semibold">
               The following data will be deleted:
@@ -77,6 +77,9 @@ export default function AccountDeletionHelp() {
             </ul>
           </div>
         </div>
+        <p className="text-[1rem] text-[#242832] text-center font-normal mb-16">
+          Please note that account deletion is permanent and we won't be able to recover your data, including previous photos and issues, once the process is complete.
+        </p>
         <h2 className="text-[1.75rem] text-[#242832] font-semibold mt-6 mb-4">
           Still need help?
         </h2>
