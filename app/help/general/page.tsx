@@ -26,6 +26,15 @@ export default function GeneralHelp() {
         <div className="flex flex-col gap-y-6 mb-16">
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
+              The app isn't loading, help!
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              As a temporary measure to minimise our resources, our servers may take a few seconds to wake up if there hasn't been activity for a while. Give it a few seconds, refresh the app, and it should load up fine!
+              If you are still unable to access the app, please try again later as we are likely fixing an issue.
+            </p>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
               How do I create an account?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
