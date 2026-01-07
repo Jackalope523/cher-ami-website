@@ -1,10 +1,5 @@
 import Image from 'next/image';
-import TitleImage from '@/public/title.png';
 import Phone from '@/public/phone.png';
-import Mouse from '@/public/mouse.png';
-import AppStoreBadge from '@/public/apple-app-store badge.svg';
-import PlayStoreBadge from '@/public/googe-play-badge.svg';
-import Placeholder from '@/public/placeholder.jpg';
 import PhoneShowcase from '@/public/app-showcase.png';
 import MagazineShowcase from '@/public/magazine-showcase.png';
 import StepOne from '@/public/step-one.png';
@@ -18,16 +13,17 @@ import ValuePrivacyIllustration from '@/public/value-privacy.png';
 import ValueFreeShippingIllustration from '@/public/value-shipping.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
-import Kimi from '@/public/kimi.jpg';
 import FAQItem from '@/components/FAQItem';
-import FeedbackCard from '@/components/FeedbackCard';
-import Link from 'next/link';
-import { usePlausible } from 'next-plausible';
 import CTA from '@/components/CTA';
+import { Suspense } from 'react';
+import Redirect from '@/components/Redirect';
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-36 py-36">
+      <Suspense>
+        <Redirect />
+      </Suspense>
       <section
         id="download-section"
         className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
@@ -291,11 +287,6 @@ export default function Home() {
                     No printed magazine.
                   </p>
                 </div>
-                <div className={'flex flex-row gap-x-1]'}>
-                  <p className="text-[1rem] text-transparent font-normal">
-                    Free shipping
-                  </p>
-                </div>
               </div>
             </div>
           </div>
@@ -353,6 +344,11 @@ export default function Home() {
                   />
                   <p className="text-[1rem] text-[#242832] font-normal">
                     Free shipping.
+                  </p>
+                </div>
+                <div className={'flex flex-row pt-2 self-center gap-x-1'}>
+                  <p className="text-[1rem] text-[#676d7b] font-normal">
+                    Available for purchase in the mobile app.
                   </p>
                 </div>
               </div>
