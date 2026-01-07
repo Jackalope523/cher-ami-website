@@ -26,67 +26,74 @@ export default function GeneralHelp() {
         <div className="flex flex-col gap-y-6 mb-16">
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Question
+              How do I create an account?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
-              Lorem ipsum dolor sit amet consectetur. Nunc ut feugiat vestibulum
-              id. Odio varius magna ullamcorper magna fermentum dis. Laoreet
-              ornare fusce consequat urna at urna dolor porta est. Odio
-              tristique felis maecenas commodo. Mauris suspendisse massa a id
-              fusce aenean a.
+              <Link href="/?redirect=download#download-section" className="underline">Download the app</Link> on your mobile device and follow the sign-up instructions!
             </p>
           </div>
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Question
+              How do I upload pictures?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
-              Lorem ipsum dolor sit amet consectetur. Nunc ut feugiat vestibulum
-              id. Odio varius magna ullamcorper magna fermentum dis. Laoreet
-              ornare fusce consequat urna at urna dolor porta est. Odio
-              tristique felis maecenas commodo. Mauris suspendisse massa a id
-              fusce aenean a.
+              From the mobile app, join or create a circle for your family and friends to share pictures securely. Then, tap the bottom-right button to post from the feed screen on the app.
             </p>
           </div>
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Question
+              How do I join or create a circle?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
-              Lorem ipsum dolor sit amet consectetur. Nunc ut feugiat vestibulum
-              id. Odio varius magna ullamcorper magna fermentum dis. Laoreet
-              ornare fusce consequat urna at urna dolor porta est. Odio
-              tristique felis maecenas commodo. Mauris suspendisse massa a id
-              fusce aenean a.
+              If you were given a code to join a circle, open the app, sign up, and enter it on the welcome screen. If you want to create your own circle, sign up and tap "Create Circle" instead and follow the instructions.
             </p>
           </div>
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Question
+              Can I edit my circle after creating it?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
-              Lorem ipsum dolor sit amet consectetur. Nunc ut feugiat vestibulum
-              id. Odio varius magna ullamcorper magna fermentum dis. Laoreet
-              ornare fusce consequat urna at urna dolor porta est. Odio
-              tristique felis maecenas commodo. Mauris suspendisse massa a id
-              fusce aenean a.
+              Currently, you cannot change your circle's name or photo after creating it. However, we are planning this feature very soon!
             </p>
           </div>
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Question
+              How can I invite people to my circle? Who can join my circle?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
-              Lorem ipsum dolor sit amet consectetur. Nunc ut feugiat vestibulum
-              id. Odio varius magna ullamcorper magna fermentum dis. Laoreet
-              ornare fusce consequat urna at urna dolor porta est. Odio
-              tristique felis maecenas commodo. Mauris suspendisse massa a id
-              fusce aenean a.
+              From the app, navigate to your circle from the top-left menu, copy the circle code, and share it with others!
+              Only those who have the code can join your circle.
+            </p>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
+              Someone I don't know joined my circle! What do I do?
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              If you don't recognise someone in your circle, you may remove them from the circle page if you own it or alert the circle creator.
+              It is possible a member accidentally shared the code publicly. In this case, you may press the 'regenerate code' button from the circle screen that will create a new code and invalidate the old one.
+            </p>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
+              What are recipients?
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              Recipients are those who will receive a physical magazine in the mail with last month's posts—perfect for distant family and friends. Add as many as you like!
+            </p>
+          </div>
+          <div className="flex flex-col gap-y-4">
+            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
+              Are my photos public?
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              No, your photos are not public and are only visible to members of your circle. We prioritize your privacy and ensure that your shared moments remain within your trusted group.
+              If you have any other questions or concerns about your privacy and data, please view our <Link href="/help/privacy" className="underline">Privacy & Security</Link> section.
             </p>
           </div>
         </div>
         <p className="text-[1rem] text-[#242832] font-semibold">
-          Last updated 11.12.2025
+          Last updated the 7th of January, 2026
         </p>
       </div>
     </div>

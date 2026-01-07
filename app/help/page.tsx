@@ -11,9 +11,9 @@ import LinkCard from '@/components/LinkCard';
 export default function Help() {
   return (
     <div className="flex flex-col items-center max-w-[1200px] mx-auto px-5 pt-12 pb-36">
-      <h1 className="text-[3rem] text-[#242832] font-semibold mb-5">Help</h1>
-      <p className="text-[1rem] text-[#242832] font-normal mb-16">
-        Find answers to your questions here.
+      <h1 className="text-[3rem] text-[#242832] font-semibold mb-5">Hello!</h1>
+      <p className="text-[1rem] text-[#242832] text-center font-normal mb-16">
+        Having trouble with something?<br/>Take a look at our FAQs below.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 w-full mb-16">
@@ -24,28 +24,22 @@ export default function Help() {
           title={'General'}
         />
         <LinkCard
-          href="/help/account-deletion"
+          href="/help/account"
           imageSource={User}
           alt={'Go to account help'}
           title={'Account'}
         />
         <LinkCard
-          href="/dsfsfsd"
+          href="/help/privacy"
           imageSource={Shield}
-          alt={'Go to security and privacy help'}
-          title={'Security & Privacy'}
+          alt={'Go to privacy and security help'}
+          title={'Privacy & Security'}
         />
         <LinkCard
-          href="/dsfsfsd"
+          href="/help/billing"
           imageSource={Billing}
           alt={'Go to billing help'}
-          title={'Billing'}
-        />
-        <LinkCard
-          href="/dsfsfsd"
-          imageSource={Truck}
-          alt={'Go to shipping help'}
-          title={'Shipping'}
+          title={'Billing & Shipping'}
         />
       </div>
 

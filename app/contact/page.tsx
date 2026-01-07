@@ -45,10 +45,10 @@ export default function AccountDeletionHelp() {
           Contact us
         </h1>
         <p className="text-[1rem] text-[#242832] font-normal">
-          Please leave us your questions or requests for Cher Ami.
+          Please leave us your questions or requests.
         </p>
         <p className="text-[1rem] text-[#242832] font-normal mb-12">
-          We will do our best to respond in a timely manner.
+          A real human will respond to you in a timely manner.
         </p>
 
         <form
@@ -58,7 +58,7 @@ export default function AccountDeletionHelp() {
             <label
               htmlFor="email"
               className="text-[1rem] text-[#242832] font-semibold">
-              Email*
+              Your Email*
             </label>
             <input
               id="email"
