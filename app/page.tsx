@@ -17,6 +17,7 @@ import FAQItem from '@/components/FAQItem';
 import CTA from '@/components/CTA';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
+import TitleText from '@/components/TitleText';
 
 export default function Home() {
   return (
@@ -29,12 +30,10 @@ export default function Home() {
         className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
         <div className="flex flex-col">
           <div className="flex flex-col items-center">
-            <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-[650px] mb-12">
-              Share Cherished Memories with Family and Friends
-            </h2>
+            <TitleText />
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px] mb-8">
               {
-                "Every month, transform your best photos into a beautiful magazine, delivered to loved ones' doorsteps."
+                "Every month, transform your best photos and stories into a beautiful magazine delivered to the doorsteps of those you care about."
               }
             </p>
             <div className="flex flex-row gap-4">
@@ -126,7 +125,7 @@ export default function Home() {
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
             {
-              'Sharing moments of your life with family and friends has never been easier.'
+              'Share your meaningful moments with family and friends easily.'
             }
           </p>
         </div>
@@ -526,6 +525,12 @@ export default function Home() {
             question={"It's already the end of the month! Can I still join?"}
             answer={
               "Yes! When you join, you can choose to start your first issue next month so you don't have to worry about not having enough photos."
+            }
+          />
+          <FAQItem
+            question={"Can I still participate if I live outside the United States?"}
+            answer={
+              "Yep! While we currently only deliver magazines within the USA, you can still join and share photos with your circle digitally through the app. We have plans to expand our delivery services internationally in the future."
             }
           />
         </div>
