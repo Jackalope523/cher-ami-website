@@ -100,6 +100,15 @@ export default function GeneralHelp() {
               If you have any other questions or concerns about your privacy and data, please view our <Link href="/help/privacy" className="underline">Privacy & Security</Link> section.
             </p>
           </div>
+          <div className="flex flex-col gap-y-4">
+            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
+              How do I edit or delete a post?
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              Currently, you cannot edit posts and can only delete them by clicking the options icon on the top-right of the post.
+              We have plans to support editing in the near future!
+            </p>
+          </div>
         </div>
         <p className="text-[1rem] text-[#242832] font-semibold">
           Last updated the 7th of January, 2026
