@@ -11,7 +11,7 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <header className="fixed w-full bg-[#FCFBF8] py-5 z-50">
+    <header className="fixed w-full bg-[#FCFBF8] pt-5 pb-2 z-50">
       <div className="flex flex-row justify-between items-center w-full max-w-[1200px] mx-auto px-5">
         <Link href={'/'}>
           <Image

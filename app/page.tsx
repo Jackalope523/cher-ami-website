@@ -149,8 +149,8 @@ export default function Home() {
         <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
           As Easy As 1-2-3
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="relative w-[350px] flex flex-col items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-12">
+          <div className="relative w-full max-w-[350px] flex flex-col items-center">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
               <Image
                 src={StepOne}
@@ -178,7 +178,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative w-[350px] flex flex-col items-center">
+          <div className="relative w-full max-w-[350px] flex flex-col items-center">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
               <Image
                 src={StepTwo}
@@ -206,7 +206,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative w-[350px] flex flex-col items-center">
+          <div className="relative w-full max-w-[350px] flex flex-col items-center">
             <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
               <Image
                 src={StepThree}
