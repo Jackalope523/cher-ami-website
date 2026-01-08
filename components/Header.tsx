@@ -6,6 +6,9 @@ import Chevron from '../public/chevron.svg';
 import Link from 'next/link';
 import TitleImage from '@/public/title.png';
 import MenuIcon from '@/public/menu.svg';
+import FacebookIcon from '@/public/facebook.svg';
+import InstagramIcon from '@/public/instagram.svg';
+import TikTokIcon from '@/public/tiktok.svg';
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
@@ -70,6 +73,26 @@ export default function Header() {
             className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
             Get Cher Ami
           </Link>
+          <div className="flex gap-10 pt-6 pb-2 px-4">
+            <Link
+              href="https://www.facebook.com/thecherami"
+              target="_blank"
+              className="text-[#B05637]">
+              <Image src={FacebookIcon} alt="Instagram icon" width={24} height={24} />
+            </Link>
+            <Link
+              href="https://www.instagram.com/thecherami"
+              target="_blank"
+              className="text-[#B05637]">
+              <Image src={InstagramIcon} alt="Instagram icon" width={24} height={24} />
+            </Link>
+            <Link
+              href="https://www.tiktok.com/@thecherami"
+              target="_blank"
+              className="text-[#B05637]">
+              <Image src={TikTokIcon} alt="Instagram icon" width={24} height={24} />
+            </Link>
+          </div>
         </div>
       )}
     </header>
