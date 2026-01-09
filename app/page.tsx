@@ -21,7 +21,7 @@ import TitleText from '@/components/TitleText';
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-36 py-36">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-36 py-18">
       <Suspense>
         <Redirect />
       </Suspense>
@@ -29,9 +29,9 @@ export default function Home() {
         id="download-section"
         className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
         <div className="flex flex-col">
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col items-center gap-12">
             <TitleText />
-            <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px] mb-8">
+            <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px]">
               {
                 "Every month, transform your best photos and stories into a beautiful magazine delivered to those you love."
               }

@@ -26,7 +26,7 @@ export default function CyclingTextHeader() {
 
 
   return (
-    <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center min-w-[320px] max-w-[650px] mb-12">
+    <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center min-w-[320px] max-w-[650px]">
       Your Cherished Memories Mailed to{' '}
       <span className="inline-block relative align-top">
         <span
