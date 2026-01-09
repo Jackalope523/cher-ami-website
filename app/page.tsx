@@ -18,6 +18,7 @@ import CTA from '@/components/CTA';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
 import TitleText from '@/components/TitleText';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -346,8 +347,8 @@ export default function Home() {
                   </p>
                 </div>
                 <div className={'flex flex-row pt-2 self-center gap-x-1'}>
-                  <p className="text-[1rem] text-[#676d7b] font-normal">
-                    Available for purchase in the mobile app.
+                  <p className="text-[1rem] text-[#676d7b] font-normal text-center">
+                    Available for purchase in the <Link href="/#download-section" className="underline">mobile app</Link>.
                   </p>
                 </div>
               </div>
