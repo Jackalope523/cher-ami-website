@@ -33,7 +33,7 @@ export default function Home() {
             <TitleText />
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px] mb-8">
               {
-                "Every month, transform your best photos and stories into a beautiful magazine delivered to the doorsteps of those you care about."
+                "Every month, transform your best photos and stories into a beautiful magazine delivered to those you love."
               }
             </p>
             <div className="flex flex-row gap-4">
