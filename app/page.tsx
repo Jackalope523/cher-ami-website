@@ -27,14 +27,14 @@ export default function Home() {
         <Redirect />
       </Suspense>
       <section
-        id="download-section"
+        id="download"
         className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
         <div className="flex flex-col">
           <div className="flex flex-col items-center gap-12">
             <TitleText />
             <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px]">
               {
-                "Every month, transform your best photos and stories into a beautiful magazine delivered to those you love."
+                "Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love."
               }
             </p>
             <div className="flex flex-row gap-4">
@@ -145,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="steps-section" className="flex flex-col items-center">
+      <section id="steps" className="flex flex-col items-center">
         <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
           As Easy As 1-2-3
         </h2>
@@ -199,7 +199,7 @@ export default function Home() {
                 We Deliver
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                <b>Every month, your photos are transformed</b> into a magazine
+                <b>Every month, your photos become</b> a magazine
                 your family eagerly awaits. Professionally designed, beautifully
                 printed, delivered right to their door.
               </p>
@@ -227,10 +227,9 @@ export default function Home() {
                 Cherish Forever
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                <b>Your grandparents enjoy it</b> at their coffee table. Your
-                parents show it to everyone who visits. It becomes the thing
-                they look forward to each month—physical proof that family is
-                never far away.
+                <b>Grandparents enjoy it</b> with their morning coffee. Parents treasure it in their growing collection.
+                It becomes what everyone looks forward to each month—physical proof
+                that family is never far away.
               </p>
             </div>
           </div>
@@ -240,10 +239,10 @@ export default function Home() {
       <section>
         <div className="mb-10">
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-            Flexible Subscriptions
+            Options for Everyone
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            {'No hidden fees, cancel anytime.'}
+            Cancel whenever, billed only when we print and ship.
           </p>
         </div>
 
@@ -254,7 +253,7 @@ export default function Home() {
                 Digital Edition
               </h3>
             </div>
-            <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA]">
+            <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA] w-full">
               <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
                 FREE
               </h3>
@@ -297,7 +296,7 @@ export default function Home() {
                 Monthly Edition
               </h3>
             </div>
-            <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C]">
+            <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C] w-full">
               <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
                 $12.99
               </h3>
@@ -348,7 +347,7 @@ export default function Home() {
                 </div>
                 <div className={'flex flex-row pt-2 self-center gap-x-1'}>
                   <p className="text-[1rem] text-[#676d7b] font-normal text-center">
-                    Available for purchase in the <Link href="/#download-section" className="underline">mobile app</Link>.
+                    Available for purchase in the <Link href="/#download" className="underline">mobile app</Link>.
                   </p>
                 </div>
               </div>
@@ -499,13 +498,13 @@ export default function Home() {
             }
           />
           <FAQItem
-            question={'Who is it for?'}
+            question={'Who do I send it to?'}
             answer={
-              'Grandparents, parents, aunts, uncles, or anyone who wants to stay connected with their loved ones through shared memories!'
+              'Grandparents, parents, aunts, uncles, or anyone you want to keep up-to-date with a physical magazine!'
             }
           />
           <FAQItem
-            question={'Where can I deliver a Cher Ami?'}
+            question={'Where can a Cher Ami be delivered?'}
             answer={
               'Currently, we deliver anywhere in the USA but have plans to reach more countries—stay tuned!'
             }
@@ -531,7 +530,7 @@ export default function Home() {
           <FAQItem
             question={"Can I still participate if I live outside the United States?"}
             answer={
-              "Yep! While we currently only deliver magazines within the USA, you can still join and share photos with your circle digitally through the app. We have plans to expand our delivery services internationally in the future."
+              "Absolutely! While we currently only deliver magazines within the USA, you can still join and share photos with your circle digitally through the app. We have plans to expand our delivery services internationally in the future."
             }
           />
         </div>

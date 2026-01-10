@@ -26,7 +26,7 @@ export default function Header() {
         </Link>
         <div className="hidden sm:flex flex-row gap-x-4">
           <Link
-            href="/#steps-section"
+            href="/#steps"
             className="text-[#B05637] px-4 py-3 rounded-xl">
             How It Works
           </Link>
@@ -34,7 +34,7 @@ export default function Header() {
             Help
           </Link>
           <Link
-            href="/#download-section"
+            href="/#download"
             className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
             Get Cher Ami
           </Link>
@@ -50,7 +50,7 @@ export default function Header() {
       {showMenu && (
         <div className="sm:hidden flex flex-col w-full max-w-[1200px] mx-auto px-5">
           <Link
-            href="/#steps-section"
+            href="/#steps"
             onClick={() => {
               setShowMenu(false);
             }}
@@ -66,7 +66,7 @@ export default function Header() {
             Help
           </Link>
           <Link
-            href="/#download-section"
+            href="/#download"
             onClick={() => {
               setShowMenu(false);
             }}

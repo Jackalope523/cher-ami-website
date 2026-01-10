@@ -17,7 +17,7 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
       <button
         onClick={() => setShowAnswer(!showAnswer)}
         className="flex flex-row justify-between w-full items-center">
-        <p className="font-medium text-gray-800">{question}</p>
+        <p className="font-medium text-gray-800 text-left">{question}</p>
         <Image
           src={Chevron}
           alt="Toggle answer"

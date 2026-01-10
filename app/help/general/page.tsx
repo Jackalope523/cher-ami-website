@@ -38,7 +38,7 @@ export default function GeneralHelp() {
               How do I create an account?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
-              <Link href="/?redirect=download#download-section" className="underline">Download the app</Link> on your mobile device and follow the sign-up instructions!
+              <Link href="/?redirect=download#download" className="underline">Download the app</Link> on your mobile device and follow the sign-up instructions!
             </p>
           </div>
           <div className="flex flex-col gap-y-4">

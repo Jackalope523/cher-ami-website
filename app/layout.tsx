@@ -41,7 +41,7 @@ export default function RootLayout({
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                   Product
                 </h3>
-                <Link href="/#steps-section" className="text-[#B05637] py-2">
+                <Link href="/#steps" className="text-[#B05637] py-2">
                   How It Works
                 </Link>
                 <Link href="/contact" className="text-[#B05637] py-2">
@@ -50,7 +50,7 @@ export default function RootLayout({
                 <Link href="/help" className="text-[#B05637] py-2">
                   Help
                 </Link>
-                <Link href="/#download-section" className="text-[#B05637] py-2">
+                <Link href="/#download" className="text-[#B05637] py-2">
                   Get Cher Ami
                 </Link>
               </div>

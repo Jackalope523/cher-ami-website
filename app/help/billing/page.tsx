@@ -38,13 +38,13 @@ export default function BillingShippingHelp() {
               When will the magazine arrive?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
-              All our print magazines are printed and shipped within the first 3-5 business days of the month.
-              Depending where the your recipient is, shipping may take up to 1 week.
+              At the start of the month, all our magazines are printed and shipped within 3-5 business days.
+              Depending where your recipient is, shipping may take up to 1 week.
             </p>
           </div>
           <div className="flex flex-col gap-y-4">
             <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              It has been two weeks and my magazine hasn't arrived. What do I do?
+              It's been two weeks and my magazine hasn't arrived. What do I do?
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal">
               We know it's disapointing when the magazine doesn't arrive on time. If your magazine has never reached your recipient, please <Link href="/contact" className="underline">contact us</Link> and we will help make it right.
