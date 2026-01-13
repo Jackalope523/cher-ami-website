@@ -121,7 +121,7 @@ export default function RootLayout({
               <div className="border border-[#DEDBD5] my-4" />
               <div className="flex flex-row justify-between">
                 <p className="text-[#868581]">
-                  © 2025 Hollow Inc. All rights reserved.
+                  © 2026 Hollow Inc. All rights reserved.
                 </p>
                 <p className="text-[#868581]">
                   Made with ❤️ in the USA, Canada, and EU.
