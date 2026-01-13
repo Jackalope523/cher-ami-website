@@ -131,22 +131,18 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="flex justify-center items-center h-full">
-            <Image
+        <div className="flex flex-col md:flex-row">
+          <Image
               src={PhoneShowcase}
               alt="A smartphone running the Cher Ami mobile app"
-              className="block w-full h-auto max-h-150 object-contain"
-            />
-          </div>
-          <div className="flex justify-center items-center h-full">
-            <Image
+              className="flex-5 w-full h-full max-h-[90vh] object-contain"
+          />
+          <Image
               src={MagazineShowcase}
               alt="The Cher Ami magazine"
-              className="block w-full h-auto max-h-150 object-contain"
-            />
-          </div>
-        </div>
+              className="flex-7 w-full h-full max-h-[90vh] object-contain"
+          />
+      </div>
       </section>
 
       <section id="steps" className="flex flex-col items-center">
