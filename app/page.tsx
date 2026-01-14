@@ -415,7 +415,7 @@ export default function Home() {
                 />
               </div>
               <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                Privacy-First
+                Privacy First
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
                 All your photos are completely private and never shared.
