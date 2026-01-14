@@ -175,6 +175,7 @@ export default function Home() {
                   src={StepOneIllustration}
                   alt="Three mice playing with a kite"
                   height={255}
+                  placeholder="blur"
                 />
               </div>
               <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
@@ -203,6 +204,7 @@ export default function Home() {
                   src={StepTwoIllustration}
                   alt="A squirrel delivering a letter"
                   height={255}
+                  placeholder="blur"
                 />
               </div>
               <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
@@ -231,6 +233,7 @@ export default function Home() {
                   src={StepThreeIllustration}
                   alt="A family of bears reading a magazine"
                   height={255}
+                  placeholder="blur"
                 />
               </div>
               <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
