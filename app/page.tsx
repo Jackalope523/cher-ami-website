@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Hero from '@/public/hero-illustration.png';
 import Phone from '@/public/phone.png';
 import PhoneShowcase from '@/public/app-showcase.png';
 import MagazineShowcase from '@/public/magazine-showcase.png';
@@ -10,6 +11,8 @@ import StepTwoIllustration from '@/public/step-two-illustration.png';
 import StepThreeIllustration from '@/public/step-three-illustration.png';
 import ValueQualityIllustration from '@/public/value-quality.png';
 import ValuePrivacyIllustration from '@/public/value-privacy.png';
+import ValueCollaborateIllustration from '@/public/value-collaborate.png';
+import ValueSecurePaymentsIllustration from '@/public/value-secure.png';
 import ValueFreeShippingIllustration from '@/public/value-shipping.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
@@ -26,9 +29,15 @@ export default function Home() {
       <Suspense>
         <Redirect />
       </Suspense>
+      <div className="hidden lg:block w-[100vw] h-full mt-[-60] mb-[-180]">
+        <Image
+          src={Hero}
+          alt="An illustration of forest creatures watching a messenger pigeon fly away"
+        />
+      </div>
       <section
         id="download"
-        className="flex flex-col lg:flex-row items-center justify-between w-full px-8">
+        className="flex flex-col lg:flex-row items-center justify-between w-full px-8 lg:mb-[-100]">
         <div className="flex flex-col">
           <div className="flex flex-col items-center gap-12">
             <TitleText />
@@ -46,10 +55,10 @@ export default function Home() {
         <Image
           src={Phone}
           alt="A smartphone running the Cher Ami mobile app"
-          height={504 * 1.5}
-          width={205 * 1.5}
+          height={525}
+          width={255}
           style={{ transform: 'rotate(2deg)' }}
-          className="hidden lg:block"
+          className="hidden lg:block transform -translate-y-1/6"
         />
       </section>
 
@@ -360,56 +369,92 @@ export default function Home() {
         <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
           Our Guiding Principles
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 place-items-center">
-          <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
-            <div className="flex flex-col h-[255px] justify-center">
+        <div className="flex flex-wrap justify-center gap-6">
+          <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
+                          transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex flex-col h-[100px] justify-center">
               <Image
-                src={ValueQualityIllustration}
-                alt="A mouse reading a paper"
-                width={156}
-                height={183}
+                src={ValueCollaborateIllustration}
+                alt="A mouse using a phone"
+                className="max-w-[120px] max-h-[120px] object-contain"
               />
             </div>
             <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              High Quality
+              Unlimited Members
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center">
+              As many members in your circle as you want, at no cost.
+            </p>
+          </div>
+          
+          <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
+                          transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex flex-col h-[100px] justify-center">
+              <Image
+                src={ValueQualityIllustration}
+                alt="A mouse reading a paper"
+                className="max-w-[100px] max-h-[100px] object-contain"
+              />
+            </div>
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+              Timeless Quality
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
               Premium prints that you can cherish for years to come.
             </p>
           </div>
 
-          <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
-            <div className="flex flex-col h-[255px] justify-center">
-              <Image
-                src={ValuePrivacyIllustration}
-                alt="A chipmunk picking up acorns"
-                width={156}
-                height={183}
-              />
+          <div className="flex flex-wrap justify-center gap-6">
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
+                            transition-transform transform hover:translate-y-[-8px]">
+              <div className="flex flex-col h-[100px] justify-center">
+                <Image
+                  src={ValuePrivacyIllustration}
+                  alt="A mouse kid running"
+                  className="max-w-[100px] max-h-[100px] object-contain"
+                />
+              </div>
+              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                Privacy-First
+              </h2>
+              <p className="text-[1rem] text-[#242832] font-normal text-center">
+                All your photos are completely private and never shared.
+              </p>
             </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Privacy-First
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center">
-              All your data is completely private and not shared with anyone.
-            </p>
-          </div>
 
-          <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[350px]">
-            <div className="flex flex-col h-[255px] justify-center">
-              <Image
-                src={ValueFreeShippingIllustration}
-                alt="A paper airplane"
-                width={156}
-                height={183}
-              />
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
+                            transition-transform transform hover:translate-y-[-8px]">
+              <div className="flex flex-col h-[100px] justify-center">
+                <Image
+                  src={ValueSecurePaymentsIllustration}
+                  alt="An acorn"
+                  className="max-w-[80px] max-h-[80px] object-contain"
+                />
+              </div>
+              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                Secure Payments
+              </h2>
+              <p className="text-[1rem] text-[#242832] font-normal text-center">
+                We retain no card information for your security and peace of mind.
+              </p>
             </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Free Shipping
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center">
-              Shipping to whoever you want, anywhere in the USA, on us.
-            </p>
+
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
+                            transition-transform transform hover:translate-y-[-8px]">
+              <div className="flex flex-col h-[100px] justify-center">
+                <Image
+                  src={ValueFreeShippingIllustration}
+                  alt="A paper airplane"
+                  className="max-w-[100px] max-h-[100px] object-contain"
+                />
+              </div>
+              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                Free Shipping
+              </h2>
+              <p className="text-[1rem] text-[#242832] font-normal text-center">
+                Shipping to whoever you want, anywhere in the USA, on us.
+              </p>
+            </div>
           </div>
         </div>
       </section>
