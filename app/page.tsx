@@ -33,6 +33,7 @@ export default function Home() {
         <Image
           src={Hero}
           alt="An illustration of forest creatures watching a messenger pigeon fly away"
+          placeholder="blur"
         />
       </div>
       <section
