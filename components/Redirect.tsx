@@ -5,7 +5,7 @@ import { useSearchParams } from 'next/navigation'
 
 const APP_DEEP_LINK = "cherami://";
 
-const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=web_share";
+const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.hollowinc.cherami&pcampaignid=website_qr_code";
 const APPLE_STORE_URL = "https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033";
 
 export default function Redirect() {

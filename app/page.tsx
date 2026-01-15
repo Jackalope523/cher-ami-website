@@ -136,7 +136,7 @@ export default function Home() {
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
             {
-              'Share your meaningful moments with family and friends easily.'
+              'Your family\'s moments shared just the way you want.'
             }
           </p>
         </div>
@@ -157,7 +157,7 @@ export default function Home() {
 
       <section id="steps" className="flex flex-col items-center">
         <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
-          As Easy As 1-2-3
+          Three Easy Steps
         </h2>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-12">
           <div className="relative w-full max-w-[350px] flex flex-col items-center">
@@ -211,9 +211,9 @@ export default function Home() {
                 We Deliver
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                <b>Every month, your photos become</b> a magazine
-                your family eagerly awaits. Professionally designed, beautifully
-                printed, delivered right to their door.
+                <b>Every month, your photos become</b> a professionally designed,
+                beautifully printed magazine
+                delivered right to the doors of your family and friends.
               </p>
             </div>
           </div>
@@ -240,8 +240,8 @@ export default function Home() {
                 Cherish Forever
               </h2>
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                <b>Grandparents enjoy it</b> with their morning coffee. Parents treasure it in their growing collection.
-                It becomes what everyone looks forward to each month—physical proof
+                <b>Grandparents enjoy it</b> with their morning coffee. Parents treasure their growing collection.
+                It becomes the mail that everyone looks forward to each month—physical proof
                 that family is never far away.
               </p>
             </div>
@@ -371,7 +371,7 @@ export default function Home() {
 
       <section>
         <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
-          Our Guiding Principles
+          Why Families Choose Us
         </h2>
         <div className="flex flex-wrap justify-center gap-6">
           <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
