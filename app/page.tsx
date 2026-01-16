@@ -2,6 +2,7 @@ import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
 import MobileHero from '@/public/postal-bird.webp';
 import Phone from '@/public/phone.png';
+import QRCode from '@/public/scan-to-download.png';
 import PhoneShowcase from '@/public/app-showcase.png';
 import MagazineShowcase from '@/public/magazine-showcase.png';
 import StepOne from '@/public/step-one.svg';
@@ -48,27 +49,35 @@ export default function Home() {
         id="download"
         className="flex flex-col lg:flex-row items-center justify-between w-full px-8 lg:mb-[-100]">
         <div className="flex flex-col">
-          <div className="flex flex-col items-center gap-12">
+          <div className="flex flex-col items-center lg:items-start gap-12">
             <TitleText />
-            <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[500px]">
+            <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
               {
                 "Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love."
               }
             </p>
-            <div className="flex flex-row gap-4">
+            <div className="flex flex-row gap-4 p-4 border-2 border-[#DEDBD5] rounded-[24px]">
               <CTA store="Apple" width={192} height={64} />
               <CTA store="Google" width={216} height={64} />
             </div>
           </div>
         </div>
-        <Image
-          src={Phone}
-          alt="A smartphone running the Cher Ami mobile app"
-          height={525}
-          width={255}
-          style={{ transform: 'rotate(2deg)' }}
-          className="hidden lg:block transform -translate-y-1/6"
-        />
+        <div className="hidden lg:block transform -translate-y-1/6">
+          <Image
+            src={Phone}
+            alt="A smartphone running the Cher Ami mobile app"
+            height={525}
+            width={255}
+            style={{ transform: 'rotate(2deg)' }}
+          />
+          <Image
+            src={QRCode}
+            alt="A qr code to download the app"
+            height={242}
+            width={281}
+            className="hidden xl:block absolute bottom-1/10 right-4/5"
+          />
+        </div>
       </section>
 
       {/* <section className="flex flex-row gap-x-10 overflow-x-auto px-40">
