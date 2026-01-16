@@ -109,6 +109,14 @@ export default function GeneralHelp() {
               We have plans to support editing in the near future!
             </p>
           </div>
+          <div className="flex flex-col gap-y-4">
+            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
+              My photos and posts disappeared, help!
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              Don't worry, your photos and posts are safe! If they don't show up or are blank, please refresh the app or try again in a bit. Sometimes, the mobile app client takes time to catch up to server changes.
+            </p>
+          </div>
         </div>
         <p className="text-[1rem] text-[#242832] font-semibold">
           Last updated the 7th of January, 2026
