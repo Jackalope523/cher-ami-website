@@ -78,19 +78,19 @@ export default function Header() {
               href="https://www.facebook.com/thecherami"
               target="_blank"
               className="text-[#B05637]">
-              <Image src={FacebookIcon} alt="Instagram icon" width={24} height={24} />
+              <Image src={FacebookIcon} alt="Instagram icon" width={24} height={24} preload />
             </Link>
             <Link
               href="https://www.instagram.com/thecherami"
               target="_blank"
               className="text-[#B05637]">
-              <Image src={InstagramIcon} alt="Instagram icon" width={24} height={24} />
+              <Image src={InstagramIcon} alt="Instagram icon" width={24} height={24} preload />
             </Link>
             <Link
               href="https://www.tiktok.com/@thecherami"
               target="_blank"
               className="text-[#B05637]">
-              <Image src={TikTokIcon} alt="Instagram icon" width={24} height={24} />
+              <Image src={TikTokIcon} alt="Instagram icon" width={24} height={24} preload />
             </Link>
           </div>
         </div>

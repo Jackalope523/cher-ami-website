@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import Hero from '@/public/hero-illustration.png';
+import DesktopHero from '@/public/hero.webp';
+import MobileHero from '@/public/postal-bird.webp';
 import Phone from '@/public/phone.png';
 import PhoneShowcase from '@/public/app-showcase.png';
 import MagazineShowcase from '@/public/magazine-showcase.png';
@@ -31,8 +32,15 @@ export default function Home() {
       </Suspense>
       <div className="hidden lg:block w-[100vw] h-full mt-[-60] mb-[-180]">
         <Image
-          src={Hero}
+          src={DesktopHero}
           alt="An illustration of forest creatures watching a messenger pigeon fly away"
+          placeholder="blur"
+        />
+      </div>
+      <div className="md:hidden w-[50vw] h-full mt-[-30] mb-[-100]">
+        <Image
+          src={MobileHero}
+          alt="An illustration of a messenger pigeon"
           placeholder="blur"
         />
       </div>
