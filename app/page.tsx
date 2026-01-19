@@ -196,7 +196,7 @@ export default function Home() {
               />
             </div>
             <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-              <div className="flex flex-col h-[255px] justify-center">
+              <div className="flex flex-col h-[255px] justify-center z-10">
                 <Image
                   src={StepOneIllustration}
                   alt="Three mice playing with a kite"
