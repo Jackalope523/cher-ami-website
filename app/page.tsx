@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
+import TabletHero from '@/public/hero-tablet.png';
 import MobileHero from '@/public/mail-pigeon.png';
 import Phone from '@/public/phone.png';
 import QRCode from '@/public/scan-to-download.png';
@@ -36,6 +37,14 @@ export default function Home() {
           src={DesktopHero}
           alt="An illustration of forest creatures watching a messenger pigeon fly away"
           placeholder="blur"
+        />
+      </div>
+      <div className="hidden md:block lg:hidden w-[100vw] h-[50vh] mt-[-60] mb-[-120]">
+        <Image
+          src={TabletHero}
+          alt="An illustration of forest creatures"
+          placeholder="blur"
+          className="h-full object-contain"
         />
       </div>
       <div className="md:hidden w-[50vw] h-full mt-[-30] mb-[-100]">
