@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
-import MobileHero from '@/public/postal-bird.webp';
+import MobileHero from '@/public/mail-pigeon.png';
 import Phone from '@/public/phone.png';
 import QRCode from '@/public/scan-to-download.png';
 import PhoneShowcase from '@/public/app-showcase.png';
@@ -56,7 +56,7 @@ export default function Home() {
                 "Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love."
               }
             </p>
-            <div className="flex flex-row gap-4 p-4 border-2 border-[#DEDBD5] rounded-[24px]">
+            <div className="flex flex-col md:flex-row items-center gap-4 p-4 border-2 border-[#DEDBD5] rounded-[24px]">
               <CTA store="Apple" width={192} height={64} />
               <CTA store="Google" width={216} height={64} />
             </div>

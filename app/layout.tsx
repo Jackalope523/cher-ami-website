@@ -18,6 +18,9 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: 'Cher Ami',
   description: 'Share memories with your family',
+  robots: {
+    noimageindex: true,
+  }
 };
 
 export default function RootLayout({
@@ -107,8 +110,14 @@ export default function RootLayout({
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                   Download the app
                 </h3>
-                <CTA store="Apple" width={120} height={40} />
-                <CTA store="Google" width={135} height={40} />
+                <div className="hidden sm:flex flex-row sm:flex-col gap-4">
+                  <CTA store="Apple" width={120} height={40} />
+                  <CTA store="Google" width={135} height={40} />
+                </div>
+                <div className="flex sm:hidden flex-row sm:flex-col gap-4">
+                  <CTA store="Apple" width={167} height={56} />
+                  <CTA store="Google" width={189} height={56} />
+                </div>
               </div>
             </div>
             <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">
