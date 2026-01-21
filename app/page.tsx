@@ -338,6 +338,9 @@ export default function Home() {
             <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C] w-full">
               <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
                 $12.99
+                <span className="absolute transform -translate-y-[-2rem] text-[1rem] text-[#676d7b] font-normal">
+                  /month
+                </span>
               </h3>
               <div className="flex flex-col">
                 <div className="flex flex-row gap-x-1">
