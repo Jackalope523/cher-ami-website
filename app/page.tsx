@@ -381,7 +381,7 @@ export default function Home() {
                     height={24}
                   />
                   <p className="text-[1rem] text-[#242832] font-normal">
-                    Free shipping.
+                    Free shipping in the USA.
                   </p>
                 </div>
                 <div className={'flex flex-row pt-2 self-center gap-x-1'}>
