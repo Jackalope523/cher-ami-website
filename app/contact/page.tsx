@@ -7,6 +7,21 @@ import X from '@/public/x-black.svg';
 import Image from 'next/image';
 import { useState } from 'react';
 
+/*
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact | Cher Ami',
+  description: 'Contact the Cher Ami team.',
+  robots: {
+    noimageindex: true,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com/contact'
+  }
+};
+*/
+
 export default function Contact() {
   const [email, setEmail] = useState('');
   const [subject, setSubject] = useState('');
