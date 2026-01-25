@@ -25,6 +25,18 @@ import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
 import TitleText from '@/components/TitleText';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Cher Ami',
+  description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
+  robots: {
+    noimageindex: true,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com'
+  }
+};
 
 export default function Home() {
   return (

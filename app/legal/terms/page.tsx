@@ -1,6 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Chevron from '@/public/chevron-right.svg';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Terms and Conditions | Cher Ami',
+  description: 'View the Terms and Conditions for Cher Ami.',
+  robots: {
+    noimageindex: true,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com/legal/terms'
+  }
+};
 
 export default function Terms() {
   const termsOfServiceContent = `

@@ -17,10 +17,10 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
-  description: 'Share memories with your family',
+  description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
   robots: {
     noimageindex: true,
-  }
+  },
 };
 
 export default function RootLayout({

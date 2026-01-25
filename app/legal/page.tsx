@@ -5,6 +5,18 @@ import Undo from '@/public/undo.svg';
 import Arrow from '@/public/arrow-up-right.svg';
 import Link from 'next/link';
 import LinkCard from '@/components/LinkCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Legal | Cher Ami',
+  description: 'Find answers to your questions with our FAQ or contact us for support.',
+  robots: {
+    noimageindex: true,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com/legal'
+  }
+};
 
 export default function Legal() {
   return (

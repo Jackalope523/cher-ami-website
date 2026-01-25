@@ -1,6 +1,18 @@
 import Link from 'next/link';
 import Chevron from '@/public/chevron-right.svg';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Billing FAQ | Cher Ami',
+  description: 'View the FAQ for billing-related questions.',
+  robots: {
+    noimageindex: true,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com/help/billing'
+  }
+};
 
 export default function BillingShippingHelp() {
   return (

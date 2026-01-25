@@ -7,6 +7,18 @@ import Truck from '@/public/truck.svg';
 import Mail from '@/public/mail.svg';
 import Link from 'next/link';
 import LinkCard from '@/components/LinkCard';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Help | Cher Ami',
+  description: 'Find answers to your questions with our FAQ or contact us for support.',
+  robots: {
+    noimageindex: true,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com/help'
+  }
+};
 
 export default function Help() {
   return (

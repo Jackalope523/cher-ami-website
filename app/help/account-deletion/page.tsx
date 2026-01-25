@@ -3,6 +3,19 @@ import Mail from '@/public/mail.svg';
 import Check from '@/public/check-black.svg';
 import X from '@/public/x-black.svg';
 import Image from 'next/image';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Account Deletion | Cher Ami',
+  description: 'View the instructions for deleting your account.',
+  robots: {
+    noimageindex: true,
+    index: false,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com/help/account-deletion'
+  }
+};
 
 export default function AccountDeletionHelp() {
   return (

@@ -1,6 +1,18 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import Chevron from '@/public/chevron-right.svg';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | Cher Ami',
+  description: 'View the Privacy Policy for Cher Ami.',
+  robots: {
+    noimageindex: true,
+  },
+  alternates: {
+    canonical: 'https://thecherami.com/legal/privacy'
+  }
+};
 
 export default function Privacy() {
   const privacyPolicyContent = `
