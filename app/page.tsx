@@ -61,7 +61,7 @@ export default function Home() {
           className="h-full object-contain"
         />
       </div>
-      <div className="md:hidden w-[50vw] h-full mt-[-30] mb-[-100]">
+      <div className="md:hidden w-[50vw] h-full mt-[-30] mb-[-100] pb-16">
         <Image
           src={MobileHero}
           alt="An illustration of a messenger pigeon"
