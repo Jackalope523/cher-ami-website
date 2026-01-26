@@ -4,8 +4,10 @@ import TabletHero from '@/public/hero-tablet.png';
 import MobileHero from '@/public/mail-pigeon.png';
 import Phone from '@/public/phone.png';
 import QRCode from '@/public/scan-to-download.png';
-import PhoneShowcase from '@/public/app-showcase.png';
-import MagazineShowcase from '@/public/magazine-showcase.png';
+import PhoneShowcase from '@/public/showcase-app.png';
+import MagazineShowcase from '@/public/showcase-magazine.png';
+import MobilePhoneShowcase from '@/public/showcase-app-mobile.png';
+import MobileMagazineShowcase from '@/public/showcase-magazine-mobile.png';
 import StepOne from '@/public/step-one.svg';
 import StepTwo from '@/public/step-two.svg';
 import StepThree from '@/public/step-three.svg';
@@ -40,7 +42,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-36 py-18">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 md:gap-36 py-18">
       <Suspense>
         <Redirect />
       </Suspense>
@@ -179,7 +181,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row">
+        <div className="hidden md:flex flex-row">
           <Image
               src={PhoneShowcase}
               alt="A smartphone running the Cher Ami mobile app"
@@ -190,7 +192,19 @@ export default function Home() {
               alt="The Cher Ami magazine"
               className="flex-7 w-full h-full max-h-[90vh] object-contain"
           />
-      </div>
+        </div>
+        <div className="md:hidden flex flex-col gap-10">
+          <Image
+              src={MobilePhoneShowcase}
+              alt="A smartphone running the Cher Ami mobile app"
+              className="w-full h-full max-h-[90vh] object-contain"
+          />
+          <Image
+              src={MobileMagazineShowcase}
+              alt="The Cher Ami magazine"
+              className="w-full h-full max-h-[90vh] object-contain"
+          />
+        </div>
       </section>
 
       <section id="steps" className="flex flex-col items-center">
