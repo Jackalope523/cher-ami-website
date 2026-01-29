@@ -28,6 +28,7 @@ import Redirect from '@/components/Redirect';
 import TitleText from '@/components/TitleText';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import DynamicCTA from '@/components/DynamicCTA';
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
@@ -75,13 +76,14 @@ export default function Home() {
           <div className="flex flex-col items-center lg:items-start gap-12">
             <TitleText />
             <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-              {
-                "Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love."
-              }
+              Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love.
+              <br /><br />
+              <span className="text-[1rem] text-[#242832] font-semibold text-center lg:text-left max-w-[500px]">
+                Available on iOS and Android.
+              </span>
             </p>
             <div className="flex flex-col md:flex-row items-center gap-4 p-4 border-2 border-[#DEDBD5] rounded-[24px]">
-              <CTA store="Apple" width={192} height={64} />
-              <CTA store="Google" width={216} height={64} />
+              <DynamicCTA />
             </div>
           </div>
         </div>
