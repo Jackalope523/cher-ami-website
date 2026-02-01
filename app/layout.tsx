@@ -101,12 +101,14 @@ export default function RootLayout({
                   className="text-[#B05637] py-2">
                   YouTube
                 </Link>
+                {/*
                 <Link
                   href="https://www.reddit.com/user/thecherami/"
                   target="_blank"
                   className="text-[#B05637] py-2">
                   Reddit
                 </Link>
+                 */}
               </div>
               <div className="flex flex-col gap-y-4">
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">

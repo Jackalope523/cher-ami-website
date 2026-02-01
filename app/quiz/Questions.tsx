@@ -42,7 +42,7 @@ function Options({options, setAnswer, onNext}: OptionsProps) {
 
 
 export function Question1({ answers, setAnswer, onNext }: any) {
-  const options = ["Myself", "Grandparents", "Family", "Friends", "I'd like to receive someone else's photos"];
+  const options = ["Grandparents", "Family", "Friends", "I'd like to receive my own photos", "I'd like to receive someone else's photos"];
   return (
     <Question title="Who would you like to receive the photos?" description="Pick the main recipient — this helps tailor the experience.">
       <Options
@@ -59,15 +59,16 @@ export function Question2({ answers, setAnswer, onNext, onBack }: any) {
     "I love physical albums / coffee-table books"
   ];
 
-  // Only show if receiver is not "Just myself" or is "No one yet"
-  if (answers.receiver === "Myself") {
+  if (answers.receiver === "I'd like to receive my own photos") {
     // skip this question automatically
     setTimeout(onNext, 0);
     return null;
   }
 
+  const title = answers.receiver === "I'd like to receive someone else's photos" ? "Why do you want to receive a Cher Ami?" : "Why do you want to send a Cher Ami?";
+
   return (
-    <Question title="Why do you want to send a Cher Ami?" description="Choose what matters most.">
+    <Question title={title} description="Choose what matters most.">
       <Options
         options={options}
         setAnswer={(ans: string) => setAnswer({ reason: ans })}
@@ -78,7 +79,14 @@ export function Question2({ answers, setAnswer, onNext, onBack }: any) {
 }
 
 export function Question3({ answers, setAnswer, onNext }: any) {
-  const options = ["By myself", "With friends", "With family"];
+  const options = ["With family", "With friends","By myself"];
+
+  if (answers.receiver === "I'd like to receive someone else's photos") {
+    // skip this question automatically
+    setTimeout(onNext, 0);
+    return null;
+  }
+
   return (
     <Question title="Would you create your Cher Ami by yourself or with others?">
       <Options

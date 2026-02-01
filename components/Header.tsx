@@ -2,10 +2,10 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import Chevron from '../public/chevron.svg';
 import Link from 'next/link';
 import TitleImage from '@/public/title.png';
 import MenuIcon from '@/public/menu.svg';
+import CloseIcon from '@/public/x-white.svg';
 import FacebookIcon from '@/public/facebook.svg';
 import InstagramIcon from '@/public/instagram.svg';
 import TikTokIcon from '@/public/tiktok.svg';
@@ -14,8 +14,9 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
-    <header className="fixed w-full bg-[#FCFBF8] pt-5 pb-2 z-50">
-      <div className="flex flex-row justify-between items-center w-full max-w-[1200px] mx-auto px-5">
+    <header className={`fixed w-full z-50 bg-[#FCFBF8]
+      ${showMenu && 'shadow-md/35 shadow-[#868581]'}`}>
+      <div className="flex flex-row justify-between items-center w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 pt-5 pb-2">
         <Link href={'/'}>
           <Image
             src={TitleImage}
@@ -43,12 +44,12 @@ export default function Header() {
           onClick={() => {
             setShowMenu(!showMenu);
           }}
-          className="sm:hidden bg-[#C15F3C] p-4 rounded-[14px]">
-          <Image src={MenuIcon} alt="Open menu" width={24} height={24} />
+          className="sm:hidden bg-[#C15F3C] p-4 rounded-[14px] shadow-md/25 shadow-[#868581]">
+          <Image src={showMenu ? CloseIcon : MenuIcon } alt="Open menu" width={24} height={24} />
         </button>
       </div>
       {showMenu && (
-        <div className="sm:hidden flex flex-col w-full max-w-[1200px] mx-auto px-5">
+        <div className="sm:hidden flex flex-col w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 pb-2">
           <Link
             href="/#steps"
             onClick={() => {
@@ -78,7 +79,7 @@ export default function Header() {
               href="https://www.facebook.com/thecherami"
               target="_blank"
               className="text-[#B05637]">
-              <Image src={FacebookIcon} alt="Instagram icon" width={24} height={24} preload />
+              <Image src={FacebookIcon} alt="Facebook icon" width={24} height={24} preload />
             </Link>
             <Link
               href="https://www.instagram.com/thecherami"
@@ -90,7 +91,7 @@ export default function Header() {
               href="https://www.tiktok.com/@thecherami"
               target="_blank"
               className="text-[#B05637]">
-              <Image src={TikTokIcon} alt="Instagram icon" width={24} height={24} preload />
+              <Image src={TikTokIcon} alt="Tiktok icon" width={24} height={24} preload />
             </Link>
           </div>
         </div>
