@@ -13,7 +13,7 @@ export default function FAQItem({ question, answer }: FAQItemProps) {
   const [showAnswer, setShowAnswer] = useState<boolean>(false);
 
   return (
-    <div className="bg-[#F4F1EA] p-4 w-[80%] max-w-[500px] rounded-[14px] gap-2 flex flex-col">
+    <div className="bg-[#F4F1EA] p-4 w-full md:max-w-[500px] rounded-[14px] gap-2 flex flex-col">
       <button
         onClick={() => setShowAnswer(!showAnswer)}
         className="flex flex-row justify-between w-full items-center">

@@ -210,94 +210,100 @@ export default function Home() {
       </section>
 
       <section id="steps" className="flex flex-col items-center">
-        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5 mb-10">
+        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center pb-5 mb-10">
           Three Easy Steps
         </h2>
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-6 gap-y-12">
-          <div className="relative w-full max-w-[350px] flex flex-col items-center">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
-              <Image
-                src={StepOne}
-                alt="The number one"
-                width={18}
-                height={22}
-              />
-            </div>
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-              <div className="flex flex-col h-[255px] justify-center z-10">
+        <div className="flex w-[100vw] max-w-[100vw] lg:justify-center p-6 gap-6 overflow-x-auto no-scrollbar">
+          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
+            <div className="relative w-full">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
                 <Image
-                  src={StepOneIllustration}
-                  alt="Three mice playing with a kite"
-                  height={255}
-                  placeholder="blur"
+                  src={StepOne}
+                  alt="The number one"
+                  width={18}
+                  height={22}
                 />
               </div>
-              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                You Share
-              </h2>
-              <p className="text-[1rem] text-[#242832] font-normal text-center">
-                <b>Add photos to your private album</b> throughout the month
-                whenever inspiration strikes. When you're ready, hit post—that's
-                it!
-              </p>
+              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
+                <div className="flex flex-col h-[255px] justify-center z-10">
+                  <Image
+                    src={StepOneIllustration}
+                    alt="Three mice playing with a kite"
+                    height={255}
+                    placeholder="blur"
+                  />
+                </div>
+                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                  You Share
+                </h2>
+                <p className="text-[1rem] text-[#242832] font-normal text-center">
+                  <b>Add photos to your private album</b> throughout the month
+                  whenever inspiration strikes. When you're ready, hit post—that's
+                  it!
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="relative w-full max-w-[350px] flex flex-col items-center">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
-              <Image
-                src={StepTwo}
-                alt="The number two"
-                width={26.61}
-                height={30.86}
-              />
-            </div>
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-              <div className="flex flex-col h-[255px] justify-center scale-x-[-1]">
+          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
+            <div className="relative w-full">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
                 <Image
-                  src={StepTwoIllustration}
-                  alt="A squirrel delivering a letter"
-                  height={255}
-                  placeholder="blur"
+                  src={StepTwo}
+                  alt="The number two"
+                  width={26.61}
+                  height={30.86}
                 />
               </div>
-              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                We Deliver
-              </h2>
-              <p className="text-[1rem] text-[#242832] font-normal text-center">
-                <b>Every month, your photos become</b> a professionally designed,
-                beautifully printed magazine
-                delivered right to the doors of your family and friends.
-              </p>
+              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
+                <div className="flex flex-col h-[255px] justify-center scale-x-[-1]">
+                  <Image
+                    src={StepTwoIllustration}
+                    alt="A squirrel delivering a letter"
+                    height={255}
+                    placeholder="blur"
+                  />
+                </div>
+                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                  We Deliver
+                </h2>
+                <p className="text-[1rem] text-[#242832] font-normal text-center">
+                  <b>Every month, your photos become</b> a professionally designed,
+                  beautifully printed magazine
+                  delivered right to the doors of your family and friends.
+                </p>
+              </div>
             </div>
           </div>
 
-          <div className="relative w-full max-w-[350px] flex flex-col items-center">
-            <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center">
-              <Image
-                src={StepThree}
-                alt="The number three"
-                width={22}
-                height={26}
-              />
-            </div>
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-              <div className="flex flex-col h-[255px] justify-center">
+          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
+            <div className="relative w-full">
+              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
                 <Image
-                  src={StepThreeIllustration}
-                  alt="A family of bears reading a magazine"
-                  height={255}
-                  placeholder="blur"
+                  src={StepThree}
+                  alt="The number three"
+                  width={22}
+                  height={26}
                 />
               </div>
-              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                Cherish Forever
-              </h2>
-              <p className="text-[1rem] text-[#242832] font-normal text-center">
-                <b>Grandparents enjoy it</b> with their morning coffee. Parents treasure their growing collection.
-                It becomes the mail that everyone looks forward to each month—physical proof
-                that family is never far away.
-              </p>
+              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
+                <div className="flex flex-col h-[255px] justify-center">
+                  <Image
+                    src={StepThreeIllustration}
+                    alt="A family of bears reading a magazine"
+                    height={255}
+                    placeholder="blur"
+                  />
+                </div>
+                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                  Cherish Forever
+                </h2>
+                <p className="text-[1rem] text-[#242832] font-normal text-center">
+                  <b>Grandparents enjoy it</b> with their morning coffee. Parents treasure their growing collection.
+                  It becomes the mail that everyone looks forward to each month—physical proof
+                  that family is never far away.
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -426,14 +432,15 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
-        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-10">
+      <section id="values" className="flex flex-col items-center">
+        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center mb-10 px-5">
           Why Families Choose Us
         </h2>
-        <div className="flex flex-wrap justify-center gap-6">
-          <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
+        <div className="flex w-[100vw] max-w-[100vw] lg:justify-center px-5 lg:px-8 xl:px-0 pt-[8px] gap-6 overflow-x-auto no-scrollbar">
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+                          bg-[#F4F1EA] rounded-4xl p-5
                           transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex flex-col h-[100px] justify-center">
+            <div className="flex h-[100px] justify-center">
               <Image
                 src={ValueCollaborateIllustration}
                 alt="A mouse using a phone"
@@ -441,16 +448,17 @@ export default function Home() {
               />
             </div>
             <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Unlimited Members
+              Unlimited<br/>Members
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
               As many members in your circle as you want, at no cost.
             </p>
           </div>
           
-          <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+                          bg-[#F4F1EA] rounded-4xl p-5
                           transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex flex-col h-[100px] justify-center">
+            <div className="flex h-[100px] justify-center">
               <Image
                 src={ValueQualityIllustration}
                 alt="A mouse reading a paper"
@@ -458,64 +466,65 @@ export default function Home() {
               />
             </div>
             <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Timeless Quality
+              Timeless<br/>Quality
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
               Premium prints that you can cherish for years to come.
             </p>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6">
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
-                            transition-transform transform hover:translate-y-[-8px]">
-              <div className="flex flex-col h-[100px] justify-center">
-                <Image
-                  src={ValuePrivacyIllustration}
-                  alt="A mouse kid running"
-                  className="max-w-[100px] max-h-[100px] object-contain"
-                />
-              </div>
-              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                Privacy First
-              </h2>
-              <p className="text-[1rem] text-[#242832] font-normal text-center">
-                All your photos are completely private and never shared.
-              </p>
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+                        bg-[#F4F1EA] rounded-4xl p-5
+                        transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex h-[100px] justify-center">
+              <Image
+                src={ValuePrivacyIllustration}
+                alt="A mouse kid running"
+                className="max-w-[100px] max-h-[100px] object-contain"
+              />
             </div>
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+              Privacy<br/>First
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center">
+              All your photos are completely private and never shared.
+            </p>
+          </div>
 
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
-                            transition-transform transform hover:translate-y-[-8px]">
-              <div className="flex flex-col h-[100px] justify-center">
-                <Image
-                  src={ValueSecurePaymentsIllustration}
-                  alt="An acorn"
-                  className="max-w-[80px] max-h-[80px] object-contain"
-                />
-              </div>
-              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                Secure Payments
-              </h2>
-              <p className="text-[1rem] text-[#242832] font-normal text-center">
-                We retain no card information for your security and peace of mind.
-              </p>
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+                        bg-[#F4F1EA] rounded-4xl p-5
+                        transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex h-[100px] justify-center">
+              <Image
+                src={ValueSecurePaymentsIllustration}
+                alt="An acorn"
+                className="max-w-[80px] max-h-[80px] object-contain self-center"
+              />
             </div>
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+              Secure<br/>Payments
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center">
+              We retain no card information for your peace of mind.
+            </p>
+          </div>
 
-            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center w-[200px]
-                            transition-transform transform hover:translate-y-[-8px]">
-              <div className="flex flex-col h-[100px] justify-center">
-                <Image
-                  src={ValueFreeShippingIllustration}
-                  alt="A paper airplane"
-                  className="max-w-[100px] max-h-[100px] object-contain"
-                />
-              </div>
-              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                Free Shipping
-              </h2>
-              <p className="text-[1rem] text-[#242832] font-normal text-center">
-                Shipping to whoever you want, anywhere in the USA, on us.
-              </p>
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+                        bg-[#F4F1EA] rounded-4xl p-5
+                        transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex h-[100px] justify-center">
+              <Image
+                src={ValueFreeShippingIllustration}
+                alt="A paper airplane"
+                className="max-w-[100px] max-h-[100px] object-contain"
+              />
             </div>
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+              Free<br/>Shipping
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center">
+              Send to anyone you want, anywhere in the USA, on us.
+            </p>
           </div>
         </div>
       </section>
@@ -593,7 +602,7 @@ export default function Home() {
             </section> */}
 
       <section className="flex flex-col w-full">
-        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto mb-5">
+        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center mb-5">
           Questions?
         </h2>
         <div className="flex flex-col gap-y-3 items-center">
