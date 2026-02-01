@@ -28,7 +28,7 @@ export default function Quiz() {
           <div className="mt-6 flex gap-3">
             <button
               onClick={() => setStarted(true)}
-              className="bg-[#C15F3C] text-white px-4 py-3 rounded-xl hover:bg-[#B05637] cursor-pointer"
+              className="bg-[#C15F3C] text-white px-4 py-3 rounded-xl hover:bg-[#89432B] active:bg-[#89432B] cursor-pointer"
             >
               Start quiz
             </button>

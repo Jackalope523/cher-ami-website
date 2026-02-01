@@ -47,7 +47,7 @@ export default function Home() {
       <Suspense>
         <Redirect />
       </Suspense>
-      <div className="hidden lg:block w-[100vw] h-full mt-[-60] mb-[-180]">
+      <div className="hidden lg:block w-[100vw] h-full mt-[-60] mb-[-160]">
         <Image
           src={DesktopHero}
           alt="An illustration of forest creatures watching a messenger pigeon fly away"
@@ -71,7 +71,7 @@ export default function Home() {
       </div>
       <section
         id="download"
-        className="flex flex-col lg:flex-row items-center justify-between w-full px-8 lg:mb-[-100]">
+        className="flex flex-col lg:flex-row items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
         <div className="flex flex-col">
           <div className="flex flex-col items-center lg:items-start gap-12">
             <TitleText />

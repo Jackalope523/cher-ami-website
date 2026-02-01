@@ -40,8 +40,8 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="flex flex-col w-full items-center gap-y-10 px-5 pb-5 bg-[#FCFBF8]">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-4xl ">
+          <footer className="flex flex-col w-full items-center gap-y-10 pb-5 bg-[#FCFBF8]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-[1200px] px-5 lg:px-13 xl:px-5">
               <div className="flex flex-col">
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                   Product
@@ -124,21 +124,23 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
-            <div className="bg-[#F4F1EA] rounded-xl w-full p-4 max-w-4xl ">
-              <Image
-                src={TitleImage}
-                alt="Cher Ami logo"
-                className="w-[143px] h-8 flex-none"
-                priority
-              />
-              <div className="border border-[#DEDBD5] my-4" />
-              <div className="flex flex-row justify-between">
-                <p className="text-[#868581]">
-                  © 2026 Hollow Inc. All rights reserved.
-                </p>
-                <p className="text-[#868581]">
-                  Made with ❤️ in the USA, Canada, and EU.
-                </p>
+            <div className="w-full max-w-[1200px] px-5 lg:px-13 xl:px-5">
+              <div className="w-full p-4 bg-[#F4F1EA] rounded-xl">
+                <Image
+                  src={TitleImage}
+                  alt="Cher Ami logo"
+                  className="w-[143px] h-8 flex-none"
+                  priority
+                />
+                <div className="border border-[#DEDBD5] my-4" />
+                <div className="flex flex-row justify-between">
+                  <p className="text-[#868581]">
+                    © 2026 Hollow Inc. All rights reserved.
+                  </p>
+                  <p className="text-[#868581]">
+                    Made with ❤️ in the USA, Canada, and EU.
+                  </p>
+                </div>
               </div>
             </div>
           </footer>

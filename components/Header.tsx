@@ -16,7 +16,7 @@ export default function Header() {
   return (
     <header className={`fixed w-full z-50 bg-[#FCFBF8]
       ${showMenu && 'shadow-md/35 shadow-[#868581]'}`}>
-      <div className="flex flex-row justify-between items-center w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 pt-5 pb-2">
+      <div className="flex flex-row justify-between items-center w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 lg:px-13 xl:px-5 pt-5 pb-2">
         <Link href={'/'}>
           <Image
             src={TitleImage}
@@ -36,7 +36,7 @@ export default function Header() {
           </Link>
           <Link
             href="/#download"
-            className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
+            className="bg-[#C15F3C] hover:bg-[#89432B] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl">
             Get Cher Ami
           </Link>
         </div>
@@ -44,7 +44,7 @@ export default function Header() {
           onClick={() => {
             setShowMenu(!showMenu);
           }}
-          className="sm:hidden bg-[#C15F3C] p-4 rounded-[14px] shadow-md/25 shadow-[#868581]">
+          className="sm:hidden bg-[#C15F3C] active:bg-[#89432B] p-4 rounded-[14px] shadow-md/25 shadow-[#868581]">
           <Image src={showMenu ? CloseIcon : MenuIcon } alt="Open menu" width={24} height={24} />
         </button>
       </div>
@@ -71,7 +71,7 @@ export default function Header() {
             onClick={() => {
               setShowMenu(false);
             }}
-            className="bg-[#C15F3C] text-[#FFFFFF] px-4 py-3 rounded-xl">
+            className="bg-[#C15F3C] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl">
             Get Cher Ami
           </Link>
           <div className="flex gap-10 pt-6 pb-2 px-4">
