@@ -12,7 +12,7 @@ export default function Quiz() {
   const [started, setStarted] = useState(false);
 
   return (
-    <div className="flex self-center items-center justify-center w-full min-h-[100vh] p-6 mt-[-60]">
+    <div className="flex self-center items-center justify-center w-full min-h-[100vh] p-6">
       {!started ? (
         <section className="w-xl bg-[#FEFEFD] rounded-2xl shadow-md p-8">
           <h1 className="text-[1.25rem] font-semibold text-[#242832]">Your Monthly Magazine They'll Love</h1>

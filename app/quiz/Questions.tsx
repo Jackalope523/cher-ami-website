@@ -78,13 +78,13 @@ export function Question2({ answers, setAnswer, onNext, onBack }: any) {
 }
 
 export function Question3({ answers, setAnswer, onNext }: any) {
-  const options = ["Just Myself", "With friends", "With family"];
+  const options = ["By myself", "With friends", "With family"];
   return (
-    <Question title="Would you create a Cher Ami alone or with others?">
+    <Question title="Would you create your Cher Ami by yourself or with others?">
       <Options
-      options={options}
-      setAnswer={(ans: string) => setAnswer({ who: ans })}
-      onNext={onNext}
+        options={options}
+        setAnswer={(ans: string) => setAnswer({ who: ans })}
+        onNext={onNext}
       />
     </Question>
   );
