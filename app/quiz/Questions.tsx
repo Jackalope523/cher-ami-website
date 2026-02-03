@@ -112,7 +112,7 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
     };
 
     try {
-      const res = await fetch('/api/welcome', {
+      const res = await fetch('/api/quiz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
