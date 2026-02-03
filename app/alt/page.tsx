@@ -56,30 +56,15 @@ export default function Home() {
       <Suspense>
         <Redirect />
       </Suspense>
-      <div className="hidden lg:block w-[100vw] h-full mt-[-60] mb-[-160]">
+      <div className="hidden">
         <Image
           src={DesktopHero}
           alt="An illustration of forest creatures watching a messenger pigeon fly away"
-          placeholder="blur"
         />
       </div>
-      <div className="hidden md:block lg:hidden w-[100vw] h-[50vh] mt-[-60] mb-[-120]">
-        <Image
-          src={TabletHero}
-          alt="An illustration of forest creatures"
-          placeholder="blur"
-          className="h-full object-contain"
-        />
-      </div>
-      <div className="md:hidden w-[50vw] h-full mt-[-30] mb-[-100] pb-16">
-        <Image
-          src={MobileHero}
-          alt="An illustration of a messenger pigeon"
-          placeholder="blur"
-        />
-      </div>
+
       <section
-        id="download"
+        id="landing"
         className="flex flex-col lg:flex-row items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
         <div className="flex flex-col">
           <div className="flex flex-col items-center lg:items-start gap-12">
@@ -95,21 +80,19 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="hidden lg:block transform -translate-y-1/6">
+        <div className="hidden lg:block flex flex-col gap-4 max-w-[30vw] text-center">
           <Image
-            src={Phone}
-            alt="A smartphone running the Cher Ami mobile app"
-            height={525}
-            width={255}
-            style={{ transform: 'rotate(2deg)' }}
+            src={MagazineShowcase}
+            alt="Magazine showcase"
           />
-          <Image
-            src={QRCode}
-            alt="A qr code to download the app"
-            height={242}
-            width={281}
-            className="hidden xl:block absolute bottom-1/10 right-4/5"
-          />
+          <Link
+            href="/example"
+            className="px-4 py-1.5 border-2 border-[#DEDBD5] rounded-[12px] shadow-md
+                        hover:bg-[#f6f4ee] active:bg-[#f6f4ee]
+                        hover:text-[#1b1e26] active:text-[#1b1e26]
+                        text-[1rem] text-[#242832]">
+              See an example
+          </Link>
         </div>
       </section>
 
