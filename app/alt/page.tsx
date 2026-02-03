@@ -37,6 +37,7 @@ import CarouselPhotoGirl from '@/public/carousel-photo-girl.webp';
 import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
 import CarouselVideoApp from '@/public/carousel-video-app.webp';
+import EmailCTA from '@/components/EmailCTA';
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
@@ -86,8 +87,11 @@ export default function Home() {
             <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
               Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love.
             </p>
-            <div className="flex flex-col md:flex-row items-center gap-4 p-4 border-2 border-[#DEDBD5] rounded-[24px]">
-              
+            <div className="flex flex-col gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
+              <p className="text-[1.25rem] text-[#242832] font-medium">
+                Start creating your first issue for FREE!
+              </p>
+              <EmailCTA />
             </div>
           </div>
         </div>
@@ -150,48 +154,15 @@ export default function Home() {
         />
       </section>
 
-      <section>
+      <section id="steps" className="flex flex-col items-center">
         <div className="mb-10">
-          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
-            Two Ways to Connect
+          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
+            Three Easy Steps
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            {
-              'Your family\'s moments shared just the way you want.'
-            }
+            Simple steps to sharing your daily joys!
           </p>
         </div>
-
-        <div className="hidden md:flex flex-row">
-          <Image
-              src={PhoneShowcase}
-              alt="A smartphone running the Cher Ami mobile app"
-              className="flex-5 w-full h-full max-h-[90vh] object-contain"
-          />
-          <Image
-              src={MagazineShowcase}
-              alt="The Cher Ami magazine"
-              className="flex-7 w-full h-full max-h-[90vh] object-contain"
-          />
-        </div>
-        <div className="md:hidden flex flex-col gap-10">
-          <Image
-              src={MobilePhoneShowcase}
-              alt="A smartphone running the Cher Ami mobile app"
-              className="w-full h-full max-h-[90vh] object-contain"
-          />
-          <Image
-              src={MobileMagazineShowcase}
-              alt="The Cher Ami magazine"
-              className="w-full h-full max-h-[90vh] object-contain"
-          />
-        </div>
-      </section>
-
-      <section id="steps" className="flex flex-col items-center">
-        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center pb-5 mb-10">
-          Three Easy Steps
-        </h2>
         <div className="flex w-[100vw] max-w-[100vw] lg:justify-center p-6 gap-6 overflow-x-auto no-scrollbar">
           <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
             <div className="relative w-full">

@@ -18,8 +18,13 @@ export function Question({ title, description, children }: QuestionProps) {
   );
 }
 
+type Option = {
+  tag: string;
+  text: string;
+}
+
 type OptionsProps = {
-  options: string[];
+  options: Option[];
   setAnswer: (answer: string) => any;
   onNext: () => any;
 };
@@ -27,13 +32,13 @@ type OptionsProps = {
 function Options({options, setAnswer, onNext}: OptionsProps) {
   return (
     <div className="grid gap-3">
-      {options.map((o: string) => (
+      {options.map((o: Option) => (
         <button
-          key={o}
-          onClick={() => { setAnswer(o); onNext(); }}
+          key={o.tag}
+          onClick={() => { setAnswer(o.tag); onNext(); }}
           className="text-left px-4 py-3 rounded-lg border-1 border-[#242832] text-[#242832] hover:shadow-md active:bg-[#ECEDEF] cursor-pointer"
         >
-          {o}
+          {o.text}
         </button>
       ))}
       </div>
@@ -42,7 +47,14 @@ function Options({options, setAnswer, onNext}: OptionsProps) {
 
 
 export function Question1({ answers, setAnswer, onNext }: any) {
-  const options = ["Grandparents", "Family", "Friends", "I'd like to receive my own photos", "I'd like to receive someone else's photos"];
+  const options = [
+    { tag: "grandparents", text: "Grandparents" },
+    { tag: "family", text: "Family" },
+    { tag: "friends", text: "Friends" },
+    { tag: "self", text: "I'd like to receive my own photos" },
+    { tag: "is_recipient", text: "I'd like to receive someone else's photos" },
+  ];
+
   return (
     <Question title="Who would you like to receive the photos?" description="Pick the main recipient — this helps tailor the experience.">
       <Options
@@ -55,17 +67,17 @@ export function Question1({ answers, setAnswer, onNext }: any) {
 }
 export function Question2({ answers, setAnswer, onNext, onBack }: any) {
   const options = [
-    "Long distance — they live far away",
-    "I love physical albums / coffee-table books"
+    { tag: "distance", text: "Long distance — they live far away" },
+    { tag: "physical", text: "I love physical albums / coffee-table books" }
   ];
 
-  if (answers.receiver === "I'd like to receive my own photos") {
+  if (answers.receiver === "self") {
     // skip this question automatically
     setTimeout(onNext, 0);
     return null;
   }
 
-  const title = answers.receiver === "I'd like to receive someone else's photos" ? "Why do you want to receive a Cher Ami?" : "Why do you want to send a Cher Ami?";
+  const title = answers.receiver === "is_recipient" ? "Why do you want to receive a Cher Ami?" : "Why do you want to send a Cher Ami?";
 
   return (
     <Question title={title} description="Choose what matters most.">
@@ -79,9 +91,13 @@ export function Question2({ answers, setAnswer, onNext, onBack }: any) {
 }
 
 export function Question3({ answers, setAnswer, onNext }: any) {
-  const options = ["With family", "With friends","By myself"];
+  const options = [
+    { tag: "family", text: "With family" },
+    { tag: "friends", text: "With friends" },
+    { tag: "myself", text: "By myself" }
+  ];
 
-  if (answers.receiver === "I'd like to receive someone else's photos") {
+  if (answers.receiver === "self") {
     // skip this question automatically
     setTimeout(onNext, 0);
     return null;
