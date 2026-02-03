@@ -102,7 +102,9 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  const submit = () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     const payload = {
       ...answers,
       name,
@@ -110,13 +112,15 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
     };
 
     try {
-      fetch('/api/quiz', {
+      const res = await fetch('/api/quiz', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(payload),
       });
+
+      if (!res.ok) throw new Error('Failed to send email');
     } catch (err) {
       console.error(err);
     }
@@ -126,7 +130,7 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
 
   return (
     <Question title="Almost done — enter your name & email">
-      <div className="space-y-3">
+      <form className="space-y-3" onSubmit={handleSubmit}>
         <input
           name="name"
           value={name}
@@ -145,14 +149,14 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
         />
         <div className="flex gap-3">
           <button
-            onClick={submit}
+            type="submit"
             className="flex-1 bg-[#C15F3C] text-white px-4 py-3 rounded-xl hover:bg-[#B05637] active:bg-[#B05637] cursor-pointer"
           >
             Continue to site
           </button>
         </div>
         <p className="text-[0.75rem] text-[#676D7B]">We only use your email to help you get started. You can unsubscribe anytime.</p>
-      </div>
+      </form>
     </Question>
   );
 }
