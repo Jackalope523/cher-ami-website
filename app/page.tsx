@@ -30,6 +30,14 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import DynamicCTA from '@/components/DynamicCTA';
 
+import CarouselPhotoParents from '@/public/carousel-photo-parents.webp';
+import CarouselPhotoParentHoldingUp from '@/public/carousel-photo-parent-holding-up.webp';
+import CarouselPhotoGirl from '@/public/carousel-photo-girl.webp';
+//import CarouselPhotoLeo from '@/public/carousel-photo-leo.webp';
+import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
+import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
+import CarouselVideoApp from '@/public/carousel-video-app.webp';
+
 export const metadata: Metadata = {
   title: 'Cher Ami',
   description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
@@ -105,71 +113,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* <section className="flex flex-row gap-x-10 overflow-x-auto px-40">
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-[32]"
-          />
-          <Image
-            src={Placeholder}
-            alt=""
-            width={408}
-            height={510}
-            className="rounded-4xl"
-          />
-        </section> */}
+      <section
+        id="carousel"
+        className="flex flex-row w-[100vw] gap-5 px-5 lg:px-12 xl:px-44 overflow-x-auto no-scrollbar">
+        <Image
+          src={CarouselPhotoParents}
+          alt=""
+          className="min-w-[256px] h-[320px] md:min-w-[408px] md:h-[510px]
+                    rounded-[32] object-cover"
+        />
+        <Image
+          src={CarouselVideoMagazine}
+          alt=""
+          className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
+                    rounded-[32] object-cover"
+        />
+        <Image
+          src={CarouselPhotoGirl}
+          alt=""
+          className="min-w-[256px] h-[320px] md:min-w-[408px] md:h-[510px]
+                    rounded-[32] object-cover"
+        />
+        <Image
+          src={CarouselVideoGirl}
+          alt=""
+          className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
+                    rounded-[32] object-cover"
+        />
+        <Image
+          src={CarouselPhotoParentHoldingUp}
+          alt=""
+          className="min-w-[256px] h-[320px] md:min-w-[408px] md:h-[510px]
+                    rounded-[32] object-cover"
+        />
+        <Image
+          src={CarouselVideoApp}
+          alt=""
+          className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
+                    rounded-[32] object-cover"
+        />
+      </section>
 
       <section>
         <div className="mb-10">
