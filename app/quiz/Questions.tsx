@@ -112,7 +112,7 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
     };
 
     try {
-      const res = await fetch('/api/quiz', {
+      const res = await fetch('/api/welcome', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -120,7 +120,7 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error('Failed to send email');
+      if (!res.ok) throw new Error('Failed to submit');
     } catch (err) {
       console.error(err);
     }
