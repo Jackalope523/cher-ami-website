@@ -7,18 +7,27 @@ export async function POST(request: NextRequest) {
 
   const answers: QuizAnswers = await request.json();
   
-  const response = await fetch("https://api.onesignal.com/notifications?c=email", {
+  const response = await fetch(`https://api.onesignal.com/apps/${ONE_SIGNAL_APP_ID}/users`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: `key ${ONE_SIGNAL_API_KEY}`,
     },
     body: JSON.stringify({
-      app_id: ONE_SIGNAL_APP_ID,
-      email_from_address: "hello@thecherami.com",
-      email_to: ["hello@thecherami.com"],
-      email_subject: 'Quiz Submission',
-      email_body: `<p>${JSON.stringify(answers)}</p>`,
+      properties: {
+        tags: {
+          'q_name': answers.name,
+          'q_reason': answers.reason,
+          'q_receiver': answers.receiver,
+          'q_circle': answers.who,
+        }
+      },
+      subscriptions: [
+        {
+          type: 'Email',
+          token: answers.email,
+          enabled: true,
+        }
+      ]
     }),
   });
 
