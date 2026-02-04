@@ -35,7 +35,7 @@ export default function Start() {
             Start creating your first magazine for <span className="text-[#C15F3C]">free</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
-            Sign up with your email address and we'll send you instructions for how to get started.
+            Sign up with your email address and we'll send you instructions for how to get started!
           </p>
           <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
             <Suspense>
