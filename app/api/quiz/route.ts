@@ -15,6 +15,7 @@ export async function POST(request: NextRequest) {
     body: JSON.stringify({
       properties: {
         tags: {
+          'entry': 'quiz',
           'q_name': answers.name,
           'q_reason': answers.reason,
           'q_receiver': answers.receiver,
