@@ -2,6 +2,8 @@
 
 import { usePlausible } from 'next-plausible';
 import { useEffect, useState } from 'react';
+import ArrowIcon from '@/public/arrow.svg';
+import Image from 'next/image';
 
 
 export default function EmailCTA() {
@@ -55,10 +57,11 @@ export default function EmailCTA() {
           />
           <button
             type="submit"
-            className=" bg-[#C15F3C] text-white px-4 py-1.5 rounded-[12px]
+            className="bg-[#C15F3C] px-3 sm:px-4 py-1.5 rounded-[12px]
                       hover:bg-[#B05637] active:bg-[#B05637] cursor-pointer"
           >
-            Continue
+            <Image src={ArrowIcon} alt="arrow icon" className="block sm:hidden" />
+            <p className="hidden sm:block text-white">Continue</p>
           </button>
         </div>
         <p className="text-[0.75rem] text-[#676D7B]">We only use your email to help you get started. You can unsubscribe anytime.</p>

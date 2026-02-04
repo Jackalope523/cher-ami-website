@@ -52,7 +52,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 md:gap-36 py-18">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 md:gap-36 pt-10 pb-18">
       <Suspense>
         <Redirect />
       </Suspense>
@@ -73,8 +73,8 @@ export default function Home() {
               Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love.
             </p>
             <div className="flex flex-col gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
-              <p className="text-[1.25rem] text-[#242832] font-medium">
-                Start creating your first issue for FREE!
+              <p className="text-[1.1rem] sm:text-[1.25rem] text-[#242832] font-medium">
+                Start creating your first issue for <span className="text-[#C15F3C]">FREE!</span>
               </p>
               <EmailCTA />
             </div>
