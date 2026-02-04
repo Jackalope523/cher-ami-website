@@ -6,7 +6,7 @@ import Chevron from '../public/chevron.svg';
 
 interface FAQItemProps {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 }
 
 export default function FAQItem({ question, answer }: FAQItemProps) {

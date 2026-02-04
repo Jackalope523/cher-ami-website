@@ -533,7 +533,9 @@ export default function Home() {
           <FAQItem
             question={'How do I create a new account?'}
             answer={
-              'Download the official Cher Ami app on your iOS or Android device and follow the sign-up instructions!'
+              <span>
+                <a href="/start" className="underline">Get started here</a> and we'll send you the sign-up instructions!
+              </span>
             }
           />
           <FAQItem
