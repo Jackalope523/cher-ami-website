@@ -30,7 +30,7 @@ export default function CyclingTextHeader() {
       Your Cherished Memories Mailed to{' '}
       <span className="inline-block relative align-top">
         <span
-          className="text-[#C15F3C] min-w-[320px] absolute left-1/2 transform -translate-x-1/2 sm:text-left transition-all duration-200"
+          className="text-[#C15F3C] min-w-[320px] absolute left-1/2 transform -translate-x-1/2 md:text-left transition-all duration-200"
           style={{
             transform: isAnimating ? 'translateY(10px)' : 'translateY(0)',
             opacity: isAnimating ? 0 : 1,
