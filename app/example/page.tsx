@@ -23,7 +23,7 @@ export default function Example() {
 
       <div className="flex flex-col items-center gap-10">
           <p className="text-[1rem] text-[#242832] font-semibold text-center lg:text-left max-w-[500px]">
-            Like what you see?
+            Ready to send your own?
           </p>
           <div className="flex flex-col w-fit gap-4 justify-center text-center">
             <Link
