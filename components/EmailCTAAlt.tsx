@@ -2,12 +2,12 @@
 
 import { usePlausible } from 'next-plausible';
 import { useEffect, useState } from 'react';
-import SendIcon from '@/public/send.svg';
+import ArrowIcon from '@/public/arrow.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 
-export default function EmailCTA() {
+export default function EmailCTAAlt() {
   const plausible = usePlausible();
   const searchParams = useSearchParams();
   
@@ -48,7 +48,7 @@ export default function EmailCTA() {
 
   if (submitted) {
     return (
-      <p className="text-[1rem] text-[#C15F3C] font-medium text-center">
+      <p className="text-[1rem] text-[#C15F3C] font-medium">
         Check your inbox!
       </p>
     );
@@ -56,24 +56,23 @@ export default function EmailCTA() {
   else {
     return (
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-row gap-3">
           <input
             name="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            placeholder="Email Address"
-            className="w-full px-4 py-1.5 md:py-2 rounded-[12px] border-2 border-[#DEDBD5] text-[#868581]"
+            placeholder="Email"
+            className="w-full px-4 py-1.5 rounded-[12px] border-2 border-[#DEDBD5] text-[#868581]"
             type="email"
             required
           />
           <button
             type="submit"
-            className="flex flex-row gap-1 px-3 px-4 py-1.5 md:py-2
-                      bg-[#C15F3C] hover:bg-[#B05637] active:bg-[#B05637] rounded-[12px] cursor-pointer
-                      text-white justify-center"
+            className="bg-[#C15F3C] px-3 sm:px-4 py-1.5 rounded-[12px]
+                      hover:bg-[#B05637] active:bg-[#B05637] cursor-pointer"
           >
-              Sign up
-              <Image src={SendIcon} alt="arrow icon" />
+            <Image src={ArrowIcon} alt="arrow icon" className="block sm:hidden" />
+            <p className="hidden sm:block text-white">Continue</p>
           </button>
         </div>
         <p className="text-[0.75rem] text-[#676D7B]">We only use your email to help you get started. You can unsubscribe anytime.</p>

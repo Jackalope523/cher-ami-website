@@ -46,10 +46,10 @@ export default function Header() {
             Help
           </Link>
           <Link
-            href="/#download"
+            href="/start"
             className="bg-[#C15F3C] hover:bg-[#89432B] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl"
             onClick={() => plausible('Header CTA Pressed')}>
-            Get Cher Ami
+            Get Started
           </Link>
         </div>
         <button
@@ -79,13 +79,13 @@ export default function Header() {
             Help
           </Link>
           <Link
-            href="/#download"
+            href="/start"
             onClick={() => {
               setShowMenu(false);
               plausible('Header CTA Pressed');
             }}
             className="bg-[#C15F3C] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl">
-            Get Cher Ami
+            Get Started
           </Link>
           <div className="flex gap-10 pt-6 pb-2 px-4">
             <Link

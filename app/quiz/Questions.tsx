@@ -141,7 +141,7 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
       console.error(err);
     }
 
-    window.location.href = `https://thecherami.com/?utm_source=quiz_completed`;
+    window.location.href = `https://thecherami.com/?utm_source=quiz_completed&submitted=true`;
   };
 
   return (
@@ -162,6 +162,7 @@ export function FinalStep({ answers, setAnswer, onNext, onBack }: any) {
           placeholder="Email (we’ll send a quick welcome)"
           className="w-full px-4 py-3 rounded-lg border-1 border-[#242832] text-[#242832]"
           type="email"
+          required
         />
         <div className="flex gap-3">
           <button

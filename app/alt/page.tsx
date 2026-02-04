@@ -1,13 +1,6 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
-import TabletHero from '@/public/hero-tablet.webp';
-import MobileHero from '@/public/mail-pigeon.png';
-import Phone from '@/public/phone.webp';
-import QRCode from '@/public/scan-to-download.png';
-import PhoneShowcase from '@/public/showcase-app.webp';
 import MagazineShowcase from '@/public/showcase-magazine.webp';
-import MobilePhoneShowcase from '@/public/showcase-app-mobile.webp';
-import MobileMagazineShowcase from '@/public/showcase-magazine-mobile.webp';
 import StepOne from '@/public/step-one.svg';
 import StepTwo from '@/public/step-two.svg';
 import StepThree from '@/public/step-three.svg';
@@ -22,13 +15,12 @@ import ValueFreeShippingIllustration from '@/public/value-shipping.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
 import FAQItem from '@/components/FAQItem';
-import CTA from '@/components/CTA';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
 import TitleText from '@/components/TitleText';
 import Link from 'next/link';
+import EmailCTAAlt from '@/components/EmailCTAAlt';
 import type { Metadata } from 'next';
-import DynamicCTA from '@/components/DynamicCTA';
 
 import CarouselPhotoParents from '@/public/carousel-photo-parents.webp';
 import CarouselPhotoParentHoldingUp from '@/public/carousel-photo-parent-holding-up.webp';
@@ -37,7 +29,6 @@ import CarouselPhotoGirl from '@/public/carousel-photo-girl.webp';
 import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
 import CarouselVideoApp from '@/public/carousel-video-app.webp';
-import EmailCTA from '@/components/EmailCTA';
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
@@ -46,7 +37,7 @@ export const metadata: Metadata = {
     noimageindex: true,
   },
   alternates: {
-    canonical: 'https://thecherami.com'
+    canonical: 'https://thecherami.com/alt'
   }
 };
 
@@ -56,7 +47,7 @@ export default function Home() {
       <Suspense>
         <Redirect />
       </Suspense>
-      <div className="hidden">
+      <div className="hidden"> {/* Don't remove, for embedded links */}
         <Image
           src={DesktopHero}
           alt="An illustration of forest creatures watching a messenger pigeon fly away"
@@ -76,24 +67,24 @@ export default function Home() {
               <p className="text-[1.1rem] sm:text-[1.25rem] text-[#242832] font-medium">
                 Start creating your first issue for <span className="text-[#C15F3C]">FREE!</span>
               </p>
-              <EmailCTA />
+              <EmailCTAAlt />
             </div>
           </div>
         </div>
-        <div className="hidden lg:block flex flex-col gap-4 max-w-[30vw] text-center">
+        <Link
+          href="/example"
+          className="hidden lg:block flex flex-col gap-4 max-w-[30vw] text-center hover:opacity-75 active:opacity-75">
           <Image
             src={MagazineShowcase}
             alt="Magazine showcase"
           />
-          <Link
-            href="/example"
-            className="px-4 py-1.5 border-2 border-[#DEDBD5] rounded-[12px] shadow-md
-                        hover:bg-[#f6f4ee] active:bg-[#f6f4ee]
-                        hover:text-[#1b1e26] active:text-[#1b1e26]
-                        text-[1rem] text-[#242832]">
-              See an example
-          </Link>
-        </div>
+          <div className="flex w-full justify-center">
+            <p className="w-fit px-4 py-1.5 border-2 border-[#DEDBD5] rounded-[12px] shadow-md
+                          text-[1rem] text-[#242832]">
+                See an example
+            </p>
+          </div>
+        </Link>
       </section>
 
       <section

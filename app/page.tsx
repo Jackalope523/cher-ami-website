@@ -1,13 +1,6 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
-import TabletHero from '@/public/hero-tablet.webp';
-import MobileHero from '@/public/mail-pigeon.png';
-import Phone from '@/public/phone.webp';
-import QRCode from '@/public/scan-to-download.png';
-import PhoneShowcase from '@/public/showcase-app.webp';
-import MagazineShowcase from '@/public/showcase-magazine.webp';
-import MobilePhoneShowcase from '@/public/showcase-app-mobile.webp';
-import MobileMagazineShowcase from '@/public/showcase-magazine-mobile.webp';
+import HeroImage from '@/public/hero-parents.webp';
 import StepOne from '@/public/step-one.svg';
 import StepTwo from '@/public/step-two.svg';
 import StepThree from '@/public/step-three.svg';
@@ -22,13 +15,12 @@ import ValueFreeShippingIllustration from '@/public/value-shipping.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
 import FAQItem from '@/components/FAQItem';
-import CTA from '@/components/CTA';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
 import TitleText from '@/components/TitleText';
 import Link from 'next/link';
+import EmailCTAAlt from '@/components/EmailCTAAlt';
 import type { Metadata } from 'next';
-import DynamicCTA from '@/components/DynamicCTA';
 
 import CarouselPhotoParents from '@/public/carousel-photo-parents.webp';
 import CarouselPhotoParentHoldingUp from '@/public/carousel-photo-parent-holding-up.webp';
@@ -51,65 +43,47 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 md:gap-36 py-18">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-16 md:gap-36 pt-2 pb-18">
       <Suspense>
         <Redirect />
       </Suspense>
-      <div className="hidden lg:block w-[100vw] h-full mt-[-60] mb-[-160]">
+      <div className="hidden"> {/* Don't remove, for embedded links */}
         <Image
           src={DesktopHero}
           alt="An illustration of forest creatures watching a messenger pigeon fly away"
-          placeholder="blur"
         />
       </div>
-      <div className="hidden md:block lg:hidden w-[100vw] h-[50vh] mt-[-60] mb-[-120]">
-        <Image
-          src={TabletHero}
-          alt="An illustration of forest creatures"
-          placeholder="blur"
-          className="h-full object-contain"
-        />
-      </div>
-      <div className="md:hidden w-[50vw] h-full mt-[-30] mb-[-100] pb-16">
-        <Image
-          src={MobileHero}
-          alt="An illustration of a messenger pigeon"
-          placeholder="blur"
-        />
-      </div>
+
       <section
-        id="download"
-        className="flex flex-col lg:flex-row items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
-        <div className="flex flex-col">
-          <div className="flex flex-col items-center lg:items-start gap-12">
-            <TitleText />
-            <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-              Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love.
-              <br /><br />
-              <span className="text-[1rem] text-[#242832] font-semibold text-center lg:text-left max-w-[500px]">
-                Available on iOS and Android.
-              </span>
-            </p>
-            <div className="flex flex-col md:flex-row items-center gap-4 p-4 border-2 border-[#DEDBD5] rounded-[24px]">
-              <DynamicCTA />
-            </div>
-          </div>
+        id="landing"
+        className="flex flex-col lg:flex-row-reverse items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
+        <div className="flex flex-col w-[100vw] lg:max-w-[30vw] pb-4">
+          <Image
+            src={HeroImage}
+            alt="Parents reading a Cher Ami"
+            className="h-[50vw] md:max-lg:h-[45vh] object-cover lg:rounded-b-[32]"
+            priority
+          />
         </div>
-        <div className="hidden lg:block transform -translate-y-1/6">
-          <Image
-            src={Phone}
-            alt="A smartphone running the Cher Ami mobile app"
-            height={525}
-            width={255}
-            style={{ transform: 'rotate(2deg)' }}
-          />
-          <Image
-            src={QRCode}
-            alt="A qr code to download the app"
-            height={242}
-            width={281}
-            className="hidden xl:block absolute bottom-1/10 right-4/5"
-          />
+        <div className="flex flex-col items-center lg:items-start gap-10">
+          <TitleText />
+          <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
+            Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love.
+          </p>
+          <div className="flex flex-col w-fit gap-4 justify-center text-center">
+            <Link
+              href="/start"
+              className="flex px-6 py-3 bg-[#C15F3C] rounded-[12px] shadow-md
+                          text-[1rem] text-white justify-center">
+                Start for free!
+            </Link>
+            <Link
+              href="/example"
+              className="flex px-6 py-3 border-2 border-[#C15F3C] rounded-[12px] shadow-md
+                          text-[1rem] text-[#C15F3C]">
+                View an example magazine
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -154,48 +128,15 @@ export default function Home() {
         />
       </section>
 
-      <section>
+      <section id="steps" className="flex flex-col items-center">
         <div className="mb-10">
-          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto pb-5">
-            Two Ways to Connect
+          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
+            Three Easy Steps
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            {
-              'Your family\'s moments shared just the way you want.'
-            }
+            Simple steps to sharing your daily joys!
           </p>
         </div>
-
-        <div className="hidden md:flex flex-row">
-          <Image
-              src={PhoneShowcase}
-              alt="A smartphone running the Cher Ami mobile app"
-              className="flex-5 w-full h-full max-h-[90vh] object-contain"
-          />
-          <Image
-              src={MagazineShowcase}
-              alt="The Cher Ami magazine"
-              className="flex-7 w-full h-full max-h-[90vh] object-contain"
-          />
-        </div>
-        <div className="md:hidden flex flex-col gap-10">
-          <Image
-              src={MobilePhoneShowcase}
-              alt="A smartphone running the Cher Ami mobile app"
-              className="w-full h-full max-h-[90vh] object-contain"
-          />
-          <Image
-              src={MobileMagazineShowcase}
-              alt="The Cher Ami magazine"
-              className="w-full h-full max-h-[90vh] object-contain"
-          />
-        </div>
-      </section>
-
-      <section id="steps" className="flex flex-col items-center">
-        <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center pb-5 mb-10">
-          Three Easy Steps
-        </h2>
         <div className="flex w-[100vw] max-w-[100vw] lg:justify-center p-6 gap-6 overflow-x-auto no-scrollbar">
           <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
             <div className="relative w-full">
@@ -292,13 +233,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section>
+      <section id="options">
         <div className="mb-10">
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
             Options for Everyone
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            Cancel whenever, billed only when we print and ship.
+            No long-term commitment,<br/>billed only when we print and ship.
           </p>
         </div>
 
@@ -310,7 +251,7 @@ export default function Home() {
               </h3>
             </div>
             <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA] w-full">
-              <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
+              <h3 className="text-[2.5rem] text-[#242832] font-semibold my-4">
                 FREE
               </h3>
               <div className="flex flex-col">
@@ -353,10 +294,10 @@ export default function Home() {
               </h3>
             </div>
             <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C] w-full">
-              <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
+              <h3 className="text-[2.5rem] text-[#242832] font-semibold my-4">
                 $12.99
-                <span className="absolute transform -translate-y-[-2rem] text-[1rem] text-[#676d7b] font-normal">
-                  /month
+                <span className="absolute transform -translate-y-[-1.6rem] text-[0.9rem] text-[#676d7b] font-normal">
+                  /magazine
                 </span>
               </h3>
               <div className="flex flex-col">
