@@ -3,6 +3,7 @@ import Magazine from '@/public/magazine.webp';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import EmailCTA from '@/components/EmailCTA';
+import { Suspense } from 'react';
 
 
 export const metadata: Metadata = {
@@ -37,7 +38,9 @@ export default function Start() {
             Sign up with your email address and we'll send you instructions for how to get started.
           </p>
           <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
-            <EmailCTA />
+            <Suspense>
+              <EmailCTA />
+            </Suspense>
           </div>
         </div>
       </section>

@@ -19,7 +19,6 @@ import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
 import TitleText from '@/components/TitleText';
 import Link from 'next/link';
-import EmailCTAAlt from '@/components/EmailCTAAlt';
 import type { Metadata } from 'next';
 
 import CarouselPhotoParents from '@/public/carousel-photo-parents.webp';

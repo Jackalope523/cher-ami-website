@@ -67,7 +67,9 @@ export default function Home() {
               <p className="text-[1.1rem] sm:text-[1.25rem] text-[#242832] font-medium">
                 Start creating your first issue for <span className="text-[#C15F3C]">FREE!</span>
               </p>
-              <EmailCTAAlt />
+              <Suspense>
+                <EmailCTAAlt />
+              </Suspense>
             </div>
           </div>
         </div>
