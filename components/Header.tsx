@@ -9,14 +9,16 @@ import CloseIcon from '@/public/x-white.svg';
 import FacebookIcon from '@/public/facebook.svg';
 import InstagramIcon from '@/public/instagram.svg';
 import TikTokIcon from '@/public/tiktok.svg';
+import { usePlausible } from 'next-plausible';
 
 export default function Header() {
+  const plausible = usePlausible();
   const [showMenu, setShowMenu] = useState<boolean>(false);
 
   return (
     <header className={`fixed w-full z-50 bg-[#FCFBF8]
       ${showMenu && 'shadow-md/35 shadow-[#868581]'}`}>
-      <div className="flex flex-row justify-between items-center w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 lg:px-13 xl:px-5 pt-5 pb-2">
+      <div className="flex flex-row justify-between items-center w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 lg:px-13 xl:px-5 pt-2 lg:pt-5 pb-2">
         <Link href={'/'}>
           <Image
             src={TitleImage}
@@ -45,7 +47,8 @@ export default function Header() {
           </Link>
           <Link
             href="/#download"
-            className="bg-[#C15F3C] hover:bg-[#89432B] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl">
+            className="bg-[#C15F3C] hover:bg-[#89432B] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl"
+            onClick={() => plausible('Header CTA Pressed')}>
             Get Cher Ami
           </Link>
         </div>
@@ -79,6 +82,7 @@ export default function Header() {
             href="/#download"
             onClick={() => {
               setShowMenu(false);
+              plausible('Header CTA Pressed');
             }}
             className="bg-[#C15F3C] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl">
             Get Cher Ami
