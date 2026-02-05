@@ -25,7 +25,6 @@ import type { Metadata } from 'next';
 import CarouselPhotoParents from '@/public/carousel-photo-parents.webp';
 import CarouselPhotoParentHoldingUp from '@/public/carousel-photo-parent-holding-up.webp';
 import CarouselPhotoGirl from '@/public/carousel-photo-girl.webp';
-//import CarouselPhotoLeo from '@/public/carousel-photo-leo.webp';
 import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
 import CarouselVideoApp from '@/public/carousel-video-app.webp';
