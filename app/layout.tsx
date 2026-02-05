@@ -99,14 +99,14 @@ export default function RootLayout({
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                   Legal
                 </h3>
+                <Link href="/legal" className="text-[#B05637] py-2">
+                  Legal Center
+                </Link>
                 <Link href="/legal/privacy" className="text-[#B05637] py-2">
                   Privacy Policy
                 </Link>
                 <Link href="/legal/terms" className="text-[#B05637] py-2">
                   Terms of Service
-                </Link>
-                <Link href="/legal/return" className="text-[#B05637] py-2">
-                  Return Policy
                 </Link>
                 <Link href="#" className="text-[#B05637] py-2 termly-display-preferences">
                   Consent Preferences

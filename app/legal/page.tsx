@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Lock from '@/public/lock.svg';
 import Handshake from '@/public/handshake.svg';
 import Undo from '@/public/undo.svg';
+import Cookie from '@/public/undo.svg';
+import Shipping from '@/public/truck.svg';
 import Arrow from '@/public/arrow-up-right.svg';
 import Link from 'next/link';
 import LinkCard from '@/components/LinkCard';
@@ -26,19 +28,31 @@ export default function Legal() {
         <LinkCard
           href="/legal/privacy"
           imageSource={Lock}
-          alt={'Go to general help'}
+          alt={'privacy policy icon'}
           title={'Privacy Policy'}
         />
         <LinkCard
           href="/legal/terms"
           imageSource={Handshake}
-          alt={'Go to account help'}
+          alt={'terms and conditions icon'}
           title={'Terms and Conditions'}
+        />
+        <LinkCard
+          href="/legal/cookies"
+          imageSource={Undo}
+          alt={'cookie policy icon'}
+          title={'Cookie Policy'}
+        />
+        <LinkCard
+          href="/legal/shipping"
+          imageSource={Shipping}
+          alt={'shipping policy icon'}
+          title={'Shipping Policy'}
         />
         <LinkCard
           href="/legal/return"
           imageSource={Undo}
-          alt={'Go to security and privacy help'}
+          alt={'return policy icon'}
           title={'Return Policy'}
         />
       </div>
