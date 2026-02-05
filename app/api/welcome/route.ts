@@ -4,7 +4,15 @@ export async function POST(request: NextRequest) {
   const ONE_SIGNAL_API_KEY = process.env.ONE_SIGNAL_API_KEY;
   const ONE_SIGNAL_APP_ID = process.env.ONE_SIGNAL_APP_ID;
 
-  const { email } = await request.json();
+  const { email, military } = await request.json();
+
+  var tags: any = {
+    'entry': 'web',
+  }
+
+  if (military) {
+    tags['military'] = '1';
+  }
   
   const response = await fetch(`https://api.onesignal.com/apps/${ONE_SIGNAL_APP_ID}/users`, {
     method: 'POST',
@@ -13,7 +21,7 @@ export async function POST(request: NextRequest) {
     },
     body: JSON.stringify({
       properties: {
-        tags: { 'entry': 'web' }
+        tags
       },
       subscriptions: [
         {

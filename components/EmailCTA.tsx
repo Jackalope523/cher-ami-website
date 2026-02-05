@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
 type Props = {
-  theme?: 'default' | 'military';
+  variant?: 'default' | 'military';
 }
 
 type ThemeVariantType = keyof typeof themeVariants;
@@ -19,9 +19,9 @@ const themeVariants = {
   militaryButton: 'bg-[#5c8f41] hover:bg-[#476f32] active:bg-[#476f32]'
 }
 
-export default function EmailCTA({ theme = 'default' }: Props) {
-  const textTheme: ThemeVariantType = theme === 'military' ? 'militaryText' : 'defaultText';
-  const buttonTheme: ThemeVariantType = theme === 'military' ? 'militaryButton' : 'defaultButton';
+export default function EmailCTA({ variant = 'default' }: Props) {
+  const textTheme: ThemeVariantType = variant === 'military' ? 'militaryText' : 'defaultText';
+  const buttonTheme: ThemeVariantType = variant === 'military' ? 'militaryButton' : 'defaultButton';
   
   const plausible = usePlausible();
   const searchParams = useSearchParams();
@@ -41,6 +41,7 @@ export default function EmailCTA({ theme = 'default' }: Props) {
 
     const payload = {
       email,
+      military: variant === 'military'
     };
 
     try {

@@ -41,7 +41,7 @@ export default function Military() {
           </p>
           <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#5c8f41] rounded-[24px] shadow-lg">
             <Suspense>
-              <EmailCTA theme='military' />
+              <EmailCTA variant='military' />
             </Suspense>
           </div>
         </div>
