@@ -6,8 +6,23 @@ import SendIcon from '@/public/send.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
 
+type Props = {
+  theme?: 'default' | 'military';
+}
 
-export default function EmailCTA() {
+type ThemeVariantType = keyof typeof themeVariants;
+
+const themeVariants = {
+  defaultText: 'text-[#C15F3C]',
+  defaultButton: 'bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]',
+  militaryText: 'text-[#5c8f41]',
+  militaryButton: 'bg-[#5c8f41] hover:bg-[#476f32] active:bg-[#476f32]'
+}
+
+export default function EmailCTA({ theme = 'default' }: Props) {
+  const textTheme: ThemeVariantType = theme === 'military' ? 'militaryText' : 'defaultText';
+  const buttonTheme: ThemeVariantType = theme === 'military' ? 'militaryButton' : 'defaultButton';
+  
   const plausible = usePlausible();
   const searchParams = useSearchParams();
   
@@ -48,7 +63,7 @@ export default function EmailCTA() {
 
   if (submitted) {
     return (
-      <p className="text-[1rem] text-[#C15F3C] font-medium text-center">
+      <p className={`text-[1rem] ${themeVariants[textTheme]} font-medium text-center`}>
         Check your inbox!
       </p>
     );
@@ -68,9 +83,9 @@ export default function EmailCTA() {
           />
           <button
             type="submit"
-            className="flex flex-row gap-1 px-3 px-4 py-1.5 md:py-2
-                      bg-[#C15F3C] hover:bg-[#B05637] active:bg-[#B05637] rounded-[12px] cursor-pointer
-                      text-white justify-center"
+            className={`flex flex-row gap-1 px-3 px-4 py-1.5 md:py-2
+                      ${themeVariants[buttonTheme]} rounded-[12px] cursor-pointer
+                      text-white justify-center`}
           >
               Sign up
               <Image src={SendIcon} alt="arrow icon" />

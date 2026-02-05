@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
       properties: {
         tags: {
           'entry': 'quiz',
-          'q_name': answers.name,
+          'name': answers.name,
           'q_reason': answers.reason,
           'q_receiver': answers.receiver,
           'q_circle': answers.who,
