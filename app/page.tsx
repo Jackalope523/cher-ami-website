@@ -72,14 +72,14 @@ export default function Home() {
           <div className="flex flex-col w-fit gap-4 justify-center text-center">
             <Link
               href="/start"
-              className="flex px-6 py-3 bg-[#C15F3C] rounded-[12px] shadow-md
-                          text-[1rem] text-white justify-center">
+              className="flex px-6 py-3 bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]
+                          rounded-[12px] shadow-md text-[1rem] text-white justify-center">
                 Start for free!
             </Link>
             <Link
               href="/example"
-              className="flex px-6 py-3 border-2 border-[#C15F3C] rounded-[12px] shadow-md
-                          text-[1rem] text-[#C15F3C]">
+              className="flex px-6 py-3 border-2 border-[#C15F3C]
+                          rounded-[12px] shadow-md text-[1rem] text-[#C15F3C]">
                 View an example magazine
             </Link>
           </div>
@@ -246,7 +246,7 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row gap-8">
             <Link
               href="/start"
-              className="flex flex-col items-center drop-shadow-lg hover:opacity-85 active:opacity-85">
+              className="flex flex-col items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
               <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#F4F1EA] items-center bg-[#F4F1EA] py-2 w-full">
                 <h3 className="text-[1.75rem] text-[#242832] font-semibold">
                   Digital Edition
@@ -291,7 +291,7 @@ export default function Home() {
 
             <Link
               href="/start"
-              className="flex flex-col items-center drop-shadow-lg hover:opacity-80 active:opacity-80">
+              className="flex flex-col items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
               <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#C15F3C] items-center bg-[#C15F3C] py-2 w-full">
                 <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
                   Monthly Edition
@@ -361,7 +361,7 @@ export default function Home() {
 
           <Link
             href="/military"
-            className="flex flex-col max-w-[423px] items-center drop-shadow-lg hover:opacity-80 active:opacity-80">
+            className="flex flex-col max-w-[423px] items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
             <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#5c8f41] items-center bg-[#5c8f41] py-2 w-full">
               <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
                 Military Edition
