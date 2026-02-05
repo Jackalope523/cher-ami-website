@@ -35,7 +35,7 @@ export default function Military() {
             We appreciate our <span className="text-[#5c8f41]">veterans</span> and <span className="text-[#5c8f41]">service members!</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
-            Whether you are sending to a service member APO/FPO/DPO or to a veteran in the USA, we offer <span className="text-[#C15F3C] font-medium">20% off</span> all issues.
+            Whether you are sending to a service member APO/FPO/DPO or to a veteran in the USA, we offer our issues for <span className="font-semibold">$9.99</span> <span className="text-[#5c8f41] font-medium">(20% off!)</span>, just tick the box when you are adding your recipient.
             <br /><br />
             Sign up with your email address and we'll send you instructions for how to get started!
           </p>

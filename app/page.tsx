@@ -369,7 +369,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center p-6 bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#5c8f41] w-full">
               <p className="text-[1rem] text-[#242832] font-normal text-center">
-                If you are sending to an active military member or veteran, click here to learn more.
+                If you are sending to an active military member or veteran, click here to learn more!
               </p>
             </div>
           </Link>
