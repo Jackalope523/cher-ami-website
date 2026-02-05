@@ -106,7 +106,7 @@ export default function RootLayout({
                   Privacy Policy
                 </Link>
                 <Link href="/legal/terms" className="text-[#B05637] py-2">
-                  Terms of Service
+                  Terms and Conditions
                 </Link>
                 <Link href="#" className="text-[#B05637] py-2 termly-display-preferences">
                   Consent Preferences

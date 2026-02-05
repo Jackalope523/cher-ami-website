@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Lock from '@/public/lock.svg';
 import Handshake from '@/public/handshake.svg';
 import Undo from '@/public/undo.svg';
-import Cookie from '@/public/undo.svg';
+import Cookie from '@/public/cookie.svg';
 import Shipping from '@/public/truck.svg';
 import Arrow from '@/public/arrow-up-right.svg';
 import Link from 'next/link';
@@ -39,7 +39,7 @@ export default function Legal() {
         />
         <LinkCard
           href="/legal/cookies"
-          imageSource={Undo}
+          imageSource={Cookie}
           alt={'cookie policy icon'}
           title={'Cookie Policy'}
         />
