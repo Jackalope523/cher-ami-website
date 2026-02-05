@@ -100,7 +100,7 @@ export default function RootLayout({
                   Legal
                 </h3>
                 <Link href="/legal" className="text-[#B05637] py-2">
-                  Legal Center
+                  Policy Center
                 </Link>
                 <Link href="/legal/privacy" className="text-[#B05637] py-2">
                   Privacy Policy
