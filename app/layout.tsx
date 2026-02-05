@@ -9,6 +9,8 @@ import './globals.css';
 import CTA from '@/components/CTA';
 import Header from '@/components/Header';
 import Script from 'next/script';
+import TermlyCMP from '@/components/TermlyCMP';
+import { Suspense } from 'react';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -30,10 +32,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const FB_PIXEL_ID = process.env.FACEBOOK_PIXEL_ID;
+  const WEBSITE_UUID = '284d228d-2ee6-4d7c-9c13-ef244cd65c4b';
 
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={poppins.className} suppressHydrationWarning>
         {FB_PIXEL_ID &&
           <Script id='fb-pixel' strategy='afterInteractive'>
             {`
@@ -50,6 +53,13 @@ export default function RootLayout({
             `}
           </Script>
         }
+
+        <Suspense fallback={null}>
+          <TermlyCMP 
+            websiteUUID={WEBSITE_UUID}
+            autoBlock={true}
+          />
+        </Suspense>
 
         <PlausibleProvider domain="thecherami.com">
           <Header />
