@@ -82,17 +82,17 @@ export default function RootLayout({
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">
                   Product
                 </h3>
+                <Link href="/start" className="text-[#B05637] py-2">
+                  Get Cher Ami
+                </Link>
                 <Link href="/#steps" className="text-[#B05637] py-2">
                   How It Works
-                </Link>
-                <Link href="/contact" className="text-[#B05637] py-2">
-                  Contact
                 </Link>
                 <Link href="/help" className="text-[#B05637] py-2">
                   Help
                 </Link>
-                <Link href="/#download" className="text-[#B05637] py-2">
-                  Get Cher Ami
+                <Link href="/contact" className="text-[#B05637] py-2">
+                  Contact
                 </Link>
               </div>
               <div className="flex flex-col">
@@ -107,6 +107,9 @@ export default function RootLayout({
                 </Link>
                 <Link href="/legal/return" className="text-[#B05637] py-2">
                   Return Policy
+                </Link>
+                <Link href="#" className="text-[#B05637] py-2 termly-display-preferences">
+                  Consent Preferences
                 </Link>
               </div>
               <div className="flex flex-col">
