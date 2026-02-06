@@ -84,7 +84,7 @@ export default function RootLayout({
                 <Link href="/start" className="text-[#B05637] py-2">
                   Get Cher Ami
                 </Link>
-                <Link href="/#steps" className="text-[#B05637] py-2">
+                <Link href="/product" className="text-[#B05637] py-2">
                   How It Works
                 </Link>
                 <Link href="/help" className="text-[#B05637] py-2">

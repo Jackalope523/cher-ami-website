@@ -7,6 +7,10 @@ const maxLength = Math.max(...texts.map((text) => text.length));
 const longestText = texts.find((text) => text.length === maxLength);
 
 
+// AB Test Texts
+// Your Family Deserves More
+// Digital Sharing Is Broken/Flat
+
 export default function TitleTextAlt() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -27,7 +31,7 @@ export default function TitleTextAlt() {
 
   return (
     <h2 className="text-[2rem] md:text-[2.5rem] text-[#242832] font-semibold text-center lg:text-left min-w-[320px] max-w-[650px]">
-      Keep Your Grandparents Close—Send Photos With{' '}
+      Keep Your Grandparents Close,<br />Send Photos With{' '}
       <br className="block sm:hidden" />
       <span className="inline-block relative align-top text-center sm:text-left">
         <span

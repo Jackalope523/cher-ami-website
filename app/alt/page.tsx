@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
-import MagazineShowcase from '@/public/showcase-magazine.webp';
+import HeroImage from '@/public/hero-parents.webp';
 import StepOne from '@/public/step-one.svg';
 import StepTwo from '@/public/step-two.svg';
 import StepThree from '@/public/step-three.svg';
@@ -19,15 +19,17 @@ import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
 import TitleText from '@/components/TitleText';
 import Link from 'next/link';
-import EmailCTAAlt from '@/components/EmailCTAAlt';
 import type { Metadata } from 'next';
 
 import CarouselPhotoParents from '@/public/carousel-photo-parents.webp';
 import CarouselPhotoParentHoldingUp from '@/public/carousel-photo-parent-holding-up.webp';
 import CarouselPhotoGirl from '@/public/carousel-photo-girl.webp';
+//import CarouselPhotoLeo from '@/public/carousel-photo-leo.webp';
 import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
 import CarouselVideoApp from '@/public/carousel-video-app.webp';
+import TitleTextAlt from '@/components/TitleTextAlt';
+import EmailCTA from '@/components/EmailCTA';
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
@@ -36,13 +38,13 @@ export const metadata: Metadata = {
     noimageindex: true,
   },
   alternates: {
-    canonical: 'https://thecherami.com/alt'
+    canonical: 'https://thecherami.com'
   }
 };
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 md:gap-36 pt-10 pb-18">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-16 md:gap-36 pt-2 pb-18">
       <Suspense>
         <Redirect />
       </Suspense>
@@ -55,37 +57,35 @@ export default function Home() {
 
       <section
         id="landing"
-        className="flex flex-col lg:flex-row items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
-        <div className="flex flex-col">
-          <div className="flex flex-col items-center lg:items-start gap-12">
-            <TitleText />
-            <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-              Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love.
-            </p>
-            <div className="flex flex-col gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
-              <p className="text-[1.1rem] sm:text-[1.25rem] text-[#242832] font-medium">
-                Start creating your first issue for <span className="text-[#C15F3C]">FREE!</span>
-              </p>
-              <Suspense>
-                <EmailCTAAlt />
-              </Suspense>
-            </div>
+        className="flex flex-col lg:flex-row-reverse items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
+        <div className="flex flex-col w-[100vw] lg:max-w-[30vw] pb-4">
+          <Image
+            src={HeroImage}
+            alt="Parents reading a Cher Ami"
+            className="h-[50vw] md:max-lg:h-[45vh] object-cover lg:rounded-b-[32]"
+            priority
+          />
+        </div>
+        <div className="flex flex-col items-center lg:items-start gap-10">
+          <TitleTextAlt />
+          <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
+            Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love. Family deserves more.
+          </p>
+          <div className="flex flex-col w-fit gap-4 justify-center text-center">
+            <Link
+              href="/start"
+              className="flex px-6 py-3 bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]
+                          rounded-[12px] shadow-md text-[1rem] text-white justify-center">
+                Build mine for free
+            </Link>
+            <Link
+              href="/example"
+              className="flex px-6 py-3 border-2 border-[#C15F3C]
+                          rounded-[12px] shadow-md text-[1rem] text-[#C15F3C]">
+                View an example magazine
+            </Link>
           </div>
         </div>
-        <Link
-          href="/example"
-          className="hidden lg:block flex flex-col gap-4 max-w-[30vw] text-center hover:opacity-75 active:opacity-75">
-          <Image
-            src={MagazineShowcase}
-            alt="Magazine showcase"
-          />
-          <div className="flex w-full justify-center">
-            <p className="w-fit px-4 py-1.5 border-2 border-[#DEDBD5] rounded-[12px] shadow-md
-                          text-[1rem] text-[#242832]">
-                See an example
-            </p>
-          </div>
-        </Link>
       </section>
 
       <section
@@ -129,26 +129,33 @@ export default function Home() {
         />
       </section>
 
-      <section id="steps" className="flex flex-col items-center">
-        <div className="mb-10">
-          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-            Three Easy Steps
+      <section id="problem" className="flex flex-row">
+        <div className="flex flex-2 flex-col">
+          <h2 className="text-[2rem] text-[#242832] font-semibold text-left">
+            Big Question
           </h2>
-          <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            Simple steps to sharing your daily joys!
+          <p className="text-[1rem] text-[#242832] font-normal text-left">
+            Problem breakdown
+          </p>
+        </div>
+        <div className="hidden md:block flex flex-1">
+          <Image
+            src={HeroImage}
+            alt="Parents reading a Cher Ami"
+            className="object-cover rounded-[32]"
+          />
+        </div>
+      </section>
+
+      <section id="objections" className="flex flex-col">
+        <div className="flex flex-2">
+          <p className="text-[1rem] text-[#242832] font-normal text-left">
+            Objections
           </p>
         </div>
         <div className="flex w-[100vw] max-w-[100vw] lg:justify-center p-6 gap-6 overflow-x-auto no-scrollbar">
           <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
             <div className="relative w-full">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
-                <Image
-                  src={StepOne}
-                  alt="The number one"
-                  width={18}
-                  height={22}
-                />
-              </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
                 <div className="flex flex-col h-[255px] justify-center z-10">
                   <Image
@@ -159,7 +166,7 @@ export default function Home() {
                   />
                 </div>
                 <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  You Share
+                  WhatsApp/Digital Albums
                 </h2>
                 <p className="text-[1rem] text-[#242832] font-normal text-center">
                   <b>Add photos to your private album</b> throughout the month
@@ -172,14 +179,6 @@ export default function Home() {
 
           <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
             <div className="relative w-full">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
-                <Image
-                  src={StepTwo}
-                  alt="The number two"
-                  width={26.61}
-                  height={30.86}
-                />
-              </div>
               <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
                 <div className="flex flex-col h-[255px] justify-center scale-x-[-1]">
                   <Image
@@ -200,161 +199,162 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
-            <div className="relative w-full">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
-                <Image
-                  src={StepThree}
-                  alt="The number three"
-                  width={22}
-                  height={26}
-                />
-              </div>
-              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <div className="flex flex-col h-[255px] justify-center">
-                  <Image
-                    src={StepThreeIllustration}
-                    alt="A family of bears reading a magazine"
-                    height={255}
-                    placeholder="blur"
-                  />
-                </div>
-                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  Cherish Forever
-                </h2>
-                <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  <b>Grandparents enjoy it</b> with their morning coffee. Parents treasure their growing collection.
-                  It becomes the mail that everyone looks forward to each month—physical proof
-                  that family is never far away.
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      <section>
-        <div className="mb-10">
+      <section id="options" className="flex flex-col gap-10 mb-10 items-center">
+        <div>
           <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
             Options for Everyone
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            Cancel whenever, billed only when we print and ship.
+            No long-term commitment,<br/>billed only when we print and ship.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="flex flex-col items-center">
-            <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#F4F1EA] items-center bg-[#F4F1EA] py-2 w-full">
-              <h3 className="text-[1.75rem] text-[#242832] font-semibold">
-                Digital Edition
-              </h3>
-            </div>
-            <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA] w-full">
-              <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
-                FREE
-              </h3>
-              <div className="flex flex-col">
-                <div className="flex flex-row gap-x-1">
-                  <Image
-                    src={Check}
-                    alt="A check mark"
-                    width={24}
-                    height={24}
-                  />
-                  <p className="text-[1rem] text-[#242832] font-normal">
-                    Share and view posts on the Cher Ami app.
-                  </p>
-                </div>
-                <div className="flex flex-row gap-x-1">
-                  <Image
-                    src={Check}
-                    alt="A check mark"
-                    width={24}
-                    height={24}
-                  />
-                  <p className="text-[1rem] text-[#242832] font-normal">
-                    Add unlimited members to your circle.
-                  </p>
-                </div>
-                <div className={'flex flex-row gap-x-1'}>
-                  <Image src={X} alt="The letter X" width={24} height={24} />
-                  <p className="text-[1rem] text-[#242832] font-normal">
-                    No printed magazine.
-                  </p>
+        <div className="flex flex-col gap-8 items-center">
+          <div className="flex flex-col lg:flex-row gap-8">
+            <Link
+              href="/start"
+              className="flex flex-col items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
+              <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#F4F1EA] items-center bg-[#F4F1EA] py-2 w-full">
+                <h3 className="text-[1.75rem] text-[#242832] font-semibold">
+                  Digital Edition
+                </h3>
+              </div>
+              <div className="flex flex-col items-center pl-6 pr-6 pb-6 bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA] w-full">
+                <h3 className="text-[2.5rem] text-[#242832] font-semibold my-4">
+                  FREE
+                </h3>
+                <div className="flex flex-col">
+                  <div className="flex flex-row gap-x-1">
+                    <Image
+                      src={Check}
+                      alt="A check mark"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[1rem] text-[#242832] font-normal">
+                      Share and view posts on the Cher Ami app.
+                    </p>
+                  </div>
+                  <div className="flex flex-row gap-x-1">
+                    <Image
+                      src={Check}
+                      alt="A check mark"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[1rem] text-[#242832] font-normal">
+                      Add unlimited members to your circle.
+                    </p>
+                  </div>
+                  <div className={'flex flex-row gap-x-1'}>
+                    <Image src={X} alt="The letter X" width={24} height={24} />
+                    <p className="text-[1rem] text-[#242832] font-normal">
+                      No printed magazine.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
+
+            <Link
+              href="/start"
+              className="flex flex-col items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
+              <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#C15F3C] items-center bg-[#C15F3C] py-2 w-full">
+                <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
+                  Monthly Edition
+                </h3>
+              </div>
+              <div className="flex flex-col items-center pl-6 pr-6 pb-6 bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C] w-full">
+                <h3 className="text-[2.5rem] text-[#242832] font-semibold my-4">
+                  $12.99
+                  <span className="absolute transform -translate-y-[-1.6rem] text-[0.9rem] text-[#676d7b] font-normal">
+                    /magazine
+                  </span>
+                </h3>
+                <div className="flex flex-col">
+                  <div className="flex flex-row gap-x-1">
+                    <Image
+                      src={Check}
+                      alt="A check mark"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[1rem] text-[#242832] font-normal">
+                      Share and view posts on the Cher Ami app.
+                    </p>
+                  </div>
+                  <div className="flex flex-row gap-x-1">
+                    <Image
+                      src={Check}
+                      alt="A check mark"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[1rem] text-[#242832] font-normal">
+                      Add unlimited members to your circle.
+                    </p>
+                  </div>
+                  <div className={'flex flex-row gap-x-1'}>
+                    <Image
+                      src={Check}
+                      alt="A check mark"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[1rem] text-[#242832] font-normal">
+                      Receive a printed magazine each month.
+                    </p>
+                  </div>
+                  <div className={'flex flex-row gap-x-1'}>
+                    <Image
+                      src={Check}
+                      alt="A check mark"
+                      width={24}
+                      height={24}
+                    />
+                    <p className="text-[1rem] text-[#242832] font-normal">
+                      Free shipping in the USA.
+                    </p>
+                  </div>
+                  <div className={'flex flex-row pt-2 self-center gap-x-1'}>
+                    <p className="text-[1rem] text-[#676d7b] font-normal text-center">
+                      Available for purchase in the mobile app.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
 
-          <div className="flex flex-col items-center">
-            <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#C15F3C] items-center bg-[#C15F3C] py-2 w-full">
+          <Link
+            href="/military"
+            className="flex flex-col max-w-[423px] items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#5c8f41] items-center bg-[#5c8f41] py-2 w-full">
               <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
-                Monthly Edition
+                Military Edition
               </h3>
             </div>
-            <div className="flex flex-col items-center pl-6 pr-6 pb-6 rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C] w-full">
-              <h3 className="text-[3rem] text-[#242832] font-semibold my-4">
-                $12.99
-                <span className="absolute transform -translate-y-[-2rem] text-[1rem] text-[#676d7b] font-normal">
-                  /month
-                </span>
-              </h3>
-              <div className="flex flex-col">
-                <div className="flex flex-row gap-x-1">
-                  <Image
-                    src={Check}
-                    alt="A check mark"
-                    width={24}
-                    height={24}
-                  />
-                  <p className="text-[1rem] text-[#242832] font-normal">
-                    Share and view posts on the Cher Ami app.
-                  </p>
-                </div>
-                <div className="flex flex-row gap-x-1">
-                  <Image
-                    src={Check}
-                    alt="A check mark"
-                    width={24}
-                    height={24}
-                  />
-                  <p className="text-[1rem] text-[#242832] font-normal">
-                    Add unlimited members to your circle.
-                  </p>
-                </div>
-                <div className={'flex flex-row gap-x-1'}>
-                  <Image
-                    src={Check}
-                    alt="A check mark"
-                    width={24}
-                    height={24}
-                  />
-                  <p className="text-[1rem] text-[#242832] font-normal">
-                    Receive a printed magazine each month.
-                  </p>
-                </div>
-                <div className={'flex flex-row gap-x-1'}>
-                  <Image
-                    src={Check}
-                    alt="A check mark"
-                    width={24}
-                    height={24}
-                  />
-                  <p className="text-[1rem] text-[#242832] font-normal">
-                    Free shipping in the USA.
-                  </p>
-                </div>
-                <div className={'flex flex-row pt-2 self-center gap-x-1'}>
-                  <p className="text-[1rem] text-[#676d7b] font-normal text-center">
-                    Available for purchase in the <Link href="/#download" className="underline">mobile app</Link>.
-                  </p>
-                </div>
-              </div>
+            <div className="flex flex-col items-center p-6 bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#5c8f41] w-full">
+              <p className="text-[1rem] text-[#242832] font-normal text-center">
+                If you are sending to an active military member or veteran, click here to learn more!
+              </p>
             </div>
-          </div>
+          </Link>
         </div>
+      </section>
+
+      <section id="lower-cta" className="flex flex-col items-center gap-4">
+        <h2 className="text-[2rem] text-[#242832] font-semibold">
+          Do it for the kids
+        </h2>
+        <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
+            <Suspense>
+              <EmailCTA />
+            </Suspense>
+          </div>
       </section>
 
       <section id="values" className="flex flex-col items-center">
@@ -534,7 +534,9 @@ export default function Home() {
           <FAQItem
             question={'How do I create a new account?'}
             answer={
-              'Download the official Cher Ami app on your iOS or Android device and follow the sign-up instructions!'
+              <span>
+                <a href="/start" className="underline">Get started here</a> and we'll send you the sign-up instructions!
+              </span>
             }
           />
           <FAQItem

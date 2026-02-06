@@ -44,6 +44,38 @@ export default function Start() {
           </div>
         </div>
       </section>
+
+      <section id="objections" className="flex flex-col gap-16">
+        <div className="flex flex-col gap-4">
+          <h3 className="text-[1.5rem]text-[#242832] font-semibold text-center ">
+            Objection 1
+          </h3>
+          <p className="text-[1rem] text-[#242832] font-normal text-center ">
+            Resolution
+          </p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h3 className="text-[1.5rem]text-[#242832] font-semibold text-center ">
+            Objection 2
+          </h3>
+          <p className="text-[1rem] text-[#242832] font-normal text-center ">
+            Resolution
+          </p>
+        </div>
+        <div className="flex flex-col gap-4">
+          <h3 className="text-[1.5rem]text-[#242832] font-semibold text-center ">
+            Objection 3
+          </h3>
+          <p className="text-[1rem] text-[#242832] font-normal text-center ">
+            Resolution
+          </p>
+        </div>
+          <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
+            <Suspense>
+              <EmailCTA />
+            </Suspense>
+          </div>
+      </section>
     </div>
   );
 }
