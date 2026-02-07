@@ -1,39 +1,16 @@
 import Image from 'next/image';
-import DesktopHero from '@/public/hero.webp';
-import HeroImage from '@/public/hero-parents.webp';
 import StepOne from '@/public/step-one.svg';
 import StepTwo from '@/public/step-two.svg';
 import StepThree from '@/public/step-three.svg';
 import StepOneIllustration from '@/public/step-one-illustration.webp';
 import StepTwoIllustration from '@/public/step-two-illustration.webp';
 import StepThreeIllustration from '@/public/step-three-illustration.webp';
-import ValueQualityIllustration from '@/public/value-quality.webp';
-import ValuePrivacyIllustration from '@/public/value-privacy.png';
-import ValueCollaborateIllustration from '@/public/value-collaborate.png';
-import ValueSecurePaymentsIllustration from '@/public/value-secure.png';
-import ValueFreeShippingIllustration from '@/public/value-shipping.png';
-import Check from '@/public/check.svg';
-import X from '@/public/x.svg';
-import FAQItem from '@/components/FAQItem';
-import { Suspense } from 'react';
-import Redirect from '@/components/Redirect';
-import TitleText from '@/components/TitleText';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-import CarouselPhotoParents from '@/public/carousel-photo-parents.webp';
-import CarouselPhotoParentHoldingUp from '@/public/carousel-photo-parent-holding-up.webp';
-import CarouselPhotoGirl from '@/public/carousel-photo-girl.webp';
-//import CarouselPhotoLeo from '@/public/carousel-photo-leo.webp';
-import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
-import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
-import CarouselVideoApp from '@/public/carousel-video-app.webp';
-import TitleTextAlt from '@/components/TitleTextAlt';
-import EmailCTA from '@/components/EmailCTA';
-
 export const metadata: Metadata = {
-  title: 'Cher Ami',
-  description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
+  title: 'Product | Cher Ami',
+  description: 'Learn how the Cher Ami works!',
   robots: {
     noimageindex: true,
   },

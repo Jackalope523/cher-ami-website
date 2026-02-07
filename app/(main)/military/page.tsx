@@ -35,13 +35,13 @@ export default function Military() {
             We appreciate our <span className="text-[#5c8f41]">veterans</span> and <span className="text-[#5c8f41]">service members!</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
-            Whether you are sending to a service member APO/FPO/DPO or to a veteran in the USA, we offer our issues for <span className="font-semibold">$9.99</span> <span className="text-[#5c8f41] font-medium">(20% off!)</span>, just tick the box when you are adding your recipient.
+            Whether you are sending to a service member APO/FPO/DPO or to a veteran in the USA, we offer our issues for <span className="font-medium">$9.99</span> <span className="text-[#5c8f41] font-semibold">(20% off!)</span>, just tick the box when you are adding your recipient.
             <br /><br />
             Sign up with your email address and we'll send you instructions for how to get started!
           </p>
           <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#5c8f41] rounded-[24px] shadow-lg">
             <Suspense>
-              <EmailCTA variant='military' />
+              <EmailCTA variant='military' location='military-top' />
             </Suspense>
           </div>
         </div>

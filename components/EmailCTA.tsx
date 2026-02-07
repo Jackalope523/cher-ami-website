@@ -8,6 +8,7 @@ import { useSearchParams } from 'next/navigation';
 
 type Props = {
   variant?: 'default' | 'military';
+  location?: string;
 }
 
 type ThemeVariantType = keyof typeof themeVariants;
@@ -19,7 +20,7 @@ const themeVariants = {
   militaryButton: 'bg-[#5c8f41] hover:bg-[#476f32] active:bg-[#476f32]'
 }
 
-export default function EmailCTA({ variant = 'default' }: Props) {
+export default function EmailCTA({ variant = 'default', location = '' }: Props) {
   const textTheme: ThemeVariantType = variant === 'military' ? 'militaryText' : 'defaultText';
   const buttonTheme: ThemeVariantType = variant === 'military' ? 'militaryButton' : 'defaultButton';
   
@@ -58,7 +59,7 @@ export default function EmailCTA({ variant = 'default' }: Props) {
       console.error(err);
     }
 
-    plausible('Email Given');
+    plausible('Email Sign Up', { props: { location }});
     setSubmitted(true);
   };
 

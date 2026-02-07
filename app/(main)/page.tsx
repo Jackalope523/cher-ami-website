@@ -1,23 +1,21 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
 import HeroImage from '@/public/hero-parents.webp';
-import StepOne from '@/public/step-one.svg';
-import StepTwo from '@/public/step-two.svg';
-import StepThree from '@/public/step-three.svg';
-import StepOneIllustration from '@/public/step-one-illustration.webp';
-import StepTwoIllustration from '@/public/step-two-illustration.webp';
-import StepThreeIllustration from '@/public/step-three-illustration.webp';
+import MiceFamilyIllustration from '@/public/step-one-illustration.webp';
+import SquirrelIllustration from '@/public/step-two-illustration.webp';
+import BearFamilyIllustration from '@/public/step-three-illustration.webp';
+import EnvelopeIllustration from '@/public/envelope-splash-green.webp';
 import ValueQualityIllustration from '@/public/value-quality.webp';
 import ValuePrivacyIllustration from '@/public/value-privacy.png';
 import ValueCollaborateIllustration from '@/public/value-collaborate.png';
 import ValueSecurePaymentsIllustration from '@/public/value-secure.png';
 import ValueFreeShippingIllustration from '@/public/value-shipping.png';
+
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
 import FAQItem from '@/components/FAQItem';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
-import TitleText from '@/components/TitleText';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -26,8 +24,9 @@ import CarouselPhotoParentHoldingUp from '@/public/carousel-photo-parent-holding
 import CarouselPhotoGirl from '@/public/carousel-photo-girl.webp';
 //import CarouselPhotoLeo from '@/public/carousel-photo-leo.webp';
 import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
+import CarouselVideoGuy from '@/public/carousel-video-guy.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
-import CarouselVideoApp from '@/public/carousel-video-app.webp';
+import TitleText from '@/components/TitleText';
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
@@ -46,6 +45,7 @@ export default function Home() {
       <Suspense>
         <Redirect />
       </Suspense>
+
       <div className="hidden"> {/* Don't remove, for embedded links */}
         <Image
           src={DesktopHero}
@@ -67,14 +67,14 @@ export default function Home() {
         <div className="flex flex-col items-center lg:items-start gap-10">
           <TitleText />
           <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-            Every month, transform your family's photos and stories into a beautiful magazine, delivered to those you love.
+            Precious moments and memories deserve more than to be forgotten in a camera roll. Transform your family's photos and stories into a beautiful magazine, delivered to those you love.
           </p>
           <div className="flex flex-col w-fit gap-4 justify-center text-center">
             <Link
               href="/start"
               className="flex px-6 py-3 bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]
                           rounded-[12px] shadow-md text-[1rem] text-white justify-center">
-                Start for free!
+                Build mine for free
             </Link>
             <Link
               href="/example"
@@ -108,7 +108,7 @@ export default function Home() {
                     rounded-[32] object-cover"
         />
         <Image
-          src={CarouselVideoGirl}
+          src={CarouselVideoGuy}
           alt=""
           className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
                     rounded-[32] object-cover"
@@ -120,115 +120,57 @@ export default function Home() {
                     rounded-[32] object-cover"
         />
         <Image
-          src={CarouselVideoApp}
+          src={CarouselVideoGirl}
           alt=""
           className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
                     rounded-[32] object-cover"
         />
       </section>
 
-      <section id="steps" className="flex flex-col items-center">
-        <div className="mb-10">
-          <h2 className="text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-            Three Easy Steps
+      <section id="problem" className="flex flex-col sm:flex-row gap-12 md:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
+        <div className="flex flex-[2.5] flex-col gap-4">
+          <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
+            A Monthly Dose of Joy
           </h2>
-          <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            Simple steps to sharing your daily joys!
+          <p className="text-[1.15rem] text-[#242832] font-normal text-center sm:text-left">
+            Every month, your family's photos and stories become a beautiful magazine,
+            the perfect photo album to send as a gift or enjoy at home.
+            <br /><br />
+            Each page filled with people you care about and love.
+            Meaningful moments you get to flip through and show proudly.
           </p>
         </div>
-        <div className="flex w-[100vw] max-w-[100vw] lg:justify-center p-6 gap-6 overflow-x-auto no-scrollbar">
-          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
-            <div className="relative w-full">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
-                <Image
-                  src={StepOne}
-                  alt="The number one"
-                  width={18}
-                  height={22}
-                />
-              </div>
-              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <div className="flex flex-col h-[255px] justify-center z-10">
-                  <Image
-                    src={StepOneIllustration}
-                    alt="Three mice playing with a kite"
-                    height={255}
-                    placeholder="blur"
-                  />
-                </div>
-                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  You Share
-                </h2>
-                <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  <b>Add photos to your private album</b> throughout the month
-                  whenever inspiration strikes. When you're ready, hit post—that's
-                  it!
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="flex flex-1 max-w-[50vw] self-center">
+          <Image
+            src={BearFamilyIllustration}
+            alt="Family of bears reading a Cher Ami"
+          />
+        </div>
+      </section>
 
-          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
-            <div className="relative w-full">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
-                <Image
-                  src={StepTwo}
-                  alt="The number two"
-                  width={26.61}
-                  height={30.86}
-                />
-              </div>
-              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <div className="flex flex-col h-[255px] justify-center scale-x-[-1]">
-                  <Image
-                    src={StepTwoIllustration}
-                    alt="A squirrel delivering a letter"
-                    height={255}
-                    placeholder="blur"
-                  />
-                </div>
-                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  We Deliver
-                </h2>
-                <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  <b>Every month, your photos become</b> a professionally designed,
-                  beautifully printed magazine
-                  delivered right to the doors of your family and friends.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
-            <div className="relative w-full">
-              <div className="absolute -top-6 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-[#F4F1EA] rounded-full flex items-center justify-center z-5">
-                <Image
-                  src={StepThree}
-                  alt="The number three"
-                  width={22}
-                  height={26}
-                />
-              </div>
-              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <div className="flex flex-col h-[255px] justify-center">
-                  <Image
-                    src={StepThreeIllustration}
-                    alt="A family of bears reading a magazine"
-                    height={255}
-                    placeholder="blur"
-                  />
-                </div>
-                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  Cherish Forever
-                </h2>
-                <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  <b>Grandparents enjoy it</b> with their morning coffee. Parents treasure their growing collection.
-                  It becomes the mail that everyone looks forward to each month—physical proof
-                  that family is never far away.
-                </p>
-              </div>
-            </div>
-          </div>
+      <section id="objection" className="flex flex-col sm:flex-row-reverse gap-12 md:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
+        <div className="flex flex-2 flex-col gap-4">
+          <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
+            Why not just text them?
+          </h2>
+          <p className="text-[1.15rem] text-[#242832] font-normal text-center sm:text-left">
+            Our camera rolls are full of photos we never send,
+            moments we forget to look back on.
+            Photos sent digitally are quickly enjoyed
+            and promptly drowned in the endless content our noisy world.
+            <br /><br />
+            <span className="font-semibold">Paper has held memories for thousands of years. </span>
+            We were meant to hold photos, not scroll past them.
+            No one forgets the letter or postcard they received
+            from a friend or relative—because love exists when you can
+            feel it as much as you can see it.
+          </p>
+        </div>
+        <div className="flex flex-1 max-w-[60vw] self-center">
+          <Image
+            src={EnvelopeIllustration}
+            alt="Envelope containing a Cher Ami"
+          />
         </div>
       </section>
 
@@ -253,7 +195,15 @@ export default function Home() {
                 </h3>
               </div>
               <div className="flex flex-col items-center pl-6 pr-6 pb-6 bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#F4F1EA] w-full">
-                <h3 className="text-[2.5rem] text-[#242832] font-semibold my-4">
+              <div className="flex flex-col h-[200px] justify-center my-4">
+                <Image
+                  src={MiceFamilyIllustration}
+                  alt="Three mice playing with a kite"
+                  height={200}
+                  placeholder="blur"
+                />
+              </div>
+                <h3 className="text-[2rem] text-[#242832] font-medium my-2">
                   FREE
                 </h3>
                 <div className="flex flex-col">
@@ -298,9 +248,17 @@ export default function Home() {
                 </h3>
               </div>
               <div className="flex flex-col items-center pl-6 pr-6 pb-6 bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C] w-full">
-                <h3 className="text-[2.5rem] text-[#242832] font-semibold my-4">
+                <div className="flex flex-col h-[200px] justify-center my-4 scale-x-[-1]">
+                  <Image
+                    src={SquirrelIllustration}
+                    alt="A squirrel delivering a letter"
+                    height={200}
+                    placeholder="blur"
+                  />
+                </div>
+                <h3 className="text-[2rem] text-[#242832] font-medium my-2">
                   $12.99
-                  <span className="absolute transform -translate-y-[-1.6rem] text-[0.9rem] text-[#676d7b] font-normal">
+                  <span className="absolute transform -translate-y-[-1.1rem] text-[0.9rem] text-[#676d7b] font-normal">
                     /magazine
                   </span>
                 </h3>
@@ -350,8 +308,8 @@ export default function Home() {
                     </p>
                   </div>
                   <div className={'flex flex-row pt-2 self-center gap-x-1'}>
-                    <p className="text-[1rem] text-[#676d7b] font-normal text-center">
-                      Available for purchase in the mobile app.
+                    <p className="text-[1rem] text-[#242832] font-medium text-center">
+                      Click me to get started!
                     </p>
                   </div>
                 </div>

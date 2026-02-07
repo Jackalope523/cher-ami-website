@@ -2,12 +2,16 @@
 
 import { useState, useEffect } from 'react';
 
-const texts = ['Grandparents', 'Family Friends', 'Aunts & Uncles ', 'Old Friends'];
+const texts = ['Love', 'Meaning', 'Feeling', 'Joy', 'Memories'];
 const maxLength = Math.max(...texts.map((text) => text.length));
 const longestText = texts.find((text) => text.length === maxLength);
 
 
-export default function CyclingTextHeader() {
+// AB Test Texts
+// Your Family Deserves More
+// Digital Sharing Is Broken/Flat
+
+export default function TitleText() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -27,10 +31,11 @@ export default function CyclingTextHeader() {
 
   return (
     <h2 className="text-[2rem] md:text-[2.5rem] text-[#242832] font-semibold text-center lg:text-left min-w-[320px] max-w-[650px]">
-      Your Cherished Memories Mailed to{' '}
-      <span className="inline-block relative align-top">
+      Keep Your Family Close,<br />Send Photos With{' '}
+      <br className="block sm:hidden" />
+      <span className="inline-block relative align-top text-center sm:text-left">
         <span
-          className="text-[#C15F3C] min-w-[320px] absolute left-1/2 transform -translate-x-1/2 md:text-left transition-all duration-200"
+          className="absolute w-full text-[#C15F3C] transition-all duration-200"
           style={{
             transform: isAnimating ? 'translateY(10px)' : 'translateY(0)',
             opacity: isAnimating ? 0 : 1,
