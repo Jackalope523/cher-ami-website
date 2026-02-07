@@ -35,7 +35,7 @@ export default function TitleTextAlt() {
       <br className="block sm:hidden" />
       <span className="inline-block relative align-top text-center sm:text-left">
         <span
-          className="text-[#C15F3C] w-full absolute left-1 transition-all duration-200"
+          className="absolute w-full text-[#C15F3C] transition-all duration-200"
           style={{
             transform: isAnimating ? 'translateY(10px)' : 'translateY(0)',
             opacity: isAnimating ? 0 : 1,

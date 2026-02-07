@@ -18,6 +18,8 @@ export default function QuizLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <>{children}</>
+    <main>
+      {children}
+    </main>
   );
 }

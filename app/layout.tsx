@@ -1,15 +1,14 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import Image from 'next/image';
-import Link from 'next/link';
-import TitleImage from '@/public/title.png';
 import PlausibleProvider from 'next-plausible';
 import './globals.css';
-import CTA from '@/components/CTA';
-import Header from '@/components/Header';
 import Script from 'next/script';
 import TermlyCMP from '@/components/TermlyCMP';
 import { Suspense } from 'react';
+import Link from 'next/link';
+import CTA from '@/components/CTA';
+import Image from 'next/image';
+import TitleImage from '@/public/title.png';
 
 const poppins = Poppins({
   weight: ['400', '500', '600', '700'],
@@ -54,16 +53,14 @@ export default function RootLayout({
         }
 
         <Suspense fallback={null}>
-          <TermlyCMP 
+          <TermlyCMP
             websiteUUID={WEBSITE_UUID}
             autoBlock={true}
           />
         </Suspense>
 
         <PlausibleProvider domain="thecherami.com">
-          <Header />
-
-          <main className="pt-16 bg-[#FCFBF8]">
+          <div className="bg-[#FCFBF8]">
             {FB_PIXEL_ID &&
               <noscript>
                 <img
@@ -73,8 +70,8 @@ export default function RootLayout({
               </noscript>
             }
             {children}
-          </main>
-
+          </div>
+          
           <footer className="flex flex-col w-full items-center gap-y-10 pb-5 bg-[#FCFBF8]">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 w-full max-w-[1200px] px-5 lg:px-13 xl:px-5">
               <div className="flex flex-col">
@@ -146,7 +143,7 @@ export default function RootLayout({
                   className="text-[#B05637] py-2">
                   Reddit
                 </Link>
-                 */}
+                  */}
               </div>
               <div className="flex flex-col gap-y-4">
                 <h3 className="text-[20px] text-[#242832] font-semibold mb-6">

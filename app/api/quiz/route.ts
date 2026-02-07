@@ -1,4 +1,4 @@
-import { QuizAnswers } from '@/app/quiz/QuizShell';
+import { QuizAnswers } from '@/app/(quiz)/quiz/QuizShell';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {

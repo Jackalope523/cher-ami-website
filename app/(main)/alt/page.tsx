@@ -1,12 +1,8 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
 import HeroImage from '@/public/hero-parents.webp';
-import StepOne from '@/public/step-one.svg';
-import StepTwo from '@/public/step-two.svg';
-import StepThree from '@/public/step-three.svg';
 import StepOneIllustration from '@/public/step-one-illustration.webp';
 import StepTwoIllustration from '@/public/step-two-illustration.webp';
-import StepThreeIllustration from '@/public/step-three-illustration.webp';
 import ValueQualityIllustration from '@/public/value-quality.webp';
 import ValuePrivacyIllustration from '@/public/value-privacy.png';
 import ValueCollaborateIllustration from '@/public/value-collaborate.png';
@@ -17,7 +13,6 @@ import X from '@/public/x.svg';
 import FAQItem from '@/components/FAQItem';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
-import TitleText from '@/components/TitleText';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -48,6 +43,7 @@ export default function Home() {
       <Suspense>
         <Redirect />
       </Suspense>
+
       <div className="hidden"> {/* Don't remove, for embedded links */}
         <Image
           src={DesktopHero}
@@ -147,56 +143,49 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="objections" className="flex flex-col">
-        <div className="flex flex-2">
-          <p className="text-[1rem] text-[#242832] font-normal text-left">
-            Objections
-          </p>
-        </div>
-        <div className="flex w-[100vw] max-w-[100vw] lg:justify-center p-6 gap-6 overflow-x-auto no-scrollbar">
-          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
-            <div className="relative w-full">
-              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <div className="flex flex-col h-[255px] justify-center z-10">
-                  <Image
-                    src={StepOneIllustration}
-                    alt="Three mice playing with a kite"
-                    height={255}
-                    placeholder="blur"
-                  />
-                </div>
-                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  WhatsApp/Digital Albums
-                </h2>
-                <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  <b>Add photos to your private album</b> throughout the month
-                  whenever inspiration strikes. When you're ready, hit post—that's
-                  it!
-                </p>
+      <section id="objections" className="flex w-[100vw] max-w-[100vw] lg:justify-center p-6 gap-6 overflow-x-auto no-scrollbar">
+        <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
+          <div className="relative w-full">
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
+              <div className="flex flex-col h-[255px] justify-center z-10">
+                <Image
+                  src={StepOneIllustration}
+                  alt="Three mice playing with a kite"
+                  height={255}
+                  placeholder="blur"
+                />
               </div>
+              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                WhatsApp/Digital Albums
+              </h2>
+              <p className="text-[1rem] text-[#242832] font-normal text-center">
+                <b>Add photos to your private album</b> throughout the month
+                whenever inspiration strikes. When you're ready, hit post—that's
+                it!
+              </p>
             </div>
           </div>
+        </div>
 
-          <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
-            <div className="relative w-full">
-              <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
-                <div className="flex flex-col h-[255px] justify-center scale-x-[-1]">
-                  <Image
-                    src={StepTwoIllustration}
-                    alt="A squirrel delivering a letter"
-                    height={255}
-                    placeholder="blur"
-                  />
-                </div>
-                <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-                  We Deliver
-                </h2>
-                <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  <b>Every month, your photos become</b> a professionally designed,
-                  beautifully printed magazine
-                  delivered right to the doors of your family and friends.
-                </p>
+        <div className="shrink-0 lg:shrink-1 max-w-[350px] flex flex-col items-center">
+          <div className="relative w-full">
+            <div className="bg-[#F4F1EA] rounded-4xl p-7 flex flex-col items-center">
+              <div className="flex flex-col h-[255px] justify-center scale-x-[-1]">
+                <Image
+                  src={StepTwoIllustration}
+                  alt="A squirrel delivering a letter"
+                  height={255}
+                  placeholder="blur"
+                />
               </div>
+              <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+                We Deliver
+              </h2>
+              <p className="text-[1rem] text-[#242832] font-normal text-center">
+                <b>Every month, your photos become</b> a professionally designed,
+                beautifully printed magazine
+                delivered right to the doors of your family and friends.
+              </p>
             </div>
           </div>
         </div>
