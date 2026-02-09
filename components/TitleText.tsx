@@ -31,7 +31,8 @@ export default function TitleText() {
 
   return (
     <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center lg:text-left min-w-[320px] max-w-[650px]">
-      Digital Photos Feel Empty,<br />Send Real Photos With{' '}
+      Digital Photos Feel Empty, <br className="hidden lg:block"/>
+      Send Real Photos With{' '}
       <br className="block sm:hidden" />
       <span className="inline-block relative align-top text-center sm:text-left">
         <span
