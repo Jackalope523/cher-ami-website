@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const texts = ['Love', 'Feeling', 'Meaning', 'Joy', 'Memories'];
+const texts = ['Love', 'Feeling', 'Stories', 'Meaning', 'Joy', 'Memories'];
 const maxLength = Math.max(...texts.map((text) => text.length));
 const longestText = texts.find((text) => text.length === maxLength);
 
@@ -23,15 +23,15 @@ export default function TitleText() {
         setCurrentIndex((prev) => (prev + 1) % texts.length);
         setIsAnimating(false);
       }, 200);
-    }, 2500);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
 
 
   return (
-    <h2 className="text-[2rem] md:text-[2.5rem] text-[#242832] font-semibold text-center lg:text-left min-w-[320px] max-w-[650px]">
-      Keep Your Family Close,<br />Send Photos With{' '}
+    <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center lg:text-left min-w-[320px] max-w-[650px]">
+      Digital Photos Feel Empty,<br />Send Real Photos With{' '}
       <br className="block sm:hidden" />
       <span className="inline-block relative align-top text-center sm:text-left">
         <span

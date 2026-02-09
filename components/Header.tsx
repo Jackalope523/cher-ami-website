@@ -112,9 +112,9 @@ export default function Header() {
         <div
           className="absolute bg-[#DB5145] w-full animate-slide-down">
           <Link href="/start">
-            <p className="text-[#FCFBF8] text-center font-medium
+            <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium
                           py-2 px-5 lg:px-13 xl:px-5">
-              Month of Love Sale — First magazine and shipping on us!
+              For the month of love, your first magazine & shipping is on us!
             </p>
           </Link>
         </div>

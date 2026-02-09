@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default function Start() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-16 md:gap-36 pt-10 pb-18">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-12 md:gap-20 pt-10 pb-18">
       <section
         id="landing"
         className="flex flex-col md:flex-row-reverse items-center justify-between w-full px-8 xl:px-0 gap-6">
@@ -33,16 +33,14 @@ export default function Start() {
           />
         <div className="flex flex-col items-center md:items-start gap-8">
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center md:text-left min-w-[320px] max-w-[650px]">
-            Start creating your first magazine for <span className="text-[#C15F3C]">free</span>
+            Your first magazine <span className="text-[#C15F3C]">free</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
-            Sign up with your email address and we'll send you instructions for how to start building your own magazine!
+            We'll even cover shipping. Sign up with your email address and we'll send you instructions for how to start!
           </p>
-          <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
-            <Suspense>
-              <EmailCTA location='start-top'/>
-            </Suspense>
-          </div>
+          <Suspense>
+            <EmailCTA location='start-top'/>
+          </Suspense>
         </div>
       </section>
 
@@ -82,7 +80,7 @@ export default function Start() {
           <h2 className="text-[1.5rem] text-[#242832] font-semibold text-center">
             We've made it easy—give it a go!
           </h2>
-          <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
+          <div className="flex flex-col w-full sm:w-auto gap-3 p-5">
             <Suspense>
               <EmailCTA location='start-bottom' />
             </Suspense>

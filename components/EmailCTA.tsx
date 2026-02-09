@@ -16,8 +16,8 @@ type ThemeVariantType = keyof typeof themeVariants;
 const themeVariants = {
   defaultText: 'text-[#C15F3C]',
   defaultButton: 'bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]',
-  militaryText: 'text-[#5c8f41]',
-  militaryButton: 'bg-[#5c8f41] hover:bg-[#476f32] active:bg-[#476f32]'
+  militaryText: 'text-[#779443]',
+  militaryButton: 'bg-[#779443] hover:bg-[#6c873d] active:bg-[#6c873d]'
 }
 
 export default function EmailCTA({ variant = 'default', location = '' }: Props) {
