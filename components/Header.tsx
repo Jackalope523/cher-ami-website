@@ -60,7 +60,7 @@ export default function Header() {
           <Image src={showMenu ? CloseIcon : MenuIcon } alt="Open menu" width={24} height={24} />
         </button>
       </div>
-      {showMenu && (
+      {showMenu ? (
         <div className="sm:hidden flex flex-col w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 pb-2">
           <Link
             href="/product"
@@ -107,6 +107,16 @@ export default function Header() {
               <Image src={TikTokIcon} alt="Tiktok icon" width={24} height={24} preload />
             </Link>
           </div>
+        </div>
+       ) : (
+        <div
+          className="absolute bg-[#DB5145] w-full animate-slide-down">
+          <Link href="/start">
+            <p className="text-[#FCFBF8] text-center font-medium
+                          py-2 px-5 lg:px-13 xl:px-5">
+              Month of Love Sale — First magazine and shipping on us!
+            </p>
+          </Link>
         </div>
       )}
     </header>

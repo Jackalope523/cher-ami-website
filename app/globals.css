@@ -34,5 +34,17 @@ body {
   .no-scrollbar {
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
-}
+  }
+  
+  @keyframes slideDown {
+    0%   { transform: translateY(-18px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+  }
+  
+  /* utility: starts after a short delay, 700ms duration, ease-in-out */
+  .animate-slide-down {
+    animation: slideDown 700ms ease-in-out 1200ms;
+    animation-fill-mode: both;
+    will-change: transform, opacity;
+  }
 }
