@@ -93,7 +93,11 @@ export default function EmailCTA({ variant = 'default', location = '' }: Props) 
               <Image src={SendIcon} alt="arrow icon" />
           </button>
         </div>
-        <p className="text-[0.75rem] text-[#676D7B]">We only use your email to help you get started. You can unsubscribe anytime.</p>
+        <p className="text-[0.75rem] text-[#676D7B]">
+          We only use your email to help you get started.
+          You can unsubscribe anytime.
+          Max 1 free magazine per circle.
+        </p>
       </form>
     );
   }
