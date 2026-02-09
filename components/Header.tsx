@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import TitleImage from '@/public/title.png';
@@ -14,9 +14,29 @@ import { usePlausible } from 'next-plausible';
 export default function Header() {
   const plausible = usePlausible();
   const [showMenu, setShowMenu] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(true);
+  const [lastScrollY, setLastScrollY] = useState<number>(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 30) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+      
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className={`fixed w-full z-50 bg-[#FCFBF8]
+    <header className={`fixed w-full z-50 bg-[#FCFBF8] transition-transform duration-300
+      ${!isVisible && !showMenu ? 'sm:translate-y-0 -translate-y-full' : 'translate-y-0'}
       ${showMenu && 'shadow-md/35 shadow-[#868581]'}`}>
       <div className="flex flex-row justify-between items-center w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 lg:px-13 xl:px-5 pt-2 lg:pt-5 pb-2">
         <Link href={'/'}>
