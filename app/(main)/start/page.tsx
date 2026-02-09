@@ -46,7 +46,7 @@ export default function Start() {
         </div>
       </section>
 
-      <section id="objections" className="flex flex-col gap-16 max-w-2xl items-center px-8 xl:px-0 gap-6">
+      <section id="objections" className="flex flex-col gap-16 max-w-2xl items-center xl:px-0 gap-6">
         <div className="flex flex-col gap-4">
           <h3 className="text-[1.5rem] text-[#242832] font-semibold text-center">
             What if I don't have enough photos to post?
@@ -80,7 +80,7 @@ export default function Start() {
         </div>
         <div className="flex flex-col gap-6 items-center">
           <h2 className="text-[1.5rem] text-[#242832] font-semibold text-center">
-            We make it easy—give it a go!
+            We've made it easy—give it a go!
           </h2>
           <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#C15F3C] rounded-[24px] shadow-lg">
             <Suspense>

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-const texts = ['Love', 'Meaning', 'Feeling', 'Joy', 'Memories'];
+const texts = ['Love', 'Feeling', 'Meaning', 'Joy', 'Memories'];
 const maxLength = Math.max(...texts.map((text) => text.length));
 const longestText = texts.find((text) => text.length === maxLength);
 
