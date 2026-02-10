@@ -131,7 +131,10 @@ export default function Header() {
        ) : (
         <div
           className="absolute bg-[#DB5145] w-full animate-slide-down">
-          <Link href="/start" className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
+          <Link
+            href="/start"
+            onClick={() => plausible('Promo Banner Pressed')}
+            className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
             <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium">
               Valentine's Offer: Your first magazine free
             </p>
