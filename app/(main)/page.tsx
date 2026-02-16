@@ -68,8 +68,9 @@ export default function Home() {
         <div className="flex flex-col items-center lg:items-start gap-10">
           <TitleText />
           <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-            Your precious memories deserve more than to be forgotten in a group chat or camera roll. Transform your photos and stories into a beautiful magazine, delivered to those you love.
-          </p>
+            Your precious memories deserve more than to be forgotten in a group chat or camera roll.
+            Send those you love a beautiful magazine filled with your photos and stories.
+          </p> {/* Make it easy, solve their problem (gift) */}
             <Link
               href="/start"
               className="flex min-w-[50%] py-3 bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]
