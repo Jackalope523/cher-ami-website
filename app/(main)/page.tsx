@@ -5,8 +5,8 @@ import MiceFamilyIllustration from '@/public/step-one-illustration.webp';
 import SquirrelIllustration from '@/public/step-two-illustration.webp';
 import BearFamilyIllustration from '@/public/step-three-illustration.webp';
 import EnvelopeIllustration from '@/public/envelope-splash-green.webp';
-import ValueQualityIllustration from '@/public/value-quality.webp';
-import ValuePrivacyIllustration from '@/public/value-privacy.png';
+import ArmchairIllustration from '@/public/value-quality.webp';
+import MouseKidIllustration from '@/public/value-privacy.png';
 import ValueCollaborateIllustration from '@/public/value-collaborate.png';
 import ValueSecurePaymentsIllustration from '@/public/value-secure.png';
 import ValueFreeShippingIllustration from '@/public/value-shipping.png';
@@ -296,64 +296,10 @@ export default function Home() {
               />
             </div>
             <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Unlimited<br/>Members
+              Happiness<br/>Guaranteed
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-              As many members in your circle as you want, at no cost.
-            </p>
-          </div>
-          
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-                          bg-[#F4F1EA] rounded-4xl p-5
-                          transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={ValueQualityIllustration}
-                alt="A mouse reading a paper"
-                className="max-w-[100px] max-h-[100px] object-contain"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Timeless<br/>Quality
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center">
-              Premium prints that you can cherish for years to come.
-            </p>
-          </div>
-
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-                        bg-[#F4F1EA] rounded-4xl p-5
-                        transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={ValuePrivacyIllustration}
-                alt="A mouse kid running"
-                className="max-w-[100px] max-h-[100px] object-contain"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Privacy<br/>First
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center">
-              All your photos are completely private and never shared.
-            </p>
-          </div>
-
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-                        bg-[#F4F1EA] rounded-4xl p-5
-                        transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={ValueSecurePaymentsIllustration}
-                alt="An acorn"
-                className="max-w-[80px] max-h-[80px] object-contain self-center"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Secure<br/>Payments
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center">
-              We retain no card information for your peace of mind.
+              If you don't like it, we'll refund it. No questions asked.
             </p>
           </div>
 
@@ -372,6 +318,60 @@ export default function Home() {
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
               Send to anyone you want, anywhere in the USA, on us.
+            </p>
+          </div>
+
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+              bg-[#F4F1EA] rounded-4xl p-5
+              transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex h-[100px] justify-center">
+              <Image
+                src={MouseKidIllustration}
+                alt="A mouse kid running"
+                className="max-w-[100px] max-h-[100px] object-contain"
+              />
+            </div>
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+              Privacy<br/>First
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center">
+              All your photos are completely private and never shared.
+            </p>
+          </div>
+          
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+                          bg-[#F4F1EA] rounded-4xl p-5
+                          transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex h-[100px] justify-center">
+              <Image
+                src={ArmchairIllustration}
+                alt="A mouse reading a paper"
+                className="max-w-[100px] max-h-[100px] object-contain"
+              />
+            </div>
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+              Timeless<br/>Quality
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center">
+              Premium prints that you can cherish for years to come.
+            </p>
+          </div>
+
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
+                        bg-[#F4F1EA] rounded-4xl p-5
+                        transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex h-[100px] justify-center">
+              <Image
+                src={ValueSecurePaymentsIllustration}
+                alt="An acorn"
+                className="max-w-[80px] max-h-[80px] object-contain self-center"
+              />
+            </div>
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+              Secure<br/>Payments
+            </h2>
+            <p className="text-[1rem] text-[#242832] font-normal text-center">
+              We retain no card information for your peace of mind.
             </p>
           </div>
         </div>

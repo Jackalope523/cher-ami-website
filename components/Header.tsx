@@ -21,8 +21,9 @@ export default function Header() {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > lastScrollY && currentScrollY > 30) {
+      if (currentScrollY > lastScrollY && currentScrollY > 40) {
         setIsVisible(false);
+        setShowMenu(false);
       } else {
         setIsVisible(true);
       }
@@ -80,7 +81,7 @@ export default function Header() {
           <Image src={showMenu ? CloseIcon : MenuIcon } alt="Open menu" width={24} height={24} />
         </button>
       </div>
-      {showMenu ? (
+      {showMenu &&
         <div className="sm:hidden flex flex-col w-full max-w-[1200px] bg-[#FCFBF8] mx-auto px-5 pb-2">
           <Link
             href="/product"
@@ -128,23 +129,22 @@ export default function Header() {
             </Link>
           </div>
         </div>
-       ) : (
-        <div
-          className="absolute bg-[#DB5145] w-full animate-slide-down">
-          <Link
-            href="/start"
-            onClick={() => plausible('Promo Banner Pressed')}
-            className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
-            <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium">
-              Valentine's Offer: Your first magazine free!{' '}
+       }
+      <div
+        className="absolute bg-[#DB5145] w-full animate-slide-down">
+        <Link
+          href="/start"
+          onClick={() => plausible('Promo Banner Pressed')}
+          className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
+          <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium">
+            February Offer: Your first magazine free!{' '}
 
-              <span className="text-[.7rem] text-[#FCFBF8] text-center font-normal">
-                (max 1 per circle)
-              </span>
-            </p>
-          </Link>
-        </div>
-      )}
+            <span className="text-[.7rem] text-[#FCFBF8] text-center font-normal">
+              (max 1 per circle)
+            </span>
+          </p>
+        </Link>
+      </div>
     </header>
   );
 }
