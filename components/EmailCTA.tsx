@@ -76,7 +76,7 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
     }
   };
 
-  if (!submitted) {
+  if (submitted) {
     return (
       <div className="flex flex-col gap-8 text-center md:text-left">
         <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold`}>
