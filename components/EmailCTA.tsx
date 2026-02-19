@@ -80,7 +80,7 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
     return (
       <div className="flex flex-col gap-8 text-center md:text-left">
         <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold`}>
-          We've sent instructions to {email || 'your inbox'}!
+          Instructions were sent to {email || 'your inbox'}!
         </p>
         <div className="flex flex-col gap-3">
           <p className="text-[1rem] text-[#242832] font-medium">
