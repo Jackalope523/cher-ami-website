@@ -78,11 +78,11 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
 
   if (submitted) {
     return (
-      <div className="flex flex-col gap-8 text-center md:text-left">
+      <div className="flex flex-col gap-8 text-center">
         <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold`}>
           Instructions were sent to {email || 'your inbox'}!
         </p>
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col gap-4">
           <p className="text-[1rem] text-[#242832] font-medium">
             Want to get started right away?
           </p>
