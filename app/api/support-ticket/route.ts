@@ -12,6 +12,21 @@ export async function POST(request: NextRequest) {
     email_body,
   } = json_body;
 
+  const body = `
+  <p>
+    From: ${email_from}
+  </p><br />
+  <p>
+    Time: ${new Date()}
+  </p><br />
+  <p>
+    Ticket Subject: ${email_subject}
+  </p><br />
+  <p>
+    Ticket Body: ${email_body}
+  </p>
+  `
+
   const response = await fetch("https://api.onesignal.com/notifications?c=email", {
     method: 'POST',
     headers: {
@@ -22,19 +37,19 @@ export async function POST(request: NextRequest) {
       app_id: ONE_SIGNAL_APP_ID,
       email_from_address: "help@thecherami.com",
       // email_from_name: "Support Tickets",
-      email_to: ["help@thecherami.com"],      
+      email_to: ["help@thecherami.com"],
       email_reply_to_address: `${email_from}`,
-      email_subject: `${email_subject}`,
-      email_body: `<p>${email_body}</p>`,
+      email_subject: `Ticket: ${email_subject}`,
+      email_body: body,
     }),
   });
 
   const data = await response.json();
 
-    if (!response.ok) {
-  console.log("FAILURE!!!!");
-  console.log("HTTP status:", response.status);
-  console.log("OneSignal errors:", data.errors);
+  if (!response.ok) {
+    console.log("FAILURE!!!!");
+    console.log("HTTP status:", response.status);
+    console.log("OneSignal errors:", data.errors);
     throw new Error(`Response status: ${response.status}`);
   }
 

@@ -27,6 +27,8 @@ export default function Contact() {
   const [subject, setSubject] = useState('');
   const [content, setContent] = useState('');
 
+  const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
@@ -48,6 +50,7 @@ export default function Contact() {
       setEmail('');
       setSubject('');
       setContent('');
+      setSubmitted(true);
     } catch (err) {
       console.error(err);
     }
@@ -134,7 +137,7 @@ export default function Contact() {
           <button
             type="submit"
             className="bg-[#C15F3C] text-[#FFFFFF] font-medium rounded-[0.875rem] px-6 py-4">
-            Submit
+            {submitted ? 'Request successfully sent!' : 'Submit'}
           </button>
         </form>
       </div>
