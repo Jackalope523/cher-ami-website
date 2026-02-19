@@ -83,8 +83,9 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
           Instructions were sent to {email || 'your inbox'}!
         </p>
         <div className="flex flex-col gap-4">
-          <p className="text-[1rem] text-[#242832] font-medium">
-            Want to get started right away?
+          <p className="text-[1rem] text-[#242832] font-normal">
+            Want to get started right away?<br />
+            <span className="font-medium">Download the app!</span>
           </p>
           {/*
             <p className={`flex flex-row gap-1 px-3 px-4 py-1.5 md:py-2
@@ -96,9 +97,6 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
               OR
             </p>
           */}
-          <p className="text-[1rem] text-[#242832]">
-            Download the app!
-          </p>
           <div className="flex flex-col md:flex-row gap-2 p-4 self-center items-center
                           border-2 rounded-2xl border-[#DEDBD5]">
             <DynamicCTA />
