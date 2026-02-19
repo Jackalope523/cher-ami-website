@@ -5,10 +5,13 @@ import { useEffect, useState } from 'react';
 import SendIcon from '@/public/send.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
+import DynamicCTA from './DynamicCTA';
 
 type Props = {
   variant?: 'default' | 'military';
   location?: string;
+  done?: boolean;
+  onSignUp?: () => any;
 }
 
 type ThemeVariantType = keyof typeof themeVariants;
@@ -20,7 +23,7 @@ const themeVariants = {
   militaryButton: 'bg-[#779443] hover:bg-[#6c873d] active:bg-[#6c873d]'
 }
 
-export default function EmailCTA({ variant = 'default', location = '' }: Props) {
+export default function EmailCTA({ variant = 'default', location = '', done = false, onSignUp }: Props) {
   const textTheme: ThemeVariantType = variant === 'military' ? 'militaryText' : 'defaultText';
   const buttonTheme: ThemeVariantType = variant === 'military' ? 'militaryButton' : 'defaultButton';
   
@@ -29,6 +32,7 @@ export default function EmailCTA({ variant = 'default', location = '' }: Props) 
   
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [multipleMode, setMultipleMode] = useState(false);
 
   useEffect(() => {
     const isSubmitted = searchParams.get('submitted');
@@ -36,6 +40,12 @@ export default function EmailCTA({ variant = 'default', location = '' }: Props) 
       setSubmitted(true);
     }
   }, []);
+
+  useEffect(() => {
+    if (done) {
+      setSubmitted(true);
+    }
+  }, [done]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -61,13 +71,40 @@ export default function EmailCTA({ variant = 'default', location = '' }: Props) 
 
     plausible('Email Sign Up', { props: { location }});
     setSubmitted(true);
+    if (onSignUp) {
+      onSignUp();
+    }
   };
 
-  if (submitted) {
+  if (!submitted) {
     return (
-      <p className={`text-[1rem] ${themeVariants[textTheme]} font-medium text-center`}>
-        Check your inbox!
-      </p>
+      <div className="flex flex-col gap-8 text-center md:text-left">
+        <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold`}>
+          We've sent instructions to {email || 'your inbox'}!
+        </p>
+        <div className="flex flex-col gap-3">
+          <p className="text-[1rem] text-[#242832] font-medium">
+            Want to get started right away?
+          </p>
+          {/*
+            <p className={`flex flex-row gap-1 px-3 px-4 py-1.5 md:py-2
+                        ${themeVariants[buttonTheme]} rounded-[12px] cursor-pointer
+                        text-white justify-center`}>
+              Click here to invite others to join you
+            </p>
+            <p className="text-[1rem] text-[#242832] font-semibold">
+              OR
+            </p>
+          */}
+          <p className="text-[1rem] text-[#242832]">
+            Download the app!
+          </p>
+          <div className="flex flex-col md:flex-row gap-2 p-4 self-center items-center
+                          border-2 rounded-2xl border-[#DEDBD5]">
+            <DynamicCTA />
+          </div>
+        </div>
+      </div>
     );
   }
   else {

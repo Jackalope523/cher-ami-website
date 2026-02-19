@@ -5,18 +5,20 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import IntroIllustration from '@/public/step-two-illustration.webp';
+import { usePlausible } from "next-plausible";
 
 const QuizShell = dynamic(() => import("./QuizShell"), { ssr: false });
 
 export default function Quiz() {
+  const plausible = usePlausible();
   const [started, setStarted] = useState(false);
 
   return (
-    <div className="flex self-center items-center justify-center w-full min-h-[100vh] p-6">
+    <div className="flex self-center items-center justify-center w-full h-[100vh] px-6 py-12">
       {!started ? (
-        <section className="w-xl bg-[#FEFEFD] rounded-2xl shadow-md p-8">
-          <h1 className="text-[1.25rem] font-semibold text-[#242832]">Your Monthly Magazine They'll Love</h1>
-          <p className="mt-3 text-[1rem] text-[#242832]">Answer 2-3 quick questions and we'll show the best way for you to get started!</p>
+        <section className="">
+          <h1 className="text-[1.25rem] font-semibold text-[#242832]">A Monthly Dose of Joy</h1>
+          <p className="mt-3 text-[1rem] text-[#242832]">Answer 5 quick questions and we'll show the best way for you to get started!</p>
           <div className="my-4 flex justify-center  scale-x-[-1]">
             <Image
               src={IntroIllustration}
