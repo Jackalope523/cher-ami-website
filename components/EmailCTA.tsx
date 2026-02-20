@@ -99,7 +99,7 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
           */}
           <div className="flex flex-col md:flex-row gap-2 p-4 self-center items-center
                           border-2 rounded-2xl border-[#DEDBD5]">
-            <DynamicCTA />
+            <DynamicCTA trackingProps={{ location: 'quick-start' }}/>
           </div>
         </div>
       </div>

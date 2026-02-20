@@ -1,13 +1,15 @@
 'use client';
 
-import { usePlausible } from 'next-plausible';
 import { useEffect, useState } from 'react';
 import CTA from './CTA';
 
 type Device = 'default' | 'ios' | 'android';
 
-export default function DynamicCTA() {
-  const plausible = usePlausible();
+interface Props {
+  trackingProps?: Record<string, unknown>;
+}
+
+export default function DynamicCTA({ trackingProps }: Props) {
   const [device, setDevice] = useState<Device>('default');
 
   useEffect(() => {
@@ -24,19 +26,19 @@ export default function DynamicCTA() {
 
   if (device === 'ios') {
     return (
-        <CTA store="Apple" width={192} height={64} />
+        <CTA store="Apple" width={192} height={64} trackingProps={trackingProps} />
     );
   }
   else if (device === 'android') {
     return (
-        <CTA store="Google" width={216} height={64} />
+        <CTA store="Google" width={216} height={64} trackingProps={trackingProps} />
     );
   }
   else {
     return (
       <>
-        <CTA store="Apple" width={192} height={64} />
-        <CTA store="Google" width={216} height={64} />
+        <CTA store="Apple" width={192} height={64} trackingProps={trackingProps} />
+        <CTA store="Google" width={216} height={64} trackingProps={trackingProps} />
       </>
     );
   }
