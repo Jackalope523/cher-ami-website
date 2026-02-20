@@ -150,12 +150,12 @@ export default function RootLayout({
                   Download the app
                 </h3>
                 <div className="hidden sm:flex flex-row sm:flex-col gap-4">
-                  <CTA store="Apple" width={120} height={40} />
-                  <CTA store="Google" width={135} height={40} />
+                  <CTA store="Apple" width={120} height={40} trackingProps={{ location: 'footer' }} />
+                  <CTA store="Google" width={135} height={40} trackingProps={{ location: 'footer' }} />
                 </div>
                 <div className="flex sm:hidden flex-row sm:flex-col gap-4">
-                  <CTA store="Apple" width={167} height={56} />
-                  <CTA store="Google" width={189} height={56} />
+                  <CTA store="Apple" width={167} height={56} trackingProps={{ location: 'footer' }} />
+                  <CTA store="Google" width={189} height={56} trackingProps={{ location: 'footer' }} />
                 </div>
               </div>
             </div>
