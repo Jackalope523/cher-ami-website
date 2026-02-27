@@ -1,9 +1,9 @@
 'use client'
 
 import React, { useMemo, useState } from "react";
-import { Question, Question1, Question2, Question3, FinalStep } from "./Questions";
+import { Question, Question1, Question2, Question3, FinalStep } from "./FeedbackQuestions";
 
-export type QuizAnswers = {
+export type FeedbackAnswers = {
   receiver?: string;
   reason?: string;
   who?: string;
@@ -13,7 +13,7 @@ export type QuizAnswers = {
 
 export default function QuizShell() {
   const [step, setStep] = useState(0);
-  const [answers, setAnswers] = useState<QuizAnswers>({});
+  const [answers, setAnswers] = useState<FeedbackAnswers>({});
   const steps = useMemo(
     () => [
       { id: "q1", component: Question1 },
@@ -27,7 +27,7 @@ export default function QuizShell() {
   const total = steps.length;
   const progress = Math.round(((step + 1) / total) * 100);
 
-  const setAnswer = (patch: Partial<QuizAnswers>) => {
+  const setAnswer = (patch: Partial<FeedbackAnswers>) => {
     setAnswers((s) => ({ ...s, ...patch }));
   };
 

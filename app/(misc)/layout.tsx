@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   }
 };
 
-export default function QuizLayout({
+export default function MiscLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

@@ -1,11 +1,11 @@
-import { QuizAnswers } from '@/app/(misc)/quiz/QuizShell';
+import { FeedbackAnswers } from '@/app/(misc)/feedback/FeedbackShell';
 import { NextRequest, NextResponse } from 'next/server';
 
 export async function POST(request: NextRequest) {
   const ONE_SIGNAL_API_KEY = process.env.ONE_SIGNAL_API_KEY;
   const ONE_SIGNAL_APP_ID = process.env.ONE_SIGNAL_APP_ID;
 
-  const answers: QuizAnswers = await request.json();
+  const answers: FeedbackAnswers = await request.json();
   
   const response = await fetch(`https://api.onesignal.com/apps/${ONE_SIGNAL_APP_ID}/users`, {
     method: 'POST',
