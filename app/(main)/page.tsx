@@ -240,6 +240,17 @@ export default function Home() {
                         height={24}
                       />
                       <p className="text-[1rem] text-[#242832] font-normal">
+                        Up to 20 posts per magazine.
+                      </p>
+                    </div>
+                    <div className={'flex flex-row gap-x-1'}>
+                      <Image
+                        src={Check}
+                        alt="A check mark"
+                        width={24}
+                        height={24}
+                      />
+                      <p className="text-[1rem] text-[#242832] font-normal">
                         Free shipping in the USA.
                       </p>
                     </div>
