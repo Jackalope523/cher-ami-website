@@ -127,25 +127,23 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col items-center gap-10">
+        <div className="flex flex-col w-fit gap-4 justify-center text-center">
           <p className="text-[1rem] text-[#242832] font-semibold text-center lg:text-left max-w-[500px]">
             Ready to make your own?
           </p>
-          <div className="flex flex-col w-fit gap-4 justify-center text-center">
-            <Link
-              href="/start"
-              className="flex px-10 py-3 bg-[#C15F3C] rounded-[12px] shadow-md
-                          text-[1rem] text-white justify-center">
-                Build mine for free
-            </Link>
-            <Link
-              href="/example"
-              className="flex px-6 py-3 border-2 border-[#C15F3C]
-                          rounded-[12px] shadow-md
-                          text-[1rem] text-[#C15F3C] justify-center">
-                See an example
-            </Link>
-          </div>
+          <Link
+            href="/start"
+            className="flex px-10 py-3 bg-[#C15F3C] rounded-[12px] shadow-md
+                        text-[1rem] text-white justify-center">
+              Let's go!
+          </Link>
+          <Link
+            href="/example"
+            className="flex px-6 py-3 border-2 border-[#C15F3C]
+                        rounded-[12px] shadow-md
+                        text-[1rem] text-[#C15F3C] justify-center">
+              See an example
+          </Link>
         </div>
       </section>
     </div>

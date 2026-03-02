@@ -288,6 +288,19 @@ export default function Home() {
               </div>
             </div>
           </Link>
+
+          <div className="flex flex-col items-center gap-4 pt-8">
+            <p className="text-[1rem] text-[#242832] font-semibold">
+              Curious how it looks?
+            </p>
+            <Link
+              href="/example"
+              className="flex px-6 py-3 border-2 border-[#C15F3C]
+                          rounded-[12px] shadow-md
+                          text-[1rem] text-[#C15F3C] justify-center">
+                See an example!
+            </Link>
+          </div>
         </div>
       </section>
 

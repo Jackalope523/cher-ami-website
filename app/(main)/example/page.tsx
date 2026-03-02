@@ -21,19 +21,19 @@ export default function Example() {
       </section>
 
       <section className="flex flex-col w-full items-center">
-        <div className="flex flex-col items-center gap-10">
+        <div className="flex flex-col items-center gap-8">
           <p className="text-[1rem] text-[#242832] font-normal text-center">
-            Printed on premium, glossy 8.5x11 paper for beautiful photos every time.
-          </p>
-          <p className="text-[1rem] text-[#242832] font-semibold text-center">
-            Ready to make your own?
+            Printed on premium, glossy 8.5x11 inch paper for beautiful photos every time. Up to 20 posts per magazine.
           </p>
           <div className="flex flex-col w-fit gap-4 justify-center text-center">
+            <p className="text-[1rem] text-[#242832] font-semibold text-center">
+              Ready to make your own?
+            </p>
             <Link
               href="/start"
               className="flex px-10 py-3 bg-[#C15F3C] rounded-[12px] shadow-md
                           text-[1rem] text-white justify-center">
-                Build mine for free
+                Let's go!
             </Link>
             <Link
               href="/product"
