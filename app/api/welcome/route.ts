@@ -3,17 +3,28 @@ import { NextRequest, NextResponse } from 'next/server';
 export async function POST(request: NextRequest) {
   const ONE_SIGNAL_API_KEY = process.env.ONE_SIGNAL_API_KEY;
   const ONE_SIGNAL_APP_ID = process.env.ONE_SIGNAL_APP_ID;
+  const CHER_AMI_API_URL = process.env.CHER_AMI_API_URL;
+  const CHER_AMI_API_KEY = process.env.CHER_AMI_API_KEY;
 
   const { email, military } = await request.json();
 
-  var tags: any = {
+  await fetch(`${CHER_AMI_API_URL}/website/user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `key ${CHER_AMI_API_KEY}`,
+      },
+      body: JSON.stringify({ email }),
+  });
+
+  const tags: any = {
     'entry': 'web',
   }
 
   if (military) {
     tags['military'] = '1';
   }
-  
+
   const response = await fetch("https://api.onesignal.com/notifications?c=email", {
     method: 'POST',
     headers: {
@@ -30,10 +41,10 @@ export async function POST(request: NextRequest) {
 
   const data = await response.json();
 
-    if (!response.ok) {
-  console.log("FAILURE!!!!");
-  console.log("HTTP status:", response.status);
-  console.log("OneSignal errors:", data.errors);
+  if (!response.ok) {
+    console.log("FAILURE!!!!");
+    console.log("HTTP status:", response.status);
+    console.log("OneSignal errors:", data.errors);
     throw new Error(`Response status: ${response.status}`);
   }
 
