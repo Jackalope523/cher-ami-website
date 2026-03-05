@@ -10,6 +10,9 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
+  "vars": {
+    "CHER_AMI_API_URL": "https://app-cherami-prod.azurewebsites.net"
+  },
   "observability": {
     "logs": {
       "enabled": true,
