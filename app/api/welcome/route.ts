@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
 
   const { email, military } = await request.json();
 
-  const res = await fetch(`${CHER_AMI_API_URL}/website/user`, {
+  await fetch(`${CHER_AMI_API_URL}/website/user`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
