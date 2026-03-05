@@ -40,9 +40,9 @@ export default function StartClient() {
             What if I don't have enough photos?
           </h3>
           <p className="text-[1rem] text-[#242832] font-normal text-center">
-            Don't worry! Even if you only make it yourself, you'll have enough time during the month
-            to fill up the magazine (you may even want more pages!). We'll also remind you to add
-            some photos if you haven't in a while.
+            Don't worry! You don't have to fill up the magazine every month to ship it.
+            Even if you only make it yourself, you'll have enough time during the month
+            to fill up the magazine (you may even want more pages!).
           </p>
         </div>
         <div className="flex flex-col gap-4">
@@ -60,10 +60,9 @@ export default function StartClient() {
             I'm too busy to make an entire magazine
           </h3>
           <p className="text-[1rem] text-[#242832] font-normal text-center">
-            We absolutely feel the same, and that's why we've made it as easy and
-            intuitive as possible to add your photos.
-            Plus, you don't need to mess with the layout and design—we'll
-            handle it to make sure it's beautiful and exciting every time!
+            As fellow busy people, we feel the same, which is why we've made it as easy and
+            intuitive as possible to add your photos. Plus, invite as many
+            other members as you want to help create your magazine!
           </p>
         </div>
         <div className="flex flex-col gap-6 items-center">

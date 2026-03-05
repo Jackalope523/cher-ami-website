@@ -131,7 +131,7 @@ export default function Header() {
         </div>
        }
       <div
-        className="absolute bg-[#DB5145] w-full animate-slide-down">
+        className="absolute bg-[#C15F3C] w-full animate-slide-down">
         <Link
           href="/start"
           onClick={() => plausible('Promo Banner Pressed')}

@@ -487,21 +487,10 @@ export default function Home() {
             }
           />
           <FAQItem
-            question={'Who do I send it to?'}
+            question={'Who do I send a magazine to?'}
             answer={
-              'Grandparents, parents, aunts, uncles, or anyone you want to keep up-to-date with a physical magazine!'
-            }
-          />
-          <FAQItem
-            question={'Where can a Cher Ami be delivered?'}
-            answer={
-              'Currently, we deliver anywhere in the USA but have plans to reach more countries—stay tuned!'
-            }
-          />
-          <FAQItem
-            question={'When can I start adding photos?'}
-            answer={
-              "Right away! Once you join and create your circle, you can start uploading photos immediately for this month's issue."
+              'Grandparents, parents, friends, or anyone else you want to show your love to with physical memories! ' +
+              'Currently, we only deliver in the USA but have plans to reach more countries soon.'
             }
           />
           <FAQItem
