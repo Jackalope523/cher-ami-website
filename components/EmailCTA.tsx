@@ -12,7 +12,7 @@ type Props = {
   location?: string;
   done?: boolean;
   onSignUp?: () => any;
-}
+};
 
 type ThemeVariantType = keyof typeof themeVariants;
 
@@ -20,16 +20,23 @@ const themeVariants = {
   defaultText: 'text-[#C15F3C]',
   defaultButton: 'bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]',
   militaryText: 'text-[#779443]',
-  militaryButton: 'bg-[#779443] hover:bg-[#6c873d] active:bg-[#6c873d]'
-}
+  militaryButton: 'bg-[#779443] hover:bg-[#6c873d] active:bg-[#6c873d]',
+};
 
-export default function EmailCTA({ variant = 'default', location = '', done = false, onSignUp }: Props) {
-  const textTheme: ThemeVariantType = variant === 'military' ? 'militaryText' : 'defaultText';
-  const buttonTheme: ThemeVariantType = variant === 'military' ? 'militaryButton' : 'defaultButton';
-  
+export default function EmailCTA({
+  variant = 'default',
+  location = '',
+  done = false,
+  onSignUp,
+}: Props) {
+  const textTheme: ThemeVariantType =
+    variant === 'military' ? 'militaryText' : 'defaultText';
+  const buttonTheme: ThemeVariantType =
+    variant === 'military' ? 'militaryButton' : 'defaultButton';
+
   const plausible = usePlausible();
   const searchParams = useSearchParams();
-  
+
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
   const [multipleMode, setMultipleMode] = useState(false);
@@ -48,11 +55,13 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
   }, [done]);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    setSubmitted(true);
+
     e.preventDefault();
 
     const payload = {
       email,
-      military: variant === 'military'
+      military: variant === 'military',
     };
 
     try {
@@ -69,8 +78,7 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
       console.error(err);
     }
 
-    plausible('Email Sign Up', { props: { location }});
-    setSubmitted(true);
+    plausible('Email Sign Up', { props: { location } });
     if (onSignUp) {
       onSignUp();
     }
@@ -84,7 +92,8 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
         </p>
         <div className="flex flex-col gap-4">
           <p className="text-[1rem] text-[#242832] font-normal">
-            Want to get started right away?<br />
+            Want to get started right away?
+            <br />
             <span className="font-medium">Download the app!</span>
           </p>
           {/*
@@ -97,15 +106,15 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
               OR
             </p>
           */}
-          <div className="flex flex-col md:flex-row gap-2 p-4 self-center items-center
+          <div
+            className="flex flex-col md:flex-row gap-2 p-4 self-center items-center
                           border-2 rounded-2xl border-[#DEDBD5]">
-            <DynamicCTA trackingProps={{ location: 'quick-start' }}/>
+            <DynamicCTA trackingProps={{ location: 'quick-start' }} />
           </div>
         </div>
       </div>
     );
-  }
-  else {
+  } else {
     return (
       <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
         <div className="flex flex-col gap-3">
@@ -122,16 +131,14 @@ export default function EmailCTA({ variant = 'default', location = '', done = fa
             type="submit"
             className={`flex flex-row gap-1 px-3 px-4 py-1.5 md:py-2
                       ${themeVariants[buttonTheme]} rounded-[12px] cursor-pointer
-                      text-white justify-center`}
-          >
-              Sign up
-              <Image src={SendIcon} alt="arrow icon" />
+                      text-white justify-center`}>
+            Sign up
+            <Image src={SendIcon} alt="arrow icon" />
           </button>
         </div>
         <p className="text-[0.75rem] text-[#676D7B]">
-          We only use your email to help you get started.
-          You can unsubscribe anytime.
-          Max 1 free magazine per circle.
+          We only use your email to help you get started. You can unsubscribe
+          anytime. Max 1 free magazine per circle.
         </p>
       </form>
     );
