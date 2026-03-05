@@ -8,7 +8,7 @@ export async function POST(request: NextRequest) {
 
   const { email, military } = await request.json();
 
-  await fetch(`${CHER_AMI_API_URL}/website/user`, {
+  const res = await fetch(`${CHER_AMI_API_URL}/website/user`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -16,6 +16,8 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({ email }),
   });
+
+  
 
   const tags: any = {
     'entry': 'web',
