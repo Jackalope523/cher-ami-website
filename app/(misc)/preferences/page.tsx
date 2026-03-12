@@ -3,17 +3,16 @@ import PreferencesClient from './PreferencesClient';
 import { Suspense } from 'react';
 
 export const metadata: Metadata = {
-  title: 'Contact | Cher Ami',
-  description: 'Contact the Cher Ami team.',
+  title: 'Email Preferences | Cher Ami',
+  description: 'Manage your email preferences for Cher Ami.',
   robots: {
+    index: false,
+    nofollow: true,
     noimageindex: true,
   },
-  alternates: {
-    canonical: 'https://thecherami.com/contact'
-  }
 };
 
-export default function Contact() {
+export default function PreferencesPage() {
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <PreferencesClient />
