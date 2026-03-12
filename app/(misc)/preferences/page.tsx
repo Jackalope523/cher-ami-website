@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: 'Manage your email preferences for Cher Ami.',
   robots: {
     index: false,
-    nofollow: true,
+    follow: false,
     noimageindex: true,
   },
 };
