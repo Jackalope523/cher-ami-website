@@ -163,7 +163,7 @@ export default function PreferencesClient() {
 
   if (state.type === 'unsubscribed') {
     return (
-      <div className="max-w-[560px] mx-auto px-5 py-24 flex flex-col items-center gap-5 text-center">
+      <div className="max-w-[560px] mx-auto px-5 pt-12 pb-32 flex flex-col items-center gap-5 text-center">
         <h1 className="text-[2rem] font-semibold text-[#242832]">
           You&apos;ve been unsubscribed.
         </h1>
@@ -185,8 +185,8 @@ export default function PreferencesClient() {
 
   // state.type === 'ready'
   return (
-    <div className="max-w-[560px] mx-auto px-5 py-24">
-      <div className="mb-8">
+    <div className="max-w-[560px] mx-auto px-5 pt-12 pb-32">
+      <div className="mb-6">
         <h1 className="text-[2rem] font-semibold text-[#242832] mb-2">
           Email Preferences
         </h1>
