@@ -9,7 +9,7 @@ const ANDROID_STORE_URL = "https://play.google.com/store/apps/details?id=com.hol
 const APPLE_STORE_URL = "https://apps.apple.com/us/app/cher-ami-family-magazine/id6753635033";
 
 export default function Redirect() {
-  const searchParams = useSearchParams()
+  const searchParams = useSearchParams();
 
   useEffect(() => {
     const redirect = searchParams.get('redirect');

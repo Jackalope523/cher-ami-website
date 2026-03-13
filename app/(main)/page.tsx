@@ -28,6 +28,7 @@ import CarouselVideoMagazine from '@/public/carousel-video-magazine.webp';
 import CarouselVideoGuy from '@/public/carousel-video-guy.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
 import TitleText from '@/components/TitleText';
+import DownloadPopup from '@/components/DownloadPopup';
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
@@ -77,6 +78,9 @@ export default function Home() {
                           rounded-[12px] shadow-md text-[1rem] text-white justify-center">
                 Let's go!
             </Link>
+            <Suspense fallback={null}>
+              <DownloadPopup />
+            </Suspense>
         </div>
       </section>
 
