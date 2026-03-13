@@ -126,7 +126,7 @@ export default function PreferencesClient() {
       const res = await fetch('/api/preferences', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: state.email }),
+        body: JSON.stringify({ subscriptionId: state.subscriptionId }),
       });
       if (!res.ok) throw new Error();
       setState({ type: 'ready', subscriptionId: state.subscriptionId, email: state.email, enabled: true, preferences: state.preferences });
