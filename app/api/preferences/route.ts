@@ -124,14 +124,12 @@ export async function DELETE(request: NextRequest) {
       }
     );
   }
-  console.log('after fetch')
 
   if (!res.ok) {
     return NextResponse.json({ error: 'Failed to unsubscribe' }, { status: res.status });
   }
-  console.log('reached reason')
+
   if (reason) {
-    console.log('inside reason')
     // Fire feedback email — non-blocking, failure is silent
     fetch(`${OS_BASE}/notifications?c=email`, {
       method: 'POST',

@@ -22,6 +22,15 @@ export const metadata: Metadata = {
   robots: {
     noimageindex: true,
   },
+  metadataBase: new URL('https://thecherami.com'),
+  openGraph: {
+    title: 'Cher Ami',
+    description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
+    url: 'https://thecherami.com',
+    siteName: 'Cher Ami',
+    images: '/opengraph-image.png',
+    type: 'website'
+  }
 };
 
 export default function RootLayout({
