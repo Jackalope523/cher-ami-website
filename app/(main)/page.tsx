@@ -58,7 +58,7 @@ export default function Home() {
       <section
         id="landing"
         className="flex flex-col lg:flex-row-reverse items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
-        <div className="flex flex-col w-[100vw] lg:max-w-[30vw] pb-4">
+        <div className="flex flex-col lg:self-start w-[100vw] lg:max-w-[30vw] pb-4">
           <Image
             src={HeroImage}
             alt="Parents reading a Cher Ami"
