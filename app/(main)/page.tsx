@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import DesktopHero from '@/public/hero.webp';
 import HeroImage from '@/public/hero-parents.webp';
+import Magazine from '@/public/magazine.webp';
 import MiceFamilyIllustration from '@/public/step-one-illustration.webp';
 import SquirrelIllustration from '@/public/step-two-illustration.webp';
 import BearFamilyIllustration from '@/public/step-three-illustration.webp';
@@ -14,6 +15,7 @@ import ValueFreeShippingIllustration from '@/public/value-shipping.png';
 import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
 import Arrow from '@/public/arrow.svg';
+import DiagonalArrow from '@/public/arrow-up-right.svg';
 import FAQItem from '@/components/FAQItem';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
@@ -29,6 +31,15 @@ import CarouselVideoGuy from '@/public/carousel-video-guy.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
 import TitleText from '@/components/TitleText';
 import DownloadPopup from '@/components/DownloadPopup';
+
+import { Damion } from 'next/font/google';
+
+const damion = Damion({
+  weight: '400',
+  fallback: ['cursive'],
+  display: 'swap',
+});
+
 
 export const metadata: Metadata = {
   title: 'Cher Ami',
@@ -128,9 +139,9 @@ export default function Home() {
       </section>
 
       <section id="problem" className="flex flex-col sm:flex-row gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
-        <div className="flex flex-[2.5] flex-col gap-4">
+        <div className="flex flex-[1.5] flex-col gap-4">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            A Monthly Dose of Joy
+            A monthly dose of <span className={`${damion.className} text-[3rem] text-[#C15F3C]`}>joy</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
             Every month, your family's photos and stories become a beautiful magazine,
@@ -138,19 +149,30 @@ export default function Home() {
             Each page filled with people you care about and love.
             Not too big, not too small—just right.
           </p>
-        </div>
-        <div className="flex flex-1 max-w-[50vw] self-center">
           <Image
-            src={BearFamilyIllustration}
-            alt="Family of bears reading a Cher Ami"
+            src={MiceFamilyIllustration}
+            alt="Illustration of a family of bears"
+            className='hidden sm:block max-w-[35vw] self-center'
           />
         </div>
+        <Link
+          href="/example"
+          className="flex flex-1 flex-col max-w-[50vw] self-center items-center gap-4"
+          >
+          <Image
+            src={Magazine}
+            alt="Image of a Cher Ami"
+          />
+          <p className="text-[1rem] text-[#C15F3C] border-2 border-[#C15F3C] rounded-2xl w-fit px-4 py-3 text-center justify-center">
+            See Example Magazine
+          </p>
+        </Link>
       </section>
 
       <section id="objection" className="flex flex-col sm:flex-row-reverse gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
         <div className="flex flex-2 flex-col gap-4">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            Why not just text them?
+            Why not just <span className={`${damion.className} text-[3rem] text-[#C15F3C]`}>text them?</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
             <span className="font-semibold">Paper has held memories for thousands of years. </span>
@@ -171,7 +193,7 @@ export default function Home() {
       <section id="options" className="flex flex-col gap-10 mb-10 items-center">
         <div>
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-            Options for Everyone
+            Options for <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C]`}>everyone</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
             No long-term commitment,<br/>billed only when we print and ship.
@@ -294,25 +316,12 @@ export default function Home() {
               </div>
             </div>
           </Link>
-
-          <div className="flex flex-col items-center gap-4 pt-8">
-            <p className="text-[1rem] text-[#242832] font-semibold">
-              Curious how it looks?
-            </p>
-            <Link
-              href="/example"
-              className="flex px-6 py-3 border-2 border-[#C15F3C]
-                          rounded-[12px] shadow-md
-                          text-[1rem] text-[#C15F3C] justify-center">
-                See an example!
-            </Link>
-          </div>
         </div>
       </section>
 
       <section id="values" className="flex flex-col items-center">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center mb-10 px-5">
-          Why Families Choose Us
+          Why families <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C]`}>choose us</span>
         </h2>
         <div className="flex w-[100vw] max-w-[100vw] lg:justify-center px-5 lg:px-8 xl:px-0 pt-[8px] gap-6 overflow-x-auto no-scrollbar">
           <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
