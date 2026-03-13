@@ -38,15 +38,16 @@ export default function DynamicCTA({ trackingProps }: Props) {
   }
   else {
     return (
-      <div className="flex flex-row gap-8">
-        <div className="flex flex-col gap-8 justify-center">
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className="flex flex-row md:flex-col gap-4 self-center justify-center items-center w-fit h-fit
+                        border-2 border-[#DEDBD5] rounded-xl p-4">
           <CTA store="Apple" width={192} height={64} trackingProps={trackingProps} />
           <CTA store="Google" width={216} height={64} trackingProps={trackingProps} />
         </div>
         <Image
           src={QRCode}
           alt="QR code to download the app"
-          className='w-80'
+          className='w-80 h-auto self-center'
           />
       </div>
     );
