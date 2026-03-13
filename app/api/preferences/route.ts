@@ -145,7 +145,9 @@ export async function DELETE(request: NextRequest) {
           <p>Reason: ${reason ?? 'Not provided'}</p>
         `,
       }),
-    }).catch(() => {});
+    })
+    .then((response) => { console.log('Email sent: ' + JSON.stringify(response)) })
+    .catch((err) => { console.log('Email not sent: ' + JSON.stringify(err)) });
   }
 
   return NextResponse.json({ success: true });
