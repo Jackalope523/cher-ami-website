@@ -96,6 +96,9 @@ export async function PATCH(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   const { subscriptionId, notificationId, unsubscribeToken, email, reason } = await request.json();
 
+  console.log('Processing unsubscribe')
+  console.error('Processing unsubscribe error log')
+
   if (!subscriptionId) {
     return NextResponse.json({ error: 'Missing subscription id' }, { status: 400 });
   }
