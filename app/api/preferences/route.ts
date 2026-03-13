@@ -136,18 +136,17 @@ export async function DELETE(request: NextRequest) {
       headers: osHeaders(),
       body: JSON.stringify({
         app_id: appId,
-        email_from_address: 'help@thecherami.com',
-        email_to: ['help@thecherami.com'],
+        email_from_address: "help@thecherami.com",
+        email_to: ["help@thecherami.com"],
         email_subject: 'Unsubscribe: Email Preferences',
         email_body: `
-          <p>From: ${email ?? 'Unknown'}</p><br />
-          <p>Time: ${new Date().toUTCString()}</p><br />
-          <p>Reason: ${reason ?? 'Not provided'}</p>
+          <p>From: ${email || 'Unknown'}</p><br />
+          <p>Time: ${new Date()}</p><br />
+          <p>Reason: ${reason}</p>
         `,
-      }),
+      })
     })
-    .then((response) => { console.log('Email sent: ' + JSON.stringify(response)) })
-    .catch((err) => { console.log('Email not sent: ' + JSON.stringify(err)) });
+    .catch(() => {});
   }
 
   return NextResponse.json({ success: true });
