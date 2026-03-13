@@ -96,9 +96,6 @@ export async function PATCH(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
   const { subscriptionId, notificationId, unsubscribeToken, email, reason } = await request.json();
 
-  console.log('Processing unsubscribe')
-  console.error('Processing unsubscribe error log')
-
   if (!subscriptionId) {
     return NextResponse.json({ error: 'Missing subscription id' }, { status: 400 });
   }
@@ -127,12 +124,14 @@ export async function DELETE(request: NextRequest) {
       }
     );
   }
+  console.log('after fetch')
 
   if (!res.ok) {
     return NextResponse.json({ error: 'Failed to unsubscribe' }, { status: res.status });
   }
-
+  console.log('reached reason')
   if (reason) {
+    console.log('inside reason')
     // Fire feedback email — non-blocking, failure is silent
     fetch(`${OS_BASE}/notifications?c=email`, {
       method: 'POST',
