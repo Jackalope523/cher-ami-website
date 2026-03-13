@@ -1,6 +1,13 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { Damion } from 'next/font/google';
+
+const damion = Damion({
+  weight: '400',
+  fallback: ['cursive'],
+  display: 'swap',
+});
 
 const texts = ['Love', 'Feeling', 'Stories', 'Meaning', 'Joy', 'Memories'];
 const maxLength = Math.max(...texts.map((text) => text.length));
@@ -31,11 +38,13 @@ export default function TitleText() {
 
   return (
     <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center lg:text-left min-w-[320px] max-w-[650px]">
-      Send Real Photos With{' '}
+      Send Real Photos{' '}
+      <br className="hidden lg:block" />
+      With{' '}
       <br className="block sm:hidden" />
       <span className="inline-block relative align-top text-center sm:text-left">
         <span
-          className="absolute w-full text-[#C15F3C] transition-all duration-200"
+          className={`${damion.className} absolute w-full text-[#C15F3C] text-[3rem] transition-all duration-200 transform translate-y-[-1rem] lg:translate-y-[-0.5rem]`}
           style={{
             transform: isAnimating ? 'translateY(10px)' : 'translateY(0)',
             opacity: isAnimating ? 0 : 1,

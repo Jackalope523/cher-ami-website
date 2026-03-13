@@ -66,10 +66,12 @@ export default function Home() {
             priority
           />
         </div>
-        <div className="flex flex-col items-center lg:items-start gap-10">
+        <div className="flex flex-col items-center lg:items-start gap-8">
           <TitleText />
           <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-            Your precious memories deserve more than to be forgotten in a group chat or camera roll.
+            Your precious memories deserve more than to be forgotten in a group chat or camera roll.{' '}
+            <br className='hidden lg:inline-block' />
+            <br className='hidden lg:inline-block' />
             Send those you love a beautiful magazine filled with your photos and stories.
           </p> {/* Make it easy, solve their problem (gift) */}
             <Link

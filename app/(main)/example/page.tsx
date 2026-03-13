@@ -35,13 +35,6 @@ export default function Example() {
                           text-[1rem] text-white justify-center">
                 Let's go!
             </Link>
-            <Link
-              href="/product"
-              className="flex px-6 py-3 border-2 border-[#C15F3C]
-                          rounded-[12px] shadow-md
-                          text-[1rem] text-[#C15F3C] justify-center">
-                See how it works
-            </Link>
           </div>
         </div>
       </section>

@@ -90,8 +90,8 @@ export default function RootLayout({
                 <Link href="/start" className="text-[#B05637] py-2">
                   Get Cher Ami
                 </Link>
-                <Link href="/product" className="text-[#B05637] py-2">
-                  How It Works
+                <Link href="/example" className="text-[#B05637] py-2">
+                  Magazine
                 </Link>
                 <Link href="/help" className="text-[#B05637] py-2">
                   Help
