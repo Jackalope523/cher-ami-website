@@ -12,19 +12,19 @@ function osHeaders() {
 
 // GET /api/preferences?email={email}
 export async function GET(request: NextRequest) {
-  const email = request.nextUrl.searchParams.get('email');
+  const externalId = request.nextUrl.searchParams.get('external_id');
 
-  if (!email) {
-    return NextResponse.json({ error: 'Missing email' }, { status: 400 });
+  if (!externalId) {
+    return NextResponse.json({ error: 'Missing external id' }, { status: 400 });
   }
 
   if (IS_DEV) {
     return NextResponse.json({
       subscriptionId: 'dev-subscription-id',
+      email: 'dev@thecherami.com',
       enabled: true,
       preferences: {
-        issue_reminders: true,
-        post_reminders: true,
+        reminders: true,
         marketing: false,
       },
     });
@@ -32,7 +32,7 @@ export async function GET(request: NextRequest) {
 
   const appId = process.env.ONE_SIGNAL_APP_ID;
   const res = await fetch(
-    `${OS_BASE}/apps/${appId}/users/by/email/${encodeURIComponent(email)}`,
+    `${OS_BASE}/apps/${appId}/users/by/external_id/${externalId}`,
     { headers: osHeaders() }
   );
 
@@ -46,40 +46,39 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({
     subscriptionId: emailSub?.id ?? null,
+    email: emailSub?.token ?? null,
     enabled: emailSub?.enabled ?? false,
     preferences: {
-      issue_reminders: tags.pref_issue_reminders !== '0',
-      post_reminders: tags.pref_post_reminders !== '0',
-      marketing: tags.pref_marketing !== '0',
+      reminders: tags.email_reminders !== '0',
+      marketing: tags.email_marketing !== '0',
     },
   });
 }
 
 // PATCH /api/preferences — update preference tags
 export async function PATCH(request: NextRequest) {
-  const { email, preferences } = await request.json();
+  const { externalId, preferences } = await request.json();
 
-  if (!email) {
-    return NextResponse.json({ error: 'Missing email' }, { status: 400 });
+  if (!externalId) {
+    return NextResponse.json({ error: 'Missing external id' }, { status: 400 });
   }
 
   if (IS_DEV) {
-    console.log('[dev] PATCH preferences for', email, preferences);
+    console.log('[dev] PATCH preferences for', externalId, preferences);
     return NextResponse.json({ success: true });
   }
 
   const appId = process.env.ONE_SIGNAL_APP_ID;
   const res = await fetch(
-    `${OS_BASE}/apps/${appId}/users/by/email/${encodeURIComponent(email)}`,
+    `${OS_BASE}/apps/${appId}/users/by/external_id/${externalId}`,
     {
       method: 'PATCH',
       headers: osHeaders(),
       body: JSON.stringify({
         properties: {
           tags: {
-            pref_issue_reminders: preferences.issue_reminders ? '1' : '0',
-            pref_post_reminders: preferences.post_reminders ? '1' : '0',
-            pref_marketing: preferences.marketing ? '1' : '0',
+            email_reminders: preferences.reminders ? '1' : '0',
+            email_marketing: preferences.marketing ? '1' : '0',
           },
         },
       }),
@@ -95,48 +94,59 @@ export async function PATCH(request: NextRequest) {
 
 // DELETE /api/preferences — unsubscribe from all (disable subscription)
 export async function DELETE(request: NextRequest) {
-  const { subscriptionId, email, reason } = await request.json();
+  const { subscriptionId, notificationId, unsubscribeToken, email, reason } = await request.json();
 
   if (!subscriptionId) {
-    return NextResponse.json({ error: 'Missing subscription ID' }, { status: 400 });
+    return NextResponse.json({ error: 'Missing subscription id' }, { status: 400 });
   }
 
   if (IS_DEV) {
-    console.log('[dev] DELETE (unsubscribe) subscription', subscriptionId, { email, reason });
+    console.log('[dev] DELETE (unsubscribe) subscription', subscriptionId, { reason });
     return NextResponse.json({ success: true });
   }
 
   const appId = process.env.ONE_SIGNAL_APP_ID;
 
-  const res = await fetch(
-    `${OS_BASE}/apps/${appId}/subscriptions/${subscriptionId}`,
-    {
-      method: 'PATCH',
-      headers: osHeaders(),
-      body: JSON.stringify({ subscription: { enabled: false } }),
-    }
-  );
+  var res;
+
+  if (notificationId && unsubscribeToken) {
+    res = await fetch(
+      `${OS_BASE}/apps/${appId}/notifications/${notificationId}/unsubscribe?token=${unsubscribeToken}`,
+      {
+        method: 'POST',
+      }
+    );
+  } else {
+    res = await fetch(
+      `${OS_BASE}/apps/${appId}/notifications/${notificationId}/unsubscribe?token=${unsubscribeToken}`,
+      {
+        method: 'POST',
+      }
+    );
+  }
 
   if (!res.ok) {
     return NextResponse.json({ error: 'Failed to unsubscribe' }, { status: res.status });
   }
 
-  // Fire feedback email — non-blocking, failure is silent
-  fetch(`${OS_BASE}/notifications?c=email`, {
-    method: 'POST',
-    headers: osHeaders(),
-    body: JSON.stringify({
-      app_id: appId,
-      email_from_address: 'help@thecherami.com',
-      email_to: ['help@thecherami.com'],
-      email_subject: 'Unsubscribe: Email Preferences',
-      email_body: `
-        <p>From: ${email ?? 'Unknown'}</p><br />
-        <p>Time: ${new Date().toUTCString()}</p><br />
-        <p>Reason: ${reason ?? 'Not provided'}</p>
-      `,
-    }),
-  }).catch(() => {});
+  if (reason) {
+    // Fire feedback email — non-blocking, failure is silent
+    fetch(`${OS_BASE}/notifications?c=email`, {
+      method: 'POST',
+      headers: osHeaders(),
+      body: JSON.stringify({
+        app_id: appId,
+        email_from_address: 'help@thecherami.com',
+        email_to: ['help@thecherami.com'],
+        email_subject: 'Unsubscribe: Email Preferences',
+        email_body: `
+          <p>From: ${email ?? 'Unknown'}</p><br />
+          <p>Time: ${new Date().toUTCString()}</p><br />
+          <p>Reason: ${reason ?? 'Not provided'}</p>
+        `,
+      }),
+    }).catch(() => {});
+  }
 
   return NextResponse.json({ success: true });
 }
@@ -146,7 +156,7 @@ export async function POST(request: NextRequest) {
   const { subscriptionId } = await request.json();
 
   if (!subscriptionId) {
-    return NextResponse.json({ error: 'Missing subscription ID' }, { status: 400 });
+    return NextResponse.json({ error: 'Missing subscription id' }, { status: 400 });
   }
 
   if (IS_DEV) {
@@ -159,7 +169,6 @@ export async function POST(request: NextRequest) {
     `${OS_BASE}/apps/${appId}/subscriptions/${subscriptionId}`,
     {
       method: 'PATCH',
-      headers: osHeaders(),
       body: JSON.stringify({ subscription: { enabled: true } }),
     }
   );

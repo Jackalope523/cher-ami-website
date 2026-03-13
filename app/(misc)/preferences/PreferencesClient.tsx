@@ -2,65 +2,32 @@
 
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
+import Toggle from '@/components/Toggle';
 
 type Preferences = {
-  issue_reminders: boolean;
-  post_reminders: boolean;
+  reminders: boolean;
   marketing: boolean;
 };
 
 type State =
   | { type: 'loading' }
   | { type: 'error' }
-  | { type: 'ready'; subscriptionId: string; enabled: boolean; preferences: Preferences }
-  | { type: 'unsubscribed'; subscriptionId: string; preferences: Preferences };
-
-function Toggle({
-  id,
-  checked,
-  onChange,
-}: {
-  id: string;
-  checked: boolean;
-  onChange: (v: boolean) => void;
-}) {
-  return (
-    <button
-      type="button"
-      id={id}
-      role="switch"
-      aria-checked={checked}
-      onClick={() => onChange(!checked)}
-      className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 focus:outline-none ${
-        checked ? 'bg-[#C15F3C]' : 'bg-[#D9D9D9]'
-      }`}>
-      <span
-        className={`pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow-sm transition-transform duration-200 ${
-          checked ? 'translate-x-5' : 'translate-x-0'
-        }`}
-      />
-    </button>
-  );
-}
+  | { type: 'ready'; subscriptionId: string; email: string; enabled: boolean; preferences: Preferences }
+  | { type: 'unsubscribed'; subscriptionId: string; email: string; preferences: Preferences };
 
 const UNSUBSCRIBE_REASONS = [
   "Too many emails",
   "Not relevant to me",
-  "I cancelled my subscription",
-  "I prefer the app",
+  "I stopped using the app",
+  "I prefer app notifications",
   "Other",
 ];
 
 const PREF_LABELS: { key: keyof Preferences; label: string; description: string }[] = [
   {
-    key: 'issue_reminders',
-    label: 'Issue Reminders',
-    description: 'Reminders when your magazine deadline is approaching.',
-  },
-  {
-    key: 'post_reminders',
-    label: 'Post Reminders',
-    description: 'Reminders to add photos and stories to your circle.',
+    key: 'reminders',
+    label: 'Issue & Post Reminders',
+    description: 'Reminders for issues and to add photos.',
   },
   {
     key: 'marketing',
@@ -71,7 +38,9 @@ const PREF_LABELS: { key: keyof Preferences; label: string; description: string 
 
 export default function PreferencesClient() {
   const searchParams = useSearchParams();
-  const email = searchParams.get('email') || '';
+  const externalId = searchParams.get('external_id') || '';
+  const notificationId = searchParams.get("notification_id");
+  const unsubscribeToken = searchParams.get("token");
 
   const [state, setState] = useState<State>({ type: 'loading' });
   const [saving, setSaving] = useState(false);
@@ -81,12 +50,12 @@ export default function PreferencesClient() {
   const [unsubscribeReason, setUnsubscribeReason] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!email) {
+    if (!externalId) {
       setState({ type: 'error' });
       return;
     }
 
-    fetch(`/api/preferences?email=${encodeURIComponent(email)}`)
+    fetch(`/api/preferences?external_id=${encodeURIComponent(externalId)}`)
       .then((r) => r.json())
       .then((data) => {
         if (data.error) {
@@ -94,6 +63,7 @@ export default function PreferencesClient() {
           return;
         }
         const base = {
+          email: data.email,
           subscriptionId: data.subscriptionId,
           preferences: data.preferences as Preferences,
         };
@@ -104,7 +74,7 @@ export default function PreferencesClient() {
         }
       })
       .catch(() => setState({ type: 'error' }));
-  }, [email]);
+  }, [externalId]);
 
   const handleSave = async () => {
     if (state.type !== 'ready') return;
@@ -113,7 +83,7 @@ export default function PreferencesClient() {
       const res = await fetch('/api/preferences', {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, preferences: state.preferences }),
+        body: JSON.stringify({ externalId, preferences: state.preferences }),
       });
       if (!res.ok) throw new Error();
       setSaved(true);
@@ -134,12 +104,14 @@ export default function PreferencesClient() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           subscriptionId: state.subscriptionId,
-          email,
+          notificationId,
+          unsubscribeToken,
+          email: state.email,
           reason: unsubscribeReason,
         }),
       });
       if (!res.ok) throw new Error();
-      setState({ type: 'unsubscribed', subscriptionId: state.subscriptionId, preferences: state.preferences });
+      setState({ type: 'unsubscribed', subscriptionId: state.subscriptionId, email: state.email, preferences: state.preferences });
     } catch {
       // silently fail
     } finally {
@@ -154,10 +126,10 @@ export default function PreferencesClient() {
       const res = await fetch('/api/preferences', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ subscriptionId: state.subscriptionId }),
+        body: JSON.stringify({ email: state.email }),
       });
       if (!res.ok) throw new Error();
-      setState({ type: 'ready', subscriptionId: state.subscriptionId, enabled: true, preferences: state.preferences });
+      setState({ type: 'ready', subscriptionId: state.subscriptionId, email: state.email, enabled: true, preferences: state.preferences });
     } catch {
       // silently fail
     } finally {
@@ -219,7 +191,7 @@ export default function PreferencesClient() {
           Email Preferences
         </h1>
         <p className="text-[#5A5A5A] text-sm">
-          Managing preferences for <span className="font-medium text-[#242832]">{email}</span>
+          Managing preferences for <span className="font-medium text-[#242832]">{state.email}</span>
         </p>
       </div>
 
