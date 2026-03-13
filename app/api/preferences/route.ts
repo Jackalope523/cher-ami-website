@@ -138,7 +138,7 @@ export async function DELETE(request: NextRequest) {
         app_id: appId,
         email_from_address: "help@thecherami.com",
         email_to: ["help@thecherami.com"],
-        email_subject: 'Unsubscribe: Email Preferences',
+        email_subject: 'Subscription Disabled',
         email_body: `
           <p>From: ${email || 'Unknown'}</p><br />
           <p>Time: ${new Date()}</p><br />
