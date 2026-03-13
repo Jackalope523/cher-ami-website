@@ -55,7 +55,7 @@ export default function PreferencesClient() {
       return;
     }
 
-    fetch(`/api/preferences?external_id=${encodeURIComponent(externalId)}`)
+    fetch(`/api/preferences?external_id=${externalId}`)
       .then((r) => r.json())
       .then((data) => {
         if (data.error) {
