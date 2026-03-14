@@ -16,6 +16,8 @@ import Check from '@/public/check.svg';
 import X from '@/public/x.svg';
 import Arrow from '@/public/arrow.svg';
 import DiagonalArrow from '@/public/arrow-up-right.svg';
+import Quotes from '@/public/quotes.svg';
+
 import FAQItem from '@/components/FAQItem';
 import { Suspense } from 'react';
 import Redirect from '@/components/Redirect';
@@ -139,9 +141,9 @@ export default function Home() {
       </section>
 
       <section id="problem" className="flex flex-col sm:flex-row gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
-        <div className="flex flex-[1.5] flex-col gap-4">
+        <div className="flex flex-[1.5] flex-col gap-8">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            A monthly dose of <span className={`${damion.className} text-[3rem] text-[#C15F3C]`}>joy</span>
+            A monthly dose of <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>joy</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
             Every month, your family's photos and stories become a beautiful magazine,
@@ -170,9 +172,9 @@ export default function Home() {
       </section>
 
       <section id="objection" className="flex flex-col sm:flex-row-reverse gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
-        <div className="flex flex-2 flex-col gap-4">
+        <div className="flex flex-2 flex-col gap-8">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            Why not just <span className={`${damion.className} text-[3rem] text-[#C15F3C]`}>text them?</span>
+            Why not just <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>text them?</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
             <span className="font-semibold">Paper has held memories for thousands of years. </span>
@@ -181,19 +183,31 @@ export default function Home() {
             from a friend or relative, because love exists when you can
             feel it as much as you can see it.
           </p>
+          <div className="flex flex-row gap-6 items-center">
+            <div className="bg-[#F4F1EA] rounded-xl">
+              <Image
+                src={Quotes}
+                alt="Quotation marks"
+                className="min-w-16 p-4"
+                />
+            </div>
+            <p className="text-[1rem] text-[#868581] italic">
+            There's something magical about holding a physical memory in your hands.
+            </p>
+          </div>
         </div>
         <div className="flex flex-1 max-w-[60vw] self-center">
           <Image
-            src={EnvelopeIllustration}
-            alt="Envelope containing a Cher Ami"
+            src={BearFamilyIllustration}
+            alt="Family of bears reading a Cher Ami"
           />
         </div>
       </section>
 
       <section id="options" className="flex flex-col gap-10 mb-10 items-center">
-        <div>
+        <div className="flex flex-col gap-4">
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-            Options for <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C]`}>everyone</span>
+            Options for <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C] leading-0`}>everyone</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
             No long-term commitment,<br/>billed only when we print and ship.
@@ -321,7 +335,7 @@ export default function Home() {
 
       <section id="values" className="flex flex-col items-center">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center mb-10 px-5">
-          Why families <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C]`}>choose us</span>
+          Why families <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C] leading-0`}>choose us</span>
         </h2>
         <div className="flex w-[100vw] max-w-[100vw] lg:justify-center px-5 lg:px-8 xl:px-0 pt-[8px] gap-6 overflow-x-auto no-scrollbar">
           <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
