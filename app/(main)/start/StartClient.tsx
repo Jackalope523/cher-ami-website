@@ -7,6 +7,14 @@ import EmailCTA from '@/components/EmailCTA';
 import { Suspense, useState } from 'react';
 import SquirrelIllustration from '@/public/step-two-illustration.webp';
 
+import { Damion } from 'next/font/google';
+
+const damion = Damion({
+  weight: '400',
+  fallback: ['cursive'],
+  display: 'swap',
+});
+
 export default function StartClient() {
   const [signedUp, setSignedUp] = useState(false);
 
@@ -14,16 +22,16 @@ export default function StartClient() {
     <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-12 md:gap-20 pt-10 pb-18">
       <section
         id="landing"
-        className="flex flex-col md:flex-row-reverse items-center justify-between w-full px-8 xl:px-0 gap-6">
+        className="flex flex-col md:flex-row-reverse items-center justify-between w-full px-8 xl:px-0 gap-4">
         <Image
           src={Magazine}
           alt="Image of magazine"
-          className="max-w-[50vw] md:max-w-[40vw] lg:max-w-[30vw]"
+          className="max-w-[60vw] sm:max-w-[50vw] md:max-w-[40vw] xl:max-w-[30vw]"
           priority
           />
         <div className="flex flex-col items-center md:items-start gap-8">
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center md:text-left min-w-[320px] max-w-[650px]">
-            Your First Magazine <span className="text-[#C15F3C]">Free</span>
+            Your First Magazine <span className={`${damion.className} text-[2.5rem] text-[#C15F3C]`}>Free</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
             We'll even cover shipping. Sign up with your email address and we'll send you instructions for how to start!

@@ -159,7 +159,7 @@ export default function Home() {
         </div>
         <Link
           href="/example"
-          className="flex flex-1 flex-col max-w-[50vw] self-center items-center gap-4"
+          className="flex flex-1 flex-col max-w-[70vw] lg:max-w-[50vw] self-center items-center gap-4"
           >
           <Image
             src={Magazine}
