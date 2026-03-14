@@ -31,7 +31,7 @@ export default function StartClient() {
           />
         <div className="flex flex-col items-center md:items-start gap-8">
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center md:text-left min-w-[320px] max-w-[650px]">
-            Your First Magazine <span className={`${damion.className} text-[2.5rem] text-[#C15F3C]`}>Free</span>
+            Your First Magazine <span className={`${damion.className} text-[2.5rem] text-[#C15F3C] leading-0`}>Free</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
             We'll even cover shipping. Sign up with your email address and we'll send you instructions for how to start!
