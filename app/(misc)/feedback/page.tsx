@@ -4,7 +4,7 @@ import React, { Suspense, useState } from "react";
 import dynamic from "next/dynamic";
 import Image from "next/image";
 
-import IntroIllustration from '@/public/step-two-illustration.webp';
+import IntroIllustration from '@/public/squirrel.webp';
 import { usePlausible } from "next-plausible";
 
 const FeedbackShell = dynamic(() => import("./FeedbackShell"), { ssr: false });

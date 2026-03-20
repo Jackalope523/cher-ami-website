@@ -11,7 +11,8 @@
     "binding": "ASSETS"
   },
   "vars": {
-    "CHER_AMI_API_URL": "https://app-cherami-prod.azurewebsites.net"
+    "CHER_AMI_API_URL": "https://app-cherami-prod.azurewebsites.net",
+    "NEXT_PUBLIC_API_URL": "https://app-cherami-prod.azurewebsites.net"
   },
   "observability": {
     "logs": {

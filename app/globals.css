@@ -47,4 +47,13 @@ body {
     animation-fill-mode: both;
     will-change: transform, opacity;
   }
+
+  @keyframes fadeIn {
+    0%   { opacity: 0; transform: translateY(-8px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 200ms ease-out;
+  }
 }

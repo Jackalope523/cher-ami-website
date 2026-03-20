@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import SendIcon from '@/public/send.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
-import DynamicCTA from './DynamicCTA';
+import StartWizard from './StartWizard';
 
 type Props = {
   variant?: 'default' | 'military';
@@ -39,7 +39,6 @@ export default function EmailCTA({
 
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
-  const [multipleMode, setMultipleMode] = useState(false);
 
   useEffect(() => {
     const isSubmitted = searchParams.get('submitted');
@@ -86,31 +85,11 @@ export default function EmailCTA({
 
   if (submitted) {
     return (
-      <div className="flex flex-col gap-8 text-center">
-        <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold`}>
-          Instructions were sent to {email || 'your inbox'}!
+      <div className="flex flex-col gap-4">
+        <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold text-center`}>
+          You&apos;re in! Let&apos;s set up your first magazine.
         </p>
-        <div className="flex flex-col gap-4">
-          <p className="text-[1rem] text-[#242832] font-normal">
-            Want to get started right away?
-            <br />
-            <span className="font-medium">Download the app!</span>
-          </p>
-          {/*
-            <p className={`flex flex-row gap-1 px-3 px-4 py-1.5 md:py-2
-                        ${themeVariants[buttonTheme]} rounded-[12px] cursor-pointer
-                        text-white justify-center`}>
-              Click here to invite others to join you
-            </p>
-            <p className="text-[1rem] text-[#242832] font-semibold">
-              OR
-            </p>
-          */}
-          <div
-            className="flex flex-col md:flex-row gap-2 p-4 self-center items-center">
-            <DynamicCTA trackingProps={{ location: 'quick-start' }} />
-          </div>
-        </div>
+        <StartWizard />
       </div>
     );
   } else {
@@ -136,8 +115,8 @@ export default function EmailCTA({
           </button>
         </div>
         <p className="text-[0.75rem] text-[#676D7B]">
-          We only use your email to help you get started. You can unsubscribe
-          anytime. Max 1 free magazine per circle.
+          We&apos;ll only use this to help you get started. Unsubscribe anytime.
+          One free magazine per circle.
         </p>
       </form>
     );

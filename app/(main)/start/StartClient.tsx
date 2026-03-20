@@ -5,7 +5,7 @@ import Magazine from '@/public/magazine.webp';
 import Link from 'next/link';
 import EmailCTA from '@/components/EmailCTA';
 import { Suspense, useState } from 'react';
-import SquirrelIllustration from '@/public/step-two-illustration.webp';
+import SquirrelIllustration from '@/public/squirrel.webp';
 
 import { Damion } from 'next/font/google';
 
