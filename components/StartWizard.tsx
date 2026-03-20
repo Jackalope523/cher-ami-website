@@ -464,7 +464,7 @@ export default function StartWizard() {
             </p>
 
             {/* Magazine preview — fanned-out pages */}
-            <div className="relative w-full max-w-[320px] mx-auto" style={{ height: '320px' }}>
+            <div className="relative w-full max-w-[360px] mx-auto" style={{ height: '340px' }}>
               {/* Cover page (left, behind) */}
               <div className="absolute top-4 left-0 w-[65%] bg-white shadow-md border border-[#E8E5DF] overflow-hidden"
                    style={{ aspectRatio: '8.5/11', transform: 'rotate(-4deg)' }}>
@@ -492,7 +492,7 @@ export default function StartWizard() {
 
                   {/* Footer */}
                   <div className="flex items-center gap-1.5">
-                    <div className="flex-1 h-[2px] bg-[#C15F3C]" />
+                    <div className="flex-1 h-[1px] bg-[#C15F3C]" />
                     {displayName && (
                       <p className={`text-xs text-[#C15F3C] ${damion.className}`}>
                         {displayName}
@@ -507,18 +507,21 @@ export default function StartWizard() {
                    style={{ aspectRatio: '8.5/11', transform: 'rotate(3deg)' }}>
                 <div className="absolute inset-0 flex flex-col p-[6%]">
                   {/* 2×2 grid */}
-                  <div className="flex-1 grid grid-cols-2 gap-[3%] content-start pt-[2%]">
+                  <div className="flex-1 grid grid-cols-2 gap-x-[3%] gap-y-[10%] content-start pt-[2%]">
                     {/* Their photo */}
                     <div className="flex flex-col">
                       {imagePreview && (
-                        <>
+                        <div className="flex flex-col gap-2">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
                           <img src={imagePreview} alt="Your photo" className="w-full aspect-[4/3] object-cover" />
-                          <p className="text-[5px] text-[#868581] mt-0.5 leading-tight">You</p>
+                          <div className="flex flex-row gap-1.5">
+                            <p className="text-[5px] text-[#868581] bg-[#F4F1EA] size-[15px] rounded-[15px] text-center content-center"></p>
+                            <p className="text-[5px] text-[#242832] font-medium mt-0.5 content-center">You!</p>
+                          </div>
                           {caption && (
-                            <p className="text-[5px] text-[#242832] line-clamp-2 leading-tight">{caption}</p>
+                            <p className="text-[5px] text-[#242832] line-clamp-2">{caption}</p>
                           )}
-                        </>
+                        </div>
                       )}
                     </div>
                     {/* Empty slots */}
