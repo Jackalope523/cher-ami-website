@@ -34,7 +34,7 @@ export default function StartClient() {
             Your First Magazine <span className={`${damion.className} text-[2.5rem] text-[#C15F3C] leading-0`}>Free</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
-            We'll even cover shipping. Sign up with your email address and we'll send you instructions for how to start!
+            We'll even cover shipping, cancel anytime. Sign up with your email address and we'll send you instructions for how to start!
           </p>
           <Suspense>
             <EmailCTA location='start-top' onSignUp={() => setSignedUp(true)} done={signedUp} />

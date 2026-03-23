@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import TitleImage from '@/public/title.png';
 import DesktopHero from '@/public/hero.webp';
 import HeroImage from '@/public/hero-parents.webp';
 import Magazine from '@/public/magazine.webp';
+import MagazineAlt from '@/public/magazine-alt.webp';
 import MiceFamilyIllustration from '@/public/mice-family.webp';
 import SquirrelIllustration from '@/public/squirrel.webp';
 import BearFamilyIllustration from '@/public/bear-family.webp';
-import EnvelopeIllustration from '@/public/envelope-splash-green.webp';
 import ArmchairIllustration from '@/public/value-quality.webp';
 import MouseKidIllustration from '@/public/value-privacy.png';
 import ValueCollaborateIllustration from '@/public/value-collaborate.png';
@@ -17,6 +18,7 @@ import X from '@/public/x.svg';
 import Arrow from '@/public/arrow.svg';
 import DiagonalArrow from '@/public/arrow-up-right.svg';
 import Quotes from '@/public/quotes.svg';
+import USFlag from '@/public/usflag.png';
 
 import FAQItem from '@/components/FAQItem';
 import { Suspense } from 'react';
@@ -35,6 +37,7 @@ import TitleText from '@/components/TitleText';
 import DownloadPopup from '@/components/DownloadPopup';
 
 import { Damion } from 'next/font/google';
+import Polaroid from '@/components/Polaroid';
 
 const damion = Damion({
   weight: '400',
@@ -56,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-16 lg:gap-36 pt-2 pb-18">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 lg:gap-36 pt-2 pb-18">
       <Suspense>
         <Redirect />
       </Suspense>
@@ -70,90 +73,79 @@ export default function Home() {
 
       <section
         id="landing"
-        className="flex flex-col lg:flex-row-reverse items-center justify-between w-full px-8 xl:px-0 lg:mb-[-100]">
-        <div className="flex flex-col lg:self-start w-[100vw] lg:max-w-[30vw] pb-4">
-          <Image
+        className="flex flex-col lg:flex-row-reverse items-center justify-between w-full lg:mb-[-100]">
+        <div className="flex flex-row w-[100vw] lg:w-auto gap-10 p-10 overflow-x-auto no-scrollbar">
+          <Polaroid
             src={HeroImage}
-            alt="Parents reading a Cher Ami"
-            className="h-[50vw] md:max-lg:h-[45vh] object-cover lg:rounded-b-[32]"
+            alt=""
+            className="w-[248px] h-[315px] lg:w-[408px] lg:h-[518px]"
+            seed={1}
+            priority
+          />
+          <Polaroid
+            src={CarouselPhotoGirl}
+            alt=""
+            className="lg:hidden w-[248px] h-[315px] lg:w-[408px] lg:h-[518px]"
+            seed={4}
+            priority
+          />
+          <Polaroid
+            src={CarouselPhotoParents}
+            alt=""
+            className="lg:hidden w-[248px] h-[315px] lg:w-[408px] lg:h-[518px]"
+            seed={3}
             priority
           />
         </div>
         <div className="flex flex-col items-center lg:items-start gap-8">
           <TitleText />
           <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-            Your precious memories deserve more than to be forgotten in a group chat or camera roll.{' '}
+            Your entire family creates memories. We print them as a beautiful magazine and mail it straight to grandparents and loved ones.{' '}
             <br className='hidden lg:inline-block' />
             <br className='hidden lg:inline-block' />
-            Send those you love a beautiful magazine filled with your photos and stories.
-          </p> {/* Make it easy, solve their problem (gift) */}
+            The perfect gift for grandparents who want to see more of their grandkids — or any loved one you want to keep close.
+          </p>
+          <div className="flex flex-col gap-4">
             <Link
               href="/start"
-              className="flex min-w-[50%] py-3 bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]
-                          rounded-[12px] shadow-md text-[1rem] text-white justify-center">
-                Let's go!
+              className="flex flex-row gap-2 min-w-[50%] py-3 px-5 bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]
+                          rounded-[12px] shadow-md text-white justify-center">
+              <p className="text-[1rem] text-white font-medium text-center">
+                Send your first one free
+              </p>
             </Link>
-            <Suspense fallback={null}>
-              <DownloadPopup />
-            </Suspense>
+            {/*<Link
+              href="/invite"
+              className="flex flex-row gap-2 min-w-[50%] py-3 px-5 border-2 border-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637]
+                          rounded-[12px] shadow-md text-white justify-center">
+                  <p className="text-[1rem] text-[#C15F3C] font-medium text-center">
+                    Join an existing family
+                  </p>      
+              </Link>*/}
+          </div>
+          <div className="flex flex-row w-full justify-center">
+            <p className="text-[0.9rem] text-[#868581]  text-center">
+              Loved by families across the USA • Free Shipping • Happiness Guaranteed
+            </p>
+          </div>
+          <Suspense fallback={null}>
+            <DownloadPopup />
+          </Suspense>
         </div>
-      </section>
-
-      <section
-        id="carousel"
-        className="flex flex-row w-[100vw] gap-5 px-5 lg:px-12 xl:px-44 overflow-x-auto no-scrollbar">
-        <Image
-          src={CarouselPhotoParents}
-          alt=""
-          className="min-w-[256px] h-[320px] md:min-w-[408px] md:h-[510px]
-                    rounded-[32] object-cover"
-        />
-        <Image
-          src={CarouselVideoMagazine}
-          alt=""
-          className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
-                    rounded-[32] object-cover"
-        />
-        <Image
-          src={CarouselPhotoGirl}
-          alt=""
-          className="min-w-[256px] h-[320px] md:min-w-[408px] md:h-[510px]
-                    rounded-[32] object-cover"
-        />
-        <Image
-          src={CarouselVideoGuy}
-          alt=""
-          className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
-                    rounded-[32] object-cover"
-        />
-        <Image
-          src={CarouselPhotoParentHoldingUp}
-          alt=""
-          className="min-w-[256px] h-[320px] md:min-w-[408px] md:h-[510px]
-                    rounded-[32] object-cover"
-        />
-        <Image
-          src={CarouselVideoGirl}
-          alt=""
-          className="min-w-[180px] h-[320px] md:min-w-[287px] md:h-[510px]
-                    rounded-[32] object-cover"
-        />
       </section>
 
       <section id="problem" className="flex flex-col sm:flex-row gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
         <div className="flex flex-[1.5] flex-col gap-8">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            A monthly dose of <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>joy</span>
+            The gift that arrives <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>every month</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            Every month, your family's photos and stories become a beautiful magazine,
-            the perfect photo album to send as a gift or enjoy at home.
-            Each page filled with people you care about and love.
-            Not too big, not too small—just right.
+            Imagine your parents or loved ones opening their mailbox to find a magazine filled with photos of school plays, Sunday pancakes, backyard adventures.
+            No tech required and no account to set up. Just a beautiful magazine that shows up like clockwork, reminding them they're loved.
           </p>
           <Image
             src={MiceFamilyIllustration}
-            alt="Illustration of a family of bears"
+            alt="Illustration of a family of mice"
             className='hidden sm:block max-w-[35vw] self-center'
           />
         </div>
@@ -174,26 +166,29 @@ export default function Home() {
       <section id="objection" className="flex flex-col sm:flex-row-reverse gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
         <div className="flex flex-2 flex-col gap-8">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            Why not just <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>text them?</span>
+            But I already <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>send them photos...</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            <span className="font-semibold">Paper has held memories for thousands of years. </span>
-            We were meant to hold photos, not scroll past them.
-            No one forgets the letter or postcard
-            from a friend or relative, because love exists when you can
-            feel it as much as you can see it.
+            You do, and they love it! But texts get buried, group chats move fast, and let's be honest, Granddad isn't great with his phone.
+            A Cher Ami magazine sits on the coffee table and becomes the thing they reach for when they miss you.
+            That's the difference between sending a photo and sending something that stays.
           </p>
           <div className="flex flex-row gap-6 items-center">
             <div className="bg-[#F4F1EA] rounded-xl">
               <Image
                 src={Quotes}
                 alt="Quotation marks"
-                className="min-w-16 p-4"
+                className="min-w-14 px-3 py-4"
                 />
             </div>
-            <p className="text-[1rem] text-[#868581] italic">
-            There's something magical about holding a physical memory in your hands.
-            </p>
+            <div className="flex flex-col gap-2">
+              <p className="text-[0.9rem] text-[#868581] italic">
+                My parents look forward to getting something in the mailbox now. That never happened before.
+              </p>
+              <p className="text-[0.9rem] text-[#868581] italic">
+                Christophe Simon, FL
+              </p>
+            </div>
           </div>
         </div>
         <div className="flex flex-1 max-w-[60vw] self-center">
@@ -204,130 +199,134 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="options" className="flex flex-col gap-10 mb-10 items-center">
+      <section id="options" className="flex flex-col gap-10 items-center">
         <div className="flex flex-col gap-4">
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-            Options for <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C] leading-0`}>everyone</span>
+            Simple pricing, <br className='sm:hidden' /><span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C] leading-0`}>no surprises</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
-            No long-term commitment,<br/>billed only when we print and ship.
+            No contract, no commitment, cancel anytime.<br/>Billed only when we print and ship.
           </p>
         </div>
 
         <div className="flex flex-col gap-8 items-center">
-          <div className="flex flex-col lg:flex-row gap-8">
-            <Link
-              href="/start"
-              className="flex flex-col items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
-              <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#C15F3C] items-center bg-[#C15F3C] py-2 w-full">
-                <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
-                  Monthly Edition
-                </h3>
+          <Link
+            href="/start"
+            className="flex flex-col gap-8 w-full max-w-[500px] p-8 items-center bg-[#C15F3C] rounded-[32px]
+                        drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex flex-col gap-3 items-center">
+              <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
+                Monthly Edition
+              </h3>
+              <p className="text-[1rem] text-[#FCFBF8] font-normal">
+                Most popular with families
+              </p>
+            </div>
+            <div className="flex flex-col justify-center">
+              <Image
+                src={MagazineAlt}
+                alt="Image of a magazine"
+                height={300}
+                placeholder="blur"
+              />
+            </div>
+            <p className="flex flex-col text-[3rem] text-[#FCFBF8] font-semibold my-2">
+              $12.99
+              <span className="text-[1.6rem]">
+                /magazine
+              </span>
+            </p>
+            <div className="flex flex-col gap-4">
+              <div className="flex flex-row gap-4 items-center">
+                <Image
+                  src={Check}
+                  alt="A check mark"
+                  width={30}
+                  height={30}
+                  className="p-[7px] bg-[#FCFBF8] rounded-[30px]"
+                />
+                <p className="text-[1rem] text-[#FCFBF8] font-normal">
+                  Share and view photos on Cher Ami
+                </p>
               </div>
-              <div className="flex flex-col items-center bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#C15F3C] w-full">
-                <div className="flex flex-col items-center px-6 pb-6">
-                  <div className="flex flex-col h-[200px] justify-center my-4 scale-x-[-1]">
-                    <Image
-                      src={SquirrelIllustration}
-                      alt="A squirrel delivering a letter"
-                      height={200}
-                      placeholder="blur"
-                    />
-                  </div>
-                  <h3 className="text-[2rem] text-[#242832] font-medium my-2">
-                    $12.99
-                    <span className="absolute transform -translate-y-[-1.1rem] text-[0.9rem] text-[#676d7b] font-normal">
-                      /magazine
-                    </span>
-                  </h3>
-                  <div className="flex flex-col">
-                    <div className="flex flex-row gap-x-1">
-                      <Image
-                        src={Check}
-                        alt="A check mark"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="text-[1rem] text-[#242832] font-normal">
-                        Share and view posts on the Cher Ami app.
-                      </p>
-                    </div>
-                    <div className="flex flex-row gap-x-1">
-                      <Image
-                        src={Check}
-                        alt="A check mark"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="text-[1rem] text-[#242832] font-normal">
-                        Add unlimited members to your circle.
-                      </p>
-                    </div>
-                    <div className={'flex flex-row gap-x-1'}>
-                      <Image
-                        src={Check}
-                        alt="A check mark"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="text-[1rem] text-[#242832] font-normal">
-                        Receive a printed magazine each month.
-                      </p>
-                    </div>
-                    <div className={'flex flex-row gap-x-1'}>
-                      <Image
-                        src={Check}
-                        alt="A check mark"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="text-[1rem] text-[#242832] font-normal">
-                        Up to 20 posts per magazine.
-                      </p>
-                    </div>
-                    <div className={'flex flex-row gap-x-1'}>
-                      <Image
-                        src={Check}
-                        alt="A check mark"
-                        width={24}
-                        height={24}
-                      />
-                      <p className="text-[1rem] text-[#242832] font-normal">
-                        Free shipping in the USA.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div className={'flex flex-row w-full p-4 justify-center gap-x-1 border-t-2 border-[#C15F3C]'}>
-                  <p className="text-[1rem] text-[#242832] font-medium text-center">
-                    Click me to get started!
-                  </p>
-                  <Image src={Arrow} alt="arrow icon" className="stroke-black" />
-                </div>
+              <div className="flex flex-row gap-4 items-center">
+                <Image
+                  src={Check}
+                  alt="A check mark"
+                  width={30}
+                  height={30}
+                  className="p-[7px] bg-[#FCFBF8] rounded-[30px]"
+                />
+                <p className="text-[1rem] text-[#FCFBF8] font-normal">
+                  Unlimited family members
+                </p>
               </div>
-            </Link>
-          </div>
+              <div className="flex flex-row gap-4 items-center">
+                <Image
+                  src={Check}
+                  alt="A check mark"
+                  width={30}
+                  height={30}
+                  className="p-[7px] bg-[#FCFBF8] rounded-[30px]"
+                />
+                <p className="text-[1rem] text-[#FCFBF8] font-normal">
+                  A printed magazine delivered every month
+                </p>
+              </div>
+              <div className="flex flex-row gap-4 items-center">
+                <Image
+                  src={Check}
+                  alt="A check mark"
+                  width={30}
+                  height={30}
+                  className="p-[7px] bg-[#FCFBF8] rounded-[30px]"
+                />
+                <p className="text-[1rem] text-[#FCFBF8] font-normal">
+                  Up to 12 pages per magazine
+                </p>
+              </div>
+              <div className="flex flex-row gap-4 items-center">
+                <Image
+                  src={Check}
+                  alt="A check mark"
+                  width={30}
+                  height={30}
+                  className="p-[7px] bg-[#FCFBF8] rounded-[30px]"
+                />
+                <p className="text-[1rem] text-[#FCFBF8] font-normal">
+                  Free shipping anywhere in the USA
+                </p>
+              </div>
+            </div>
+            <div className={'w-full py-6 bg-[#FCFBF8] justify-center rounded-[20]'}>
+              <p className="text-[1rem] text-[#242832] font-medium text-center">
+                Get Started
+              </p>
+            </div>
+          </Link>
 
           <Link
             href="/military"
-            className="flex flex-col max-w-[423px] items-center drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex flex-col rounded-t-[20] border-t-2 border-l-2 border-r-2 border-[#5c8f41] items-center bg-[#5c8f41] py-2 w-full">
+            className="flex flex-col gap-8 p-8 w-full max-w-[500px] items-center bg-[#779443] rounded-[32px]
+                        drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex flex-row gap-5">
               <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold">
                 Military Edition
               </h3>
+              <Image
+                src={USFlag}
+                alt="US Flag"
+                className="w-10 border-1 border-[#FCFBF8] rounded-[2px] self-center"
+                />
             </div>
-            <div className="flex flex-col items-center bg-[#FCFBF8] rounded-b-[20] border-b-2 border-l-2 border-r-2 border-[#5c8f41] w-full">
-              <div className="flex flex-col items-center p-6 bg-[#FCFBF8]">
-                <p className="text-[1rem] text-[#242832] font-normal text-center">
-                  Sending to an active military member or veteran?
-                </p>
-              </div>
-              <div className={'flex flex-row w-full p-4 justify-center gap-x-1 border-t-2 border-[#5c8f41]'}>
-                <p className="text-[1rem] text-[#242832] font-medium text-center">
-                  Click me to learn more
-                </p>
-                <Image src={Arrow} alt="arrow icon" className="stroke-black" />
-              </div>
+            <p className="text-[1rem] text-[#FCFBF8] font-normal text-center">
+              Sending a magazine to a service member or veteran?
+              Get 20% off every magazine.
+            </p>
+            <div className={'w-full py-6 bg-[#FCFBF8] justify-center rounded-[20]'}>
+              <p className="text-[1rem] text-[#242832] font-medium text-center">
+                Learn More
+              </p>
             </div>
           </Link>
         </div>
@@ -335,7 +334,7 @@ export default function Home() {
 
       <section id="values" className="flex flex-col items-center">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center mb-10 px-5">
-          Why families <span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C] leading-0`}>choose us</span>
+          Why families trust <span className="inline-block pl-1 align-[-1]"><Image src={TitleImage} alt="Cher Ami logo" className='w-[9rem]'/></span>
         </h2>
         <div className="flex w-[100vw] max-w-[100vw] lg:justify-center px-5 lg:px-8 xl:px-0 pt-[8px] gap-6 overflow-x-auto no-scrollbar">
           <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
@@ -352,7 +351,7 @@ export default function Home() {
               Happiness<br/>Guaranteed
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-              If you don't like it, we'll refund it. No questions asked.
+              Not what you expected? We'll refund it, no questions asked.
             </p>
           </div>
 
@@ -370,7 +369,7 @@ export default function Home() {
               Free<br/>Shipping
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-              Send to anyone you want, anywhere in the USA, on us.
+              Delivered straight to their door, anywhere in the USA, on us.
             </p>
           </div>
 
@@ -388,7 +387,7 @@ export default function Home() {
               Privacy<br/>First
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-              All your photos are completely private and never shared.
+              Your photos never leave your family circle. No ads, no data sharing, ever.
             </p>
           </div>
           
@@ -403,10 +402,10 @@ export default function Home() {
               />
             </div>
             <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Timeless<br/>Quality
+              Made to Keep
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-              Premium prints that you can cherish for years to come.
+              Premium glossy prints that look beautiful every time.
             </p>
           </div>
 
@@ -424,7 +423,7 @@ export default function Home() {
               Secure<br/>Payments
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-              We retain no card information for your peace of mind.
+            Your payment info is never stored. Cancel anytime with one tap.
             </p>
           </div>
         </div>
@@ -502,17 +501,26 @@ export default function Home() {
           </div>
             </section> */}
 
-      <section className="flex flex-col w-full">
-        <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center mb-5">
-          Questions?
-        </h2>
+      <section className="flex flex-col w-full gap-6">
+        <div className="flex flex-col gap-2">
+          <p className="text-[1rem] text-[#C15F3C] font-semibold py-1 px-2 border-2 border-[#C15F3C] rounded-[1000px] w-min self-center">FAQ</p>
+          <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center mb-5">
+            Questions?
+          </h2>
+        </div>
         <div className="flex flex-col gap-y-3 items-center">
           <FAQItem
-            question={'How do I create a new account?'}
+            question={'How do I get started?'}
             answer={
               <span>
-                <a href="/start" className="underline">Get started here</a> and we'll send you the sign-up instructions!
+                <a href="/start" className="underline">Get started here</a> and we'll walk you through everything. You'll download the app, invite family members, and your first magazine will be on its way in no time!
               </span>
+            }
+          />
+          <FAQItem
+            question={'Does the recipient need an app or account?'}
+            answer={
+              'Nope! The magazine arrives in their mailbox like any other piece of mail. No app and no account, they just open it and enjoy.'
             }
           />
           <FAQItem
@@ -523,21 +531,27 @@ export default function Home() {
             }
           />
           <FAQItem
-            question={'Who can see my photos?'}
+            question={'Who can contribute to the magazine?'}
             answer={
-              'Only you and members you invite to your circle can view, add, and deliver photos.'
+              'Anyone you invite! Siblings, cousins, aunts, uncles — the whole family can post photos and stories from their phone. The more people who contribute, the better the magazine gets.'
             }
           />
           <FAQItem
-            question={"It's already the end of the month! Can I still join?"}
+            question={"What if I don't have enough photos this month?"}
             answer={
-              "Yes! When you join, you can choose to start your first issue next month so you don't have to worry about not having enough photos."
+              "No problem. Even a handful of photos makes a wonderful magazine. You can also skip a month — you're only billed when we print and ship."
             }
           />
           <FAQItem
-            question={"Can I still participate if I live outside the United States?"}
+            question={"Is this a good gift idea?"}
             answer={
-              "Absolutely! While we currently only deliver magazines within the USA, you can still join and share photos with your circle digitally through the app. We have plans to expand our delivery services internationally in the future."
+              "It's one of the best. Grandparents and loved ones consistently tell us it's their favorite thing to receive. It's personal, it's physical, and it shows up every single month reminding them how loved they are."
+            }
+          />
+          <FAQItem
+            question={"Can I send it to someone outside the USA?"}
+            answer={
+              "We currently ship within the USA only, but international family members can still join your family and contribute photos through the app. International delivery is coming soon."
             }
           />
         </div>

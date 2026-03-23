@@ -32,17 +32,17 @@ export default function Military() {
           />
         <div className="flex flex-col items-center md:items-start gap-8">
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center md:text-left min-w-[320px] max-w-[650px]">
-            We appreciate our <span className="text-[#779443]">veterans</span> and <span className="text-[#779443]">service members!</span>
+            Keep them connected, wherever they serve
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
-            In addition to your first magazine being free,  we offer monthly issues for <span className="text-[#779443] font-medium">$9.99 (20% off!)</span> when you are sending to a service member APO/FPO/DPO or to a veteran in the USA.
-            Just follow the instructions when you are adding your recipient.
+            Send a monthly magazine filled with family photos to your service member or veteran for just <span className="text-[#779443] font-medium">$9.99/issue (20% off)</span>.
+            We ship to APO/FPO/DPO addresses and anywhere in the USA.
             <br /><br />
-            Sign up with your email address and we'll send you instructions for how to get started!
+            First magazine free, shipping included. Because distance shouldn't mean missing out on family.
           </p>
           <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#5c8f41] rounded-[24px] shadow-lg">
             <Suspense>
-              <EmailCTA variant='military' location='military-top' />
+              <EmailCTA variant='military' location='military' />
             </Suspense>
           </div>
         </div>

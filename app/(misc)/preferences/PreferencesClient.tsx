@@ -27,7 +27,7 @@ const PREF_LABELS: { key: keyof Preferences; label: string; description: string 
   {
     key: 'reminders',
     label: 'Issue & Post Reminders',
-    description: 'Reminders for issues and to add photos.',
+    description: 'Reminders to add photos before issue deadlines.',
   },
   {
     key: 'marketing',

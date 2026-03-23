@@ -9,7 +9,7 @@ const damion = Damion({
   display: 'swap',
 });
 
-const texts = ['Love', 'Feeling', 'Stories', 'Meaning', 'Joy', 'Memories'];
+const texts = ['Nana', 'Papa', 'Grammy', 'Pops', 'Mamaw', 'Granddad'];
 const maxLength = Math.max(...texts.map((text) => text.length));
 const longestText = texts.find((text) => text.length === maxLength);
 
@@ -38,10 +38,10 @@ export default function TitleText() {
 
   return (
     <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center lg:text-left min-w-[320px] max-w-[650px]">
-      Send Real Photos{' '}
+      A Monthly Magazine{' '}
       <br className="hidden lg:block" />
-      With{' '}
-      <br className="block sm:hidden" />
+      For{' '}
+      <br className="sm:hidden" />
       <span className="inline-block relative align-top text-center sm:text-left">
         <span
           className={`${damion.className} absolute w-full text-[#C15F3C] text-[3rem] transition-all duration-200 transform translate-y-[-1rem] lg:translate-y-[-0.5rem]`}

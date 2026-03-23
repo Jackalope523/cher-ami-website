@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Cher Ami — Monthly Family Album',
     short_name: 'Cher Ami',
-    description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
+    description: 'The perfect gift for grandparents, a monthly magazine filled with family photos, delivered to their door.',
     start_url: '/',
     display: 'standalone',
     background_color: '#FCFBF8',

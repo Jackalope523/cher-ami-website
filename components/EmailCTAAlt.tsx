@@ -116,7 +116,7 @@ export default function EmailCTA({
         </div>
         <p className="text-[0.75rem] text-[#676D7B]">
           We&apos;ll only use this to help you get started. Unsubscribe anytime.
-          One free magazine per circle.
+          One free magazine per family.
         </p>
       </form>
     );

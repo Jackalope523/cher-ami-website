@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Example Magazine | Cher Ami',
-  description: 'Preview an example of one of our issues.',
+  description: 'Preview an example of one of our magazines.',
   robots: {
     noimageindex: true,
   },
@@ -23,7 +23,7 @@ export default function Example() {
       <section className="flex flex-col w-full items-center">
         <div className="flex flex-col items-center gap-8">
           <p className="text-[1rem] text-[#242832] font-normal text-center">
-            Printed on premium, glossy 8.5x11 inch paper for beautiful photos every time. Up to 20 posts per magazine.
+            Printed on premium, glossy 8.5x11 inch paper for beautiful photos every time. Up to 12 pages per magazine.
           </p>
           <div className="flex flex-col w-fit gap-4 justify-center text-center">
             <p className="text-[1rem] text-[#242832] font-semibold text-center">
