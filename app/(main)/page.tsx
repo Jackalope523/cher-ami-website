@@ -357,42 +357,6 @@ export default function Home() {
               Not what you expected? We'll refund it, no questions asked.
             </p>
           </div>
-
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-                        bg-[#F4F1EA] rounded-4xl p-5
-                        transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={ValueFreeShippingIllustration}
-                alt="A paper airplane"
-                className="max-w-[100px] max-h-[100px] object-contain"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Free<br/>Shipping
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center">
-              Delivered straight to their door, anywhere in the USA, on us.
-            </p>
-          </div>
-
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-              bg-[#F4F1EA] rounded-4xl p-5
-              transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={MouseKidIllustration}
-                alt="A mouse kid running"
-                className="max-w-[100px] max-h-[100px] object-contain"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Privacy<br/>First
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal text-center">
-              Your photos never leave your family circle. No ads, no data sharing, ever.
-            </p>
-          </div>
           
           <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
                           bg-[#F4F1EA] rounded-4xl p-5
@@ -413,20 +377,20 @@ export default function Home() {
           </div>
 
           <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-                        bg-[#F4F1EA] rounded-4xl p-5
-                        transition-transform transform hover:translate-y-[-8px]">
+              bg-[#F4F1EA] rounded-4xl p-5
+              transition-transform transform hover:translate-y-[-8px]">
             <div className="flex h-[100px] justify-center">
               <Image
-                src={ValueSecurePaymentsIllustration}
-                alt="An acorn"
-                className="max-w-[80px] max-h-[80px] object-contain self-center"
+                src={MouseKidIllustration}
+                alt="A mouse kid running"
+                className="max-w-[100px] max-h-[100px] object-contain"
               />
             </div>
             <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
-              Secure<br/>Payments
+              Privacy<br/>First
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-            Your payment info is never stored. Cancel anytime with one tap.
+              Your photos never leave your family circle. No ads, no data sharing, ever.
             </p>
           </div>
         </div>
