@@ -100,10 +100,10 @@ export default function Home() {
         <div className="flex flex-col items-center lg:items-start gap-8">
           <TitleText />
           <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-            Your entire family creates memories. We print them as a beautiful magazine and mail it straight to grandparents and loved ones.{' '}
+            Your family shares memories. We turn them as a magazine and mail it straight to grandparents and loved ones.{' '}
             <br className='hidden lg:inline-block' />
             <br className='hidden lg:inline-block' />
-            The perfect gift for grandparents who want to see more of their grandkids — or any loved one you want to keep close.
+            The perfect gift for anyone who wishes they were there.
           </p>
           <div className="flex flex-col gap-4">
             <Link
@@ -140,8 +140,10 @@ export default function Home() {
             The gift that arrives <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>every month</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            Imagine your parents or loved ones opening their mailbox to find a magazine filled with photos of school plays, Sunday pancakes, backyard adventures.
-            No tech required and no account to set up. Just a beautiful magazine that shows up like clockwork, reminding them they're loved.
+            Picture your parents opening their mailbox and finding a magazine full of the people they love.
+            School plays, Sunday pancakes, the backyard fort.
+            No tech required, no account to set up.
+            It just shows up, every month, like a letter from the people they miss most.
           </p>
           <Image
             src={MiceFamilyIllustration}
@@ -170,8 +172,8 @@ export default function Home() {
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
             You do, and they love it! But texts get buried, group chats move fast, and let's be honest, Granddad isn't great with his phone.
-            A Cher Ami magazine sits on the coffee table and becomes the thing they reach for when they miss you.
-            That's the difference between sending a photo and sending something that stays.
+            A magazine doesn't need Wi-Fi. It's familiar and memorable.
+            It sits on the coffee table and becomes the thing they reach for when they miss you.
           </p>
           <div className="flex flex-row gap-6 items-center">
             <div className="bg-[#F4F1EA] rounded-xl">
@@ -201,8 +203,9 @@ export default function Home() {
 
       <section id="options" className="flex flex-col gap-10 items-center">
         <div className="flex flex-col gap-4">
+          <p className="text-[1rem] text-[#C15F3C] font-semibold py-1 px-2 border-2 border-[#C15F3C] rounded-[1000px] w-min self-center">Pricing</p>
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">
-            Simple pricing, <br className='sm:hidden' /><span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C] leading-0`}>no surprises</span>
+            Pricing that makes <br className='sm:hidden' /><span className={`${damion.className} text-[3.2rem] lg:text-[3.8rem] text-[#C15F3C] leading-0`}>sense</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-xl mx-auto">
             No contract, no commitment, cancel anytime.<br/>Billed only when we print and ship.
