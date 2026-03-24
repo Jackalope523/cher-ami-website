@@ -100,7 +100,7 @@ export default function Home() {
         <div className="flex flex-col items-center lg:items-start gap-8">
           <TitleText />
           <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-            Your family shares memories. We turn them as a magazine and mail it straight to grandparents and loved ones.{' '}
+            Your family shares photos. We turn them into a magazine and mail it straight to grandparents and loved ones.{' '}
             <br className='hidden lg:inline-block' />
             <br className='hidden lg:inline-block' />
             The perfect gift for anyone who wishes they were there.
