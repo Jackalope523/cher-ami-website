@@ -338,36 +338,34 @@ export default function Home() {
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center mb-10 px-5">
           Why families trust <span className="inline-block pl-1 align-[-1]"><Image src={TitleImage} alt="Cher Ami logo" className='w-[9rem]'/></span>
         </h2>
-        <div className="flex w-[100vw] max-w-[100vw] lg:justify-center px-5 lg:px-8 xl:px-0 pt-[8px] gap-6 overflow-x-auto no-scrollbar">
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-                          bg-[#F4F1EA] rounded-4xl p-5
+        <div className="flex w-[100vw] max-w-[100vw] lg:justify-center px-5 lg:px-8 xl:px-0 py-6 gap-10 overflow-x-auto no-scrollbar">
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center gap-4
                           transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={ValueCollaborateIllustration}
-                alt="A mouse using a phone"
-                className="max-w-[120px] max-h-[120px] object-contain"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+            <Polaroid
+              src={ValueCollaborateIllustration}
+              alt="A mouse using a phone"
+              className="w-[160px] h-[160px]"
+              seed={10}
+              objectFit="contain"
+            />
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center">
               Happiness<br/>Guaranteed
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
-              Not what you expected? We'll refund it, no questions asked.
+              Not what you expected? We&apos;ll refund it, no questions asked.
             </p>
           </div>
-          
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-                          bg-[#F4F1EA] rounded-4xl p-5
+
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center gap-4
                           transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={ArmchairIllustration}
-                alt="A mouse reading a paper"
-                className="max-w-[100px] max-h-[100px] object-contain"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+            <Polaroid
+              src={ArmchairIllustration}
+              alt="A mouse reading a paper"
+              className="w-[160px] h-[160px]"
+              seed={5}
+              objectFit="contain"
+            />
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center">
               Made to Keep
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">
@@ -375,17 +373,16 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center
-              bg-[#F4F1EA] rounded-4xl p-5
-              transition-transform transform hover:translate-y-[-8px]">
-            <div className="flex h-[100px] justify-center">
-              <Image
-                src={MouseKidIllustration}
-                alt="A mouse kid running"
-                className="max-w-[100px] max-h-[100px] object-contain"
-              />
-            </div>
-            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center mt-6 mb-2">
+          <div className="shrink-0 lg:shrink-1 max-w-[200px] flex flex-col items-center gap-4
+                          transition-transform transform hover:translate-y-[-8px]">
+            <Polaroid
+              src={MouseKidIllustration}
+              alt="A mouse kid running"
+              className="w-[160px] h-[160px]"
+              seed={30}
+              objectFit="contain"
+            />
+            <h2 className="text-[1.75rem] text-[#C15F3C] font-semibold text-center">
               Privacy<br/>First
             </h2>
             <p className="text-[1rem] text-[#242832] font-normal text-center">

@@ -7,6 +7,8 @@ type Props = {
   priority?: boolean;
   /** Optional seed for deterministic random rotation. Defaults to 0. */
   seed?: number;
+  /** How the image fills the frame. Defaults to 'cover'. Use 'contain' for illustrations. */
+  objectFit?: 'cover' | 'contain';
 };
 
 /**
@@ -24,6 +26,7 @@ export default function Polaroid({
   className = '',
   priority = false,
   seed = 0,
+  objectFit = 'cover',
 }: Props) {
   // Front polaroid rotation: -2 to 2 degrees
   const frontRotation = seededRandom(seed) * 2;
@@ -34,7 +37,7 @@ export default function Polaroid({
     : frontRotation + backMagnitude;
 
   return (
-    <div className={`relative flex-shrink-0 ${className}`}>
+    <div className={`relative flex-shrink-0 z-10 ${className}`}>
       {/* Stacked card behind — uses inset-0 so it matches wrapper size */}
       <div
         className="absolute inset-0 bg-[#DEDBD5] rounded-[8px] shadow-[0_2px_12px_rgba(0,0,0,0.15)]"
@@ -45,11 +48,11 @@ export default function Polaroid({
         className="relative w-full h-full"
         style={{ transform: `rotate(${frontRotation}deg)` }}>
         <div className="w-full h-full bg-[#F5F1EA] rounded-[8px] p-[8px] shadow-[0_4px_20px_rgba(0,0,0,0.3)]">
-          <div className="relative w-full h-full overflow-hidden rounded-[1px]">
+          <div className={`relative w-full h-full overflow-hidden rounded-[1px] ${objectFit === 'contain' ? 'bg-[#F4F1EA]' : ''}`}>
             <Image
               src={src}
               alt={alt}
-              className="object-cover"
+              className={objectFit === 'cover' ? 'object-cover' : 'object-contain p-3'}
               fill
               sizes="(max-width: 768px) 248px, 408px"
               priority={priority}
