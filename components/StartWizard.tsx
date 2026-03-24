@@ -213,7 +213,7 @@ export default function StartWizard() {
 
   const photoHeading = `Pick a photo for ${possessive} first issue`;
 
-  const previewCta = `Let's make it real!`;
+  const previewCta = `Continue`;
 
   const inviteHeading = displayName
     ? `Who else should help build ${possessive} magazine?`
@@ -507,9 +507,9 @@ export default function StartWizard() {
                    style={{ aspectRatio: '8.5/11', transform: 'rotate(3deg)' }}>
                 <div className="absolute inset-0 flex flex-col p-[6%]">
                   {/* 2×2 grid */}
-                  <div className="flex-1 grid grid-cols-2 gap-x-[3%] gap-y-[10%] content-start pt-[2%]">
-                    {/* Their photo */}
-                    <div className="flex flex-col">
+                  <div className="flex flex-1 flex-col gap-y-[8%] content-start pt-[2%]">
+                    <div className="flex-1 grid grid-cols-2 gap-x-[3%]">
+                      {/* Their photo */}
                       {imagePreview && (
                         <div className="flex flex-col gap-2">
                           {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -523,11 +523,29 @@ export default function StartWizard() {
                           )}
                         </div>
                       )}
+                      <div className="flex flex-col gap-2">
+                        <div className="w-full aspect-[4/3] bg-[#F4F1EA]" />
+                        <div className="flex flex-row gap-1.5 items-center">
+                          <p className="bg-[#F4F1EA] size-[15px] rounded-[15px] text-center content-center" />
+                          <p className="bg-[#F4F1EA] w-[30px] h-[4px] text-center content-center" />
+                        </div>
+                        <p className="bg-[#F4F1EA] w-[75px] h-[4px] text-center content-center mt-[2px]" />
+                      </div>
                     </div>
                     {/* Empty slots */}
-                    <div className="w-full aspect-[4/3] bg-[#F4F1EA]" />
-                    <div className="w-full aspect-[4/3] bg-[#F4F1EA]" />
-                    <div className="w-full aspect-[4/3] bg-[#F4F1EA]" />
+                    <div className="flex flex-1 flex-col gap-2">
+                      <div className="w-full aspect-[4/1.5] bg-[#F4F1EA]" />
+                      <div className="grid grid-cols-2">
+                        <div className="flex flex-row gap-1.5 items-center">
+                          <p className="bg-[#F4F1EA] size-[15px] rounded-[15px] text-center content-center" />
+                          <p className="bg-[#F4F1EA] w-[45px] h-[4px] text-center content-center" />
+                        </div>
+                        <div className="flex flex-col gap-1 content-start">
+                          <p className="bg-[#F4F1EA] w-[65px] h-[4px] text-center content-center" />
+                          <p className="bg-[#F4F1EA] w-[50px] h-[4px] text-center content-center" />
+                        </div>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Page footer */}
