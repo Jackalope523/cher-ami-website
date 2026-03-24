@@ -100,10 +100,9 @@ export default function Home() {
         <div className="flex flex-col items-center lg:items-start gap-8">
           <TitleText />
           <p className="text-[1rem] text-[#242832] font-normal text-center lg:text-left max-w-[500px]">
-            Your family shares photos. We turn them into a magazine and mail it straight to grandparents and loved ones.{' '}
+            Your family shares photos. We turn them into a magazine and mail it to grandparents, parents, or anyone who'd love a little more of your everyday.{' '}
             <br className='hidden lg:inline-block' />
             <br className='hidden lg:inline-block' />
-            The perfect gift for anyone who wishes they were there.
           </p>
           <div className="flex flex-col gap-4">
             <Link
@@ -140,8 +139,8 @@ export default function Home() {
             The gift that arrives <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>every month</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            Picture your parents opening their mailbox and finding a magazine full of the people they love.
-            School plays, Sunday pancakes, the backyard fort.
+            Picture your parents opening their mailbox and finding a magazine full of the people they love:
+            stories of school plays, Sunday pancakes, and the backyard fort.
             No tech required, no account to set up.
             It just shows up, every month, like a letter from the people they miss most.
           </p>
@@ -171,7 +170,7 @@ export default function Home() {
             But I already <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>send them photos...</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            You do, and they love it! But texts get buried, group chats move fast, and let's be honest, Granddad isn't great with his phone.
+            You do, and they love it! But texts get buried, group chats move fast, and honestly, Granddad still isn't great with his phone.
             A magazine doesn't need Wi-Fi. It's familiar and memorable.
             It sits on the coffee table and becomes the thing they reach for when they miss you.
           </p>
