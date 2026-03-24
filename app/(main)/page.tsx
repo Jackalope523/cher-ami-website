@@ -184,7 +184,7 @@ export default function Home() {
             </div>
             <div className="flex flex-col gap-2">
               <p className="text-[0.9rem] text-[#868581] italic">
-                My parents look forward to getting something in the mailbox now. That never happened before.
+                My parents look forward to getting something in the mailbox now. That never happened before!
               </p>
               <p className="text-[0.9rem] text-[#868581] italic">
                 Christophe Simon, FL
