@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 lg:gap-36 pt-2 pb-18">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 lg:gap-36 pt-6 pb-18">
       <Suspense>
         <Redirect />
       </Suspense>
