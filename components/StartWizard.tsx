@@ -16,7 +16,7 @@ const damion = Damion({
   display: 'swap',
 });
 
-type Step = 'scenario' | 'recipientName' | 'collaboration' | 'invite' | 'firstPost' | 'preview' | 'done';
+type Step = 'scenario' | 'yourName' | 'recipientName' | 'collaboration' | 'invite' | 'firstPost' | 'preview' | 'done';
 
 type Scenario = 'grandparent' | 'parent' | 'myself' | 'other';
 type Collaboration = 'solo' | 'together';
@@ -62,7 +62,7 @@ function getDefaultName(scenario: Scenario): string {
 }
 
 function getSteps(scenario: Scenario | null, collaboration: Collaboration | null, hasPhoto: boolean): Step[] {
-  const steps: Step[] = ['scenario'];
+  const steps: Step[] = ['scenario', 'yourName'];
 
   // "other" needs a name input
   if (scenario === 'other') {
@@ -89,13 +89,15 @@ function getSteps(scenario: Scenario | null, collaboration: Collaboration | null
   return steps;
 }
 
-export default function StartWizard() {
+export default function StartWizard({ email }: { email: string }) {
   const plausible = usePlausible();
 
   const [step, setStep] = useState<Step>('scenario');
   const [scenario, setScenario] = useState<Scenario | null>(null);
   const [collaboration, setCollaboration] = useState<Collaboration | null>(null);
   const [recipientName, setRecipientName] = useState('');
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [caption, setCaption] = useState('');
 
@@ -139,12 +141,7 @@ export default function StartWizard() {
     setScenario(s);
     const defaultName = getDefaultName(s);
     setRecipientName(defaultName);
-    // For "other", go to recipientName; otherwise go to collaboration
-    if (s === 'other') {
-      goToStep('recipientName');
-    } else {
-      goToStep('collaboration');
-    }
+    goToStep('yourName');
   }
 
   function handleCollaborationSelect(c: Collaboration) {
@@ -176,9 +173,38 @@ export default function StartWizard() {
     goToStep('preview');
   }
 
+  async function submitOnboarding() {
+    const formData = new FormData();
+    formData.append('Email', email);
+    formData.append('FirstName', firstName);
+    formData.append('LastName', lastName);
+    formData.append('Caption', caption);
+
+    const validEmails = inviteEmails.filter(e => e.trim());
+    validEmails.forEach(e => formData.append('FriendEmails', e));
+
+    if (imageFile) {
+      formData.append('Image', imageFile);
+    }
+
+    try {
+      await fetch('/api/onboarding', {
+        method: 'POST',
+        body: formData,
+      });
+    } catch (err) {
+      console.error(err);
+    }
+  }
+
+  function goToDoneAndSubmit() {
+    submitOnboarding();
+    goToStep('done');
+  }
+
   function handleSkipPhoto() {
     // No photo → skip preview, go straight to done
-    goToStep('done');
+    goToDoneAndSubmit();
   }
 
   function addInviteField() {
@@ -279,6 +305,46 @@ export default function StartWizard() {
                 </button>
               ))}
             </div>
+          </div>
+        )}
+
+        {/* Step: Your Name */}
+        {step === 'yourName' && (
+          <div className="flex flex-col gap-4">
+            <h2 className="text-[1.5rem] font-semibold text-[#242832]">
+              What&apos;s your name?
+            </h2>
+            <p className="text-[0.875rem] text-[#868581]">
+              We&apos;ll use this to set up your account.
+            </p>
+            <div className="flex flex-col gap-3">
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value.slice(0, 100))}
+                placeholder="First name"
+                className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none"
+                autoFocus
+              />
+              <input
+                type="text"
+                value={lastName}
+                onChange={(e) => setLastName(e.target.value.slice(0, 100))}
+                onKeyDown={(e) => { if (e.key === 'Enter' && firstName.trim() && lastName.trim()) nextStep(); }}
+                placeholder="Last name"
+                className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none"
+              />
+            </div>
+            <button
+              onClick={nextStep}
+              disabled={!firstName.trim() || !lastName.trim()}
+              className={`w-full py-3 rounded-[12px] border-2 text-base font-medium transition-colors ${
+                !firstName.trim() || !lastName.trim()
+                  ? 'bg-[#ECEDEF] border-[#ECEDEF] text-[#A8ABB3]'
+                  : 'bg-[#C15F3C] border-[#C15F3C] text-white hover:bg-[#a8512f]'
+              }`}>
+              Next
+            </button>
           </div>
         )}
 
@@ -559,7 +625,7 @@ export default function StartWizard() {
             </div>
 
             <button
-              onClick={nextStep}
+              onClick={goToDoneAndSubmit}
               className="w-full py-3 rounded-[12px] border-2 bg-[#C15F3C] border-[#C15F3C] text-white text-base font-medium hover:bg-[#a8512f] transition-colors">
               {previewCta}
             </button>

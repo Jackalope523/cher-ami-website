@@ -89,7 +89,7 @@ export default function EmailCTA({
         <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold text-center`}>
           You&apos;re in! Let&apos;s set up your first magazine.
         </p>
-        <StartWizard />
+        <StartWizard email={email} />
       </div>
     );
   } else {
