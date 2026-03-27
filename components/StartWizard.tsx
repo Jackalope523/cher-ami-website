@@ -1,8 +1,6 @@
 'use client';
 
 import { useState, useRef } from 'react';
-import { usePlausible } from 'next-plausible';
-import Link from 'next/link';
 import Image from 'next/image';
 import { Damion } from 'next/font/google';
 import { cropImageToAspectRatio, compressImage } from '@/lib/utility';
@@ -90,7 +88,6 @@ function getSteps(scenario: Scenario | null, collaboration: Collaboration | null
 }
 
 export default function StartWizard({ email }: { email: string }) {
-  const plausible = usePlausible();
 
   const [step, setStep] = useState<Step>('scenario');
   const [scenario, setScenario] = useState<Scenario | null>(null);
@@ -641,45 +638,14 @@ export default function StartWizard({ email }: { email: string }) {
           <div className="flex flex-col gap-5">
             <div className="flex flex-col gap-4">
               <h2 className="text-[1.5rem] font-semibold text-[#242832] text-center">
-                You're all set up!
+                You&apos;re all set up!
               </h2>
               <p className="text-[0.875rem] text-[#868581] text-center">
-                You can keep adding photos and your recipient's mailing address from the app.
+                Download the app to keep adding photos and your recipient&apos;s mailing address.
               </p>
             </div>
-            <div className="flex flex-col gap-3 p-5">
-              <p className="text-[1rem] text-[#242832] font-semibold">
-                Keep going on the web
-              </p>
-              <p className="text-[0.875rem] text-[#868581]">
-                {displayName
-                  ? `Create your account and we'll get ${possessive} first magazine started`
-                  : 'Create your account and start building your first issue'}
-              </p>
-              <Link
-                href="/app/login"
-                onClick={() => plausible('Web Signup Clicked', { props: { location: 'start-wizard' } })}
-                className="flex flex-row gap-1 px-4 py-2.5 bg-[#C15F3C] hover:bg-[#b05637] active:bg-[#b05637] rounded-[12px] text-white justify-center font-medium">
-                Create your account
-              </Link>
-            </div>
-
-            <div className="flex items-center gap-3">
-              <div className="flex-1 h-px bg-[#DEDBD5]" />
-              <span className="text-[0.875rem] text-[#868581] font-medium">OR</span>
-              <div className="flex-1 h-px bg-[#DEDBD5]" />
-            </div>
-
-            <div className="flex flex-col gap-3 p-5">
-              <p className="text-[1rem] text-[#242832] font-semibold">
-                Continue on the app
-              </p>
-              <p className="text-[0.875rem] text-[#868581]">
-                Snap and share photos right from your phone
-              </p>
-              <div className="flex flex-col md:flex-row gap-2 items-center">
-                <DynamicCTA trackingProps={{ location: 'start-wizard' }} />
-              </div>
+            <div className="flex flex-col gap-3 items-center">
+              <DynamicCTA trackingProps={{ location: 'start-wizard' }} />
             </div>
           </div>
         )}
