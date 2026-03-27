@@ -178,13 +178,12 @@ export default function StartWizard({ email }: { email: string }) {
     formData.append('Email', email);
     formData.append('FirstName', firstName);
     formData.append('LastName', lastName);
-    formData.append('Caption', caption);
-
     const validEmails = inviteEmails.filter(e => e.trim());
     validEmails.forEach(e => formData.append('FriendEmails', e));
 
     if (imageFile) {
       formData.append('Image', imageFile);
+      if (caption) formData.append('Caption', caption);
     }
 
     try {
@@ -492,28 +491,33 @@ export default function StartWizard({ email }: { email: string }) {
               )}
             </button>
 
-            {/* Caption */}
-            <div className="relative">
-              <textarea
-                value={caption}
-                onChange={(e) => setCaption(e.target.value.slice(0, 200))}
-                placeholder="Write a caption (optional)"
-                rows={2}
-                className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none resize-none"
-              />
-              <span className="absolute bottom-2 right-3 text-xs text-[#868581]">{caption.length}/200</span>
-            </div>
+            {/* Caption — only shown when a photo is selected */}
+            {imageFile && (
+              <div className="relative">
+                <textarea
+                  value={caption}
+                  onChange={(e) => setCaption(e.target.value.slice(0, 200))}
+                  placeholder="Write a caption (optional)"
+                  rows={2}
+                  className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none resize-none"
+                />
+                <span className="absolute bottom-2 right-3 text-xs text-[#868581]">{caption.length}/200</span>
+              </div>
+            )}
 
-            <button
-              onClick={handleAddToMagazine}
-              disabled={!imageFile}
-              className={`w-full py-3 rounded-[12px] border-2 text-base font-medium transition-colors ${
-                !imageFile
-                  ? 'bg-[#ECEDEF] border-[#ECEDEF] text-[#A8ABB3]'
-                  : 'bg-[#C15F3C] border-[#C15F3C] text-white hover:bg-[#a8512f]'
-              }`}>
-              Add to Magazine
-            </button>
+            {imageFile ? (
+              <button
+                onClick={handleAddToMagazine}
+                className="w-full py-3 rounded-[12px] border-2 bg-[#C15F3C] border-[#C15F3C] text-white text-base font-medium hover:bg-[#a8512f] transition-colors">
+                Add to Magazine
+              </button>
+            ) : (
+              <button
+                onClick={() => { submitOnboarding(); goToStep('done'); }}
+                className="w-full py-3 rounded-[12px] border-2 bg-[#C15F3C] border-[#C15F3C] text-white text-base font-medium hover:bg-[#a8512f] transition-colors">
+                I&apos;ll do this later
+              </button>
+            )}
           </div>
         )}
 
