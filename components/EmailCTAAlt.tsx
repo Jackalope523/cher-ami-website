@@ -54,28 +54,8 @@ export default function EmailCTA({
   }, [done]);
 
   const handleSubmit = async (e: React.FormEvent) => {
-    setSubmitted(true);
-
     e.preventDefault();
-
-    const payload = {
-      email,
-      military: variant === 'military',
-    };
-
-    try {
-      const res = await fetch('/api/welcome', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!res.ok) throw new Error('Failed to submit');
-    } catch (err) {
-      console.error(err);
-    }
+    setSubmitted(true);
 
     plausible('Email Sign Up', { props: { location } });
     if (onSignUp) {
