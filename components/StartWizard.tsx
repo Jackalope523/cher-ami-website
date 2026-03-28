@@ -101,7 +101,7 @@ export default function StartWizard({ email }: { email: string }) {
   // Photo state (no layout picker — default to wide)
   const [imageFile, setImageFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
-  const selectedSize = { width: 372, height: 259 };
+  const selectedSize = { width: 1088, height: 756 };
 
   // Invite state
   const [inviteEmails, setInviteEmails] = useState<string[]>(['']);
