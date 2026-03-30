@@ -200,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="options" className="flex flex-col gap-10 items-center">
+      <section id="pricing" className="flex flex-col gap-10 items-center">
         <div className="flex flex-col gap-4">
           <p className="text-[1rem] text-[#C15F3C] font-semibold py-1 px-2 border-2 border-[#C15F3C] rounded-[1000px] w-min self-center">Pricing</p>
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-3xl mx-auto">

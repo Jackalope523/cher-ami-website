@@ -63,6 +63,11 @@ export default function Header() {
             className="text-[#B05637] px-2 py-3 rounded-xl">
             Magazine
           </Link>
+          <Link
+            href="/#pricing"
+            className="text-[#B05637] px-2 py-3 rounded-xl">
+            Pricing
+          </Link>
           <Link href="/help" className="text-[#B05637] px-4 py-3 rounded-xl">
             Help
           </Link>
@@ -90,6 +95,14 @@ export default function Header() {
             }}
             className="text-[#B05637] px-4 py-3 rounded-xl">
             Magazine
+          </Link>
+          <Link
+            href="/#pricing"
+            onClick={() => {
+              setShowMenu(false);
+            }}
+            className="text-[#B05637] px-4 py-3 rounded-xl">
+            Pricing
           </Link>
           <Link
             href="/help"
