@@ -49,9 +49,9 @@ const SCENARIOS: { id: Scenario; label: string; description: string; icon: strin
 function getDefaultName(scenario: Scenario): string {
   switch (scenario) {
     case 'grandparent':
-      return 'Grandparent';
+      return 'the grandparents';
     case 'parent':
-      return 'Parent';
+      return 'Mom & Dad';
     case 'myself':
       return '';
     case 'other':
