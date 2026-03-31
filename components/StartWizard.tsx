@@ -175,6 +175,7 @@ export default function StartWizard({ email }: { email: string }) {
     formData.append('Email', email);
     formData.append('FirstName', firstName);
     formData.append('LastName', lastName);
+    if (recipientName) formData.append('RecipientName', recipientName);
     const validEmails = inviteEmails.filter(e => e.trim());
     validEmails.forEach(e => formData.append('FriendEmails', e));
 
