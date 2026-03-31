@@ -60,7 +60,7 @@ function getDefaultName(scenario: Scenario): string {
 }
 
 function getSteps(scenario: Scenario | null, collaboration: Collaboration | null, hasPhoto: boolean): Step[] {
-  const steps: Step[] = ['yourName', 'scenario'];
+  const steps: Step[] = ['scenario', 'yourName'];
 
   // "other" needs a name input
   if (scenario === 'other') {
@@ -89,7 +89,7 @@ function getSteps(scenario: Scenario | null, collaboration: Collaboration | null
 
 export default function StartWizard({ email }: { email: string }) {
 
-  const [step, setStep] = useState<Step>('yourName');
+  const [step, setStep] = useState<Step>('scenario');
   const [scenario, setScenario] = useState<Scenario | null>(null);
   const [collaboration, setCollaboration] = useState<Collaboration | null>(null);
   const [recipientName, setRecipientName] = useState('');
@@ -138,12 +138,7 @@ export default function StartWizard({ email }: { email: string }) {
     setScenario(s);
     const defaultName = getDefaultName(s);
     setRecipientName(defaultName);
-    // Steps are recalculated on next render; advance past scenario
-    if (s === 'other') {
-      goToStep('recipientName');
-    } else {
-      goToStep('collaboration');
-    }
+    goToStep('yourName');
   }
 
   function handleCollaborationSelect(c: Collaboration) {
@@ -180,7 +175,6 @@ export default function StartWizard({ email }: { email: string }) {
     formData.append('Email', email);
     formData.append('FirstName', firstName);
     formData.append('LastName', lastName);
-    if (recipientName.trim()) formData.append('RecipientName', recipientName.trim());
     const validEmails = inviteEmails.filter(e => e.trim());
     validEmails.forEach(e => formData.append('FriendEmails', e));
 
@@ -227,7 +221,7 @@ export default function StartWizard({ email }: { email: string }) {
     setInviteEmails(updated);
   }
 
-  const showBack = step !== 'yourName';
+  const showBack = step !== 'scenario';
   const showSkip = step === 'firstPost' || step === 'invite';
 
   // --- Dynamic copy ---
