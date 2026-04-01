@@ -16,7 +16,7 @@ const damion = Damion({
 
 type Step = 'scenario' | 'yourName' | 'recipientName' | 'collaboration' | 'invite' | 'firstPost' | 'preview' | 'done';
 
-type Scenario = 'grandparent' | 'parent' | 'myself' | 'other';
+type Scenario = 'grandparent' | 'parent' | 'myself' | 'other' | 'usa' | 'abroad';
 type Collaboration = 'solo' | 'together';
 
 const SCENARIOS: { id: Scenario; label: string; description: string; icon: string }[] = [
@@ -46,6 +46,21 @@ const SCENARIOS: { id: Scenario; label: string; description: string; icon: strin
   },
 ];
 
+const MILITARY_SCENARIOS: { id: Scenario; label: string; description: string; icon: string }[] = [
+  {
+    id: 'usa',
+    label: 'In the USA',
+    description: 'Stationed domestically (US address)',
+    icon: '🇺🇸',
+  },
+  {
+    id: 'abroad',
+    label: 'Overseas',
+    description: 'Deployed or stationed abroad (APO/FPO/DPO address)',
+    icon: '🌍',
+  },
+];
+
 function getDefaultName(scenario: Scenario): string {
   switch (scenario) {
     case 'grandparent':
@@ -56,14 +71,17 @@ function getDefaultName(scenario: Scenario): string {
       return '';
     case 'other':
       return '';
+    case 'usa':
+    case 'abroad':
+      return '';
   }
 }
 
 function getSteps(scenario: Scenario | null, collaboration: Collaboration | null, hasPhoto: boolean): Step[] {
   const steps: Step[] = ['scenario', 'yourName'];
 
-  // "other" needs a name input
-  if (scenario === 'other') {
+  // "other" and military scenarios need a name input
+  if (scenario === 'other' || scenario === 'usa' || scenario === 'abroad') {
     steps.push('recipientName');
   }
 
@@ -87,7 +105,23 @@ function getSteps(scenario: Scenario | null, collaboration: Collaboration | null
   return steps;
 }
 
-export default function StartWizard({ email }: { email: string }) {
+const THEME = {
+  default: {
+    accent: '#C15F3C',
+    accentHover: '#a8512f',
+    progressBg: '#C15F3C',
+  },
+  military: {
+    accent: '#779443',
+    accentHover: '#6c873d',
+    progressBg: '#779443',
+  },
+} as const;
+
+export default function StartWizard({ email, variant = 'default' }: { email: string; variant?: 'default' | 'military' }) {
+  const theme = THEME[variant];
+  const primaryStyle = { backgroundColor: theme.accent, borderColor: theme.accent } as React.CSSProperties;
+  const primaryHoverStyle = { backgroundColor: theme.accentHover, borderColor: theme.accentHover } as React.CSSProperties;
 
   const [step, setStep] = useState<Step>('scenario');
   const [scenario, setScenario] = useState<Scenario | null>(null);
@@ -243,12 +277,12 @@ export default function StartWizard({ email }: { email: string }) {
     : 'Who else should contribute?';
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full" style={{ '--accent': theme.accent, '--accent-hover': theme.accentHover } as React.CSSProperties}>
       {/* Progress bar */}
       <div className="w-full h-1.5 bg-[#F4F1EA] rounded-full mb-2">
         <div
-          className="h-full bg-[#C15F3C] rounded-full transition-all duration-500 ease-out"
-          style={{ width: `${progress}%` }}
+          className="h-full rounded-full transition-all duration-500 ease-out"
+          style={{ width: `${progress}%`, backgroundColor: theme.accent }}
         />
       </div>
 
@@ -283,17 +317,19 @@ export default function StartWizard({ email }: { email: string }) {
         {step === 'scenario' && (
           <div className="flex flex-col gap-4">
             <h2 className="text-[1.5rem] font-semibold text-[#242832]">
-              Who are you making this for?
+              {variant === 'military' ? 'Where is your service member based?' : 'Who are you making this for?'}
             </h2>
             <p className="text-[0.875rem] text-[#868581]">
-              Every month, your photos and stories get printed and mailed as a real magazine.
+              {variant === 'military'
+                ? 'We ship anywhere in the USA and to APO/FPO/DPO addresses worldwide.'
+                : 'Every month, your photos and stories get printed and mailed as a real magazine.'}
             </p>
             <div className="flex flex-col gap-3">
-              {SCENARIOS.map((s) => (
+              {(variant === 'military' ? MILITARY_SCENARIOS : SCENARIOS).map((s) => (
                 <button
                   key={s.id}
                   onClick={() => handleScenarioSelect(s.id)}
-                  className="flex items-center gap-4 p-4 rounded-2xl border-2 border-[#DEDBD5] hover:border-[#C15F3C] transition-colors text-left">
+                  className="flex items-center gap-4 p-4 rounded-2xl border-2 border-[#DEDBD5] hover:border-[var(--accent)] transition-colors text-left">
                   <span className="text-2xl flex-shrink-0">{s.icon}</span>
                   <div>
                     <p className="text-base font-medium text-[#242832]">{s.label}</p>
@@ -320,7 +356,7 @@ export default function StartWizard({ email }: { email: string }) {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value.slice(0, 100))}
                 placeholder="First name"
-                className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none"
+                className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[var(--accent)] focus:outline-none"
                 autoFocus
               />
               <input
@@ -329,7 +365,7 @@ export default function StartWizard({ email }: { email: string }) {
                 onChange={(e) => setLastName(e.target.value.slice(0, 100))}
                 onKeyDown={(e) => { if (e.key === 'Enter' && firstName.trim() && lastName.trim()) nextStep(); }}
                 placeholder="Last name"
-                className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none"
+                className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[var(--accent)] focus:outline-none"
               />
             </div>
             <button
@@ -338,31 +374,35 @@ export default function StartWizard({ email }: { email: string }) {
               className={`w-full py-3 rounded-[12px] border-2 text-base font-medium transition-colors ${
                 !firstName.trim() || !lastName.trim()
                   ? 'bg-[#ECEDEF] border-[#ECEDEF] text-[#A8ABB3]'
-                  : 'bg-[#C15F3C] border-[#C15F3C] text-white hover:bg-[#a8512f]'
-              }`}>
+                  : 'text-white'
+              }`}
+              style={firstName.trim() && lastName.trim() ? primaryStyle : undefined}>
               Next
             </button>
           </div>
         )}
 
-        {/* Step: Recipient Name (only for "other" scenario) */}
+        {/* Step: Recipient Name (for "other" or military scenarios) */}
         {step === 'recipientName' && (
           <div className="flex flex-col gap-4">
             <h2 className="text-[1.5rem] font-semibold text-[#242832]">
-              What do you call them?
+              {variant === 'military' ? 'Who is this magazine for?' : 'What do you call them?'}
             </h2>
             <p className="text-[0.875rem] text-[#868581]">
               We&apos;ll use this to personalize their magazine.
             </p>
             <div>
-              <p className="text-sm font-medium text-[#242832] mb-2">Their name or nickname</p>
+              <p className="text-sm font-medium text-[#242832] mb-2">
+                {variant === 'military' ? 'Their name or rank & name' : 'Their name or nickname'}
+              </p>
               <input
                 type="text"
                 value={recipientName}
                 onChange={(e) => setRecipientName(e.target.value.slice(0, 100))}
                 onKeyDown={(e) => { if (e.key === 'Enter' && recipientName.trim()) nextStep(); }}
-                placeholder="e.g. Grandma, Mom & Dad, Uncle Joe"
-                className="w-full px-4 py-3 rounded-xl border-2 border-[#C15F3C] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:outline-none"
+                placeholder={variant === 'military' ? 'e.g. SGT Davis, Mom, Jake' : 'e.g. Grandma, Mom & Dad, Uncle Joe'}
+                className="w-full px-4 py-3 rounded-xl border-2 bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:outline-none"
+                style={{ borderColor: theme.accent }}
                 autoFocus
               />
             </div>
@@ -372,8 +412,9 @@ export default function StartWizard({ email }: { email: string }) {
               className={`w-full py-3 rounded-[12px] border-2 text-base font-medium transition-colors ${
                 !recipientName.trim()
                   ? 'bg-[#ECEDEF] border-[#ECEDEF] text-[#A8ABB3]'
-                  : 'bg-[#C15F3C] border-[#C15F3C] text-white hover:bg-[#a8512f]'
-              }`}>
+                  : 'text-white'
+              }`}
+              style={recipientName.trim() ? primaryStyle : undefined}>
               Next
             </button>
           </div>
@@ -391,7 +432,7 @@ export default function StartWizard({ email }: { email: string }) {
             <div className="flex flex-col gap-3">
               <button
                 onClick={() => handleCollaborationSelect('solo')}
-                className="flex items-center gap-4 p-4 rounded-2xl border-2 border-[#DEDBD5] hover:border-[#C15F3C] transition-colors text-left">
+                className="flex items-center gap-4 p-4 rounded-2xl border-2 border-[#DEDBD5] hover:border-[var(--accent)] transition-colors text-left">
                 <span className="text-2xl flex-shrink-0">🙋</span>
                 <div>
                   <p className="text-base font-medium text-[#242832]">Just me</p>
@@ -400,7 +441,7 @@ export default function StartWizard({ email }: { email: string }) {
               </button>
               <button
                 onClick={() => handleCollaborationSelect('together')}
-                className="flex items-center gap-4 p-4 rounded-2xl border-2 border-[#DEDBD5] hover:border-[#C15F3C] transition-colors text-left">
+                className="flex items-center gap-4 p-4 rounded-2xl border-2 border-[#DEDBD5] hover:border-[var(--accent)] transition-colors text-left">
                 <span className="text-2xl flex-shrink-0">👨‍👩‍👧‍👦</span>
                 <div>
                   <p className="text-base font-medium text-[#242832]">With family &amp; friends</p>
@@ -429,12 +470,12 @@ export default function StartWizard({ email }: { email: string }) {
                     value={email}
                     onChange={(e) => updateInviteEmail(index, e.target.value)}
                     placeholder="Family member's email"
-                    className="flex-1 px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none"
+                    className="flex-1 px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[var(--accent)] focus:outline-none"
                   />
                   {inviteEmails.length > 1 && (
                     <button
                       onClick={() => removeInviteEmail(index)}
-                      className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-[#868581] hover:text-[#C15F3C] hover:bg-[#F4F1EA] transition-colors"
+                      className="flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-[#868581] hover:text-[var(--accent)] hover:bg-[#F4F1EA] transition-colors"
                       aria-label="Remove email">
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                         <path d="M18 6 6 18" /><path d="m6 6 12 12" />
@@ -448,7 +489,8 @@ export default function StartWizard({ email }: { email: string }) {
             {inviteEmails.length < 10 && (
               <button
                 onClick={addInviteField}
-                className="flex items-center gap-2 text-sm text-[#C15F3C] hover:text-[#a8512f] transition-colors font-medium">
+                className="flex items-center gap-2 text-sm transition-colors font-medium"
+                style={{ color: theme.accent }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M12 5v14" /><path d="M5 12h14" />
                 </svg>
@@ -458,7 +500,8 @@ export default function StartWizard({ email }: { email: string }) {
 
             <button
               onClick={nextStep}
-              className="w-full py-3 rounded-[12px] border-2 bg-[#C15F3C] border-[#C15F3C] text-white text-base font-medium hover:bg-[#a8512f] transition-colors">
+              className="w-full py-3 rounded-[12px] border-2 text-white text-base font-medium transition-colors"
+              style={primaryStyle}>
               {inviteEmails.some((e) => e.trim()) ? 'Looks good' : 'I\'ll do this later'}
             </button>
           </div>
@@ -474,7 +517,7 @@ export default function StartWizard({ email }: { email: string }) {
             <input ref={fileInputRef} type="file" accept="image/*" onChange={handleFileSelect} className="hidden" />
             <button
               onClick={() => fileInputRef.current?.click()}
-              className="w-full rounded-2xl border-2 border-dashed border-[#DEDBD5] hover:border-[#C15F3C] transition-colors overflow-hidden"
+              className="w-full rounded-2xl border-2 border-dashed border-[#DEDBD5] hover:border-[var(--accent)] transition-colors overflow-hidden"
               style={{ aspectRatio: `${selectedSize.width}/${selectedSize.height}` }}>
               {imagePreview ? (
                 // eslint-disable-next-line @next/next/no-img-element
@@ -497,7 +540,7 @@ export default function StartWizard({ email }: { email: string }) {
                   onChange={(e) => setCaption(e.target.value.slice(0, 200))}
                   placeholder="Write a caption (optional)"
                   rows={2}
-                  className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[#C15F3C] focus:outline-none resize-none"
+                  className="w-full px-4 py-3 rounded-xl border-2 border-[#DEDBD5] bg-[#FCFBF8] text-[#242832] text-base placeholder-[#868581] focus:border-[var(--accent)] focus:outline-none resize-none"
                 />
                 <span className="absolute bottom-2 right-3 text-xs text-[#868581]">{caption.length}/200</span>
               </div>
@@ -506,13 +549,15 @@ export default function StartWizard({ email }: { email: string }) {
             {imageFile ? (
               <button
                 onClick={handleAddToMagazine}
-                className="w-full py-3 rounded-[12px] border-2 bg-[#C15F3C] border-[#C15F3C] text-white text-base font-medium hover:bg-[#a8512f] transition-colors">
+                className="w-full py-3 rounded-[12px] border-2 text-white text-base font-medium transition-colors"
+              style={primaryStyle}>
                 Add to Magazine
               </button>
             ) : (
               <button
                 onClick={() => { submitOnboarding(); goToStep('done'); }}
-                className="w-full py-3 rounded-[12px] border-2 bg-[#C15F3C] border-[#C15F3C] text-white text-base font-medium hover:bg-[#a8512f] transition-colors">
+                className="w-full py-3 rounded-[12px] border-2 text-white text-base font-medium transition-colors"
+              style={primaryStyle}>
                 I&apos;ll do this later
               </button>
             )}
@@ -628,7 +673,8 @@ export default function StartWizard({ email }: { email: string }) {
 
             <button
               onClick={goToDoneAndSubmit}
-              className="w-full py-3 rounded-[12px] border-2 bg-[#C15F3C] border-[#C15F3C] text-white text-base font-medium hover:bg-[#a8512f] transition-colors">
+              className="w-full py-3 rounded-[12px] border-2 text-white text-base font-medium transition-colors"
+              style={primaryStyle}>
               {previewCta}
             </button>
           </div>

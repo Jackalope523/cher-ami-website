@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Magazine from '@/public/magazine.webp';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import EmailCTA from '@/components/EmailCTA';
+import WizardEmailCTA from '@/components/WizardEmailCTA';
 import { Suspense } from 'react';
 
 
@@ -40,11 +40,9 @@ export default function Military() {
             <br /><br />
             First magazine free, shipping included. Because distance shouldn't mean missing out on family.
           </p>
-          <div className="flex flex-col w-full sm:w-auto gap-3 p-5 border-2 border-[#5c8f41] rounded-[24px] shadow-lg">
-            <Suspense>
-              <EmailCTA variant='military' location='military' />
-            </Suspense>
-          </div>
+          <Suspense>
+            <WizardEmailCTA variant='military' location='military' />
+          </Suspense>
         </div>
       </section>
     </div>

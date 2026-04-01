@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Magazine from '@/public/magazine.webp';
 import Link from 'next/link';
-import EmailCTA from '@/components/WizardEmailCTA';
+import WizardEmailCTA from '@/components/WizardEmailCTA';
 import { Suspense, useRef, useState } from 'react';
 import SquirrelIllustration from '@/public/squirrel.webp';
 
@@ -47,7 +47,7 @@ export default function StartClient() {
           </p>
           <div ref={wizardRef}>
             <Suspense>
-              <EmailCTA location='start-top' onSignUp={() => setSignedUp(true)} done={signedUp} />
+              <WizardEmailCTA location='start' onSignUp={() => setSignedUp(true)} done={signedUp} />
             </Suspense>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function StartClient() {
             </h2>
             <div className="flex flex-col w-full sm:w-auto gap-3 px-2">
               <Suspense>
-                <EmailCTA location='start-bottom' onSignUp={handleBottomSignUp} done={signedUp} />
+                <WizardEmailCTA location='start' onSignUp={handleBottomSignUp} done={signedUp} />
               </Suspense>
             </div>
             <div className="max-w-[400px] pt-8">

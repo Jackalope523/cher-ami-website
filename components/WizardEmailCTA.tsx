@@ -23,7 +23,7 @@ const themeVariants = {
   militaryButton: 'bg-[#779443] hover:bg-[#6c873d] active:bg-[#6c873d]',
 };
 
-export default function EmailCTA({
+export default function WizardEmailCTA({
   variant = 'default',
   location = '',
   done = false,
@@ -65,11 +65,11 @@ export default function EmailCTA({
 
   if (submitted) {
     return (
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 w-full">
         <p className={`text-[1rem] ${themeVariants[textTheme]} font-semibold text-center`}>
           You&apos;re in! Let&apos;s set up your first magazine.
         </p>
-        <StartWizard email={email} />
+        <StartWizard email={email} variant={variant} />
       </div>
     );
   } else {
