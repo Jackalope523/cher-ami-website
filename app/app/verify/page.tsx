@@ -3,7 +3,7 @@
 import { useAuth } from '@/lib/auth-context';
 import { useEmailVerifyMutation } from '@/lib/hooks';
 import { useToast, ToastType } from '@/components/app/ToastProvider';
-import OTPInput from '@/components/app/OTPInput';
+import OTPInput from '@/app/app/verify/OTPInput';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useState, Suspense } from 'react';
 

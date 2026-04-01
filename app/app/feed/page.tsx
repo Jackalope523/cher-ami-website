@@ -1,8 +1,8 @@
 'use client';
 
 import { useGetCircleQuery } from '@/lib/hooks';
-import FeedContents from '@/components/app/FeedContents';
-import JoinOrCreateCircle from '@/components/app/JoinOrCreateCircle';
+import FeedContents from '@/app/app/feed/FeedContents';
+import JoinOrCreateCircle from '@/app/app/feed/JoinOrCreateCircle';
 
 export default function FeedPage() {
   const circleQuery = useGetCircleQuery();

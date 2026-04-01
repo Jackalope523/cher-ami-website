@@ -2,10 +2,10 @@
 
 import AuthProvider from '@/lib/auth-context';
 import APIProvider from '@/lib/api-context';
-import Sidebar from '@/components/app/Sidebar';
+import Sidebar from '@/app/app/Sidebar';
 import ToastProvider from '@/components/app/ToastProvider';
 import ModalProvider from '@/components/app/ModalProvider';
-import AuthGuard from '@/components/app/AuthGuard';
+import AuthGuard from '@/app/AuthGuard';
 
 export default function AppLayout({
   children,

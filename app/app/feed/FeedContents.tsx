@@ -1,11 +1,11 @@
 'use client';
 
 import { useFeedPostsInfiniteQuery, useGetCircleQuery, useGetSelfQuery, useGetPaymentMethodQuery } from '@/lib/hooks';
-import { useToast, ToastType } from './ToastProvider';
+import { useToast, ToastType } from '../../../components/app/ToastProvider';
 import { mapDateToText } from '@/lib/utility';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import Post from './Post';
+import Post from '../../../components/app/Post';
 import PostCounter from './PostCounter';
 
 export default function FeedContents() {

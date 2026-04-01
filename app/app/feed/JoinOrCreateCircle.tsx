@@ -1,7 +1,7 @@
 'use client';
 
 import { useJoinCircleMutation } from '@/lib/hooks';
-import { useToast, ToastType } from './ToastProvider';
+import { useToast, ToastType } from '../../../components/app/ToastProvider';
 import { useQueryClient } from '@tanstack/react-query';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';

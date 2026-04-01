@@ -3,14 +3,14 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { useGetCircleQuery } from '@/lib/hooks';
-import WizardShell from '@/components/app/wizard/WizardShell';
-import WelcomeStep from '@/components/app/wizard/WelcomeStep';
-import RecipientNameStep from '@/components/app/wizard/RecipientNameStep';
-import FirstPostStep from '@/components/app/wizard/FirstPostStep';
-import InviteStep from '@/components/app/wizard/InviteStep';
-import MagazinePreview from '@/components/app/wizard/MagazinePreview';
-import ShipItStep from '@/components/app/wizard/ShipItStep';
-import DoneStep from '@/components/app/wizard/DoneStep';
+import WizardShell from '@/app/app/getting-started/wizard/WizardShell';
+import WelcomeStep from '@/app/app/getting-started/wizard/WelcomeStep';
+import RecipientNameStep from '@/app/app/getting-started/wizard/RecipientNameStep';
+import FirstPostStep from '@/app/app/getting-started/wizard/FirstPostStep';
+import InviteStep from '@/app/app/getting-started/wizard/InviteStep';
+import MagazinePreview from '@/app/app/getting-started/wizard/MagazinePreview';
+import ShipItStep from '@/app/app/getting-started/wizard/ShipItStep';
+import DoneStep from '@/app/app/getting-started/wizard/DoneStep';
 
 type Step = 'welcome' | 'recipientName' | 'firstPost' | 'invite' | 'magazinePreview' | 'shipIt' | 'done';
 

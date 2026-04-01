@@ -2,7 +2,7 @@
 
 import { useAddPostMutation } from '@/lib/hooks';
 import { useToast, ToastType } from '@/components/app/ToastProvider';
-import PostCounter from '@/components/app/PostCounter';
+import PostCounter from '@/app/app/feed/PostCounter';
 import { cropImageToAspectRatio, compressImage } from '@/lib/utility';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { useRef, useState, Suspense } from 'react';

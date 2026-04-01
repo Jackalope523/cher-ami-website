@@ -5,7 +5,7 @@ import { useGetCircleQuery, useGetSelfQuery } from '@/lib/hooks';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import { useState } from 'react';
-import AuthImage from './AuthImage';
+import AuthImage from '../../components/app/AuthImage';
 
 export default function Sidebar() {
   const [mobileOpen, setMobileOpen] = useState(false);

@@ -38,7 +38,7 @@ export default function RootLayout({
   const WEBSITE_UUID = '284d228d-2ee6-4d7c-9c13-ef244cd65c4b';
 
   return (
-    <html lang="en">
+    <html lang="en" style={{ background: '#FCFBF8'}}>
       <body className={poppins.className} suppressHydrationWarning>
         {FB_PIXEL_ID &&
           <Script id='fb-pixel' strategy='afterInteractive'>
