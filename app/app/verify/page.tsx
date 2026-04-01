@@ -4,7 +4,7 @@ import { useAuth } from '@/lib/auth-context';
 import { useEmailVerifyMutation } from '@/lib/hooks';
 import { useToast, ToastType } from '@/components/app/ToastProvider';
 import OTPInput from '@/components/app/OTPInput';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { useState, Suspense } from 'react';
 
 function VerifyContent() {
@@ -13,11 +13,13 @@ function VerifyContent() {
   const email = searchParams.get('email') || '';
   const { updateToken, updateOnboarded } = useAuth();
   const showToast = useToast();
+  const router = useRouter();
 
   const emailVerifyMutation = useEmailVerifyMutation(
     (response) => {
       updateToken(response.token);
       updateOnboarded(response.onboarded);
+      router.push('/app/feed');
     },
     () => showToast('Network error. Try again.', ToastType.Error),
   );

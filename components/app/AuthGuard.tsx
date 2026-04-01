@@ -5,39 +5,28 @@ import { usePathname, useRouter } from 'next/navigation';
 import { ReactNode, useEffect } from 'react';
 
 const PUBLIC_PATHS = ['/app/login', '/app/verify'];
-const NO_SIDEBAR_PATHS = ['/app/onboarding', '/app/getting-started'];
-
 export default function AuthGuard({
   children,
 }: {
   children: (showSidebar: boolean) => ReactNode;
 }) {
-  const { loaded, getToken, getOnboarded } = useAuth();
+  const { loaded, getToken } = useAuth();
   const router = useRouter();
   const pathname = usePathname();
 
   const isPublic = PUBLIC_PATHS.some((p) => pathname.startsWith(p));
-  const isOnboarding = pathname.startsWith('/app/onboarding');
-  const isGettingStarted = pathname.startsWith('/app/getting-started');
-  const isNoSidebar = NO_SIDEBAR_PATHS.some((p) => pathname.startsWith(p));
 
   useEffect(() => {
     if (!loaded) return;
 
     const token = getToken();
-    const onboarded = getOnboarded();
-    const wizardComplete = typeof window !== 'undefined' && localStorage.getItem('wizardComplete') === 'true';
 
     if (!token && !isPublic) {
       router.push('/app/login');
-    } else if (token && !onboarded && !isOnboarding && !isPublic) {
-      router.push('/app/onboarding');
-    } else if (token && onboarded && !wizardComplete && !isGettingStarted && !isOnboarding && !isPublic) {
-      router.push('/app/getting-started');
-    } else if (token && onboarded && wizardComplete && (isPublic || isOnboarding || isGettingStarted)) {
+    } else if (token && isPublic) {
       router.push('/app/feed');
     }
-  }, [loaded, getToken, getOnboarded, pathname, router, isPublic, isOnboarding, isGettingStarted]);
+  }, [loaded, getToken, pathname, router, isPublic]);
 
   if (!loaded) {
     return (
@@ -48,13 +37,11 @@ export default function AuthGuard({
   }
 
   const token = getToken();
-  const onboarded = getOnboarded();
 
   // Don't render protected content without auth
   if (!token && !isPublic) return null;
 
-  // Show sidebar only for authenticated + onboarded + wizard-complete users on main app pages
-  const showSidebar = !!token && !!onboarded && !isPublic && !isNoSidebar;
+  const showSidebar = !!token && !isPublic;
 
   return <>{children(showSidebar)}</>;
 }

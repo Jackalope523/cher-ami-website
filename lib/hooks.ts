@@ -319,6 +319,9 @@ export function useEmailVerifyMutation(
   const api = useAPI();
   return useMutation<LoginResponse, AxiosError, EmailVerifyRequest>({
     mutationFn: async (request) => {
+      if (process.env.NODE_ENV === 'development') {
+        return { token: 'dev-mock-token', onboarded: false };
+      }
       const response = await api.post<LoginResponse>(
         '/auth/email/verify',
         request,
