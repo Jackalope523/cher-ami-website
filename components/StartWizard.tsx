@@ -7,6 +7,7 @@ import { cropImageToAspectRatio, compressImage } from '@/lib/utility';
 import DynamicCTA from './DynamicCTA';
 import TitleLogo from '@/public/title.png';
 import HedgehogIllustration from '@/public/hedgehog.png';
+import { usePlausible } from 'next-plausible';
 
 const damion = Damion({
   weight: '400',
@@ -131,6 +132,7 @@ export default function StartWizard({ email, variant = 'default' }: { email: str
   const [lastName, setLastName] = useState('');
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const [caption, setCaption] = useState('');
+  const plausible = usePlausible();
 
   // Photo state (no layout picker — default to wide)
   const [imageFile, setImageFile] = useState<File | null>(null);
@@ -226,6 +228,8 @@ export default function StartWizard({ email, variant = 'default' }: { email: str
     } catch (err) {
       console.error(err);
     }
+
+    plausible('Wizard Completed', { props: { location } });
   }
 
   function goToDoneAndSubmit() {
