@@ -19,9 +19,9 @@ export default function AppLayout({
           <ModalProvider>
             <AuthGuard>
               {(showSidebar) => (
-                <div className="flex min-h-screen bg-[#FCFBF8]">
+                <div className="flex min-h-screen bg-[#FCFBF8] overflow-x-hidden">
                   {showSidebar && <Sidebar />}
-                  <main className={`flex-1 ${showSidebar ? 'lg:ml-0' : ''}`}>
+                  <main className="flex-1 min-w-0">
                     {children}
                   </main>
                 </div>
