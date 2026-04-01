@@ -31,7 +31,7 @@ export default function Sidebar() {
   ];
 
   const sidebarContent = (
-    <div className="flex flex-col h-full justify-between py-6">
+    <div className="flex flex-col h-full justify-between mt-14 py-6">
       <div>
         {selfQuery.data && (
           <Link

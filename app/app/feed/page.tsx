@@ -29,7 +29,7 @@ export default function FeedPage() {
 
   return (
     <div>
-      <div className="px-5 pt-6 pb-2 lg:pl-6">
+      <div className="px-5 pt-6 pb-2 lg:pl-6 text-center">
         <h1 className="text-2xl font-medium text-[#C15F3C]" style={{ fontFamily: 'Damion, cursive' }}>
           {circleQuery.data.title}
         </h1>
