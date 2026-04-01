@@ -222,7 +222,7 @@ export default function StartWizard({ email }: { email: string }) {
     setInviteEmails(updated);
   }
 
-  const showBack = step !== 'scenario';
+  const showBack = step !== 'scenario' && step !== 'done';
   const showSkip = step === 'firstPost' || step === 'invite';
 
   // --- Dynamic copy ---

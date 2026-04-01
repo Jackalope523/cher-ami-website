@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Magazine from '@/public/magazine.webp';
 import Link from 'next/link';
-import EmailCTA from '@/components/EmailCTAAlt';
+import EmailCTA from '@/components/WizardEmailCTA';
 import { Suspense, useRef, useState } from 'react';
 import SquirrelIllustration from '@/public/squirrel.webp';
 

@@ -57,7 +57,7 @@ export default function EmailCTA({
     e.preventDefault();
     setSubmitted(true);
 
-    plausible('Email Sign Up', { props: { location } });
+    plausible('Wizard Start', { props: { location } });
     if (onSignUp) {
       onSignUp();
     }
