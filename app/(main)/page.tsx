@@ -73,7 +73,7 @@ export default function Home() {
 
       <section
         id="landing"
-        className="flex flex-col lg:flex-row-reverse items-center justify-between w-full lg:mb-[-100]">
+        className="flex flex-col lg:flex-row-reverse items-center justify-between w-full lg:mb-[-100] px-5 lg:px-8 xl:px-0">
         <div className="flex flex-row w-[100vw] lg:w-auto gap-10 p-10 overflow-x-auto no-scrollbar">
           <Polaroid
             src={HeroImage}
