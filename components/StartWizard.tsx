@@ -229,7 +229,7 @@ export default function StartWizard({ email, variant = 'default' }: { email: str
       console.error(err);
     }
 
-    plausible('Wizard Completed', { props: { location } });
+    plausible('Wizard Done', { props: { location } });
   }
 
   function goToDoneAndSubmit() {
