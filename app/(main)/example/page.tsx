@@ -17,7 +17,7 @@ export default function Example() {
   return (
     <div className="flex flex-col w-full max-w-[1200px] mx-auto px-5 pt-6 pb-18 items-center gap-10">
       <section className="w-[90vw] md:w-[100vw] h-[90vh]">
-        <iframe src="https://heyzine.com/flip-book/5b793e9c89.html" className="w-full h-full" allowFullScreen allow="clipboard-write *;" />
+        <iframe src="https://heyzine.com/flip-book/bc03038600.html" className="w-full h-full" allowFullScreen allow="clipboard-write *;" />
       </section>
 
       <section className="flex flex-col w-full items-center">
