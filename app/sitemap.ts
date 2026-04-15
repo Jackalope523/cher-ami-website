@@ -1,6 +1,22 @@
 import type { MetadataRoute } from 'next'
- 
+import { BLOG_POSTS } from '@/lib/blog'
+
 export default function sitemap(): MetadataRoute.Sitemap {
+  const blogEntries: MetadataRoute.Sitemap = [
+    {
+      url: 'https://thecherami.com/blog',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.8,
+    },
+    ...BLOG_POSTS.map((post) => ({
+      url: `https://thecherami.com/blog/${post.slug}`,
+      lastModified: new Date(post.dateISO),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ]
+
   return [
     {
       url: 'https://thecherami.com',
@@ -8,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
+    ...blogEntries,
     
     {
       url: 'https://thecherami.com/example',

@@ -13,20 +13,51 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'Cher Ami',
-  description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
+  title: {
+    default: 'Cher Ami — A printed photo magazine from your family, every month',
+    template: '%s | Cher Ami',
+  },
+  description: 'Every month, transform your family\'s photos and stories into a beautiful printed magazine, delivered to those you love. First magazine free. Free US shipping. Cancel anytime.',
+  applicationName: 'Cher Ami',
+  keywords: [
+    'family photo magazine',
+    'printed photo magazine',
+    'gift for grandparents',
+    'long distance family gift',
+    'mother\'s day gift',
+    'monthly photo subscription',
+    'family memories',
+  ],
+  authors: [{ name: 'Cher Ami' }],
+  creator: 'Cher Ami',
+  publisher: 'Cher Ami',
   robots: {
+    index: true,
+    follow: true,
     noimageindex: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
   metadataBase: new URL('https://thecherami.com'),
   openGraph: {
-    title: 'Cher Ami',
-    description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
+    title: 'Cher Ami — A printed photo magazine from your family, every month',
+    description: 'Every month, transform your family\'s photos and stories into a beautiful printed magazine, delivered to those you love.',
     url: 'https://thecherami.com',
     siteName: 'Cher Ami',
     images: '/opengraph-image.png',
-    type: 'website'
-  }
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Cher Ami — A printed photo magazine from your family, every month',
+    description: 'Turn your family\'s photos into a printed magazine, delivered to those you love. First magazine free.',
+    images: '/opengraph-image.png',
+  },
 };
 
 export default function RootLayout({
@@ -40,6 +71,37 @@ export default function RootLayout({
   return (
     <html lang="en" style={{ background: '#FCFBF8'}}>
       <body className={poppins.className} suppressHydrationWarning>
+        <Script
+          id="ld-organization"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Cher Ami',
+              url: 'https://thecherami.com',
+              logo: 'https://thecherami.com/title.png',
+              sameAs: [
+                'https://www.facebook.com/thecherami',
+                'https://www.instagram.com/thecherami',
+                'https://www.tiktok.com/@thecherami',
+                'https://www.youtube.com/@thecherami',
+              ],
+            }),
+          }}
+        />
+        <Script
+          id="ld-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'WebSite',
+              name: 'Cher Ami',
+              url: 'https://thecherami.com',
+            }),
+          }}
+        />
         {FB_PIXEL_ID &&
           <Script id='fb-pixel' strategy='afterInteractive'>
             {`

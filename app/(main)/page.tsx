@@ -38,6 +38,7 @@ import DownloadPopup from '@/components/DownloadPopup';
 
 import { Damion } from 'next/font/google';
 import Polaroid from '@/components/Polaroid';
+import Script from 'next/script';
 
 const damion = Damion({
   weight: '400',
@@ -47,19 +48,65 @@ const damion = Damion({
 
 
 export const metadata: Metadata = {
-  title: 'Cher Ami',
-  description: 'Every month, transform your family\'s photos and stories into a beautiful magazine, delivered to those you love.',
-  robots: {
-    noimageindex: true,
+  title: {
+    absolute: 'Cher Ami — A printed photo magazine from your family, every month',
   },
+  description: 'Every month, transform your family\'s photos and stories into a beautiful printed magazine, delivered to those you love. First magazine free. Free US shipping. Cancel anytime.',
   alternates: {
     canonical: 'https://thecherami.com'
   }
 };
 
+const faqItems = [
+  { q: 'How do I get started?', a: "Get started at thecherami.com/start and we'll walk you through everything. Download the app, invite family members, and your first magazine will be on its way." },
+  { q: 'Does the recipient need an app or account?', a: 'No. The magazine arrives in their mailbox like any other piece of mail. No app, no account — they just open it and enjoy.' },
+  { q: 'Who do I send a magazine to?', a: 'Grandparents, parents, friends, or anyone else you want to show love to with physical memories. We currently deliver in the USA with plans to reach more countries soon.' },
+  { q: 'Who can contribute to the magazine?', a: 'Anyone you invite — siblings, cousins, aunts, uncles. The whole family can post photos and stories from their phone.' },
+  { q: "What if I don't have enough photos this month?", a: "No problem. Even a handful of photos makes a wonderful magazine. You can also skip a month — you're only billed when we print and ship." },
+  { q: 'Is this a good gift idea?', a: "It's one of the best. Grandparents and loved ones consistently tell us it's their favorite thing to receive — personal, physical, and it shows up every single month." },
+  { q: 'Can I send it to someone outside the USA?', a: 'We currently ship within the USA only, but international family members can still join your family and contribute photos through the app. International delivery is coming soon.' },
+];
+
 export default function Home() {
   return (
     <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-5 gap-20 lg:gap-36 pt-6 pb-18">
+      <Script
+        id="ld-product"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Product',
+            name: 'Cher Ami Monthly Photo Magazine',
+            description:
+              "A printed monthly photo magazine created from your family's photos and stories, shipped to the people who miss you most.",
+            brand: { '@type': 'Brand', name: 'Cher Ami' },
+            image: 'https://thecherami.com/opengraph-image.png',
+            offers: {
+              '@type': 'Offer',
+              price: '12.99',
+              priceCurrency: 'USD',
+              availability: 'https://schema.org/InStock',
+              url: 'https://thecherami.com/start',
+            },
+          }),
+        }}
+      />
+      <Script
+        id="ld-faq"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: faqItems.map((f) => ({
+              '@type': 'Question',
+              name: f.q,
+              acceptedAnswer: { '@type': 'Answer', text: f.a },
+            })),
+          }),
+        }}
+      />
       <Suspense>
         <Redirect />
       </Suspense>

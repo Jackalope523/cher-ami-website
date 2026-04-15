@@ -38,6 +38,9 @@ export default function RootLayout({
             <Link href="/example" className="text-[#B05637] py-2">
               Magazine
             </Link>
+            <Link href="/blog" className="text-[#B05637] py-2">
+              Blog
+            </Link>
             <Link href="/help" className="text-[#B05637] py-2">
               Help
             </Link>
