@@ -150,7 +150,7 @@ export default function Header() {
           onClick={() => plausible('Promo Banner Pressed')}
           className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
           <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium">
-            Get ready for Mother's Day! Send her first magazine free
+            Get ready for Father's Day! Send his first magazine free
           </p>
         </Link>
       </div>
