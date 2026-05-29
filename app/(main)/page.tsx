@@ -35,6 +35,7 @@ import CarouselVideoGuy from '@/public/carousel-video-guy.webp';
 import CarouselVideoGirl from '@/public/carousel-video-girl.webp';
 import TitleText from '@/components/TitleText';
 import DownloadPopup from '@/components/DownloadPopup';
+import NextPrintNotice from '@/components/NextPrintNotice';
 
 import { Damion } from 'next/font/google';
 import Polaroid from '@/components/Polaroid';
@@ -169,6 +170,7 @@ export default function Home() {
                   </p>      
               </Link>*/}
           </div>
+          <NextPrintNotice className="self-center lg:self-start" />
           <div className="flex flex-row w-full justify-center">
             <p className="text-[0.9rem] text-[#868581]  text-center">
               Loved by families across the USA • Free Shipping • Happiness Guaranteed

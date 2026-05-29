@@ -4,6 +4,7 @@ import Image from 'next/image';
 import Magazine from '@/public/magazine.webp';
 import Link from 'next/link';
 import WizardEmailCTA from '@/components/WizardEmailCTA';
+import NextPrintNotice from '@/components/NextPrintNotice';
 import { Suspense, useRef, useState } from 'react';
 import SquirrelIllustration from '@/public/squirrel.webp';
 
@@ -45,6 +46,7 @@ export default function StartClient() {
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[500px]">
             We&apos;ll even cover shipping. Enter your email and we&apos;ll help you get started in minutes.
           </p>
+          <NextPrintNotice className="self-center md:self-start" />
           <div className="w-full" ref={wizardRef}>
             <Suspense>
               <WizardEmailCTA location='start' onSignUp={() => setSignedUp(true)} done={signedUp} />
