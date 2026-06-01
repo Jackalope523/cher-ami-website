@@ -115,7 +115,7 @@ export default function ContactClient() {
               placeholder="Write here..."
               value={content}
               onChange={(e) => setContent(e.target.value)}
-              className="py-3 focus:outline-none"
+              className="px-4 py-3 border-2 border-[#DEDBD5] rounded-xl"
               rows={6}
             />
           </div>
