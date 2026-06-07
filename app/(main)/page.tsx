@@ -185,7 +185,7 @@ export default function Home() {
       <section id="problem" className="flex flex-col sm:flex-row gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
         <div className="flex flex-[1.5] flex-col gap-8">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            The gift that arrives <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>every month</span>
+            The gift that arrives <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>every&nbsp;month</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
             Picture your parents opening their mailbox and finding a magazine full of the people they love:
@@ -216,7 +216,7 @@ export default function Home() {
       <section id="objection" className="flex flex-col sm:flex-row-reverse gap-12 lg:gap-40 w-full max-w-[1200px] px-5 lg:px-8 xl:px-0">
         <div className="flex flex-2 flex-col gap-8">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            But I already <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>send them photos...</span>
+            But I already <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>send them&nbsp;photos...</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
             You do, and they love it! But texts get buried, group chats move fast, and honestly, Granddad still isn't great with his phone.
