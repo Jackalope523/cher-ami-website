@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const REDIRECTS: Record<string, string> = {
+  '/download': '/?redirect=download',
   '/s/ig': '/?utm_source=instagram&utm_medium=social&utm_campaign=launch',
   '/s/tt': '/?utm_source=tiktok&utm_medium=social&utm_campaign=launch',
   '/s/fb': '/?utm_source=facebook&utm_medium=social&utm_campaign=launch',
