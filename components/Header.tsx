@@ -143,17 +143,20 @@ export default function Header() {
           </div>
         </div>
        }
-      <div
-        className="absolute bg-[#C15F3C] w-full animate-slide-down">
-        <Link
-          href="/start"
-          onClick={() => plausible('Promo Banner Pressed')}
-          className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
-          <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium">
-            Get ready for Father's Day! Send his first magazine free
-          </p>
-        </Link>
-      </div>
+       {/*
+       
+        <div
+          className="absolute bg-[#C15F3C] w-full animate-slide-down">
+          <Link
+            href="/start"
+            onClick={() => plausible('Promo Banner Pressed')}
+            className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
+            <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium">
+              Get ready for Father's Day! Send his first magazine free
+            </p>
+          </Link>
+        </div>
+       */}
     </header>
   );
 }
