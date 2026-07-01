@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getPostHogClient } from '@/lib/posthog-server';
 
 export async function POST(request: NextRequest) {
   const ONE_SIGNAL_API_KEY = process.env.ONE_SIGNAL_API_KEY;
@@ -52,6 +53,14 @@ export async function POST(request: NextRequest) {
     console.log("OneSignal errors:", data.errors);
     throw new Error(`Response status: ${response.status}`);
   }
+
+  const posthog = getPostHogClient();
+  posthog.capture({
+    distinctId: email_from,
+    event: 'support_ticket_submitted',
+    properties: { subject: email_subject },
+  });
+  await posthog.shutdown();
 
   return NextResponse.json(data);
 }

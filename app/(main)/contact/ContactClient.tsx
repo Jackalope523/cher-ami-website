@@ -1,5 +1,6 @@
 'use client';
 
+import posthog from 'posthog-js';
 import Link from 'next/link';
 import Mail from '@/public/mail.svg';
 import Check from '@/public/check-black.svg';
@@ -32,11 +33,13 @@ export default function ContactClient() {
 
       if (!res.ok) throw new Error('Failed to send email');
 
+      posthog.capture('contact_form_submitted', { subject });
       setEmail('');
       setSubject('');
       setContent('');
       setSubmitted(true);
     } catch (err) {
+      posthog.captureException(err);
       console.error(err);
     }
   };

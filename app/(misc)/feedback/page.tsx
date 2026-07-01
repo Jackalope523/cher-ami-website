@@ -5,12 +5,10 @@ import dynamic from "next/dynamic";
 import Image from "next/image";
 
 import IntroIllustration from '@/public/squirrel.webp';
-import { usePlausible } from "next-plausible";
 
 const FeedbackShell = dynamic(() => import("./FeedbackShell"), { ssr: false });
 
 export default function FeedbackQuiz() {
-  const plausible = usePlausible();
   const [started, setStarted] = useState(false);
 
   return (

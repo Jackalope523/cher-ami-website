@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { getPostHogClient } from '@/lib/posthog-server';
 
 export async function POST(request: NextRequest) {
   const ONE_SIGNAL_API_KEY = process.env.ONE_SIGNAL_API_KEY;
@@ -16,6 +17,15 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({ email }),
   });
+
+  const posthog = getPostHogClient();
+  posthog.identify({ distinctId: email, properties: { email } });
+  posthog.capture({
+    distinctId: email,
+    event: 'welcome_email_submitted',
+    properties: { military: !!military },
+  });
+  await posthog.shutdown();
 
   return NextResponse.json({});
 }

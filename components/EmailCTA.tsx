@@ -1,7 +1,7 @@
 'use client';
 
-import { usePlausible } from 'next-plausible';
 import { useEffect, useState } from 'react';
+import posthog from 'posthog-js';
 import SendIcon from '@/public/send.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
@@ -34,7 +34,6 @@ export default function EmailCTA({
   const buttonTheme: ThemeVariantType =
     variant === 'military' ? 'militaryButton' : 'defaultButton';
 
-  const plausible = usePlausible();
   const searchParams = useSearchParams();
 
   const [email, setEmail] = useState('');
@@ -78,7 +77,8 @@ export default function EmailCTA({
       console.error(err);
     }
 
-    plausible('Email Sign Up', { props: { location } });
+    posthog.identify(email, { email });
+    posthog.capture('email_sign_up', { location, variant });
     if (onSignUp) {
       onSignUp();
     }

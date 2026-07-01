@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-const { withPlausibleProxy } = require('next-plausible');
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -17,6 +16,25 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/ingest/static/:path*',
+        destination: 'https://us-assets.i.posthog.com/static/:path*',
+      },
+      {
+        source: '/ingest/array/:path*',
+        destination: 'https://us-assets.i.posthog.com/array/:path*',
+      },
+      {
+        source: '/ingest/:path*',
+        destination: 'https://us.i.posthog.com/:path*',
+      },
+    ];
+  },
+
+  skipTrailingSlashRedirect: true,
 
 };
 

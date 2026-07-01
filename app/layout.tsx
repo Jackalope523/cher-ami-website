@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Poppins } from 'next/font/google';
-import PlausibleProvider from 'next-plausible';
 import './globals.css';
 import Script from 'next/script';
 import TermlyCMP from '@/components/TermlyCMP';
@@ -126,19 +125,17 @@ export default function RootLayout({
           />
         </Suspense>
 
-        <PlausibleProvider domain="thecherami.com">
-          <div className="bg-[#FCFBF8]">
-            {FB_PIXEL_ID &&
-              <noscript>
-                <img
-                  height="1" width="1" style={{ display: 'none' }}
-                  src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
-                />
-              </noscript>
-            }
-            {children}
-          </div>
-        </PlausibleProvider>
+        <div className="bg-[#FCFBF8]">
+          {FB_PIXEL_ID &&
+            <noscript>
+              <img
+                height="1" width="1" style={{ display: 'none' }}
+                src={`https://www.facebook.com/tr?id=${FB_PIXEL_ID}&ev=PageView&noscript=1`}
+              />
+            </noscript>
+          }
+          {children}
+        </div>
       </body>
     </html>
   );

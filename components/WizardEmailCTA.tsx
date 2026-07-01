@@ -1,7 +1,7 @@
 'use client';
 
-import { usePlausible } from 'next-plausible';
 import { useEffect, useState } from 'react';
+import posthog from 'posthog-js';
 import SendIcon from '@/public/send.svg';
 import Image from 'next/image';
 import { useSearchParams } from 'next/navigation';
@@ -34,7 +34,6 @@ export default function WizardEmailCTA({
   const buttonTheme: ThemeVariantType =
     variant === 'military' ? 'militaryButton' : 'defaultButton';
 
-  const plausible = usePlausible();
   const searchParams = useSearchParams();
 
   const [email, setEmail] = useState('');
@@ -57,7 +56,7 @@ export default function WizardEmailCTA({
     e.preventDefault();
     setSubmitted(true);
 
-    plausible('Wizard Start', { props: { location } });
+    posthog.capture('wizard_started', { location, variant });
     if (onSignUp) {
       onSignUp();
     }

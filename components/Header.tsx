@@ -9,10 +9,9 @@ import CloseIcon from '@/public/x-white.svg';
 import FacebookIcon from '@/public/facebook.svg';
 import InstagramIcon from '@/public/instagram.svg';
 import TikTokIcon from '@/public/tiktok.svg';
-import { usePlausible } from 'next-plausible';
+import posthog from 'posthog-js';
 
 export default function Header() {
-  const plausible = usePlausible();
   const [showMenu, setShowMenu] = useState<boolean>(false);
   const [isVisible, setIsVisible] = useState<boolean>(true);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
@@ -74,7 +73,7 @@ export default function Header() {
           <Link
             href="/start"
             className="bg-[#C15F3C] hover:bg-[#89432B] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl"
-            onClick={() => plausible('Header CTA Pressed')}>
+            onClick={() => posthog.capture('header_cta_pressed', { location: 'desktop' })}>
             Get Started
           </Link>
         </div>
@@ -116,7 +115,7 @@ export default function Header() {
             href="/start"
             onClick={() => {
               setShowMenu(false);
-              plausible('Header CTA Pressed');
+              posthog.capture('header_cta_pressed', { location: 'mobile' });
             }}
             className="bg-[#C15F3C] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl">
             Get Started
@@ -149,7 +148,7 @@ export default function Header() {
           className="absolute bg-[#C15F3C] w-full animate-slide-down">
           <Link
             href="/start"
-            onClick={() => plausible('Promo Banner Pressed')}
+            onClick={() => posthog.capture('promo_banner_pressed')}
             className="flex flex-col gap-1 py-2 px-5 lg:px-13 xl:px-5">
             <p className="text-[.9rem] text-[#FCFBF8] text-center font-medium">
               Get ready for Father's Day! Send his first magazine free

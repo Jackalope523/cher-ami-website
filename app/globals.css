@@ -66,6 +66,45 @@ body {
   .animate-fade-in {
     animation: fadeIn 200ms ease-out;
   }
+
+  /* Wizard step content entering */
+  @keyframes rise {
+    0%   { opacity: 0; transform: translateY(12px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  .animate-rise {
+    animation: rise 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Gentle bob for wizard illustrations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-8px); }
+  }
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  /* Celebration pop on the final step */
+  @keyframes pop {
+    0%   { opacity: 0; transform: scale(0.8); }
+    60%  { transform: scale(1.04); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  .animate-pop {
+    animation: pop 440ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  /* Respect users who prefer less motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-rise,
+    .animate-float,
+    .animate-pop,
+    .animate-fade-in,
+    .animate-slide-down {
+      animation: none !important;
+    }
+  }
 }
 
 .blog-prose h2 {
