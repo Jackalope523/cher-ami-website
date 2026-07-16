@@ -19,6 +19,7 @@ import Arrow from '@/public/arrow.svg';
 import DiagonalArrow from '@/public/arrow-up-right.svg';
 import Quotes from '@/public/quotes.svg';
 import USFlag from '@/public/usflag.png';
+import HandshakeWhite from '@/public/handshake-white.svg';
 
 import FAQItem from '@/components/FAQItem';
 import { Suspense } from 'react';
@@ -373,6 +374,33 @@ export default function Home() {
             <p className="text-[1rem] text-[#FCFBF8] font-normal text-center">
               Sending a magazine to a service member or veteran?
               Get 20% off every magazine.
+            </p>
+            <div className={'w-full py-6 bg-[#FCFBF8] justify-center rounded-[20]'}>
+              <p className="text-[1rem] text-[#242832] font-medium text-center">
+                Learn More
+              </p>
+            </div>
+          </Link>
+
+          <Link
+            href="/communities"
+            className="flex flex-col gap-8 p-8 w-full max-w-[500px] items-center bg-[#242832] rounded-[32px]
+                        drop-shadow-lg transition-transform transform hover:translate-y-[-8px]">
+            <div className="flex flex-row gap-5">
+              <h3 className="text-[1.75rem] text-[#FCFBF8] font-semibold text-center">
+                Senior Living Communities
+              </h3>
+              <Image
+                src={HandshakeWhite}
+                alt="Handshake icon"
+                width={40}
+                height={40}
+                className="w-10 self-center shrink-0"
+                />
+            </div>
+            <p className="text-[1rem] text-[#FCFBF8] font-normal text-center">
+              Bring Cher Ami to your residents.
+              Families cover the cost — your community gets the smiles.
             </p>
             <div className={'w-full py-6 bg-[#FCFBF8] justify-center rounded-[20]'}>
               <p className="text-[1rem] text-[#242832] font-medium text-center">

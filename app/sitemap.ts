@@ -65,6 +65,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
 
     {
+      url: 'https://thecherami.com/communities',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+
+    {
       url: 'https://thecherami.com/contact',
       lastModified: new Date(),
       changeFrequency: 'yearly',

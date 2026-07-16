@@ -28,6 +28,7 @@ No test framework is configured.
 **Route groups:**
 - `app/(main)/` — all public-facing pages sharing the main layout (header + footer). Homepage (`page.tsx`) is the primary marketing page.
 - `app/(misc)/` — pages with non-site origins (such as `/feedback` and `/preferences`).
+- `app/(print)/` — chrome-free printable pages (such as `/communities/flyer`, the flyer senior living communities hand to residents' families).
 - `app/api/` — server-side API routes integrating OneSignal and support ticketing.
 
 **Components** (`components/`) are small and purpose-built. Client components (marked `"use client"`) include `Header.tsx`, `EmailCTA.tsx`, `ContactClient.tsx`, and `StartClient.tsx`. Everything else is a server component by default.

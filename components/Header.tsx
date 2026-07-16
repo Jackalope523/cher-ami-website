@@ -70,6 +70,9 @@ export default function Header() {
           <Link href="/help" className="text-[#B05637] px-4 py-3 rounded-xl">
             Help
           </Link>
+          <Link href="/communities" className="text-[#B05637] px-4 py-3 rounded-xl">
+            For Communities
+          </Link>
           <Link
             href="/start"
             className="bg-[#C15F3C] hover:bg-[#89432B] active:bg-[#89432B] text-[#FFFFFF] px-4 py-3 rounded-xl"
@@ -110,6 +113,14 @@ export default function Header() {
             }}
             className="text-[#B05637] px-4 py-3 rounded-xl">
             Help
+          </Link>
+          <Link
+            href="/communities"
+            onClick={() => {
+              setShowMenu(false);
+            }}
+            className="text-[#B05637] px-4 py-3 rounded-xl">
+            For Communities
           </Link>
           <Link
             href="/start"
