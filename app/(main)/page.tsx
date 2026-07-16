@@ -399,8 +399,7 @@ export default function Home() {
                 />
             </div>
             <p className="text-[1rem] text-[#FCFBF8] font-normal text-center">
-              Bring Cher Ami to your residents.
-              Families cover the cost — your community gets the smiles.
+              Bring Cher Ami and smiles to your residents.
             </p>
             <div className={'w-full py-6 bg-[#FCFBF8] justify-center rounded-[20]'}>
               <p className="text-[1rem] text-[#242832] font-medium text-center">
