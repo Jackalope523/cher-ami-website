@@ -16,6 +16,7 @@ import {
   EmailAuthRequest,
   EmailVerifyRequest,
   IdRequest,
+  JoinCircleByLinkRequest,
   JoinCircleRequest,
   RecipientRequest,
   TokenRequest,
@@ -496,6 +497,24 @@ export function useJoinCircleMutation(
       await api.post('/circles/join', request);
     },
     onSuccess,
+    onError,
+  });
+}
+
+export function useJoinCircleByLinkMutation(
+  onSuccess?: () => void,
+  onError?: (error: AxiosError) => void,
+) {
+  const api = useAPI();
+  const queryClient = useQueryClient();
+  return useMutation<void, AxiosError, JoinCircleByLinkRequest>({
+    mutationFn: async (request) => {
+      await api.post('/circles/join-by-link', request);
+    },
+    onSuccess: async () => {
+      await queryClient.invalidateQueries({ queryKey: ['Circle'] });
+      onSuccess?.();
+    },
     onError,
   });
 }

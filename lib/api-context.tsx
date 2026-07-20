@@ -92,9 +92,12 @@ export default function APIProvider({ children }: { children: ReactNode }) {
     const staleToken = api.interceptors.response.use(
       (response) => response,
       (error) => {
+        // The /join invite flow handles its own auth errors (e.g. a mistyped
+        // verification code) and must not be bounced to the login page.
         if (
-          error.response?.status === 401 ||
-          error.response?.status === 500
+          (error.response?.status === 401 ||
+            error.response?.status === 500) &&
+          !window.location.pathname.startsWith('/join')
         ) {
           deleteToken();
           router.push('/app/login');

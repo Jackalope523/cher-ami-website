@@ -35,6 +35,10 @@ export interface JoinCircleRequest {
   code: string;
 }
 
+export interface JoinCircleByLinkRequest {
+  token: string;
+}
+
 export interface TokenRequest {
   authorizationCode: string;
 }
