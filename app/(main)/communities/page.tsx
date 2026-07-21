@@ -129,7 +129,7 @@ export default function Communities() {
             </Link>
           </div>
           <p className="text-[0.9rem] text-[#868581] text-center md:text-left">
-            No cost to your community • No staff admin • Nothing for residents
+            No cost to your community • No staff admin
             to learn
           </p>
         </div>
@@ -158,7 +158,7 @@ export default function Communities() {
             {
               step: '3',
               title: 'Residents just open it',
-              body: 'No app, no account, no password. Personal piece of mail, full of the people they love.',
+              body: 'No app, no account, no password. Personal piece of mail in their mailbox, full of the people they love.',
             },
           ].map((item) => (
             <div
@@ -190,8 +190,8 @@ export default function Communities() {
             </span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            Video calls need a helper and recalls. Digital frames aren't updated and unplugged.
-            Group chats are difficult and move quickly. A printed magazine asks nothing of your residents
+            Video calls need a helper and recalls. Digital frames move quickly.
+            A printed magazine asks nothing of your residents
             except their reading glasses. It waits on the nightstand, gets
             reread between visits, and gets shown off at lunch.
           </p>
@@ -225,7 +225,7 @@ export default function Communities() {
       {/* Desire: benefits by stakeholder */}
       <section id="benefits" className="flex flex-col items-center gap-10 w-full">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-[800px]">
-          Good for residents. Great for families.{' '}
+          Joy for residents. Great for families.{' '}
           <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
             Easy for your&nbsp;team
           </span>
@@ -236,8 +236,8 @@ export default function Communities() {
               For your residents
             </h3>
             <p className="text-[1rem] text-[#242832] font-normal">
-              Real mail with their name on it. Not a bill, not a flyer. A
-              monthly ritual to look forward to, photos to show tablemates, and
+              Real, meaningful mail with their name on it. Not a bill, not a flyer. A
+              monthly ritual to look forward to, photos to show neighbors, and
               stories to reread between visits.
             </p>
           </div>
@@ -246,7 +246,7 @@ export default function Communities() {
               For their families
             </h3>
             <p className="text-[1rem] text-[#242832] font-normal">
-              A meaningful way to show up between visits, from anywhere. The
+              A delightful way to show up between visits, from anywhere. The
               whole family contributes from their phones. They manage
               the subscription and all the photos.
             </p>
@@ -258,7 +258,7 @@ export default function Communities() {
             <p className="text-[1rem] text-[#242832] font-normal">
               Every issue puts names and faces to each resident&apos;s family.
               Residents get to show off the grandkids, the new puppy, the trip to the lake.
-              Something more exciting to hand over than a bingo card.
+              Something exciting to hand to residents.
             </p>
           </div>
         </div>
