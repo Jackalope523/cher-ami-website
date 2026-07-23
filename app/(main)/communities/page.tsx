@@ -95,7 +95,7 @@ export default function Communities() {
           priority
         />
         <div className="flex flex-col items-center md:items-start gap-8">
-          <p className="text-[1rem] text-[#C15F3C] font-semibold py-1 px-3 border-2 border-[#C15F3C] rounded-[1000px] w-fit">
+          <p className="text-[1.2rem] text-[#C15F3C] font-semibold py-1 px-3 border-2 border-[#C15F3C] rounded-[1000px] w-fit">
             For Senior Living Communities
           </p>
           <h1 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center md:text-left max-w-[650px]">
