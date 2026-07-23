@@ -106,8 +106,8 @@ export default function Communities() {
           </h1>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[520px]">
             Cher Ami turns each family&apos;s photos and stories into a printed
-            monthly magazine for their loved one in your
-            community. Each family sets up their own magazine and your resident gets
+            monthly magazine for their loved one in your community.
+            Each family sets up their own magazine and your resident gets
             something wonderful in the mail to open, share, and keep.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
