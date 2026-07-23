@@ -138,9 +138,9 @@ export default function Communities() {
       {/* Interest: how it works */}
       <section id="how-it-works" className="flex flex-col items-center gap-10 w-full">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center">
-          How it{' '}
+          Three easy{' '}
           <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
-            works
+            steps
           </span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1000px]">
@@ -190,7 +190,7 @@ export default function Communities() {
             </span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            Video calls need a helper and recalls. Digital frames move quickly.
+            Video calls can be confusing and may need a helper. Digital frames move quickly.
             A printed magazine asks nothing of your residents
             except their reading glasses. It waits on the nightstand, gets
             reread between visits, and gets shown off at lunch.
@@ -209,7 +209,7 @@ export default function Communities() {
                 mailbox now, that hasn&apos;t happened in years!
               </p>
               <p className="text-[0.9rem] text-[#868581] italic">
-                Andrew McCabe, FL — sends Cher Ami to his parents
+                Andrew McCabe, FL
               </p>
             </div>
           </div>
@@ -225,7 +225,7 @@ export default function Communities() {
       {/* Desire: benefits by stakeholder */}
       <section id="benefits" className="flex flex-col items-center gap-10 w-full">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-[800px]">
-          Joy for residents. Great for families.{' '}
+          Joy for residents. Wonderful for families.{' '}
           <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
             Easy for your&nbsp;team
           </span>
@@ -282,7 +282,7 @@ export default function Communities() {
               </h3>
               <p className="text-[1rem] text-[#242832] font-normal">
                 Hand them out at coffee and let residents introduce their
-                families to each other. It beats bingo.
+                families to each other.
               </p>
             </div>
             <div className="flex flex-col gap-1">
@@ -303,15 +303,6 @@ export default function Communities() {
                 Suggest Cher Ami to families on move-in day. The first magazine
                 is free, and it arrives right when a familiar face means the
                 most.
-              </p>
-            </div>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-[1.1rem] text-[#242832] font-semibold">
-                Show, don&apos;t tell, on tours
-              </h3>
-              <p className="text-[1rem] text-[#242832] font-normal">
-                A resident flipping through their own family magazine says more
-                about life in your community than any brochure.
               </p>
             </div>
           </div>
@@ -358,8 +349,7 @@ export default function Communities() {
               </h3>
               <p className="text-[1rem] text-[#242832] font-normal">
                 Tell us about your community in the form below, or email
-                partners@thecherami.com. We'll get back to you usually within
-                a day with everything you need.
+                partners@thecherami.com. We'll get back to you.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -384,7 +374,7 @@ export default function Communities() {
               <p className="text-[1rem] text-[#242832] font-normal">
                 Families sign up in minutes at <span className="text-nowrap">thecherami.com/start.</span> Magazines
                 arrive each month addressed to their resident, nothing for
-                your staff to manage.
+                your staff to manage. Just goodness in the mailbox!
               </p>
             </div>
           </div>
@@ -403,13 +393,13 @@ export default function Communities() {
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center">
             Get the{' '}
             <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
-              partner kit
+              kit
             </span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[600px]">
             Tell us a little about your community and we&apos;ll send the
             printable flyer, the newsletter blurb, and answers to anything
-            families might ask. Free, no strings.
+            families might ask.
           </p>
         </div>
         <PartnerForm />

@@ -175,7 +175,7 @@ export default function PartnerForm() {
       )}
       <p className="text-[0.75rem] text-[#676D7B] text-center">
         Prefer email? Write to partners@thecherami.com. We&apos;ll only use your
-        details to set up your community — no marketing lists.
+        details to set up your community.
       </p>
     </form>
   );
