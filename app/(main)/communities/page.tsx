@@ -4,22 +4,12 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 
 import Magazine from '@/public/magazine.webp';
-import ArmchairIllustration from '@/public/value-quality.webp';
 import MailboxMiceIllustration from '@/public/mailbox-mice.webp';
-import ForestAnimalsIllustration from '@/public/forest-animals.webp';
 import Quotes from '@/public/quotes.svg';
 
 import FAQItem from '@/components/FAQItem';
 import PartnerForm from './PartnerForm';
 import CopyBlurb from './CopyBlurb';
-
-import { Damion } from 'next/font/google';
-
-const damion = Damion({
-  weight: '400',
-  fallback: ['cursive'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'For Senior Living Communities',
@@ -100,9 +90,7 @@ export default function Communities() {
           </p>
           <h1 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center md:text-left max-w-[650px]">
             Mail your residents will{' '}
-            <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
-              look forward&nbsp;to
-            </span>
+            <span className="text-[#C15F3C] font-bold">look forward to</span>
           </h1>
           <p className="text-[1rem] text-[#242832] font-normal text-center md:text-left max-w-[520px]">
             Cher Ami turns each family&apos;s photos and stories into a printed
@@ -139,26 +127,24 @@ export default function Communities() {
       <section id="how-it-works" className="flex flex-col items-center gap-10 w-full">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center">
           Three easy{' '}
-          <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
-            steps
-          </span>
+          <span className="text-[#C15F3C] font-bold">steps</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1000px]">
           {[
             {
               step: '1',
               title: 'Families share photos',
-              body: 'Kids, grandkids, siblings — everyone posts photos and short stories in the Cher Ami app, from wherever they live.',
+              body: 'Your family subscribes in the Cher Ami app, then kids, grandkids, and siblings post photos and short stories from wherever they live.',
             },
             {
               step: '2',
               title: 'We print and mail',
-              body: 'At the start of each month, we turn those posts into a beautiful printed magazine and mail it, addressed to the resident.',
+              body: 'Each month, we turn those posts into a beautiful printed magazine and mail it, addressed to the resident.',
             },
             {
               step: '3',
               title: 'Residents just open it',
-              body: 'No app, no account, no password. Personal piece of mail in their mailbox, full of the people they love.',
+              body: 'No app, no account, no password. A personal piece of mail in their mailbox, full of the people they love.',
             },
           ].map((item) => (
             <div
@@ -181,54 +167,41 @@ export default function Communities() {
       {/* Interest: why print */}
       <section
         id="why-print"
-        className="flex flex-col sm:flex-row gap-12 lg:gap-40 w-full px-5 lg:px-8 xl:px-0">
-        <div className="flex flex-[1.5] flex-col gap-8">
-          <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            Screens weren&apos;t made for{' '}
-            <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>
-              every&nbsp;resident
-            </span>
-          </h2>
-          <p className="text-[1rem] text-[#242832] font-normal text-center sm:text-left">
-            Video calls can be confusing and may need a helper. Digital frames move quickly.
-            A printed magazine asks nothing of your residents
-            except their reading glasses. It waits on the nightstand, gets
-            reread between visits, and gets shown off at lunch.
-          </p>
-          <div className="flex flex-row gap-6 items-center">
-            <div className="bg-[#F4F1EA] rounded-xl">
-              <Image
-                src={Quotes}
-                alt="Quotation marks"
-                className="min-w-14 px-3 py-4"
-              />
-            </div>
-            <div className="flex flex-col gap-2">
-              <p className="text-[0.9rem] text-[#868581] italic">
-                My parents actually look forward to getting something in their
-                mailbox now, that hasn&apos;t happened in years!
-              </p>
-              <p className="text-[0.9rem] text-[#868581] italic">
-                Andrew McCabe, FL
-              </p>
-            </div>
+        className="flex flex-col items-center gap-8 w-full max-w-[800px] text-center px-5 lg:px-8 xl:px-0">
+        <h2 className="text-[2rem] text-[#242832] font-semibold">
+          Screens aren&apos;t made for{' '}
+          <span className="text-[#C15F3C] font-bold">everyone</span>
+        </h2>
+        <p className="text-[1rem] text-[#242832] font-normal">
+          Video calls may need a helper. Digital frames move quickly.
+          A printed magazine asks nothing of your residents
+          except their reading glasses. It waits on the nightstand, gets
+          reread between visits, and gets shown off at lunch.
+        </p>
+        <div className="flex flex-row gap-6 items-center text-left">
+          <div className="bg-[#F4F1EA] rounded-xl">
+            <Image
+              src={Quotes}
+              alt="Quotation marks"
+              className="min-w-14 px-3 py-4"
+            />
           </div>
-        </div>
-        <div className="flex flex-1 max-w-[60vw] sm:max-w-[30vw] self-center">
-          <Image
-            src={ArmchairIllustration}
-            alt="Illustration of a mouse reading a magazine in an armchair"
-          />
+          <div className="flex flex-col gap-2">
+            <p className="text-[0.9rem] text-[#868581] italic">
+              My parents actually look forward to getting something in their
+              mailbox now, that hasn&apos;t happened in years!
+            </p>
+            <p className="text-[0.9rem] text-[#868581] italic">
+              Andrew McCabe, FL
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Desire: benefits by stakeholder */}
       <section id="benefits" className="flex flex-col items-center gap-10 w-full">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center max-w-[800px]">
-          Joy for residents. Wonderful for families.{' '}
-          <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
-            Easy for your&nbsp;team
-          </span>
+          Joy for residents. Great for families. <span className="text-[#C15F3C] font-bold">Easy for your team.</span>
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1000px]">
           <div className="flex flex-col gap-4 p-8 bg-[#F4F1EA] rounded-[32px]">
@@ -236,7 +209,7 @@ export default function Communities() {
               For your residents
             </h3>
             <p className="text-[1rem] text-[#242832] font-normal">
-              Real, meaningful mail with their name on it. Not a bill, not a flyer. A
+              Meaningful mail addressed to them. Not a bill, not a flyer. A
               monthly ritual to look forward to, photos to show neighbors, and
               stories to reread between visits.
             </p>
@@ -246,9 +219,9 @@ export default function Communities() {
               For their families
             </h3>
             <p className="text-[1rem] text-[#242832] font-normal">
-              A delightful way to show up between visits, from anywhere. The
-              whole family contributes from their phones. They manage
-              the subscription and all the photos.
+              A fun way to stay connected between visits. The whole family
+              contributes from their phones, and they manage the subscription
+              and all the photos.
             </p>
           </div>
           <div className="flex flex-col gap-4 p-8 bg-[#F4F1EA] rounded-[32px]">
@@ -267,51 +240,39 @@ export default function Communities() {
       {/* Desire: use cases */}
       <section
         id="use-cases"
-        className="flex flex-col sm:flex-row-reverse gap-12 lg:gap-24 w-full px-5 lg:px-8 xl:px-0 items-center">
-        <div className="flex flex-[1.5] flex-col gap-8">
-          <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
-            Activity hours that{' '}
-            <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0 text-nowrap`}>
-              plan themselves
-            </span>
-          </h2>
-          <div className="flex flex-col gap-6">
-            <div className="flex flex-col gap-1">
-              <h3 className="text-[1.1rem] text-[#242832] font-semibold">
-                Magazine day
-              </h3>
-              <p className="text-[1rem] text-[#242832] font-normal">
-                Hand them out at coffee and let residents introduce their
-                families to each other.
-              </p>
-            </div>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-[1.1rem] text-[#242832] font-semibold">
-                Reminiscence sessions
-              </h3>
-              <p className="text-[1rem] text-[#242832] font-normal">
-                Familiar faces with names and captions make gentle prompts for
-                storytelling, especially for residents living with memory
-                loss.
-              </p>
-            </div>
-            <div className="flex flex-col gap-1">
-              <h3 className="text-[1.1rem] text-[#242832] font-semibold">
-                A warmer move-in
-              </h3>
-              <p className="text-[1rem] text-[#242832] font-normal">
-                Suggest Cher Ami to families on move-in day. The first magazine
-                is free, and it arrives right when a familiar face means the
-                most.
-              </p>
-            </div>
+        className="flex flex-col items-center gap-10 w-full px-5 lg:px-8 xl:px-0">
+        <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center">
+          Activity hours that{' '}
+          <span className="text-[#C15F3C] font-bold text-nowrap">plan themselves</span>
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full max-w-[1000px]">
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <h3 className="text-[1.1rem] text-[#242832] font-semibold">
+              Magazine day
+            </h3>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              Once magazines have arrived by mail, gather residents to introduce
+              their families to one another.
+            </p>
           </div>
-        </div>
-        <div className="flex flex-1 max-w-[60vw] sm:max-w-[30vw] self-center">
-          <Image
-            src={ForestAnimalsIllustration}
-            alt="Illustration of forest animals gathered together"
-          />
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <h3 className="text-[1.1rem] text-[#242832] font-semibold">
+              Reminiscence sessions
+            </h3>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              Familiar faces with names and captions make gentle prompts for
+              storytelling, especially in memory care.
+            </p>
+          </div>
+          <div className="flex flex-col gap-1 text-center md:text-left">
+            <h3 className="text-[1.1rem] text-[#242832] font-semibold">
+              A warmer move-in
+            </h3>
+            <p className="text-[1rem] text-[#242832] font-normal">
+              Suggest Cher Ami to families on move-in day. The first magazine is
+              free, and arrives right when a familiar face means the most.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -319,15 +280,12 @@ export default function Communities() {
       <section id="cost" className="flex flex-col items-center gap-8 w-full max-w-[800px] text-center">
         <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold">
           What it costs your community:{' '}
-          <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
-            nothing
-          </span>
+          <span className="text-[#C15F3C] font-bold">nothing</span>
         </h2>
         <p className="text-[1rem] text-[#242832] font-normal">
           Families subscribe directly — starting at $12.99 per magazine, with their first one free.
           There is nothing for your community to sign, stock, bill, or manage.
-          And if a family isn&apos;t happy
-          with a magazine, we replace or refund it.
+          And if a family isn&apos;t happy with a magazine, we replace or refund it.
         </p>
       </section>
 
@@ -338,18 +296,20 @@ export default function Communities() {
         <div className="flex flex-[1.5] flex-col gap-8">
           <h2 className="text-[2rem] text-[#242832] font-semibold text-center sm:text-left">
             Bring Cher Ami to{' '}
-            <span className={`${damion.className} text-[3rem] text-[#C15F3C] leading-0`}>
-              your community
-            </span>
+            <span className="text-[#C15F3C] font-bold">your community</span>
           </h2>
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-2">
               <h3 className="text-[1.1rem] text-[#242832] font-semibold">
-                1. Ask for the partner kit
+                1. Request your free partner kit
               </h3>
               <p className="text-[1rem] text-[#242832] font-normal">
                 Tell us about your community in the form below, or email
-                partners@thecherami.com. We'll get back to you.
+                partners@thecherami.com. A real person will reply within a day
+                with everything you need — a printable family flyer, a
+                newsletter blurb, an example magazine, and answers to the
+                questions families ask. Want a printed sample for your
+                activities room? Just say so.
               </p>
             </div>
             <div className="flex flex-col gap-4">
@@ -357,8 +317,10 @@ export default function Communities() {
                 2. Share it with families
               </h3>
               <p className="text-[1rem] text-[#242832] font-normal">
-                Print the ready-made flyer for your notice board and front
-                desk, or paste our blurb straight into your family newsletter.
+                The kit is made to be passed along. Pin the flyer to your notice
+                board, drop the blurb into your family newsletter, and point
+                families to Cher Ami. Here are the flyer and blurb to get
+                started today.
               </p>
               <Link
                 href="/communities/flyer"
@@ -391,10 +353,7 @@ export default function Communities() {
       <section id="partner" className="flex flex-col items-center gap-8 w-full">
         <div className="flex flex-col gap-4 items-center">
           <h2 className="text-[2rem] lg:text-[2.5rem] text-[#242832] font-semibold text-center">
-            Get the{' '}
-            <span className={`${damion.className} text-[3rem] lg:text-[3.5rem] text-[#C15F3C] leading-0`}>
-              kit
-            </span>
+            Get the <span className="text-[#C15F3C] font-bold">kit</span>
           </h2>
           <p className="text-[1rem] text-[#242832] font-normal text-center max-w-[600px]">
             Tell us a little about your community and we&apos;ll send the
@@ -425,7 +384,7 @@ export default function Communities() {
           <a href="mailto:partners@thecherami.com" className="text-[#B05637] underline">
             partners@thecherami.com
           </a>{' '}
-          and we'll get back to you.
+          and we&apos;ll get back to you.
         </p>
       </section>
     </div>
