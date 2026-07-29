@@ -1,89 +1,91 @@
-import Link from 'next/link';
-import Chevron from '@/public/chevron-right.svg';
-import Image from 'next/image';
+import HelpFaqItem from '@/components/HelpFaqItem';
+import HelpPageLayout from '@/components/HelpPageLayout';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Privacy FAQ | Cher Ami',
-  description: 'View the FAQ for privacy-related questions.',
+  title: 'Privacy & security | Help',
+  description:
+    'Who can see your photos, what we collect, and how payments are kept safe.',
   robots: {
     noimageindex: true,
   },
   alternates: {
-    canonical: 'https://thecherami.com/help/privacy'
-  }
+    canonical: 'https://thecherami.com/help/privacy',
+  },
 };
 
-export default function PrivacySecurityHelp() {
+export default function PrivacyHelp() {
   return (
-    <div className="bg-[#FCFBF8] max-w-[1200px] mx-auto px-5 pt-12 pb-36">
-      <nav className="flex flex-row gap-x-4 py-3">
-        <Link href="/help" className="text-[1rem] text-[#242832] font-medium">
-          Help
-        </Link>
-        <Image
-          src={Chevron}
-          alt="A right facing chevron"
-          width={24}
-          height={24}
-        />
-        <p className="text-[1rem] text-[#242832] font-medium underline">
-          Privacy & Security
+    <HelpPageLayout
+      title="Privacy & security"
+      intro="Family photos are personal. Here's plainly who can see them and what we do with your information."
+      lastUpdated="July 29, 2026">
+      <HelpFaqItem question="Who can see our photos?" defaultOpen>
+        <p>
+          Only the people in your family circle, and whoever you mail the printed
+          magazine to. Photos are never public, never browsable by strangers, and
+          never shown to anyone who hasn&apos;t been invited with your code.
         </p>
-      </nav>
-      <div>
-        <h1 className="text-[2.5rem] text-[#383a3f] font-semibold mb-8">
-          Privacy & Security
-        </h1>
-        <div className="flex flex-col gap-y-6 mb-16">
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Do you sell my data?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              Nope! We are committed to protecting your privacy and do not sell your data to third parties.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Are my photos public?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              No, your photos are not public and are only visible to members of your circle. We prioritize your privacy and ensure that your shared moments remain within your trusted group.
-              Any printed magazines are privately and securely handled.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Are payments secure?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              Yes! Payments are securely processed through our trusted payment partners using industry-standard encryption.
-              We retain no payment information on our servers.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              What data do you collect?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              We are committed to only collecting the necessary data to provide you with our services.
-              If you'd like to learn about all our data collection policies and practices, please review our <Link href="/legal/privacy" className="underline">Privacy Policy</Link>.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              How do I delete my account?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              If you wish to delete your account, please follow the instructions on our <Link href="/help/account-deletion" className="underline">account deletion page</Link>.
-            </p>
-          </div>
-        </div>
-        <p className="text-[1rem] text-[#242832] font-semibold">
-          Last updated the 7th of January, 2026
+        <p>
+          There is no public profile, no feed of strangers, and no way to search
+          for your family.
         </p>
-      </div>
-    </div>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Do you sell our data or show ads?">
+        <p>
+          No, and no. We don&apos;t sell your information, we don&apos;t share it
+          for advertising, and there are no ads in the app or in the magazine.
+          Cher Ami is paid for by the magazines people send.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="What information do you collect?">
+        <p>
+          What we need to make and mail your magazine: your name and email, the
+          photos and captions you add, and the name and address of each
+          recipient.
+        </p>
+        <p>
+          Our <Link href="/legal/privacy">Privacy Policy</Link> spells out the
+          full detail, including how long we keep things.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Who handles the printed magazine?">
+        <p>
+          Your photos go to our print and mail partner solely to produce and post
+          that magazine. They aren&apos;t used for anything else and aren&apos;t
+          passed on.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Are payments secure?">
+        <p>
+          Yes. Card details are handled by our payment provider using
+          industry-standard encryption and are never stored on our servers — we
+          only ever see the last four digits, so we can show you which card is on
+          file.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Can I stop someone in the circle from seeing my photos?">
+        <p>
+          You can block someone from their profile in the app, which hides your
+          photos from them and theirs from you. If someone joined who
+          shouldn&apos;t have, you can also generate a new invite code — see{' '}
+          <Link href="/help/general">Using Cher Ami</Link>.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="How do I delete my account and my data?">
+        <p>
+          From the app&apos;s settings. Our{' '}
+          <Link href="/help/account-deletion">account deletion page</Link> lists
+          exactly what is removed and what is kept, and why.
+        </p>
+      </HelpFaqItem>
+    </HelpPageLayout>
   );
 }

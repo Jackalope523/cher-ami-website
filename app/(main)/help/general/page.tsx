@@ -1,139 +1,186 @@
-import Link from 'next/link';
-import Chevron from '@/public/chevron-right.svg';
-import Image from 'next/image';
+import HelpFaqItem from '@/components/HelpFaqItem';
+import HelpPageLayout from '@/components/HelpPageLayout';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'General FAQ | Cher Ami',
-  description: 'View the FAQ for app- and product-related questions.',
+  title: 'Using Cher Ami | Help',
+  description:
+    'How family circles, photos, recipients and monthly magazines work.',
   robots: {
     noimageindex: true,
   },
   alternates: {
-    canonical: 'https://thecherami.com/help/general'
-  }
+    canonical: 'https://thecherami.com/help/general',
+  },
 };
 
 export default function GeneralHelp() {
   return (
-    <div className="bg-[#FCFBF8] max-w-[1200px] mx-auto px-5 pt-12 pb-36">
-      <nav className="flex flex-row gap-x-4 py-3">
-        <Link href="/help" className="text-[1rem] text-[#242832] font-medium">
-          Help
-        </Link>
-        <Image
-          src={Chevron}
-          alt="A right facing chevron"
-          width={24}
-          height={24}
-        />
-        <p className="text-[1rem] text-[#242832] font-medium underline">
-          General
+    <HelpPageLayout
+      title="Using Cher Ami"
+      intro="How family circles, photos and magazines fit together — and what to do when something looks wrong."
+      lastUpdated="July 29, 2026">
+      <HelpFaqItem question="What is Cher Ami?" defaultOpen>
+        <p>
+          Your family shares photos in a private space in the app called a
+          family circle. At the end of each month those photos are printed as a
+          glossy magazine and mailed to the people you choose — usually
+          grandparents.
         </p>
-      </nav>
-      <div>
-        <h1 className="text-[2.5rem] text-[#383a3f] font-semibold mb-8">
-          General
-        </h1>
-        <div className="flex flex-col gap-y-6 mb-16">
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              The app isn't loading, help!
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              As a temporary measure to minimise our resources, our servers may take a few seconds to wake up if there hasn't been activity for a while. Give it a few seconds, refresh the app, and it should load up fine!
-              If you are still unable to access the app, please try again later as we are likely fixing an issue.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              How do I create an account?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              <Link href="/?redirect=download#download" className="underline">Download the app</Link> on your mobile device and follow the sign-up instructions!
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              How do I upload pictures?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              From the mobile app, join or create a circle for your family and friends to share pictures securely. Then, tap the bottom-right button to post from the feed screen on the app.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              How do I join or create a circle?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              If you were given a code to join a circle, open the app, sign up, and enter it on the welcome screen. If you want to create your own circle, sign up and tap "Create Circle" instead and follow the instructions.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Can I edit my circle after creating it?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              Currently, you cannot change your circle's name or photo after creating it. However, we are planning this feature very soon!
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              How can I invite people to my circle? Who can join my circle?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              From the app, navigate to your circle from the top-left menu, copy the circle code, and share it with others!
-              Only those who have the code can join your circle.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Someone I don't know joined my circle! What do I do?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              If you don't recognise someone in your circle, you may remove them from the circle page if you own it or alert the circle creator.
-              It is possible a member accidentally shared the code publicly. In this case, you may press the 'regenerate code' button from the circle screen that will create a new code and invalidate the old one.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              What are recipients?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              Recipients are those who will receive a physical magazine in the mail with last month's posts—perfect for distant family and friends. Add as many as you like!
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              Are my photos public?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              No, your photos are not public and are only visible to members of your circle. We prioritize your privacy and ensure that your shared moments remain within your trusted group.
-              If you have any other questions or concerns about your privacy and data, please view our <Link href="/help/privacy" className="underline">Privacy & Security</Link> section.
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              How do I edit or delete a post?
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              Currently, you cannot edit posts and can only delete them by clicking the options icon on the top-right of the post.
-              We have plans to support editing in the near future!
-            </p>
-          </div>
-          <div className="flex flex-col gap-y-4">
-            <h2 className="text-[1.5rem] text-[#383a3f] font-medium">
-              My photos and posts disappeared, help!
-            </h2>
-            <p className="text-[1rem] text-[#242832] font-normal">
-              Don't worry, your photos and posts are safe! If they don't show up or are blank, please refresh the app or try again in a bit. Sometimes, the mobile app client takes time to catch up to server changes.
-            </p>
-          </div>
-        </div>
-        <p className="text-[1rem] text-[#242832] font-semibold">
-          Last updated the 7th of January, 2026
+        <p>
+          The people who receive the magazine need nothing at all: no app, no
+          account, no Wi-Fi. It simply arrives in their mailbox.
         </p>
-      </div>
-    </div>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Someone sent me an invite code. What do I do?">
+        <p>
+          <Link href="/?redirect=download#download">Download the app</Link>,
+          sign up with your email, and when you&apos;re asked about your family
+          circle choose to join one and enter the code you were given. You&apos;ll
+          land straight in your family&apos;s photo feed.
+        </p>
+        <p>
+          Joining costs nothing. Only the person who adds a recipient pays for
+          that magazine.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="How do I start a family circle?">
+        <p>
+          <Link href="/?redirect=download#download">Download the app</Link> and
+          sign up. When you&apos;re asked, choose to start a family circle,
+          give it a name your family will recognise — something like &ldquo;The
+          Harper Family&rdquo; — and add a cover photo.
+        </p>
+        <p>
+          After that you can invite the rest of the family, add photos, and add
+          the person who&apos;ll receive the magazine.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="How do I add photos?">
+        <p>
+          Open your feed and tap the round + button in the bottom-right corner.
+          Choose a photo, pick the shape you&apos;d like it printed in, crop it,
+          and add a caption if you want one.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="How many photos fit in one magazine?">
+        <p>
+          Up to 20 photos per magazine, shared across everyone in the family
+          circle. The app shows how full this month&apos;s magazine is at the
+          top of the feed.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="When is the magazine made and sent?">
+        <p>
+          Each magazine covers one calendar month. It closes at the end of that
+          month, then it&apos;s printed and mailed during the following month.
+        </p>
+        <p>
+          Anything added after a magazine closes goes into the next one, so
+          nothing is ever lost — it just travels in the next issue. See{' '}
+          <Link href="/help/billing">Billing &amp; delivery</Link> for arrival
+          times.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="What are recipients?">
+        <p>
+          Recipients are the people who get the printed magazine in the mail.
+          You add their name and address in the app, and that&apos;s all
+          that&apos;s needed — they don&apos;t need the app or an account.
+        </p>
+        <p>
+          You can add more than one. Each recipient gets their own copy, and
+          each copy is its own monthly subscription.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Can I be both a member and a recipient?">
+        <p>
+          Yes. You can add photos in the app and also receive the printed
+          magazine each month — just add yourself as a recipient.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Can family outside the USA take part?">
+        <p>
+          They can share photos in the app from anywhere in the world. We only
+          deliver printed magazines within the USA at the moment, so recipients
+          need a US mailing address.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Can I change our family circle's name or cover photo?">
+        <p>
+          Yes. Open the menu in the top-left, tap{' '}
+          <strong>My Family Circle</strong>, and edit the name or cover photo
+          from there. Everyone in the circle sees the change.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Can I delete a photo I added?">
+        <p>
+          Yes — tap the ⋮ button in the top-right of your photo and choose
+          delete. If the magazine it belongs to hasn&apos;t been printed yet,
+          the photo is removed from it.
+        </p>
+        <p>
+          Once a magazine has been printed and mailed we can&apos;t change that
+          copy, but deleting still removes the photo from the app.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="How do I invite more family?">
+        <p>
+          Open the menu, tap <strong>My Family Circle</strong>, then{' '}
+          <strong>Invite Family &amp; Friends</strong>. You can send an
+          invitation by text or email, or copy the invite code and share it
+          however you like. There&apos;s no limit on how many people can join.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Someone I don't recognise joined our circle. What can I do?">
+        <p>
+          Invite codes work for anyone who has them, so this usually means a
+          code was shared more widely than intended. Open{' '}
+          <strong>My Family Circle</strong>, tap{' '}
+          <strong>Invite Family &amp; Friends</strong>, and choose{' '}
+          <strong>Generate new code</strong> — the old code stops working
+          immediately, so nobody else can join with it.
+        </p>
+        <p>
+          You can also block someone from their profile, which hides their
+          photos from you and yours from them.{' '}
+          <Link href="/contact">Contact us</Link> if you need a hand and
+          we&apos;ll sort it out with you.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="The app is slow to open, or photos look blank">
+        <p>
+          Our servers rest when nobody has used the app for a while, so the
+          first load after a quiet spell can take a few seconds. Give it a
+          moment, or close and reopen the app.
+        </p>
+        <p>
+          Your photos are safe either way — nothing is deleted by a slow load.
+          If it still won&apos;t load after a few minutes,{' '}
+          <Link href="/contact">let us know</Link>.
+        </p>
+      </HelpFaqItem>
+
+      <HelpFaqItem question="Does everyone in the family have to pay?">
+        <p>
+          No. Sharing photos is free for everyone in the family circle. Only the
+          person who adds a recipient pays for that recipient&apos;s magazine.
+        </p>
+      </HelpFaqItem>
+    </HelpPageLayout>
   );
 }
