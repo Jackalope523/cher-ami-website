@@ -21,7 +21,7 @@ export default function NextPrintNotice({ className = '' }: { className?: string
     <div
       className={`inline-flex items-center gap-2 px-3 py-1.5 bg-[#C15F3C]/10 rounded-full animate-fade-in ${className}`}>
       <p className="text-[0.85rem] text-[#C15F3C] font-medium">
-        Your next magazine prints {month} 1st!
+        Your first magazine prints {month} 1st!
       </p>
     </div>
   );

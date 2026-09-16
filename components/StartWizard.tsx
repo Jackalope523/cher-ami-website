@@ -354,7 +354,7 @@ export default function StartWizard({
       style={{ backgroundColor: theme.tint }}>
       <span className="h-2 w-2 rounded-full" style={{ backgroundColor: theme.accent }} />
       <p className="text-[0.8rem] font-medium" style={{ color: theme.accent }}>
-        Your next magazine prints {printMonth} 1st
+        Your first magazine prints {printMonth} 1st
       </p>
     </div>
   );
